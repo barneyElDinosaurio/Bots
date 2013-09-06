@@ -31,12 +31,17 @@ public:
 	void setSendingPort(int _port);
 	void setSendingHost( string _host );
 	void setOscSender( string _host, int _port);
-	void callibrate();
+	void calibrate();
+	void isCalibrated();
 	
 	void setDistanceThreshold(float _d);
 	void setAngleThreshold(float _a);
 	void advance(float speed, float rotAngle);
 	void rotate(float rotAngle);
+	void stop();
+	
+	void setupSerial(string terminal, int baudRate );
+	void setupSerial(int device, int baudRate);
 	
 	
 	
@@ -44,6 +49,15 @@ public:
 	ofVec2f pos;
 	ofVec2f orientation;
 	float angle;
+	
+	ofSerial serial;
+
+	
+	// Identification
+	int ID;
+	
+	// State variables
+	bool calibrated;
 	
 	// Distance threshold for updating position
 	float distanceThreshold;

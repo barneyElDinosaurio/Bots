@@ -7,7 +7,12 @@ void testApp::setup(){
 	elBot.setImage("imagenBotSmall.png");
 	elBot.setListeningPort(9001);
 	elBot.setDistanceThreshold(0.01);
+	elBot.setupSerial(0, 9600);
 	
+	
+	string s("trin");
+	
+	cout << s.length() << endl;
 }
 
 //--------------------------------------------------------------
@@ -25,6 +30,23 @@ void testApp::draw(){
 void testApp::keyPressed(int key){ //Dirty calibration
 	elBot.setPos( elBot.blobData.x, elBot.blobData.y );
 	elBot.setAngle( elBot.blobData.z);
+	
+	if(key == 's'){
+		string s("#0 P1600 T1000");
+		
+		elBot.serial.writeBytes( (unsigned char *) string2CharBuf(s) , s.length() );
+		elBot.serial.writeByte( "\n" );
+	}
+}
+// ------
+char * testApp::string2CharBuf(string str){
+	
+	//std::string s
+	char *a=new char[str.size()+1];
+	a[str.size()]=0;
+	memcpy(a,str.c_str(),str.size());
+	
+	return(a);
 
 }
 

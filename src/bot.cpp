@@ -52,6 +52,12 @@ void Bot::setPos(float x, float y){
 void Bot::setAngle(float _angle){
 	angle = _angle;
 }
+void Bot::setupSerial(int device, int baudRate){
+	serial.setup(device, baudRate);
+}
+void Bot::setupSerial(string port, int baudRate){
+	serial.setup(port, baudRate);
+}
 void Bot::draw(){
 	ofEnableAlphaBlending();
 	image.draw( pos.x*ofGetWidth(), pos.y*ofGetHeight() );
@@ -89,8 +95,8 @@ void Bot::advance(float speed, float rotAngle){
 void Bot::rotate(float rotAngle){
 	angle+=rotAngle;
 }
-void Bot::callibrate(){
+/*void Bot::callibrate(){
 
-}
+}*/
 
 

@@ -19,6 +19,8 @@ class testApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+	
+	char * string2CharBuf(string str);
 		
 	Bot elBot;
 };
