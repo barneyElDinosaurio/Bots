@@ -7,9 +7,10 @@
  *
  */
 
+#include "ofMain.h"
 class servoMover{
 	
 public:
 	void moveServo(int numServo, float angle, float time);
 	void initSerial( string terminal , int baudRate);
-}
+};

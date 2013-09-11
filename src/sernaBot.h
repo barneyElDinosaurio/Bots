@@ -7,12 +7,14 @@
  *
  */
 
-class sernaBot : public bot{
+#include "bot.h"
+class sernaBot : public Bot{
 
 public:
-	void advance(float speed, float rotAngle)
+	void advance(float speed, float rotAngle);
 	void advance();
-	void advance(float speed, float rotAngle)
+	void rotate(float angle);
 
 
-}
+
+};

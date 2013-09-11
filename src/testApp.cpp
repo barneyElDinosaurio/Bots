@@ -35,7 +35,7 @@ void testApp::keyPressed(int key){ //Dirty calibration
 		string s("#0 P1600 T1000");
 		
 		elBot.serial.writeBytes( (unsigned char *) string2CharBuf(s) , s.length() );
-		elBot.serial.writeByte( "\n" );
+		//elBot.serial.writeByte( "\n" );
 	}
 }
 // ------

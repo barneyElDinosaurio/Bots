@@ -18,7 +18,7 @@
 */
 
 hexapod::hexapod(){
-	super.
+	//super.
 
 }
 void hexapod:: advance( float speed, float rotAngle){

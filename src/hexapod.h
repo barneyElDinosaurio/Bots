@@ -7,13 +7,15 @@
  *
  */
 
-class hexapod : public bot{
+#include "bot.h"
+
+class hexapod : public Bot{
 
 public:	
-	void hexapod();
+	hexapod();
 	void advance( float speed, float rotAngle);
 	void rotate(float angle);
 	void advance();
 	void stop();
 	
-}
+};
