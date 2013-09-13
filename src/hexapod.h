@@ -7,12 +7,20 @@
  *
  */
 
+#ifndef BOT_H
+#define BOT_H
 #include "bot.h"
+#endif
+
+
+
 #include "SSC32.h"
 
 // Should this be in ssc32 ?
 //#include "wiringPi.h"
 //#include "wiringSerial.h"
+
+
 
 class hexapod : public Bot{
 
@@ -22,6 +30,8 @@ public:
 	void rotate(float angle);
 	void advance();
 	void stop();
+	void setup();
+	void mandarUnDato();
 	
 	// Serial:
 void startSerial();

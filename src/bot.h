@@ -7,6 +7,9 @@
  *
  */
 
+#ifndef BOT_H
+#define BOT_H
+#endif
 #include "ofMain.h"
 #include "ofxOsc.h"
 

@@ -3,6 +3,7 @@
 #include "ofMain.h"
 //#include "bot.h"
 #include "sernaBot.h"
+#include "hexapod.h"
 
 class testApp : public ofBaseApp{
 
@@ -25,4 +26,5 @@ class testApp : public ofBaseApp{
 		
 	Bot elBot;
 	SernaBot elGarden;
+	hexapod hexa;
 };

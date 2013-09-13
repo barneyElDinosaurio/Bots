@@ -113,6 +113,8 @@ class SSC32
 		int readDigitalInput(int input);
 		int readAnalogInput(int input);
 	
+	void mandarUnDato();
+	
 	int serialNumber;
 		
 
