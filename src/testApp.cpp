@@ -9,7 +9,7 @@ void testApp::setup(){
 	//elBot.setDistanceThreshold(0.01);
 	//elBot.setupSerial(0, 9600);
 	
-	//elGarden.setup();
+	elGarden.setup();
 	
 	
 
@@ -17,13 +17,14 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
-	elBot.update();
+//	elBot.update();
+	elGarden.update();
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
 	ofBackground(150);
-	elBot.draw();
+	//elBot.draw();
 }
 
 //--------------------------------------------------------------

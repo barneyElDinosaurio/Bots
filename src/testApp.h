@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "bot.h"
+#include "sernaBot.h"
 
 class testApp : public ofBaseApp{
 
@@ -23,5 +24,5 @@ class testApp : public ofBaseApp{
 	char * string2CharBuf(string str);
 		
 	Bot elBot;
-	//SernaBot elGarden;
+	SernaBot elGarden;
 };

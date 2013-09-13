@@ -10,7 +10,7 @@
 #include "sernaBot.h"
 
 void SernaBot::setup(){
-	botType = "sernaBot";
+	//this.botType = "sernaBot";
 	
 	//Setear wiringPI
 	wiringPiSetup();
