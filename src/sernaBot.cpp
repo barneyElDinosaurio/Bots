@@ -9,6 +9,14 @@
 
 #include "sernaBot.h"
 
+void setup::setup(){
+	
+	//Setear wiringPI
+	wiringPiSetup();
+	int serialFlag  = serialOpen("/dev/ttyAMA0",9600);
+	
+	cout << "Se ha conectado al puerto serial número: " << endl;
+}
 void sernaBot::advance(float speed, float rotAngle){
 
 }
