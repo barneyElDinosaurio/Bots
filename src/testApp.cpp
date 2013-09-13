@@ -46,6 +46,9 @@ void testApp::keyPressed(int key){ //Dirty calibration
 		elBot.serial.writeBytes( (unsigned char *) string2CharBuf(s) , s.length() );
 		//elBot.serial.writeByte( "\n" );
 	}
+	if( key =='m'){
+		hexa.mandarUnDato();
+	}
 }
 // ------
 char * testApp::string2CharBuf(string str){

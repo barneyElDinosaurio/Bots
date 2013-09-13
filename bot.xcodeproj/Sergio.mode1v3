@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>49B62E5C17E2EFBE003B59D2</string>
+						<string>49B62E6517E2F0C6003B59D2</string>
 						<key>history</key>
 						<array>
 							<string>49B62D7417E2D039003B59D2</string>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>49B62E5D17E2EFBE003B59D2</string>
+						<string>49B62E6617E2F0C6003B59D2</string>
 						<key>history</key>
 						<array>
 							<string>49B62DB317E2DAEC003B59D2</string>
@@ -296,7 +296,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>49B62E5E17E2EFBE003B59D2</string>
+						<string>49B62E6717E2F0C6003B59D2</string>
 						<key>history</key>
 						<array>
 							<string>49B62DD217E2DEE8003B59D2</string>
@@ -395,14 +395,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>21</integer>
-									<integer>19</integer>
-									<integer>18</integer>
+									<integer>7</integer>
+									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 60}, {193, 618}}</string>
+							<string>{{0, 0}, {193, 618}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -439,7 +438,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SSC32.cpp</string>
+								<string>testApp.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -447,11 +446,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SSC32.cpp</string>
+										<string>testApp.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>49B62E5B17E2EFBE003B59D2</string>
+										<string>49B62E6417E2F0C6003B59D2</string>
 										<key>history</key>
 										<array>
 											<string>49B2333C178E62D900C2AEA4</string>
@@ -468,15 +467,15 @@
 											<string>49B62DCE17E2DEE8003B59D2</string>
 											<string>49B62E0517E2E18C003B59D2</string>
 											<string>49B62E0617E2E18C003B59D2</string>
-											<string>49B62E3617E2ECE7003B59D2</string>
 											<string>49B62E3717E2ECE7003B59D2</string>
-											<string>49B62E3A17E2ECE7003B59D2</string>
 											<string>49B62E3B17E2ECE7003B59D2</string>
 											<string>49B62E3C17E2ECE7003B59D2</string>
-											<string>49B62E5817E2EFBE003B59D2</string>
-											<string>49B62E5917E2EFBE003B59D2</string>
-											<string>49B62E5A17E2EFBE003B59D2</string>
-											<string>49B62D5E17E2CEA9003B59D2</string>
+											<string>49B62E5F17E2F0C6003B59D2</string>
+											<string>49B62E6017E2F0C6003B59D2</string>
+											<string>49B62E6117E2F0C6003B59D2</string>
+											<string>49B62E6217E2F0C6003B59D2</string>
+											<string>49B62E6317E2F0C6003B59D2</string>
+											<string>49B62E3617E2ECE7003B59D2</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -679,8 +678,8 @@
 		<string>49B62D7F17E2D322003B59D2</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>49B62D7C17E2D322003B59D2</string>
-		<string>/Users/Sergio/Documents/OF/of_v0.7.4_osx_release/apps/Symbiosis/bot/bot.xcodeproj</string>
 		<string>4903F233178C4E6000CEEDED</string>
+		<string>/Users/Sergio/Documents/OF/of_v0.7.4_osx_release/apps/Symbiosis/bot/bot.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>40 160 1046 677 0 0 1440 878 </string>
