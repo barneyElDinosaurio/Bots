@@ -80,9 +80,13 @@
 #include "wiringPi.h"
 #include "wiringSerial.h"
 
+
+#include <iostream>
+#include <cstdlib>
+#include <sstream>
 //#include <stdio.h>;
 
-//using namespace std;
+using namespace std;
 
 class SSC32
 {
@@ -114,6 +118,7 @@ class SSC32
 		int readAnalogInput(int input);
 	
 	void mandarUnDato();
+	std::string int2str(int number);
 	
 	int serialNumber;
 		

@@ -51,6 +51,8 @@ void testApp::keyPressed(int key){ //Dirty calibration
 	if( key =='m'){
 		hexa.mandarUnDato();
 		cout << "mandando un dato... en prtincipio" << endl;
+		hexa.servocontroller.servoMove(1, 1000);
+		hexa.servocontroller.servoMove(2, ofRandom(1500 , 1800) );
 	}
 }
 // ------

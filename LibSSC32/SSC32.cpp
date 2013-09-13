@@ -39,10 +39,8 @@
 
 #include "SSC32.h"
 
-#include "wiringPi.h"
-#include "wiringSerial.h"
 
-//using namespace std;
+
 
 
 /**
@@ -69,7 +67,7 @@ void SSC32::begin(int bauds)
 	
 	serialNumber  = serialOpen("/dev/ttyAMA0",bauds);
 	
-	//std::cout << "Se ha conectado al puerto serial número: " << endl;
+	cout << "Se ha conectado al puerto serial número: " << endl;
 	serialPutchar( serialNumber, 'c' );
 	
 	
@@ -88,4 +86,177 @@ void SSC32:: mandarUnDato(){
 *	@param type	The type of group command. Should be one of the following : SSC32_CMDGRP_TYPE_SERVO_MOVEMENT, SSC32_CMDGRP_TYPE_PULSE_OFFSET, SSC32_CMDGRP_TYPE_DISCRETE_OUTPUT
 *	@return It will return false if a previous call to beginGroupCommand has not been finished yet by calling endGroupCommand. True otherwise.
 */
+
+bool SSC32::beginGroupCommand(int type)
+{
+	
+	if (type < SSC32_CMDGRP_TYPE_NONE || type > SSC32_CMDGRP_TYPE_DISCRETE_OUTPUT)
+	{
+		//The command type is not valid
+		return false;
+	}
+	
+	
+	if ( _commandType != SSC32_CMDGRP_TYPE_NONE)
+	{
+		//Can not start another command group while in the middle of another command group
+		return false;
+	}
+	
+	_commandType = type;
+	return true;
+	
+}
+
+/**
+ *	Abort a group of commands
+ *	@return It will return false if a group command has not been started by calling beginGroupCommand. True otherwise.
+ */
+bool SSC32::abortGroupCommand()
+{
+	
+	if (_commandType == SSC32_CMDGRP_TYPE_NONE)
+	{
+		//Can not abort, we are not in a group of commands
+		return false;
+	}
+	
+	//According to the manual I should write the ascii character for <esc>
+	// ************ CAMBIAR, POSIBLEMENTE POR:
+	
+	//Serial.write(27);
+	
+	serialPutchar( serialNumber, 27);
+	_commandType = SSC32_CMDGRP_TYPE_NONE;
+	_ttcm = -1;
+	
+	return true;
+}
+
+/**
+ *	End a group of commands
+ *	@return It will return false if a group command has not been started by calling beginGroupCommand or it has been aborted by abortGroupCommand. True otherwise.
+ */
+bool SSC32::endGroupCommand()
+{
+	
+	if (_commandType == SSC32_CMDGRP_TYPE_NONE)
+	{
+		//Can not end, we are not in a group of commands
+		return false;
+	}
+	
+	if (_ttcm != -1)
+	{
+		//Set the time to complete movement
+		// **** ARDUINO ****
+//		Serial.print(" T");
+//		Serial.print(_ttcm);
+		
+		// **** RASPI ****
+		
+		string mes(" T");
+		serialPuts( serialNumber, (char*) mes.c_str() ); // With wiringpi
+		serialPuts( serialNumber, (char*)_ttcm ); // With wiringpi // NO estoy seguro
+
+	}
+	
+	string mes("/n/r"); // **** REvisar orden
+	serialPuts( serialNumber, (char*) mes.c_str() );
+	_commandType = SSC32_CMDGRP_TYPE_NONE;
+	_ttcm = -1;
+	return true;
+	
+}
+
+/**
+ *	Move the servo at #channel to "position".
+ *	If this function is called from outside a pair of beginGroupCommand/endGroupCommand	then the servo will move right away.
+ *
+ *	But if this function is called inside a gruop of commands, then the servo will not move	until you call endGroupCommand
+ *	@param	channel	The servo to move
+ *	@param	position	The position where to move the servo
+ *	@return False if the channel or position is not valid or if this function is called while inside a command group other than SSC32_CMDGRP_TYPE_SERVO_MOVEMENT. True otherwise.
+ */
+bool SSC32::servoMove(int channel, int position)
+{
+	if (channel < SSC32_MIN_CH || channel > SSC32_MAX_CH)
+	{
+		//Channel not valid
+		return false;
+	}
+	
+	if (position < SSC32_MIN_PW || position > SSC32_MAX_PW)
+	{
+		//Position not valid
+		return false;
+	}
+	
+	if (_commandType != SSC32_CMDGRP_TYPE_NONE && _commandType != SSC32_CMDGRP_TYPE_SERVO_MOVEMENT)
+	{
+		//This can only be called as a single command or inside a group of 
+		//commands of type SSC32_CMDGRP_TYPE_SERVO_MOVEMENT
+		return false;	
+	}
+	
+	//We are good to go
+	
+	// **** ARDUINO ****
+	/*
+	Serial.print("#");
+	Serial.print(channel);
+	Serial.print(" P");
+	Serial.print(position);
+	Serial.print(" ");
+	*/
+		
+	// **** RASPI *****
+	string mes = "#";
+	string channelString = int2str(channel);
+	mes.append(channelString);
+	mes.append(" P");
+	
+	string positionString = int2str(position);
+	mes.append(positionString);
+	mes.append(" ");
+	cout << "Trying to send message " <<  mes << endl;
+	serialPuts( serialNumber, (char*) mes.c_str() ); // With wiringpi
+	
+	if (_commandType == SSC32_CMDGRP_TYPE_NONE)
+	{
+		//This is a single command so execute it
+		
+		// **** ARDUINO ****
+		//Serial.println();
+		
+		// **** RASPI ****
+		string mes("/n/r");
+		serialPuts(serialNumber, (char*) mes.c_str());
+		
+	}
+	
+	cout << "En el movedor de servos" << endl;
+	return true;
+	
+}
+
+/**
+ *	Move the servo at #channel to "position" with speed "speed".
+ *	If this function is called from outside a pair of beginGroupCommand/endGroupCommand	then the servo will move right away.
+ *
+ *	But if this function is called inside a gruop of commands, then the servo will not move	until you call endGroupCommand.
+ *	@param channel The servo to move
+ *	@param position	The position where to move the servo
+ *	@param speed	The speed for the movement
+ *	@return False if the channel or position or speed is invalid or if this function is called while inside a command group other than SSC32_CMDGRP_TYPE_SERVO_MOVEMENT. True otherwise.
+ */
+
+
+string SSC32::int2str(int number){// por revisar
+	std::stringstream ss;
+	ss << number;
+	return(ss.str());
+}
+
+
 
