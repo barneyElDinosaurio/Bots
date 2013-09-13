@@ -24,6 +24,58 @@
 		4909E01F17DA305A00406CD7 /* sernaBot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4909E01E17DA305A00406CD7 /* sernaBot.cpp */; };
 		4909E04217DA37BA00406CD7 /* hexapod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4909E04117DA37BA00406CD7 /* hexapod.cpp */; };
 		4909E04617DA3BD900406CD7 /* servoMover.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4909E04517DA3BD900406CD7 /* servoMover.cpp */; };
+		49B62BFF17E2B8AF003B59D2 /* drcSerial.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BAF17E2B8AF003B59D2 /* drcSerial.c */; };
+		49B62C0017E2B8AF003B59D2 /* drcSerial.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BB117E2B8AF003B59D2 /* drcSerial.o */; };
+		49B62C0117E2B8AF003B59D2 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BB317E2B8AF003B59D2 /* Makefile */; };
+		49B62C0217E2B8AF003B59D2 /* max31855.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BB417E2B8AF003B59D2 /* max31855.c */; };
+		49B62C0317E2B8AF003B59D2 /* max31855.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BB617E2B8AF003B59D2 /* max31855.o */; };
+		49B62C0417E2B8AF003B59D2 /* max5322.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BB717E2B8AF003B59D2 /* max5322.c */; };
+		49B62C0517E2B8AF003B59D2 /* max5322.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BB917E2B8AF003B59D2 /* max5322.o */; };
+		49B62C0617E2B8AF003B59D2 /* mcp23008.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BBA17E2B8AF003B59D2 /* mcp23008.c */; };
+		49B62C0717E2B8AF003B59D2 /* mcp23008.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BBC17E2B8AF003B59D2 /* mcp23008.o */; };
+		49B62C0817E2B8AF003B59D2 /* mcp23016.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BBD17E2B8AF003B59D2 /* mcp23016.c */; };
+		49B62C0917E2B8AF003B59D2 /* mcp23016.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BBF17E2B8AF003B59D2 /* mcp23016.o */; };
+		49B62C0A17E2B8AF003B59D2 /* mcp23017.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BC117E2B8AF003B59D2 /* mcp23017.c */; };
+		49B62C0B17E2B8AF003B59D2 /* mcp23017.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BC317E2B8AF003B59D2 /* mcp23017.o */; };
+		49B62C0C17E2B8AF003B59D2 /* mcp23s08.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BC417E2B8AF003B59D2 /* mcp23s08.c */; };
+		49B62C0D17E2B8AF003B59D2 /* mcp23s08.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BC617E2B8AF003B59D2 /* mcp23s08.o */; };
+		49B62C0E17E2B8AF003B59D2 /* mcp23s17.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BC717E2B8AF003B59D2 /* mcp23s17.c */; };
+		49B62C0F17E2B8AF003B59D2 /* mcp23s17.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BC917E2B8AF003B59D2 /* mcp23s17.o */; };
+		49B62C1017E2B8AF003B59D2 /* mcp3002.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BCC17E2B8AF003B59D2 /* mcp3002.c */; };
+		49B62C1117E2B8AF003B59D2 /* mcp3002.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BCE17E2B8AF003B59D2 /* mcp3002.o */; };
+		49B62C1217E2B8AF003B59D2 /* mcp3004.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BCF17E2B8AF003B59D2 /* mcp3004.c */; };
+		49B62C1317E2B8AF003B59D2 /* mcp3004.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BD117E2B8AF003B59D2 /* mcp3004.o */; };
+		49B62C1417E2B8AF003B59D2 /* mcp3422.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BD217E2B8AF003B59D2 /* mcp3422.c */; };
+		49B62C1517E2B8AF003B59D2 /* mcp3422.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BD417E2B8AF003B59D2 /* mcp3422.o */; };
+		49B62C1617E2B8AF003B59D2 /* mcp4802.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BD517E2B8AF003B59D2 /* mcp4802.c */; };
+		49B62C1717E2B8AF003B59D2 /* mcp4802.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BD717E2B8AF003B59D2 /* mcp4802.o */; };
+		49B62C1817E2B8AF003B59D2 /* pcf8574.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BD817E2B8AF003B59D2 /* pcf8574.c */; };
+		49B62C1917E2B8AF003B59D2 /* pcf8574.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BDA17E2B8AF003B59D2 /* pcf8574.o */; };
+		49B62C1A17E2B8AF003B59D2 /* pcf8591.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BDB17E2B8AF003B59D2 /* pcf8591.c */; };
+		49B62C1B17E2B8AF003B59D2 /* pcf8591.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BDD17E2B8AF003B59D2 /* pcf8591.o */; };
+		49B62C1C17E2B8AF003B59D2 /* piHiPri.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BDE17E2B8AF003B59D2 /* piHiPri.c */; };
+		49B62C1D17E2B8AF003B59D2 /* piHiPri.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BDF17E2B8AF003B59D2 /* piHiPri.o */; };
+		49B62C1E17E2B8AF003B59D2 /* piThread.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BE017E2B8AF003B59D2 /* piThread.c */; };
+		49B62C1F17E2B8AF003B59D2 /* piThread.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BE117E2B8AF003B59D2 /* piThread.o */; };
+		49B62C2017E2B8AF003B59D2 /* sn3218.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BE217E2B8AF003B59D2 /* sn3218.c */; };
+		49B62C2117E2B8AF003B59D2 /* sn3218.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BE417E2B8AF003B59D2 /* sn3218.o */; };
+		49B62C2217E2B8AF003B59D2 /* softPwm.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BE517E2B8AF003B59D2 /* softPwm.c */; };
+		49B62C2317E2B8AF003B59D2 /* softPwm.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BE717E2B8AF003B59D2 /* softPwm.o */; };
+		49B62C2417E2B8AF003B59D2 /* softServo.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BE817E2B8AF003B59D2 /* softServo.c */; };
+		49B62C2517E2B8AF003B59D2 /* softTone.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BEA17E2B8AF003B59D2 /* softTone.c */; };
+		49B62C2617E2B8AF003B59D2 /* softTone.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BEC17E2B8AF003B59D2 /* softTone.o */; };
+		49B62C2717E2B8AF003B59D2 /* sr595.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BED17E2B8AF003B59D2 /* sr595.c */; };
+		49B62C2817E2B8AF003B59D2 /* sr595.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BEF17E2B8AF003B59D2 /* sr595.o */; };
+		49B62C2917E2B8AF003B59D2 /* wiringPi.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BF017E2B8AF003B59D2 /* wiringPi.c */; };
+		49B62C2A17E2B8AF003B59D2 /* wiringPi.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BF217E2B8AF003B59D2 /* wiringPi.o */; };
+		49B62C2B17E2B8AF003B59D2 /* wiringPiI2C.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BF317E2B8AF003B59D2 /* wiringPiI2C.c */; };
+		49B62C2C17E2B8AF003B59D2 /* wiringPiI2C.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BF517E2B8AF003B59D2 /* wiringPiI2C.o */; };
+		49B62C2D17E2B8AF003B59D2 /* wiringPiSPI.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BF617E2B8AF003B59D2 /* wiringPiSPI.c */; };
+		49B62C2E17E2B8AF003B59D2 /* wiringPiSPI.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BF817E2B8AF003B59D2 /* wiringPiSPI.o */; };
+		49B62C2F17E2B8AF003B59D2 /* wiringSerial.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BF917E2B8AF003B59D2 /* wiringSerial.c */; };
+		49B62C3017E2B8AF003B59D2 /* wiringSerial.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BFB17E2B8AF003B59D2 /* wiringSerial.o */; };
+		49B62C3117E2B8AF003B59D2 /* wiringShift.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BFC17E2B8AF003B59D2 /* wiringShift.c */; };
+		49B62C3217E2B8AF003B59D2 /* wiringShift.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BFE17E2B8AF003B59D2 /* wiringShift.o */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -117,6 +169,87 @@
 		4909E04117DA37BA00406CD7 /* hexapod.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hexapod.cpp; sourceTree = "<group>"; };
 		4909E04417DA3BD900406CD7 /* servoMover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = servoMover.h; sourceTree = "<group>"; };
 		4909E04517DA3BD900406CD7 /* servoMover.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = servoMover.cpp; sourceTree = "<group>"; };
+		49B62BAE17E2B8AF003B59D2 /* COPYING.LESSER */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.LESSER; sourceTree = "<group>"; };
+		49B62BAF17E2B8AF003B59D2 /* drcSerial.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = drcSerial.c; sourceTree = "<group>"; };
+		49B62BB017E2B8AF003B59D2 /* drcSerial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = drcSerial.h; sourceTree = "<group>"; };
+		49B62BB117E2B8AF003B59D2 /* drcSerial.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = drcSerial.o; sourceTree = "<group>"; };
+		49B62BB217E2B8AF003B59D2 /* libwiringPi.so.2.0 */ = {isa = PBXFileReference; lastKnownFileType = file; path = libwiringPi.so.2.0; sourceTree = "<group>"; };
+		49B62BB317E2B8AF003B59D2 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		49B62BB417E2B8AF003B59D2 /* max31855.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = max31855.c; sourceTree = "<group>"; };
+		49B62BB517E2B8AF003B59D2 /* max31855.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = max31855.h; sourceTree = "<group>"; };
+		49B62BB617E2B8AF003B59D2 /* max31855.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = max31855.o; sourceTree = "<group>"; };
+		49B62BB717E2B8AF003B59D2 /* max5322.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = max5322.c; sourceTree = "<group>"; };
+		49B62BB817E2B8AF003B59D2 /* max5322.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = max5322.h; sourceTree = "<group>"; };
+		49B62BB917E2B8AF003B59D2 /* max5322.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = max5322.o; sourceTree = "<group>"; };
+		49B62BBA17E2B8AF003B59D2 /* mcp23008.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mcp23008.c; sourceTree = "<group>"; };
+		49B62BBB17E2B8AF003B59D2 /* mcp23008.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcp23008.h; sourceTree = "<group>"; };
+		49B62BBC17E2B8AF003B59D2 /* mcp23008.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = mcp23008.o; sourceTree = "<group>"; };
+		49B62BBD17E2B8AF003B59D2 /* mcp23016.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mcp23016.c; sourceTree = "<group>"; };
+		49B62BBE17E2B8AF003B59D2 /* mcp23016.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcp23016.h; sourceTree = "<group>"; };
+		49B62BBF17E2B8AF003B59D2 /* mcp23016.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = mcp23016.o; sourceTree = "<group>"; };
+		49B62BC017E2B8AF003B59D2 /* mcp23016reg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcp23016reg.h; sourceTree = "<group>"; };
+		49B62BC117E2B8AF003B59D2 /* mcp23017.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mcp23017.c; sourceTree = "<group>"; };
+		49B62BC217E2B8AF003B59D2 /* mcp23017.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcp23017.h; sourceTree = "<group>"; };
+		49B62BC317E2B8AF003B59D2 /* mcp23017.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = mcp23017.o; sourceTree = "<group>"; };
+		49B62BC417E2B8AF003B59D2 /* mcp23s08.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mcp23s08.c; sourceTree = "<group>"; };
+		49B62BC517E2B8AF003B59D2 /* mcp23s08.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcp23s08.h; sourceTree = "<group>"; };
+		49B62BC617E2B8AF003B59D2 /* mcp23s08.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = mcp23s08.o; sourceTree = "<group>"; };
+		49B62BC717E2B8AF003B59D2 /* mcp23s17.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mcp23s17.c; sourceTree = "<group>"; };
+		49B62BC817E2B8AF003B59D2 /* mcp23s17.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcp23s17.h; sourceTree = "<group>"; };
+		49B62BC917E2B8AF003B59D2 /* mcp23s17.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = mcp23s17.o; sourceTree = "<group>"; };
+		49B62BCA17E2B8AF003B59D2 /* mcp23x08.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcp23x08.h; sourceTree = "<group>"; };
+		49B62BCB17E2B8AF003B59D2 /* mcp23x0817.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcp23x0817.h; sourceTree = "<group>"; };
+		49B62BCC17E2B8AF003B59D2 /* mcp3002.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mcp3002.c; sourceTree = "<group>"; };
+		49B62BCD17E2B8AF003B59D2 /* mcp3002.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcp3002.h; sourceTree = "<group>"; };
+		49B62BCE17E2B8AF003B59D2 /* mcp3002.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = mcp3002.o; sourceTree = "<group>"; };
+		49B62BCF17E2B8AF003B59D2 /* mcp3004.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mcp3004.c; sourceTree = "<group>"; };
+		49B62BD017E2B8AF003B59D2 /* mcp3004.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcp3004.h; sourceTree = "<group>"; };
+		49B62BD117E2B8AF003B59D2 /* mcp3004.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = mcp3004.o; sourceTree = "<group>"; };
+		49B62BD217E2B8AF003B59D2 /* mcp3422.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mcp3422.c; sourceTree = "<group>"; };
+		49B62BD317E2B8AF003B59D2 /* mcp3422.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcp3422.h; sourceTree = "<group>"; };
+		49B62BD417E2B8AF003B59D2 /* mcp3422.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = mcp3422.o; sourceTree = "<group>"; };
+		49B62BD517E2B8AF003B59D2 /* mcp4802.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mcp4802.c; sourceTree = "<group>"; };
+		49B62BD617E2B8AF003B59D2 /* mcp4802.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcp4802.h; sourceTree = "<group>"; };
+		49B62BD717E2B8AF003B59D2 /* mcp4802.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = mcp4802.o; sourceTree = "<group>"; };
+		49B62BD817E2B8AF003B59D2 /* pcf8574.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pcf8574.c; sourceTree = "<group>"; };
+		49B62BD917E2B8AF003B59D2 /* pcf8574.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pcf8574.h; sourceTree = "<group>"; };
+		49B62BDA17E2B8AF003B59D2 /* pcf8574.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = pcf8574.o; sourceTree = "<group>"; };
+		49B62BDB17E2B8AF003B59D2 /* pcf8591.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pcf8591.c; sourceTree = "<group>"; };
+		49B62BDC17E2B8AF003B59D2 /* pcf8591.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pcf8591.h; sourceTree = "<group>"; };
+		49B62BDD17E2B8AF003B59D2 /* pcf8591.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = pcf8591.o; sourceTree = "<group>"; };
+		49B62BDE17E2B8AF003B59D2 /* piHiPri.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = piHiPri.c; sourceTree = "<group>"; };
+		49B62BDF17E2B8AF003B59D2 /* piHiPri.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = piHiPri.o; sourceTree = "<group>"; };
+		49B62BE017E2B8AF003B59D2 /* piThread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = piThread.c; sourceTree = "<group>"; };
+		49B62BE117E2B8AF003B59D2 /* piThread.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = piThread.o; sourceTree = "<group>"; };
+		49B62BE217E2B8AF003B59D2 /* sn3218.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sn3218.c; sourceTree = "<group>"; };
+		49B62BE317E2B8AF003B59D2 /* sn3218.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sn3218.h; sourceTree = "<group>"; };
+		49B62BE417E2B8AF003B59D2 /* sn3218.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = sn3218.o; sourceTree = "<group>"; };
+		49B62BE517E2B8AF003B59D2 /* softPwm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = softPwm.c; sourceTree = "<group>"; };
+		49B62BE617E2B8AF003B59D2 /* softPwm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = softPwm.h; sourceTree = "<group>"; };
+		49B62BE717E2B8AF003B59D2 /* softPwm.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = softPwm.o; sourceTree = "<group>"; };
+		49B62BE817E2B8AF003B59D2 /* softServo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = softServo.c; sourceTree = "<group>"; };
+		49B62BE917E2B8AF003B59D2 /* softServo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = softServo.h; sourceTree = "<group>"; };
+		49B62BEA17E2B8AF003B59D2 /* softTone.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = softTone.c; sourceTree = "<group>"; };
+		49B62BEB17E2B8AF003B59D2 /* softTone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = softTone.h; sourceTree = "<group>"; };
+		49B62BEC17E2B8AF003B59D2 /* softTone.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = softTone.o; sourceTree = "<group>"; };
+		49B62BED17E2B8AF003B59D2 /* sr595.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sr595.c; sourceTree = "<group>"; };
+		49B62BEE17E2B8AF003B59D2 /* sr595.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sr595.h; sourceTree = "<group>"; };
+		49B62BEF17E2B8AF003B59D2 /* sr595.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = sr595.o; sourceTree = "<group>"; };
+		49B62BF017E2B8AF003B59D2 /* wiringPi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wiringPi.c; sourceTree = "<group>"; };
+		49B62BF117E2B8AF003B59D2 /* wiringPi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wiringPi.h; sourceTree = "<group>"; };
+		49B62BF217E2B8AF003B59D2 /* wiringPi.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = wiringPi.o; sourceTree = "<group>"; };
+		49B62BF317E2B8AF003B59D2 /* wiringPiI2C.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wiringPiI2C.c; sourceTree = "<group>"; };
+		49B62BF417E2B8AF003B59D2 /* wiringPiI2C.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wiringPiI2C.h; sourceTree = "<group>"; };
+		49B62BF517E2B8AF003B59D2 /* wiringPiI2C.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = wiringPiI2C.o; sourceTree = "<group>"; };
+		49B62BF617E2B8AF003B59D2 /* wiringPiSPI.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wiringPiSPI.c; sourceTree = "<group>"; };
+		49B62BF717E2B8AF003B59D2 /* wiringPiSPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wiringPiSPI.h; sourceTree = "<group>"; };
+		49B62BF817E2B8AF003B59D2 /* wiringPiSPI.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = wiringPiSPI.o; sourceTree = "<group>"; };
+		49B62BF917E2B8AF003B59D2 /* wiringSerial.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wiringSerial.c; sourceTree = "<group>"; };
+		49B62BFA17E2B8AF003B59D2 /* wiringSerial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wiringSerial.h; sourceTree = "<group>"; };
+		49B62BFB17E2B8AF003B59D2 /* wiringSerial.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = wiringSerial.o; sourceTree = "<group>"; };
+		49B62BFC17E2B8AF003B59D2 /* wiringShift.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wiringShift.c; sourceTree = "<group>"; };
+		49B62BFD17E2B8AF003B59D2 /* wiringShift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wiringShift.h; sourceTree = "<group>"; };
+		49B62BFE17E2B8AF003B59D2 /* wiringShift.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = wiringShift.o; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -165,6 +298,31 @@
 				E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */,
 				E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */,
 				E7E077E515D3B63C0020DFD4 /* CoreVideo.framework in Frameworks */,
+				49B62C0017E2B8AF003B59D2 /* drcSerial.o in Frameworks */,
+				49B62C0317E2B8AF003B59D2 /* max31855.o in Frameworks */,
+				49B62C0517E2B8AF003B59D2 /* max5322.o in Frameworks */,
+				49B62C0717E2B8AF003B59D2 /* mcp23008.o in Frameworks */,
+				49B62C0917E2B8AF003B59D2 /* mcp23016.o in Frameworks */,
+				49B62C0B17E2B8AF003B59D2 /* mcp23017.o in Frameworks */,
+				49B62C0D17E2B8AF003B59D2 /* mcp23s08.o in Frameworks */,
+				49B62C0F17E2B8AF003B59D2 /* mcp23s17.o in Frameworks */,
+				49B62C1117E2B8AF003B59D2 /* mcp3002.o in Frameworks */,
+				49B62C1317E2B8AF003B59D2 /* mcp3004.o in Frameworks */,
+				49B62C1517E2B8AF003B59D2 /* mcp3422.o in Frameworks */,
+				49B62C1717E2B8AF003B59D2 /* mcp4802.o in Frameworks */,
+				49B62C1917E2B8AF003B59D2 /* pcf8574.o in Frameworks */,
+				49B62C1B17E2B8AF003B59D2 /* pcf8591.o in Frameworks */,
+				49B62C1D17E2B8AF003B59D2 /* piHiPri.o in Frameworks */,
+				49B62C1F17E2B8AF003B59D2 /* piThread.o in Frameworks */,
+				49B62C2117E2B8AF003B59D2 /* sn3218.o in Frameworks */,
+				49B62C2317E2B8AF003B59D2 /* softPwm.o in Frameworks */,
+				49B62C2617E2B8AF003B59D2 /* softTone.o in Frameworks */,
+				49B62C2817E2B8AF003B59D2 /* sr595.o in Frameworks */,
+				49B62C2A17E2B8AF003B59D2 /* wiringPi.o in Frameworks */,
+				49B62C2C17E2B8AF003B59D2 /* wiringPiI2C.o in Frameworks */,
+				49B62C2E17E2B8AF003B59D2 /* wiringPiSPI.o in Frameworks */,
+				49B62C3017E2B8AF003B59D2 /* wiringSerial.o in Frameworks */,
+				49B62C3217E2B8AF003B59D2 /* wiringShift.o in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +432,94 @@
 			name = ofxOsc;
 			sourceTree = "<group>";
 		};
+		49B62BAD17E2B8AF003B59D2 /* wiringPi */ = {
+			isa = PBXGroup;
+			children = (
+				49B62BAE17E2B8AF003B59D2 /* COPYING.LESSER */,
+				49B62BAF17E2B8AF003B59D2 /* drcSerial.c */,
+				49B62BB017E2B8AF003B59D2 /* drcSerial.h */,
+				49B62BB117E2B8AF003B59D2 /* drcSerial.o */,
+				49B62BB217E2B8AF003B59D2 /* libwiringPi.so.2.0 */,
+				49B62BB317E2B8AF003B59D2 /* Makefile */,
+				49B62BB417E2B8AF003B59D2 /* max31855.c */,
+				49B62BB517E2B8AF003B59D2 /* max31855.h */,
+				49B62BB617E2B8AF003B59D2 /* max31855.o */,
+				49B62BB717E2B8AF003B59D2 /* max5322.c */,
+				49B62BB817E2B8AF003B59D2 /* max5322.h */,
+				49B62BB917E2B8AF003B59D2 /* max5322.o */,
+				49B62BBA17E2B8AF003B59D2 /* mcp23008.c */,
+				49B62BBB17E2B8AF003B59D2 /* mcp23008.h */,
+				49B62BBC17E2B8AF003B59D2 /* mcp23008.o */,
+				49B62BBD17E2B8AF003B59D2 /* mcp23016.c */,
+				49B62BBE17E2B8AF003B59D2 /* mcp23016.h */,
+				49B62BBF17E2B8AF003B59D2 /* mcp23016.o */,
+				49B62BC017E2B8AF003B59D2 /* mcp23016reg.h */,
+				49B62BC117E2B8AF003B59D2 /* mcp23017.c */,
+				49B62BC217E2B8AF003B59D2 /* mcp23017.h */,
+				49B62BC317E2B8AF003B59D2 /* mcp23017.o */,
+				49B62BC417E2B8AF003B59D2 /* mcp23s08.c */,
+				49B62BC517E2B8AF003B59D2 /* mcp23s08.h */,
+				49B62BC617E2B8AF003B59D2 /* mcp23s08.o */,
+				49B62BC717E2B8AF003B59D2 /* mcp23s17.c */,
+				49B62BC817E2B8AF003B59D2 /* mcp23s17.h */,
+				49B62BC917E2B8AF003B59D2 /* mcp23s17.o */,
+				49B62BCA17E2B8AF003B59D2 /* mcp23x08.h */,
+				49B62BCB17E2B8AF003B59D2 /* mcp23x0817.h */,
+				49B62BCC17E2B8AF003B59D2 /* mcp3002.c */,
+				49B62BCD17E2B8AF003B59D2 /* mcp3002.h */,
+				49B62BCE17E2B8AF003B59D2 /* mcp3002.o */,
+				49B62BCF17E2B8AF003B59D2 /* mcp3004.c */,
+				49B62BD017E2B8AF003B59D2 /* mcp3004.h */,
+				49B62BD117E2B8AF003B59D2 /* mcp3004.o */,
+				49B62BD217E2B8AF003B59D2 /* mcp3422.c */,
+				49B62BD317E2B8AF003B59D2 /* mcp3422.h */,
+				49B62BD417E2B8AF003B59D2 /* mcp3422.o */,
+				49B62BD517E2B8AF003B59D2 /* mcp4802.c */,
+				49B62BD617E2B8AF003B59D2 /* mcp4802.h */,
+				49B62BD717E2B8AF003B59D2 /* mcp4802.o */,
+				49B62BD817E2B8AF003B59D2 /* pcf8574.c */,
+				49B62BD917E2B8AF003B59D2 /* pcf8574.h */,
+				49B62BDA17E2B8AF003B59D2 /* pcf8574.o */,
+				49B62BDB17E2B8AF003B59D2 /* pcf8591.c */,
+				49B62BDC17E2B8AF003B59D2 /* pcf8591.h */,
+				49B62BDD17E2B8AF003B59D2 /* pcf8591.o */,
+				49B62BDE17E2B8AF003B59D2 /* piHiPri.c */,
+				49B62BDF17E2B8AF003B59D2 /* piHiPri.o */,
+				49B62BE017E2B8AF003B59D2 /* piThread.c */,
+				49B62BE117E2B8AF003B59D2 /* piThread.o */,
+				49B62BE217E2B8AF003B59D2 /* sn3218.c */,
+				49B62BE317E2B8AF003B59D2 /* sn3218.h */,
+				49B62BE417E2B8AF003B59D2 /* sn3218.o */,
+				49B62BE517E2B8AF003B59D2 /* softPwm.c */,
+				49B62BE617E2B8AF003B59D2 /* softPwm.h */,
+				49B62BE717E2B8AF003B59D2 /* softPwm.o */,
+				49B62BE817E2B8AF003B59D2 /* softServo.c */,
+				49B62BE917E2B8AF003B59D2 /* softServo.h */,
+				49B62BEA17E2B8AF003B59D2 /* softTone.c */,
+				49B62BEB17E2B8AF003B59D2 /* softTone.h */,
+				49B62BEC17E2B8AF003B59D2 /* softTone.o */,
+				49B62BED17E2B8AF003B59D2 /* sr595.c */,
+				49B62BEE17E2B8AF003B59D2 /* sr595.h */,
+				49B62BEF17E2B8AF003B59D2 /* sr595.o */,
+				49B62BF017E2B8AF003B59D2 /* wiringPi.c */,
+				49B62BF117E2B8AF003B59D2 /* wiringPi.h */,
+				49B62BF217E2B8AF003B59D2 /* wiringPi.o */,
+				49B62BF317E2B8AF003B59D2 /* wiringPiI2C.c */,
+				49B62BF417E2B8AF003B59D2 /* wiringPiI2C.h */,
+				49B62BF517E2B8AF003B59D2 /* wiringPiI2C.o */,
+				49B62BF617E2B8AF003B59D2 /* wiringPiSPI.c */,
+				49B62BF717E2B8AF003B59D2 /* wiringPiSPI.h */,
+				49B62BF817E2B8AF003B59D2 /* wiringPiSPI.o */,
+				49B62BF917E2B8AF003B59D2 /* wiringSerial.c */,
+				49B62BFA17E2B8AF003B59D2 /* wiringSerial.h */,
+				49B62BFB17E2B8AF003B59D2 /* wiringSerial.o */,
+				49B62BFC17E2B8AF003B59D2 /* wiringShift.c */,
+				49B62BFD17E2B8AF003B59D2 /* wiringShift.h */,
+				49B62BFE17E2B8AF003B59D2 /* wiringShift.o */,
+			);
+			path = wiringPi;
+			sourceTree = "<group>";
+		};
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +582,7 @@
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
+				49B62BAD17E2B8AF003B59D2 /* wiringPi */,
 				BB4B014C10F69532006C3DED /* addons */,
 				E45BE5980E8CC70C009D7055 /* frameworks */,
 				E4B69B5B0A3A1756003C02F2 /* botDebug.app */,
@@ -472,6 +719,33 @@
 				4909E01F17DA305A00406CD7 /* sernaBot.cpp in Sources */,
 				4909E04217DA37BA00406CD7 /* hexapod.cpp in Sources */,
 				4909E04617DA3BD900406CD7 /* servoMover.cpp in Sources */,
+				49B62BFF17E2B8AF003B59D2 /* drcSerial.c in Sources */,
+				49B62C0117E2B8AF003B59D2 /* Makefile in Sources */,
+				49B62C0217E2B8AF003B59D2 /* max31855.c in Sources */,
+				49B62C0417E2B8AF003B59D2 /* max5322.c in Sources */,
+				49B62C0617E2B8AF003B59D2 /* mcp23008.c in Sources */,
+				49B62C0817E2B8AF003B59D2 /* mcp23016.c in Sources */,
+				49B62C0A17E2B8AF003B59D2 /* mcp23017.c in Sources */,
+				49B62C0C17E2B8AF003B59D2 /* mcp23s08.c in Sources */,
+				49B62C0E17E2B8AF003B59D2 /* mcp23s17.c in Sources */,
+				49B62C1017E2B8AF003B59D2 /* mcp3002.c in Sources */,
+				49B62C1217E2B8AF003B59D2 /* mcp3004.c in Sources */,
+				49B62C1417E2B8AF003B59D2 /* mcp3422.c in Sources */,
+				49B62C1617E2B8AF003B59D2 /* mcp4802.c in Sources */,
+				49B62C1817E2B8AF003B59D2 /* pcf8574.c in Sources */,
+				49B62C1A17E2B8AF003B59D2 /* pcf8591.c in Sources */,
+				49B62C1C17E2B8AF003B59D2 /* piHiPri.c in Sources */,
+				49B62C1E17E2B8AF003B59D2 /* piThread.c in Sources */,
+				49B62C2017E2B8AF003B59D2 /* sn3218.c in Sources */,
+				49B62C2217E2B8AF003B59D2 /* softPwm.c in Sources */,
+				49B62C2417E2B8AF003B59D2 /* softServo.c in Sources */,
+				49B62C2517E2B8AF003B59D2 /* softTone.c in Sources */,
+				49B62C2717E2B8AF003B59D2 /* sr595.c in Sources */,
+				49B62C2917E2B8AF003B59D2 /* wiringPi.c in Sources */,
+				49B62C2B17E2B8AF003B59D2 /* wiringPiI2C.c in Sources */,
+				49B62C2D17E2B8AF003B59D2 /* wiringPiSPI.c in Sources */,
+				49B62C2F17E2B8AF003B59D2 /* wiringSerial.c in Sources */,
+				49B62C3117E2B8AF003B59D2 /* wiringShift.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

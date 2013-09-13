@@ -42,7 +42,7 @@ void Bot::update(){
 			tempBot = (SernaBot *) this;
 			tempBot.advance();
 			 */
-			if( this.botType == "sernaBot"){
+			/*if( this.botType == "sernaBot"){
 				((SernaBot) this).advance();
 			}
 //			(SernaBot)this.adban 
@@ -58,7 +58,8 @@ void Bot::update(){
 			tempBot = (SernaBot *) this;
 			tempBot.stop();
 		}
-		
+		*/
+		}
 	}
 }
 void Bot::setImage( string imageName ){

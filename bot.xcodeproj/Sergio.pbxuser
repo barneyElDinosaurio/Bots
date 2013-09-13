@@ -53,32 +53,33 @@
 	};
 	4903F238178C4E8600CEEDED /* bot.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {786, 1079}}";
-			sepNavSelRange = "{1003, 0}";
-			sepNavVisRange = "{221, 670}";
+			sepNavIntBoundsRect = "{{0, 0}, {572, 1183}}";
+			sepNavSelRange = "{1601, 0}";
+			sepNavVisRange = "{1074, 531}";
 			sepNavWindowFrame = "{{198, 75}, {766, 803}}";
 		};
 	};
 	4903F239178C4E8600CEEDED /* bot.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {992, 1339}}";
-			sepNavSelRange = "{2329, 0}";
-			sepNavVisRange = "{958, 663}";
+			sepNavIntBoundsRect = "{{0, 0}, {992, 1560}}";
+			sepNavSelRange = "{1576, 0}";
+			sepNavVisRange = "{26, 1345}";
 			sepNavWindowFrame = "{{255, 30}, {766, 803}}";
 		};
 	};
 	4909E01D17DA305A00406CD7 /* sernaBot.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {446, 407}}";
+			sepNavIntBoundsRect = "{{0, 0}, {418, 401}}";
 			sepNavSelRange = "{359, 0}";
 			sepNavVisRange = "{0, 394}";
+			sepNavWindowFrame = "{{15, 281}, {685, 592}}";
 		};
 	};
 	4909E01E17DA305A00406CD7 /* sernaBot.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {460, 754}}";
-			sepNavSelRange = "{348, 0}";
-			sepNavVisRange = "{0, 552}";
+			sepNavIntBoundsRect = "{{0, 0}, {460, 806}}";
+			sepNavSelRange = "{498, 0}";
+			sepNavVisRange = "{3, 527}";
 		};
 	};
 	4909E04017DA37BA00406CD7 /* hexapod.h */ = {
@@ -91,17 +92,24 @@
 	};
 	4909E04117DA37BA00406CD7 /* hexapod.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {822, 455}}";
-			sepNavSelRange = "{280, 0}";
-			sepNavVisRange = "{146, 264}";
+			sepNavIntBoundsRect = "{{0, 0}, {418, 481}}";
+			sepNavSelRange = "{142, 4}";
+			sepNavVisRange = "{19, 421}";
 		};
 	};
 	4909E04417DA3BD900406CD7 /* servoMover.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {418, 313}}";
-			sepNavSelRange = "{167, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {418, 401}}";
+			sepNavSelRange = "{305, 0}";
 			sepNavVisRange = "{0, 305}";
 			sepNavWindowFrame = "{{15, 281}, {685, 592}}";
+		};
+	};
+	4909E04517DA3BD900406CD7 /* servoMover.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {418, 401}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 175}";
 		};
 	};
 	494137CF17DD3C6E0031EFED /* softServo.h */ = {
@@ -126,7 +134,7 @@
 		fRef = E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */;
 		name = "testApp.cpp: 38";
 		rLen = 0;
-		rLoc = 1011;
+		rLoc = 995;
 		rType = 0;
 		vrLen = 760;
 		vrLoc = 0;
@@ -251,7 +259,7 @@
 		fRef = 4909E01E17DA305A00406CD7 /* sernaBot.cpp */;
 		name = "sernaBot.cpp: 19";
 		rLen = 0;
-		rLoc = 348;
+		rLoc = 374;
 		rType = 0;
 		vrLen = 432;
 		vrLoc = 0;
@@ -271,7 +279,7 @@
 		fRef = 4909E01E17DA305A00406CD7 /* sernaBot.cpp */;
 		name = "sernaBot.cpp: 19";
 		rLen = 0;
-		rLoc = 348;
+		rLoc = 374;
 		rType = 0;
 		vrLen = 578;
 		vrLoc = 0;
@@ -281,7 +289,7 @@
 		fRef = 4903F239178C4E8600CEEDED /* bot.cpp */;
 		name = "bot.cpp: 100";
 		rLen = 0;
-		rLoc = 2329;
+		rLoc = 2759;
 		rType = 0;
 		vrLen = 720;
 		vrLoc = 958;
@@ -375,17 +383,17 @@
 	};
 	E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1175, 1183}}";
-			sepNavSelRange = "{984, 0}";
-			sepNavVisRange = "{0, 1180}";
+			sepNavIntBoundsRect = "{{0, 0}, {600, 1183}}";
+			sepNavSelRange = "{386, 0}";
+			sepNavVisRange = "{0, 795}";
 			sepNavWindowFrame = "{{61, 99}, {1234, 732}}";
 		};
 	};
 	E4B69E1F0A3A1BDC003C02F2 /* testApp.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {786, 364}}";
-			sepNavSelRange = "{14, 19}";
-			sepNavVisRange = "{0, 545}";
+			sepNavIntBoundsRect = "{{0, 0}, {822, 364}}";
+			sepNavSelRange = "{542, 0}";
+			sepNavVisRange = "{87, 478}";
 			sepNavWindowFrame = "{{61, 99}, {1234, 732}}";
 		};
 	};
