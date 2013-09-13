@@ -9,14 +9,44 @@
 
 #include "sernaBot.h"
 
-void sernaBot::advance(float speed, float rotAngle){
-
-}
-
 void sernaBot::advance(){
 
+digitalWrite(15, HIGH);
+digitalWrite(16, LOW);
+digitalWrite(1, HIGH);
+digitalWrite(4, LOW);
+
+
 }
 
-void sernaBot::rotate(float rotAngle){
+void sernaBot:: recoil(){
+  digitalWrite(15, HIGH);
+  digitalWrite(16, LOW);
+  digitalWrite(1, LOW);
+  digitalWrite(4, HIGH);
+
+
+}
+
+void sernaBot::rotateR(){
+
+digitalWrite(15, LOW);
+digitalWrite(16, HIGH);
+digitalWrite(1, HIGH);
+digitalWrite(4, LOW);
+
+}
+void sernaBot::rotateL(){
+digitalWrite(15, LOW);
+digitalWrite(16, HIGH);
+digitalWrite(1, LOW);
+digitalWrite(4, HIGH);
+}
+
+void sernaBot::stop(){
+digitalWrite(15, LOW);
+digitalWrite(16, LOW);
+digitalWrite(1, LOW);
+digitalWrite(4, LOW);
 
 }
