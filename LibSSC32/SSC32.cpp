@@ -221,6 +221,8 @@ bool SSC32::servoMove(int channel, int position)
 	mes.append(" ");
 	cout << "Trying to send message " <<  mes << endl;
 	serialPuts( serialNumber, (char*) mes.c_str() ); // With wiringpi
+	//string mes2("\n+\r");
+     	//serialPuts(serialNumber, (char*) mes2.c_str());
 	
 	if (_commandType == SSC32_CMDGRP_TYPE_NONE)
 	{
@@ -230,7 +232,7 @@ bool SSC32::servoMove(int channel, int position)
 		//Serial.println();
 		
 		// **** RASPI ****
-		string mes("/n/r");
+		string mes("\n\r");
 		serialPuts(serialNumber, (char*) mes.c_str());
 		
 	}
