@@ -17,8 +17,11 @@
 
 */
 
+
 hexapod::hexapod(){
-	//super.
+	//startSerial();
+	
+	servocontroller.begin(9600);	
 
 }
 void hexapod:: advance( float speed, float rotAngle){

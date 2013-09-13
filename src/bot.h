@@ -36,7 +36,7 @@ public:
 	
 	void setDistanceThreshold(float _d);
 	void setAngleThreshold(float _a);
-	void advance(float speed, float rotAngle);
+	//void advance(float speed, float rotAngle);
 	void rotate(float rotAngle);
 	void stop();
 	

@@ -7,8 +7,9 @@
  *
  */
 
-#include "bot.h"
-#include "sernaBot.h"
+//#include "bot.h"
+#include "sernaBot.h" /// ****** PROBLEMAS DE CROSS HEADERS!!!V
+//class SernaBot;
 
 void Bot::update(){
 	
@@ -39,7 +40,7 @@ void Bot::update(){
 			}
 		}
 		// Other messages: eg. orders: calibrate, go home... qué se yo...
-		else if( m.getAddress() == "/advance"){ 
+		/*else if( m.getAddress() == "/advance"){ 
 			if( this->botType == "sernaBot"){
 				((SernaBot*) this)->advance();
 			}
@@ -50,7 +51,7 @@ void Bot::update(){
 			if( this->botType == "sernaBot"){
 				((SernaBot*) this)->recoil();
 			}
-		}
+		}*/
 		else if( m.getAddress() == "/stop"){
 			
 		
@@ -100,7 +101,7 @@ void Bot::setDistanceThreshold(float _d){
 void Bot::setAngleThreshold(float _a){
 	angleThreshold = _a;
 }
-void Bot::advance(float speed, float rotAngle){
+/*void Bot::advance(float speed, float rotAngle){
 	
 	ofVec2f velocityVector = orientation*speed; 
 	pos+=velocityVector;

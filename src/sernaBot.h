@@ -10,6 +10,8 @@
 
 #include "wiringPi.h"
 #include "wiringSerial.h"
+#include "bot.h"
+//class Bot;
 
 class SernaBot : public Bot{
 

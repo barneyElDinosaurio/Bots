@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "bot.h"
+//#include "bot.h"
 #include "sernaBot.h"
 
 class testApp : public ofBaseApp{

@@ -8,6 +8,11 @@
  */
 
 #include "bot.h"
+#include "SSC32.h"
+
+// Should this be in ssc32 ?
+//#include "wiringPi.h"
+//#include "wiringSerial.h"
 
 class hexapod : public Bot{
 
@@ -18,4 +23,9 @@ public:
 	void advance();
 	void stop();
 	
+	// Serial:
+void startSerial();
+	
+	SSC32 servocontroller;
+
 };
