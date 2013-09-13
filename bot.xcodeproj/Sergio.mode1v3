@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>49B62E6517E2F0C6003B59D2</string>
+						<string>49B62E7617E2F967003B59D2</string>
 						<key>history</key>
 						<array>
 							<string>49B62D7417E2D039003B59D2</string>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>49B62E6617E2F0C6003B59D2</string>
+						<string>49B62E7717E2F967003B59D2</string>
 						<key>history</key>
 						<array>
 							<string>49B62DB317E2DAEC003B59D2</string>
@@ -296,7 +296,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>49B62E6717E2F0C6003B59D2</string>
+						<string>49B62E7817E2F967003B59D2</string>
 						<key>history</key>
 						<array>
 							<string>49B62DD217E2DEE8003B59D2</string>
@@ -351,6 +351,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -431,8 +433,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -450,7 +450,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>49B62E6417E2F0C6003B59D2</string>
+										<string>49B62E7517E2F967003B59D2</string>
 										<key>history</key>
 										<array>
 											<string>49B2333C178E62D900C2AEA4</string>
@@ -460,22 +460,22 @@
 											<string>49B62B7417E2A748003B59D2</string>
 											<string>49B62D5C17E2CEA9003B59D2</string>
 											<string>49B62D7717E2D322003B59D2</string>
-											<string>49B62D7817E2D322003B59D2</string>
 											<string>49B62D9717E2D82D003B59D2</string>
 											<string>49B62DCC17E2DEE8003B59D2</string>
 											<string>49B62DCD17E2DEE8003B59D2</string>
 											<string>49B62DCE17E2DEE8003B59D2</string>
-											<string>49B62E0517E2E18C003B59D2</string>
-											<string>49B62E0617E2E18C003B59D2</string>
-											<string>49B62E3717E2ECE7003B59D2</string>
-											<string>49B62E3B17E2ECE7003B59D2</string>
 											<string>49B62E3C17E2ECE7003B59D2</string>
-											<string>49B62E5F17E2F0C6003B59D2</string>
-											<string>49B62E6017E2F0C6003B59D2</string>
 											<string>49B62E6117E2F0C6003B59D2</string>
-											<string>49B62E6217E2F0C6003B59D2</string>
-											<string>49B62E6317E2F0C6003B59D2</string>
-											<string>49B62E3617E2ECE7003B59D2</string>
+											<string>49B62E6B17E2F967003B59D2</string>
+											<string>49B62E6C17E2F967003B59D2</string>
+											<string>49B62E6D17E2F967003B59D2</string>
+											<string>49B62E6E17E2F967003B59D2</string>
+											<string>49B62E6F17E2F967003B59D2</string>
+											<string>49B62E7017E2F967003B59D2</string>
+											<string>49B62E7117E2F967003B59D2</string>
+											<string>49B62E7217E2F967003B59D2</string>
+											<string>49B62E7317E2F967003B59D2</string>
+											<string>49B62E7417E2F967003B59D2</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
