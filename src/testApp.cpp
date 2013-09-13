@@ -27,6 +27,8 @@ void testApp::setup(){
 void testApp::update(){
 //	elBot.update();
 	elGarden.update();
+	ofLogVerbose()<< "I am running";
+	//cout << "ESTOY EJECUTANDP" << endl;
 }
 
 //--------------------------------------------------------------
@@ -48,6 +50,7 @@ void testApp::keyPressed(int key){ //Dirty calibration
 	}
 	if( key =='m'){
 		hexa.mandarUnDato();
+		cout << "mandando un dato... en prtincipio" << endl;
 	}
 }
 // ------
