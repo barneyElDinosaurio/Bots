@@ -23,4 +23,5 @@ class testApp : public ofBaseApp{
 	char * string2CharBuf(string str);
 		
 	Bot elBot;
+	SernaBot elGarden;
 };

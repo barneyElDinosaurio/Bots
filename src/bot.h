@@ -84,5 +84,8 @@ public:
 	// sending HOST and PORT
 	string sHOST;
 	int sPORT;
+	
+	// Type of bot
+	string botType;
 
 };

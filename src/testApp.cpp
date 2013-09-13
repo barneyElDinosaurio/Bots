@@ -3,16 +3,16 @@
 //--------------------------------------------------------------
 void testApp::setup(){
 	//elBot.setPos(0.7*ofRandom( ofGetWidth()), 0.7*ofRandom( ofGetHeight() ));
-	elBot.setPos( 0.5 , 0.5 );
-	elBot.setImage("imagenBotSmall.png");
-	elBot.setListeningPort(9001);
-	elBot.setDistanceThreshold(0.01);
-	elBot.setupSerial(0, 9600);
+	//elBot.setPos( 0.5 , 0.5 );
+	//elBot.setImage("imagenBotSmall.png");
+	//elBot.setListeningPort(9001);
+	//elBot.setDistanceThreshold(0.01);
+	//elBot.setupSerial(0, 9600);
+	
+	elGarden.setup();
 	
 	
-	string s("trin");
-	
-	cout << s.length() << endl;
+
 }
 
 //--------------------------------------------------------------

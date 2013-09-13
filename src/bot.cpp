@@ -37,8 +37,26 @@ void Bot::update(){
 			}
 		}
 		// Other messages: eg. orders: calibrate, go home... qué se yo...
-		else if( m.getAddress() == "/command"){ 
+		else if( m.getAddress() == "/advance"){ 
+			/*SernaBot * tempBot;
+			tempBot = (SernaBot *) this;
+			tempBot.advance();
+			 */
+			if( this.botType == "sernaBot"){
+				((SernaBot) this).advance();
+			}
+//			(SernaBot)this.adban 
 		
+		}
+		else if( m.getAddress() == "/recoil"){
+			if( this.botType == "sernaBot"){
+				((SernaBot) this).recoil();
+			}
+		}
+		else if( m.getAddress() == "/stop"){
+			SernaBot * tempBot;
+			tempBot = (SernaBot *) this;
+			tempBot.stop();
 		}
 		
 	}

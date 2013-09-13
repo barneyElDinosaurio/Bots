@@ -11,7 +11,7 @@
 #include "wiringPi.h"
 #include "wiringSerial.h"
 
-class sernaBot : public Bot{
+class SernaBot : public Bot{
 
 public:
 	void setup();
