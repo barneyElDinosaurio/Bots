@@ -12,6 +12,8 @@
 void SernaBot::setup(){
 	
 	// Setup de la clase padre ??
+	//(Bot*) setup();
+	( (Bot* )this)->setListeningPort(9000);
 	
 	// Tipo de bot
 	botType = "sernaBot";
@@ -21,7 +23,9 @@ void SernaBot::setup(){
 	wiringPiSetup();
 	
 }
-
+void SernaBot::update(){
+	((Bot* )this)->update(); // Aquí adentro están los recibidores de osc.
+}
 void SernaBot::advance(){
 	
 	digitalWrite(15, HIGH);

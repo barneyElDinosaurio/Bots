@@ -24,6 +24,7 @@ class SernaBot : public Bot{
 public:
 	void setup();
 	void advance(float speed, float rotAngle);
+	void update();
 	void advance();
 	void rotateR();
 	void rotateL();

@@ -11,7 +11,6 @@
 #include "sernaBot.h" /// ****** PROBLEMAS DE CROSS HEADERS!!!**** Corregir con ifdefs... !
 #include "hexapod.h"
 //class SernaBot;
-
 void Bot::update(){
 	
 
@@ -43,7 +42,7 @@ void Bot::update(){
 		// Other messages: eg. orders: calibrate, go home... qué se yo...
 
 		
-		else if( m.getAddress() == "/advance"){ // **** ADVANCE ****
+		else if( m.getAddress() == "/advance"){ // **** ADVANCE **** // ESTO ESTÁ MALO, LAS ORDENES DEBERÍAN ESTAR DIRIGIDAS.HAY QUE HACER PARSING DE OSC
 			
 			// SERNAPODO
 			
@@ -106,6 +105,8 @@ void Bot::update(){
 		
 	}
 }
+
+// Tal vez algunos de estos métodos deberían estar dentro de la clase sintética.
 void Bot::setImage( string imageName ){
 	image.loadImage(imageName);
 }
