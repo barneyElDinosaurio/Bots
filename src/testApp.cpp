@@ -2,7 +2,10 @@
 
 //#include 
 
-//#define HEXAPOD 1
+//#define HEXAPOD 
+#define SERNAPODO 
+//#define DORMILONADOR
+
 
 //--------------------------------------------------------------
 void testApp::setup(){
@@ -14,26 +17,52 @@ void testApp::setup(){
 	//elBot.setupSerial(0, 9600);
 	
 	
+	// **************** SERNAPODO GARDEN ***************
 	//if( )GARDEN
-	
+		
+#ifdef SERNAPODO
 	elGarden.setup();
-	
-	// HEXA
-	
-	//hexa.setup();
-	//hexa.mandarUnDato();
-	
-	// SERNA
+	cout << "SERNAPODO STARTING" << endl;
+#endif
 	
 	
+	
+	// ******************* HEXAPODO ********************
+	
+	
+#ifdef HEXAPOD	
+	hexa.setup();
+	cout << " HEXAPODO STARTING" << endl;
+#endif
+	
+	
+	
+	// ******************** DORMILONADOR ***************
+	
+#ifdef DORMILONADOR
+	cout << " DORMILONADOR STARTING " << endl;
+#endif
 	
 
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-//	elBot.update();
+	
+	// para el simulado
+	//	elBot.update();
+	
+	
+	// **************** SERNAPODO GARDEN ***************
+#ifdef SERNAPODO
 	elGarden.update();
+#endif
+	
+#ifdef HEXAPOD
+	hexa.update();
+#endif
+
+	
 	ofLogVerbose()<< "I am running";
 	//cout << "ESTOY EJECUTANDP" << endl;
 }

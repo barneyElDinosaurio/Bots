@@ -18,27 +18,39 @@
 */
 
 
-hexapod::hexapod(){
+Hexapod::Hexapod(){
 	//startSerial();
 }
-void hexapod::setup(){
+void Hexapod::setup(){
 	servocontroller.begin(9600);
 }
-void hexapod:: advance( float speed, float rotAngle){
+void Hexapod:: advance( float speed, float rotAngle){
 
 }
-void hexapod::mandarUnDato(){
+void Hexapod::mandarUnDato(){
 	servocontroller.mandarUnDato();
 }
 
-void hexapod:: rotate( float angle ){
+void Hexapod:: rotate( float angle ){
 
 }
 
-void hexapod:: advance(){
+void Hexapod:: rotateR(){
 
 }
 
-void hexapod:: stop(){
+void Hexapod:: rotateL(){
+
+
+}
+
+void Hexapod:: advance(){
+
+}
+
+void Hexapod:: recoil(){
+
+}
+void Hexapod:: stop(){
 
 }

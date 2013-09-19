@@ -22,13 +22,16 @@
 
 
 
-class hexapod : public Bot{
+class Hexapod : public Bot{
 
 public:	
-	hexapod();
+	Hexapod();
 	void advance( float speed, float rotAngle);
 	void rotate(float angle);
+	void rotateR();
+	void rotateL();
 	void advance();
+	void recoil();
 	void stop();
 	void setup();
 	void mandarUnDato();

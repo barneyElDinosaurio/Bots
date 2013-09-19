@@ -8,7 +8,8 @@
  */
 
 //#include "bot.h"
-#include "sernaBot.h" /// ****** PROBLEMAS DE CROSS HEADERS!!!V
+#include "sernaBot.h" /// ****** PROBLEMAS DE CROSS HEADERS!!!**** Corregir con ifdefs... !
+#include "hexapod.h"
 //class SernaBot;
 
 void Bot::update(){
@@ -40,27 +41,69 @@ void Bot::update(){
 			}
 		}
 		// Other messages: eg. orders: calibrate, go home... qué se yo...
-		/*else if( m.getAddress() == "/advance"){ 
-			if( this->botType == "sernaBot"){
-				((SernaBot*) this)->advance();
-			}
 
 		
+		else if( m.getAddress() == "/advance"){ // **** ADVANCE ****
+			
+			// SERNAPODO
+			
+			if( this->botType == "sernaBot"){
+				cout << "Avanzando desde OSC" << endl;
+				((SernaBot*) this)->advance();	
+			}
+			
+			//  HEXAPOD 
+			
+			else if(botType == "hexapod"){
+				((Hexapod*) this)->advance();
+			
+			}
+			
+			
 		}
-		else if( m.getAddress() == "/recoil"){
+		
+		else if( m.getAddress() == "/stop"){ // **** STOP ****
+			
+			// SERNAPODO
+			
+			if( this->botType == "sernaBot"){
+				((SernaBot*) this)->stop();
+			}
+			
+			// HEXAPOD
+			
+			else if(botType == "hexapod"){
+				((Hexapod*) this)->stop();
+			}
+			
+
+		}
+		else if( m.getAddress() == "/recoil"){ // **** RECOIL ****
+			
+			// SERNAPODO
+			
 			if( this->botType == "sernaBot"){
 				((SernaBot*) this)->recoil();
 			}
-		}*/
-		else if( m.getAddress() == "/stop"){
 			
-		
-		
+			// HEXAPOD
+			
+			else if(botType == "hexapod"){
+				((Hexapod*) this)->recoil();
+			}
 		}
 		
-		else if( m.getAddress() == "/advance" ){
-			
+		else if( m.getAddress() == "/rotateR"){
+			if( this->botType == "sernaBot"){
+				((SernaBot*) this)->rotateR();
+			}
 		}
+		else if( m.getAddress() == "/rotateL"){
+			if( this->botType == "sernaBot"){
+				((SernaBot*) this)->rotateL();
+			}
+		}
+		
 	}
 }
 void Bot::setImage( string imageName ){

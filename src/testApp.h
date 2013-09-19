@@ -26,5 +26,5 @@ class testApp : public ofBaseApp{
 		
 	Bot elBot;
 	SernaBot elGarden;
-	hexapod hexa;
+	Hexapod hexa;
 };

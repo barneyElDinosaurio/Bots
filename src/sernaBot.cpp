@@ -10,16 +10,16 @@
 #include "sernaBot.h"
 
 void SernaBot::setup(){
-	//this.botType = "sernaBot";
+	
+	// Setup de la clase padre ??
+	
+	// Tipo de bot
+	botType = "sernaBot";
+	
 	
 	//Setear wiringPI
 	wiringPiSetup();
 	
-	// NO es necesario
-	
-	int serialFlag  = serialOpen("/dev/ttyAMA0",9600);
-	
-	cout << "Se ha conectado al puerto serial número: " << endl;
 }
 
 void SernaBot::advance(){

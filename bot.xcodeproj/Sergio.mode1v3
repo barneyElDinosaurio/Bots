@@ -328,7 +328,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>491DE2D217EAA7A1002E4FF7</string>
+										<string>491DE2D317EAA91A002E4FF7</string>
 										<key>history</key>
 										<array>
 											<string>49B2333C178E62D900C2AEA4</string>
@@ -551,8 +551,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>/Users/Sergio/Documents/OF/of_v0.7.4_osx_release/apps/Symbiosis/bot/bot.xcodeproj</string>
 		<string>4903F233178C4E6000CEEDED</string>
+		<string>/Users/Sergio/Documents/OF/of_v0.7.4_osx_release/apps/Symbiosis/bot/bot.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>432 110 799 768 0 0 1440 878 </string>
