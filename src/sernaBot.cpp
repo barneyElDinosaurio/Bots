@@ -14,6 +14,9 @@ void SernaBot::setup(){
 	
 	//Setear wiringPI
 	wiringPiSetup();
+	
+	// NO es necesario
+	
 	int serialFlag  = serialOpen("/dev/ttyAMA0",9600);
 	
 	cout << "Se ha conectado al puerto serial número: " << endl;

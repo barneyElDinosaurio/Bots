@@ -1,5 +1,9 @@
 #include "testApp.h"
 
+//#include 
+
+//#define HEXAPOD 1
+
 //--------------------------------------------------------------
 void testApp::setup(){
 	//elBot.setPos(0.7*ofRandom( ofGetWidth()), 0.7*ofRandom( ofGetHeight() ));
@@ -10,14 +14,17 @@ void testApp::setup(){
 	//elBot.setupSerial(0, 9600);
 	
 	
-	// GARDEN
+	//if( )GARDEN
 	
-	//elGarden.setup();
+	elGarden.setup();
 	
 	// HEXA
 	
-	hexa.setup();
+	//hexa.setup();
 	//hexa.mandarUnDato();
+	
+	// SERNA
+	
 	
 	
 
@@ -53,6 +60,15 @@ void testApp::keyPressed(int key){ //Dirty calibration
 		cout << "mandando un dato... en prtincipio" << endl;
 		hexa.servocontroller.servoMove(1, 1000);
 		hexa.servocontroller.servoMove(2, ofRandom(1500 , 1800) );
+	}
+	if (key == 'w') {
+		elGarden.advance();
+	}
+	if (key == 's' ){
+		elGarden.recoil();		
+	}
+	if (key == 'd'){
+	
 	}
 }
 // ------

@@ -13,6 +13,10 @@
 #include "ofMain.h"
 #include "ofxOsc.h"
 
+#define HEXAPOD 0
+#define SERNAPOD 1
+#define DORMILONADOR 2
+
 class Bot{
 	
 public:

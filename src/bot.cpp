@@ -57,6 +57,10 @@ void Bot::update(){
 		
 		
 		}
+		
+		else if( m.getAddress() == "/advance" ){
+			
+		}
 	}
 }
 void Bot::setImage( string imageName ){

@@ -68,6 +68,8 @@ void SSC32::begin(int bauds)
 	serialNumber  = serialOpen("/dev/ttyAMA0",bauds);
 	
 	cout << "Se ha conectado al puerto serial número: " << endl;
+	
+	// Código de prueba
 	serialPutchar( serialNumber, 'c' );
 	
 	
@@ -241,18 +243,6 @@ bool SSC32::servoMove(int channel, int position)
 	return true;
 	
 }
-
-/**
- *	Move the servo at #channel to "position" with speed "speed".
- *	If this function is called from outside a pair of beginGroupCommand/endGroupCommand	then the servo will move right away.
- *
- *	But if this function is called inside a gruop of commands, then the servo will not move	until you call endGroupCommand.
- *	@param channel The servo to move
- *	@param position	The position where to move the servo
- *	@param speed	The speed for the movement
- *	@return False if the channel or position or speed is invalid or if this function is called while inside a command group other than SSC32_CMDGRP_TYPE_SERVO_MOVEMENT. True otherwise.
- */
-
 
 string SSC32::int2str(int number){// por revisar
 	std::stringstream ss;
