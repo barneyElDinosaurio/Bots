@@ -63,12 +63,14 @@ void testApp::keyPressed(int key){ //Dirty calibration
 	}
 	if (key == 'w') {
 		elGarden.advance();
+		cout << "Avanzando " << endl;
 	}
 	if (key == 's' ){
 		elGarden.recoil();		
+		cout << "retrocediendo " << endl;
 	}
 	if (key == 'd'){
-	
+		
 	}
 }
 // ------
