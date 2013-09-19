@@ -21,6 +21,10 @@ void SernaBot::setup(){
 	
 	//Setear wiringPI
 	wiringPiSetup();
+	pinMode(15, OUTPUT);
+	pinMode(16, OUTPUT);
+	pinMode(1, OUTPUT);
+	pinMode(4, OUTPUT);
 	
 }
 void SernaBot::update(){
