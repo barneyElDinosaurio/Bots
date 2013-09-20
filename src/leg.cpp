@@ -48,15 +48,17 @@ void Leg::moveTo(float x, float y, float z, float w){
 	// angulos en radiantes
 	
 	//Brazo
+	cout << " 1 " << endl;
 	float pulseWidth1 = angBrazo/PI*1000 + 1000;
-	servocontroller->servoMove(1, pulseWidth1);
-	
+	cout << " 2 " << endl;
+	servocontroller->servoMove(1, 1500 );
+	cout << " 3 " << endl;
 	//Antebrazo
 	float pulseWidth2 = angAntebrazo/PI*1000 + 1500;
-	servocontroller->servoMove(2, pulseWidth2);
+	servocontroller->servoMove(2, 1500 );
 	
 	//Muñeca
 	float pulseWidth3 = angMun/PI*1000 + 1500;
-	servocontroller->servoMove(3, pulseWidth3);
+	servocontroller->servoMove(3, 1500);
 }
 

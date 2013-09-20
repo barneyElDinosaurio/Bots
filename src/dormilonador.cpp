@@ -21,7 +21,8 @@ void Dormilonador::setup(){
 	((Bot*)this)->setListeningPort(9000);
 	servocontroller.begin(9600);
 	
-	// LEG // MEDIR CORRECTAMENTE !!!!
+	// LEG // MEDIR CORRECTAMENTE !!!
+	brazo.setServocontroller(&servocontroller);
 	brazo.setSize(12.5, 16, 8);
 	brazo.setOffset( ofVec3f( 0, 0, 6) );
 	
