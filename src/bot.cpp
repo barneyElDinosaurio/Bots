@@ -92,12 +92,12 @@ void Bot::update(){
 			}
 		}
 		
-		else if( m.getAddress() == "/rotateR"){
+		else if( m.getAddress() == "/rotateR"){ // **** ROTATE R ****
 			if( this->botType == "sernaBot"){
 				((SernaBot*) this)->rotateR();
 			}
 		}
-		else if( m.getAddress() == "/rotateL"){
+		else if( m.getAddress() == "/rotateL"){ // **** ROTATE L ****
 			if( this->botType == "sernaBot"){
 				((SernaBot*) this)->rotateL();
 			}
