@@ -10,6 +10,7 @@
 //#include "bot.h"
 #include "sernaBot.h" /// ****** PROBLEMAS DE CROSS HEADERS!!!**** Corregir con ifdefs... !
 #include "hexapod.h"
+#include "dormilonador.h"
 //class SernaBot;
 void Bot::update(){
 	

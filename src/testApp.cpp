@@ -40,6 +40,7 @@ void testApp::setup(){
 	// ******************** DORMILONADOR ***************
 	
 #ifdef DORMILONADOR
+	dorm.setup();
 	cout << " DORMILONADOR STARTING " << endl;
 #endif
 	

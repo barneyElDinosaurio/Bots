@@ -124,11 +124,15 @@ bool SSC32::abortGroupCommand()
 	}
 	
 	//According to the manual I should write the ascii character for <esc>
-	// ************ CAMBIAR, POSIBLEMENTE POR:
+	// ************ ARDUINO *********
 	
 	//Serial.write(27);
 	
+	// *********** RASPI (WiringPi) ******
+	
 	serialPutchar( serialNumber, 27);
+	
+	
 	_commandType = SSC32_CMDGRP_TYPE_NONE;
 	_ttcm = -1;
 	
@@ -165,6 +169,8 @@ bool SSC32::endGroupCommand()
 	
 	string mes("/n/r"); // **** REvisar orden
 	serialPuts( serialNumber, (char*) mes.c_str() );
+	
+	
 	_commandType = SSC32_CMDGRP_TYPE_NONE;
 	_ttcm = -1;
 	return true;
@@ -222,7 +228,14 @@ bool SSC32::servoMove(int channel, int position)
 	mes.append(positionString);
 	mes.append(" ");
 	cout << "Trying to send message " <<  mes << endl;
-	serialPuts( serialNumber, (char*) mes.c_str() ); // With wiringpi
+	
+	
+	std::stringstream ss;
+	ss << "#" << channelString << " P" << positionString;
+	
+	serialPuts( serialNumber, (char*) ss.str().c_str() );
+	//serialPuts( serialNumber, (char*) mes.c_str() ); // With wiringpi
+	
 	//string mes2("\n+\r");
      	//serialPuts(serialNumber, (char*) mes2.c_str());
 	
@@ -245,7 +258,7 @@ bool SSC32::servoMove(int channel, int position)
 }
 
 string SSC32::int2str(int number){// por revisar
-	std::stringstream ss;
+	stringstream ss;
 	ss << number;
 	return(ss.str());
 }

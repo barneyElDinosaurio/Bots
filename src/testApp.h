@@ -4,6 +4,7 @@
 #include "bot.h"
 #include "sernaBot.h"
 #include "hexapod.h"
+#include "dormilonador.h"
 
 class testApp : public ofBaseApp{
 
@@ -27,4 +28,5 @@ class testApp : public ofBaseApp{
 	Bot elBot;
 	SernaBot elGarden;
 	Hexapod hexa;
+	Dormilonador dorm;
 };
