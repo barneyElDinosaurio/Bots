@@ -105,7 +105,7 @@ class SSC32
 		bool endGroupCommand();
 
 		bool servoMove(int channel, int position);
-		bool servoMove(int channel, int position, int speed);
+		bool servoMoveSpeed(int channel, int position, int speed);
 		bool servoMoveTime(int channel, int position, int ttcm);
 
 		bool pulseOffset(int channel, int offset);

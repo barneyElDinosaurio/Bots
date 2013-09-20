@@ -218,7 +218,7 @@ bool SSC32::servoMove(int channel, int position)
 	Serial.print(" ");
 	*/
 		
-	// **** RASPI *****
+	/*// **** RASPI *****
 	string mes = "#";
 	string channelString = int2str(channel);
 	mes.append(channelString);
@@ -228,16 +228,17 @@ bool SSC32::servoMove(int channel, int position)
 	mes.append(positionString);
 	mes.append(" ");
 	cout << "Trying to send message " <<  mes << endl;
+	*/
+	
+	stringstream ss;
+	ss << "#" << int2str(channel) << " P" << int2str(position);
+	const string s = ss.str(); // Careful with this, see  See http://stackoverflow.com/questions/1374468/c-stringstream-string-and-char-conversion-confusion
+	//cout << "SS___ " << ss;  
 	
 	
-	std::stringstream ss;
-	ss << "#" << channelString << " P" << positionString;
-	cout << "SS___ " << ss;  
 	
-	
-	
-	const char * c = appendChannelPos( channel , position );
-	serialPuts(serialNumber,  c );
+	//const char * c = appendChannelPos( channel , position );
+	serialPuts(serialNumber,  (char *) s.c_str() );
 	
 	//serialPuts( serialNumber, (char*) ss.str().c_str() );
 	//serialPuts( serialNumber, (char*) mes.c_str() ); // With wiringpi
@@ -262,6 +263,164 @@ bool SSC32::servoMove(int channel, int position)
 	return true;
 	
 }
+
+
+
+/**
+ *	Move the servo at #channel to "position" with speed "speed".
+ *	If this function is called from outside a pair of beginGroupCommand/endGroupCommand	then the servo will move right away.
+ *
+ *	But if this function is called inside a gruop of commands, then the servo will not move	until you call endGroupCommand.
+ *	@param channel The servo to move
+ *	@param position	The position where to move the servo
+ *	@param speed	The speed for the movement
+ *	@return False if the channel or position or speed is invalid or if this function is called while inside a command group other than SSC32_CMDGRP_TYPE_SERVO_MOVEMENT. True otherwise.
+ */
+
+
+bool SSC32::servoMove(int channel, int position, int speed)
+{
+	if (channel < SSC32_MIN_CH || channel > SSC32_MAX_CH)
+	{
+		//Channel not valid
+		return false;
+	}
+	
+	if (position < SSC32_MIN_PW || position > SSC32_MAX_PW)
+	{
+		//Position not valid
+		return false;
+	}
+	
+	if (speed < 0)
+	{
+		//Speed not valid
+		return false;
+	}
+	
+	if (_commandType != SSC32_CMDGRP_TYPE_NONE && _commandType != SSC32_CMDGRP_TYPE_SERVO_MOVEMENT)
+	{
+		//This can only be called as a single command or inside a group of 
+		//commands of type SSC32_CMDGRP_TYPE_SERVO_MOVEMENT
+		return false;	
+	}
+	
+	//**** ARDUINO ****
+	/*
+	//We are good to go
+	Serial.print("#");
+	Serial.print(channel);
+	Serial.print(" P");
+	Serial.print(position);
+	Serial.print(" S");
+	Serial.print(speed);
+	Serial.print(" ");
+	*/
+	
+	//**** RASPI ****
+	
+	stringstream ss;
+	ss <<"#"<<int2str(channel) << " P"<< int2str(position) << " S" << int2str(speed) << " ";
+	const string s = ss.str();
+	
+	serialPuts(serialNumber, (char*) s.c_str());
+
+	
+	if (_commandType == SSC32_CMDGRP_TYPE_NONE)
+	{
+		//This is a single command so execute it
+		
+		//**** ARDUINO ****
+		//Serial.println();
+		
+		//**** RASPI ****
+		string mes("\n\r");
+		serialPuts(serialNumber, (char*) mes.c_str());
+		
+	}
+	
+	return true;
+	
+}
+/**
+ *	Move the servo at #channel to "position" taking "time" milliseconds.
+ *	If this function is called from outside a pair of beginGroupCommand/endGroupCommand	then the servo will move right away.
+ *
+ *	But if this function is called inside a gruop of commands, then the servo will not move	until you call endGroupCommand
+ *	@param channel The servo to move
+ *	@param position	The position where to move the servo
+ *	@param ttcm	Time to complete the movement
+ *	@return False if the channel or position or time is invalid or if this function is called while inside a command group other than SSC32_CMDGRP_TYPE_SERVO_MOVEMENT. True otherwise.
+ */
+bool SSC32::servoMoveTime(int channel, int position, int ttcm)
+{
+	if (channel < SSC32_MIN_CH || channel > SSC32_MAX_CH)
+	{
+		//Channel not valid
+		return false;
+	}
+	
+	if (position < SSC32_MIN_PW || position > SSC32_MAX_PW)
+	{
+		//Position not valid
+		return false;
+	}
+	
+	if (ttcm < SSC32_MIN_TIME || ttcm > SSC32_MAX_TIME )
+	{
+		//time not valid
+		return false;
+	}
+	
+	if (_commandType != SSC32_CMDGRP_TYPE_NONE && _commandType != SSC32_CMDGRP_TYPE_SERVO_MOVEMENT)
+	{
+		//This can only be called as a single command or inside a group of 
+		//commands of type SSC32_CMDGRP_TYPE_SERVO_MOVEMENT
+		return false;	
+	}
+	
+	//We are good to go
+	//**** ARDUINO ****
+	/*
+	Serial.print("#");
+	Serial.print(channel);
+	Serial.print(" P");
+	Serial.print(position);
+	*/
+	
+	//**** RASPI ****
+	
+	stringstream ss;
+	ss <<"#"<<int2str(channel) << " P"<< int2str(position);
+	const string s = ss.str();
+	serialPuts(serialNumber, (char*) s.c_str());
+	
+	if (_commandType == SSC32_CMDGRP_TYPE_NONE)
+	{
+		//This is a single command so execute it
+		// **** ARDUINO ****
+		/*
+		Serial.print(" T");
+		Serial.print(ttcm);
+		Serial.print(" ");
+		Serial.println();
+		 */
+		
+		// **** RASPI *****
+		
+		stringstream ss;
+		ss << " T" << int2str( ttcm ) << " " << endl; // PROBARRRR !!!!
+	}else{
+		//This is a command group. Store the "time to complete movement" for later
+		_ttcm = ttcm;
+	}
+	
+	return true;
+	
+}
+
+
+// AUXILIARY FUNCTIONS
 
 string SSC32::int2str(int number){// por revisar
 	stringstream ss;

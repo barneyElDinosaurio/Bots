@@ -61,7 +61,14 @@ void Bot::update(){
 			
 			}
 			
-			
+		}
+		else if( m.getAddress() == "/pruebaSS"){ // ServoSpeed
+			((Hexapod*) this)->servocontroller.servoMoveSpeed(1, ofRandom(1500, 1800), 2000 );
+
+		
+		}
+		else if( m.getAddress() == "/pruebaST"){ // ServoTime
+			((Hexapod*) this)->servocontroller.servoMoveTime(1, ofRandom(1500, 1800), 2000 );			
 		}
 		
 		else if( m.getAddress() == "/stop"){ // **** STOP ****
