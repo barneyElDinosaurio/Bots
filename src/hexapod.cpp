@@ -17,12 +17,16 @@
 
 */
 
-
+#ifndef BOT_H
+#define BOT_H
+#include "bot.h"
+#endif
 Hexapod::Hexapod(){
 	//startSerial();
 }
 void Hexapod::setup(){
 	servocontroller.begin(9600);
+	((Bot*)this)->setListeningPort(9000);
 }
 void Hexapod:: advance( float speed, float rotAngle){
 
