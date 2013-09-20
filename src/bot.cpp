@@ -56,6 +56,8 @@ void Bot::update(){
 			
 			else if(botType == "hexapod"){
 				((Hexapod*) this)->advance();
+				((Hexapod*) this)->servocontroller.servoMove(1, ofRandom(1500, 1800) );
+				cout << "Avanzando el hexapodo desde osc" << endl;
 			
 			}
 			

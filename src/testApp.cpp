@@ -2,8 +2,8 @@
 
 //#include 
 
-//#define HEXAPOD 
-#define SERNAPODO 
+#define HEXAPOD 
+//#define SERNAPODO 
 //#define DORMILONADOR
 
 

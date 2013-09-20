@@ -61,9 +61,9 @@
 	};
 	4903F239178C4E8600CEEDED /* bot.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1083, 2145}}";
-			sepNavSelRange = "{1629, 7}";
-			sepNavVisRange = "{0, 640}";
+			sepNavIntBoundsRect = "{{0, 0}, {1083, 2093}}";
+			sepNavSelRange = "{1693, 0}";
+			sepNavVisRange = "{1118, 660}";
 			sepNavWindowFrame = "{{255, 27}, {889, 806}}";
 		};
 	};
@@ -86,16 +86,16 @@
 	4909E04017DA37BA00406CD7 /* hexapod.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1081, 572}}";
-			sepNavSelRange = "{587, 15}";
-			sepNavVisRange = "{219, 388}";
+			sepNavSelRange = "{379, 0}";
+			sepNavVisRange = "{220, 387}";
 			sepNavWindowFrame = "{{38, 260}, {685, 592}}";
 		};
 	};
 	4909E04117DA37BA00406CD7 /* hexapod.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1081, 650}}";
-			sepNavSelRange = "{493, 0}";
-			sepNavVisRange = "{168, 373}";
+			sepNavIntBoundsRect = "{{0, 0}, {1081, 728}}";
+			sepNavSelRange = "{601, 0}";
+			sepNavVisRange = "{0, 376}";
 			sepNavWindowFrame = "{{153, 182}, {699, 565}}";
 		};
 	};
@@ -187,7 +187,7 @@
 		fRef = 49B62D5317E2CD28003B59D2 /* SSC32.cpp */;
 		name = "SSC32.cpp: 246";
 		rLen = 0;
-		rLoc = 6081;
+		rLoc = 6265;
 		rType = 0;
 		vrLen = 1209;
 		vrLoc = 1651;
@@ -277,7 +277,7 @@
 		fRef = 4903F239178C4E8600CEEDED /* bot.cpp */;
 		name = "bot.cpp: 100";
 		rLen = 0;
-		rLoc = 2390;
+		rLoc = 2521;
 		rType = 0;
 		vrLen = 1019;
 		vrLoc = 1695;
@@ -463,9 +463,9 @@
 	};
 	49B62D5317E2CD28003B59D2 /* SSC32.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1251, 3393}}";
-			sepNavSelRange = "{6081, 0}";
-			sepNavVisRange = "{1486, 446}";
+			sepNavIntBoundsRect = "{{0, 0}, {1251, 3614}}";
+			sepNavSelRange = "{5810, 0}";
+			sepNavVisRange = "{1882, 627}";
 			sepNavWindowFrame = "{{122, 19}, {699, 565}}";
 		};
 	};
@@ -783,7 +783,7 @@
 	};
 	E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1164, 686}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1081, 334}}";
 			sepNavSelRange = "{462, 0}";
 			sepNavVisRange = "{0, 462}";
 			sepNavWindowFrame = "{{134, 68}, {1234, 732}}";
@@ -791,9 +791,9 @@
 	};
 	E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1081, 2158}}";
-			sepNavSelRange = "{830, 0}";
-			sepNavVisRange = "{493, 392}";
+			sepNavIntBoundsRect = "{{0, 0}, {1081, 2015}}";
+			sepNavSelRange = "{35, 0}";
+			sepNavVisRange = "{0, 591}";
 			sepNavWindowFrame = "{{61, 99}, {1234, 732}}";
 		};
 	};
