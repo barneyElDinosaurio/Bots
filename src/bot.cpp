@@ -73,10 +73,11 @@ void Bot::update(){
 		}*/
 		else if(m.getAddress() == "/dormilonador"){
 			cout << "En el movedor del triplehijuputa DORM" << endl;
+			cout << "numARGS " << m.getNumArgs() << endl;
 			float x = m.getArgAsFloat(0);
 			float y = m.getArgAsFloat(1);
 			float z = m.getArgAsFloat(2);			
-			((Dormilonador*)this)->brazo.moveTo( x, y, z, 0);
+			//((Dormilonador*)this)->brazo.moveTo( x, y, z, 0);
 		}
 		
 		
