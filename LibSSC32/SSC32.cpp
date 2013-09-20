@@ -409,7 +409,9 @@ bool SSC32::servoMoveTime(int channel, int position, int ttcm)
 		// **** RASPI *****
 		
 		stringstream ss;
-		ss << " T" << int2str( ttcm ) << " " << endl; // PROBARRRR !!!!
+		ss << " T" << int2str( ttcm ) << " \n\r";
+		const string s = ss.str();
+		serialPuts( serialNumber, (char*) s.c_str() );
 	}else{
 		//This is a command group. Store the "time to complete movement" for later
 		_ttcm = ttcm;
