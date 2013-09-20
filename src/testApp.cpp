@@ -50,7 +50,7 @@ void testApp::setup(){
 	cout << " DORMILONADOR STARTING " << endl;
 #endif
 	
-	
+	leg.setOffset(ofVec3f(0, 0, 0));
 	leg.setSize(100, 80, 50);
 	leg.calcularAngulos( 40, 50, 60, 0);
 	cout << leg.angBrazo << " " << leg.angAntebrazo <<  " "  << leg.angMun << endl;

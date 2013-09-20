@@ -13,7 +13,7 @@ class Leg{
 
 public:
 	// zero offset
-	ofVec2f offset; 
+	ofVec3f offset; 
 	
 	// Lengths of arm
 	float lBrazo;
@@ -36,6 +36,10 @@ public:
 	};
 	
 	void calcularAngulos(float x, float y, float z, float w);
+
+	void setOffset(ofVec3f _offset){
+	  offset.set(_offset);
+	};
 	
 	
 	
