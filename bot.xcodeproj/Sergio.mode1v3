@@ -216,10 +216,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>49E5011717EC075B00CED24D</string>
+						<string>49E5012F17EC128A00CED24D</string>
 						<key>history</key>
 						<array>
-							<string>49E500F617EBF8D800CED24D</string>
+							<string>49E5012217EC127800CED24D</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -314,9 +314,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>23</integer>
-									<integer>21</integer>
-									<integer>20</integer>
+									<integer>12</integer>
+									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -368,7 +367,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>49E5011517EC075B00CED24D</string>
+										<string>49E5012517EC128A00CED24D</string>
 										<key>history</key>
 										<array>
 											<string>49B2333C178E62D900C2AEA4</string>
@@ -425,7 +424,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SSC32.h</string>
+								<string>bot.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -433,11 +432,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SSC32.h</string>
+										<string>bot.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>49E5011617EC075B00CED24D</string>
+										<string>49E5012E17EC128A00CED24D</string>
 										<key>history</key>
 										<array>
 											<string>49B2333C178E62D900C2AEA4</string>
@@ -452,20 +451,20 @@
 											<string>4952F0DD17EB3DDD00FD178C</string>
 											<string>4952F0E217EB3DDD00FD178C</string>
 											<string>49E5007717EBD21800CED24D</string>
-											<string>49E5007817EBD21800CED24D</string>
-											<string>49E5007917EBD21800CED24D</string>
-											<string>49E5007D17EBD21800CED24D</string>
 											<string>49E500D017EBEDE800CED24D</string>
 											<string>49E500D117EBEDE800CED24D</string>
 											<string>49E500D217EBEDE800CED24D</string>
 											<string>49E500D317EBEDE800CED24D</string>
-											<string>49E500D517EBEDE800CED24D</string>
-											<string>49E500D617EBEDE800CED24D</string>
 											<string>49E500D717EBEDE800CED24D</string>
 											<string>49E500D817EBEDE800CED24D</string>
-											<string>49E500E717EBF25600CED24D</string>
-											<string>49E500FA17EBF8E500CED24D</string>
-											<string>4952F0E117EB3DDD00FD178C</string>
+											<string>49E5012617EC128A00CED24D</string>
+											<string>49E5012717EC128A00CED24D</string>
+											<string>49E5012817EC128A00CED24D</string>
+											<string>49E5012917EC128A00CED24D</string>
+											<string>49E5012A17EC128A00CED24D</string>
+											<string>49E5012B17EC128A00CED24D</string>
+											<string>49E5012C17EC128A00CED24D</string>
+											<string>49E5012D17EC128A00CED24D</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -477,14 +476,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 377}, {1142, 366}}</string>
+								<string>{{0, 377}, {1142, 322}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 59 1440 819 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>366pt</string>
+							<string>322pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -497,14 +496,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 748}, {1142, 31}}</string>
+								<string>{{0, 704}, {1142, 75}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 59 1440 819 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>31pt</string>
+							<string>75pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -667,8 +666,8 @@
 	<array>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/Sergio/Documents/OF/of_v0.7.4_osx_release/apps/Symbiosis/bot/bot.xcodeproj</string>
-		<string>4903F233178C4E6000CEEDED</string>
 		<string>49E500FC17EBF8E500CED24D</string>
+		<string>4903F233178C4E6000CEEDED</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 59 1440 819 0 0 1440 878 </string>

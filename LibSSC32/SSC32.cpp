@@ -278,7 +278,7 @@ bool SSC32::servoMove(int channel, int position)
  */
 
 
-bool SSC32::servoMove(int channel, int position, int speed)
+bool SSC32::servoMoveSpeed(int channel, int position, int speed)
 {
 	if (channel < SSC32_MIN_CH || channel > SSC32_MAX_CH)
 	{
