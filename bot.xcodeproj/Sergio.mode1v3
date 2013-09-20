@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>49E5012F17EC128A00CED24D</string>
+						<string>49E5013517EC12E900CED24D</string>
 						<key>history</key>
 						<array>
 							<string>49E5012217EC127800CED24D</string>
@@ -314,8 +314,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>12</integer>
-									<integer>3</integer>
+									<integer>24</integer>
+									<integer>21</integer>
+									<integer>20</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -367,7 +368,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>49E5012517EC128A00CED24D</string>
+										<string>49E5013017EC12E900CED24D</string>
 										<key>history</key>
 										<array>
 											<string>49B2333C178E62D900C2AEA4</string>
@@ -424,7 +425,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>bot.cpp</string>
+								<string>SSC32.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -432,11 +433,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>bot.cpp</string>
+										<string>SSC32.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>49E5012E17EC128A00CED24D</string>
+										<string>49E5013417EC12E900CED24D</string>
 										<key>history</key>
 										<array>
 											<string>49B2333C178E62D900C2AEA4</string>
@@ -457,14 +458,14 @@
 											<string>49E500D317EBEDE800CED24D</string>
 											<string>49E500D717EBEDE800CED24D</string>
 											<string>49E500D817EBEDE800CED24D</string>
-											<string>49E5012617EC128A00CED24D</string>
 											<string>49E5012717EC128A00CED24D</string>
 											<string>49E5012817EC128A00CED24D</string>
 											<string>49E5012917EC128A00CED24D</string>
-											<string>49E5012A17EC128A00CED24D</string>
 											<string>49E5012B17EC128A00CED24D</string>
 											<string>49E5012C17EC128A00CED24D</string>
-											<string>49E5012D17EC128A00CED24D</string>
+											<string>49E5013117EC12E900CED24D</string>
+											<string>49E5013217EC12E900CED24D</string>
+											<string>49E5013317EC12E900CED24D</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -665,9 +666,9 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Users/Sergio/Documents/OF/of_v0.7.4_osx_release/apps/Symbiosis/bot/bot.xcodeproj</string>
 		<string>49E500FC17EBF8E500CED24D</string>
 		<string>4903F233178C4E6000CEEDED</string>
+		<string>/Users/Sergio/Documents/OF/of_v0.7.4_osx_release/apps/Symbiosis/bot/bot.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 59 1440 819 0 0 1440 878 </string>
