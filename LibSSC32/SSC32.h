@@ -117,6 +117,8 @@ class SSC32
 		int readDigitalInput(int input);
 		int readAnalogInput(int input);
 	
+	const char * appendChannelPos(int channel, int position);
+	
 	void mandarUnDato();
 	std::string int2str(int number);
 	

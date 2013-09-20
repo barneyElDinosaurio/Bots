@@ -232,8 +232,14 @@ bool SSC32::servoMove(int channel, int position)
 	
 	std::stringstream ss;
 	ss << "#" << channelString << " P" << positionString;
+	cout << "SS___ " << ss;  
 	
-	serialPuts( serialNumber, (char*) ss.str().c_str() );
+	
+	
+	const char * c = appendChannelPos( channel , position );
+	serialPuts(serialNumber,  c );
+	
+	//serialPuts( serialNumber, (char*) ss.str().c_str() );
 	//serialPuts( serialNumber, (char*) mes.c_str() ); // With wiringpi
 	
 	//string mes2("\n+\r");
@@ -262,6 +268,24 @@ string SSC32::int2str(int number){// por revisar
 	ss << number;
 	return(ss.str());
 }
+const char* SSC32::appendChannelPos( int channel , int position){ // Append stuff into char*
+	
+	string mes = "#";
+	string channelString = int2str(channel);
+	mes.append(channelString);
+	mes.append(" P");
+	
+	string positionString = int2str(position);
+	mes.append(positionString);
+	mes.append(" "); // unnecesary
+	
+	// c_str() deallocates after usage, using temp variable . See http://stackoverflow.com/questions/1374468/c-stringstream-string-and-char-conversion-confusion
+
+	
+	return( mes.c_str() );
+
+}
+
 
 
 
