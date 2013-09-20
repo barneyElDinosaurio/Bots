@@ -77,6 +77,7 @@ void Bot::update(){
 			float x = m.getArgAsFloat(0);
 			float y = m.getArgAsFloat(1);
 			float z = m.getArgAsFloat(2);			
+			cout << "mandadnome por osc a "<< x << " " << y << " " << z << endl;
 			//((Dormilonador*)this)->brazo.moveTo( x, y, z, 0);
 		}
 		

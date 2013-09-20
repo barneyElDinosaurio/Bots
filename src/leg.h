@@ -12,7 +12,7 @@
 class Leg{
 
 public:
-	
+	Leg(){}
 	void setServocontroller( SSC32 * _servoControllerFromParent ){
 		servocontroller = _servoControllerFromParent;
 	}
