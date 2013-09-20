@@ -78,6 +78,7 @@
 		49B62C3217E2B8AF003B59D2 /* wiringShift.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BFE17E2B8AF003B59D2 /* wiringShift.o */; };
 		49B62D5517E2CD28003B59D2 /* SSC32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49B62D5317E2CD28003B59D2 /* SSC32.cpp */; };
 		49E5007617EBD0F000CED24D /* dormilonador.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49E5007517EBD0F000CED24D /* dormilonador.cpp */; };
+		49E5014D17EC27F000CED24D /* leg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49E5014C17EC27F000CED24D /* leg.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -257,6 +258,8 @@
 		49B62D5417E2CD28003B59D2 /* SSC32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSC32.h; sourceTree = "<group>"; };
 		49E5007417EBD0F000CED24D /* dormilonador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dormilonador.h; sourceTree = "<group>"; };
 		49E5007517EBD0F000CED24D /* dormilonador.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dormilonador.cpp; sourceTree = "<group>"; };
+		49E5014B17EC27F000CED24D /* leg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leg.h; sourceTree = "<group>"; };
+		49E5014C17EC27F000CED24D /* leg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = leg.cpp; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -623,6 +626,8 @@
 				4909E01E17DA305A00406CD7 /* sernaBot.cpp */,
 				49E5007417EBD0F000CED24D /* dormilonador.h */,
 				49E5007517EBD0F000CED24D /* dormilonador.cpp */,
+				49E5014B17EC27F000CED24D /* leg.h */,
+				49E5014C17EC27F000CED24D /* leg.cpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -768,6 +773,7 @@
 				49B62C3117E2B8AF003B59D2 /* wiringShift.c in Sources */,
 				49B62D5517E2CD28003B59D2 /* SSC32.cpp in Sources */,
 				49E5007617EBD0F000CED24D /* dormilonador.cpp in Sources */,
+				49E5014D17EC27F000CED24D /* leg.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

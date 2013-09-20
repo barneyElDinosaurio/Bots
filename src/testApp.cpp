@@ -6,9 +6,15 @@
 //#define SERNAPODO 
 //#define DORMILONADOR
 
+//#define DEBUG
+
+
 
 //--------------------------------------------------------------
 void testApp::setup(){
+#ifndef DEBUG
+	
+	
 	//elBot.setPos(0.7*ofRandom( ofGetWidth()), 0.7*ofRandom( ofGetHeight() ));
 	//elBot.setPos( 0.5 , 0.5 );
 	//elBot.setImage("imagenBotSmall.png");
@@ -44,12 +50,22 @@ void testApp::setup(){
 	cout << " DORMILONADOR STARTING " << endl;
 #endif
 	
+	
+	leg.setSize(100, 80, 50);
+	leg.calcularAngulos( 40, 50, 60, 0);
+	cout << leg.angBrazo << " " << leg.angAntebrazo <<  " "  << leg.angMun << endl;
 
+#else // If debugging
+	
+	
+	
+#endif // closes DEBUG
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-	
+#ifndef DEBUG
+
 	// para el simulado
 	//	elBot.update();
 	
@@ -66,6 +82,12 @@ void testApp::update(){
 	
 	ofLogVerbose()<< "I am running";
 	//cout << "ESTOY EJECUTANDP" << endl;
+	
+#else
+	
+	
+	
+#endif // DEBUG
 }
 
 //--------------------------------------------------------------
@@ -76,6 +98,8 @@ void testApp::draw(){
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){ //Dirty calibration
+	
+#ifndef DEBUG
 	elBot.setPos( elBot.blobData.x, elBot.blobData.y );
 	elBot.setAngle( elBot.blobData.z);
 	
@@ -102,6 +126,9 @@ void testApp::keyPressed(int key){ //Dirty calibration
 	if (key == 'd'){
 		
 	}
+#else
+	
+#endif
 }
 // ------
 char * testApp::string2CharBuf(string str){

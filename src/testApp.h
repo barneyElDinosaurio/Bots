@@ -6,6 +6,9 @@
 #include "hexapod.h"
 #include "dormilonador.h"
 
+
+#include "leg.h"
+
 class testApp : public ofBaseApp{
 
 	public:
@@ -29,4 +32,7 @@ class testApp : public ofBaseApp{
 	SernaBot elGarden;
 	Hexapod hexa;
 	Dormilonador dorm;
+	
+	// Debug:
+	Leg leg;
 };

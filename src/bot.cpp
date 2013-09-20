@@ -169,7 +169,7 @@ void Bot::setAngleThreshold(float _a){
 void Bot::rotate(float rotAngle){
 	angle+=rotAngle;
 }
-/*void Bot::callibrate(){
+void Bot::callibrate(){
 
 }*/
 
