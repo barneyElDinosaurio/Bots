@@ -6,8 +6,10 @@
 #include "hexapod.h"
 #include "dormilonador.h"
 
-
+#ifndef LEG_H
+#define LEG_H
 #include "leg.h"
+#endif
 
 class testApp : public ofBaseApp{
 

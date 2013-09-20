@@ -62,6 +62,7 @@ void Bot::update(){
 			}
 			
 		}
+		/* // DEBUUUUUUG
 		else if( m.getAddress() == "/pruebaSS"){ // ServoSpeed
 			((Hexapod*) this)->servocontroller.servoMoveSpeed(1, ofRandom(1500, 1800), 2000 );
 
@@ -69,7 +70,15 @@ void Bot::update(){
 		}
 		else if( m.getAddress() == "/pruebaST"){ // ServoTime
 			((Hexapod*) this)->servocontroller.servoMoveTime(1, ofRandom(1500, 1800), 2000 );			
+		}*/
+		else if(m.getAddress() == "/dormilonador"){
+			cout << "En el movedor del triplehijuputa DORM" << endl;
+			float x = m.getArgAsFloat(0);
+			float y = m.getArgAsFloat(1);
+			float z = m.getArgAsFloat(2);			
+			((Dormilonador*)this)->brazo.moveTo( x, y, z, 0);
 		}
+		
 		
 		else if( m.getAddress() == "/stop"){ // **** STOP ****
 			

@@ -16,11 +16,19 @@ void Dormilonador::setup(){
 	
 	// Setup de la clase padre?
 	//((Bot* )this )->setup();
+	botType = "dormilonador";
 	
 	((Bot*)this)->setListeningPort(9000);
 	servocontroller.begin(9600);
 	
+	// LEG // MEDIR CORRECTAMENTE !!!!
+	brazo.setSize(12.5, 16, 8);
+	brazo.setOffset( ofVec3f( 0, 0, 6) );
+	
 }
 void Dormilonador::meterEnVaso(){
 	servocontroller.servoMove(2, 1500);
+}
+void Dormilonador::update(){
+	((Bot*)this)->update();
 }

@@ -39,3 +39,24 @@ void Leg::calcularAngulos(float x, float y, float z, float w){
 	angGiro     = atan2(y, x);
 }
 
+void Leg::moveTo(float x, float y, float z, float w){
+	calcularAngulos(x, y, z, w);
+	
+	// CALIBRACION SUCIA 
+	// Angulos en radianes, hay que convertir a milisegundos
+	// Vamos a suponer por ahora que la mínima es 1000, y la máxima, 2000, ver http://www.servodatabase.com/servo/hitec/hs-5745mg
+	// angulos en radiantes
+	
+	//Brazo
+	float pulseWidth1 = angBrazo/PI*1000 + 1000;
+	servocontroller->servoMove(1, pulseWidth1);
+	
+	//Antebrazo
+	float pulseWidth2 = angAntebrazo/PI*1000 + 1500;
+	servocontroller->servoMove(2, pulseWidth2);
+	
+	//Muñeca
+	float pulseWidth3 = angMun/PI*1000 + 1500;
+	servocontroller->servoMove(3, pulseWidth3);
+}
+

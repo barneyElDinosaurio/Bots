@@ -79,6 +79,10 @@ void testApp::update(){
 	hexa.update();
 #endif
 
+#ifdef DORMILONADOR
+	dorm.update();
+#endif
+	
 	
 	ofLogVerbose()<< "I am running";
 	//cout << "ESTOY EJECUTANDP" << endl;
