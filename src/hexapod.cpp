@@ -27,7 +27,7 @@ Hexapod::Hexapod(){
 void Hexapod::setup(){
 	servocontroller.begin(9600);
 	((Bot*)this)->setListeningPort(9000);
-	botType = "hexapod"
+	botType = "hexapod";
 }
 void Hexapod:: advance( float speed, float rotAngle){
 
