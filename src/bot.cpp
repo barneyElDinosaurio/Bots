@@ -80,7 +80,24 @@ void Bot::update(){
 			cout << "mandadnome por osc a "<< x << " " << y << " " << z << endl;
 			((Dormilonador*)this)->brazo.moveTo( x, y, z, 0);
 		}
-		
+		else if(m.getAddress() == "/moverServo" ){ // **** MOVER SERVO
+			
+			cout << "En mover servo. Numargs " << m.getNumArgs() <<endl;
+			int servoNum = m.getArgAsInt32(0);
+			int pulse = m.getArgAsInt32(1);
+			
+			// HEXAPODO
+			
+			if(botType == "hexapod"){
+				((Hexapod*) this)->servocontroller.servoMove(servoNum, pulse);
+			}	
+			
+			// DORMILONADOR
+			
+			if( botType == "dormilonador"){
+				((Dormilonador *)this)->servocontroller.servoMove(servoNum, pulse);
+			}
+		}
 		
 		else if( m.getAddress() == "/stop"){ // **** STOP ****
 			
