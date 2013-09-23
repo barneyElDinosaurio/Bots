@@ -10,34 +10,66 @@
 #include "leg.h"
 
 void Leg::calcularAngulos(float x, float y, float z, float w){
-        float xPrima = sqrt( x*x + y*y);
-        float yPrima = z;
-	
-	float cabeceo = w * PI/180;
-	
-	float afx = cos(cabeceo) * lMun;
-	float afy = sin(cabeceo) * lMun;
-	
-	float ladoX  = xPrima - afx;
-	float ladoY  = yPrima - afy - offset.x ;
-	
-	float hipotenusa  = sqrt( ladoX*ladoX + ladoY*ladoY );
-	
-	//  println("HIPOTENUSA " + hipotenusa);
-	float alfa    = atan2   (ladoY, ladoX);
-	float beta    = acos    ( ( lBrazo*lBrazo - lAntebrazo*lAntebrazo + hipotenusa*hipotenusa ) / ( 2 * lBrazo * hipotenusa) );
-	float gama    = acos    ( ( lBrazo*lBrazo + lAntebrazo*lAntebrazo - hipotenusa*hipotenusa ) / ( 2 * lBrazo * lAntebrazo) );
-	
-	cout << "alfa "<< alfa << endl;
-	cout << "beta " << beta << endl;
-	cout << "game " << gama << endl;
-	//angulos en grados
-	
-	angBrazo    = (alfa + beta);
-	angAntebrazo   = (-( PI - gama));
-	angMun    = cabeceo - angBrazo - angAntebrazo;
-	angGiro     = atan2(y, x);
+        
+    bool menos = false;
+    bool mas = false;
+    int repeat=0;
+
+    cabeceo = w;
+
+    while ( (menos == true) || (mas == true) || (repeat == 0)) {
+
+
+		float cabeceo = cabeceo * PI/180;
+
+
+	    float xPrima = sqrt( x*x + y*y);
+		float yPrima = z;
+		
+		float afx = cos(cabeceo) * lMun;
+		float afy = sin(cabeceo) * lMun;
+		
+		float ladoX  = xPrima - afx;
+		float ladoY  = yPrima - afy - offset.x ;
+		
+		float hipotenusa  = sqrt( ladoX*ladoX + ladoY*ladoY );
+		
+		//  println("HIPOTENUSA " + hipotenusa);
+		float alfa    = atan2   (ladoY, ladoX);
+		float beta    = acos    ( ( lBrazo*lBrazo - lAntebrazo*lAntebrazo + hipotenusa*hipotenusa ) / ( 2 * lBrazo * hipotenusa) );
+		float gama    = acos    ( ( lBrazo*lBrazo + lAntebrazo*lAntebrazo - hipotenusa*hipotenusa ) / ( 2 * lBrazo * lAntebrazo) );
+		
+		cout << "alfa "<< alfa << endl;
+		cout << "beta " << beta << endl;
+		cout << "game " << gama << endl;
+		//angulos en 180/PIos
+		
+		angBrazo    = (alfa + beta);
+		angAntebrazo   = (-( PI - gama));
+		angMun    = cabeceo - angBrazo - angAntebrazo;
+		angGiro     = atan2(y, x);
+
+      	repeat +=1;
+      
+
+      	if  ( angMunec * 180/PI < -90 ) {
+	        menos = true;
+	        mas = false;
+	        cabeceo=cabeceo * 180/PI + 1;
+	      }
+	      else if (angMunec * 180/PI > 90) {
+	        mas = true;    
+	        menos=false;    
+	        cabeceo=cabeceo * 180/PI - 1;
+	      }
+	      else {
+	        mas = false;
+	        menos=false;
+	      }
+		}
+	}
 }
+
 
 void Leg::moveTo(float x, float y, float z, float w){
 	calcularAngulos(x, y, z, w);
