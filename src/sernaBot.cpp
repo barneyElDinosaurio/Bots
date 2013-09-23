@@ -13,7 +13,10 @@ void SernaBot::setup(){
 	cout << "SernaBot: inicializando..." << endl;
 	// Setup de la clase padre ??
 	//(Bot*) setup();
-	( (Bot* )this)->setListeningPort(9000);
+	int port = 9001;
+	cout << "tratando de conectar al puerto " << port << endl;
+	( (Bot* )this)->setListeningPort(9001);
+	
 	
 	// Tipo de bot
 	botType = "sernaBot";
