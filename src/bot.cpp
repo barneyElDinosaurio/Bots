@@ -23,14 +23,21 @@ void Bot::update(){
 		
 		// Position
 		
-		if ( m.getAddress() == "/blob") { // got blob message
+		if ( m.getAddress() == "/blob/data") { // got blob message
 			cout << " In OSC parsing !!!" << endl;
 			// Get position vector and direction vector (a unit vector)
 			ofVec2f blobPos( m.getArgAsFloat(0), m.getArgAsFloat(1) );
 			float angle = m.getArgAsFloat(2);
+			float area = m.getArgAsFloat(3);
+			float hu1 = m.getArgAsFloat(4);
+			float hu2 = m.getArgAsFloat(5);
 			
 			cout << "Blob position : " << blobPos << endl;
 			cout << "Blob angle : "  << angle << endl;
+			cout << "Blob area : "  << area << endl;			
+			cout << "Hu moment 1: " << hu1 << endl;
+			cout << "Hu moment 2: " << hu2 << endl;
+			
 			ofVec2f blobDirection( cos(angle), sin(angle) );
 				
 			if ( pos.distance(blobPos) < distanceThreshold /* && orientation.angle(blobDirection) < angleThreshold && timer! */){ // Its me!
