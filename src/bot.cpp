@@ -38,14 +38,6 @@ void Bot::update(){
 			cout << "Hu moment 1: " << hu1 << endl;
 			cout << "Hu moment 2: " << hu2 << endl;
 			
-			float hu1fixed = 162;
-			float hu1thres = 5;
-			
-			if( abs(hu1 - hu1fixed)  < hu1thres ){
-				setPos(blobPos.x, blobPos.y);
-				cout << "Me llamo SERNAPODO, con posición:---  " << pos.x << " " << pos.y << endl; 
-			}
-			
 			ofVec2f blobDirection( cos(angle), sin(angle) );
 				
 			if ( pos.distance(blobPos) < distanceThreshold /* && orientation.angle(blobDirection) < angleThreshold && timer! */){ // Its me!

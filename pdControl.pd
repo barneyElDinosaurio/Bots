@@ -1,92 +1,99 @@
-#N canvas 750 31 646 591 10;
-#X obj 218 91 sendOSC;
-#X obj 261 40;
-#X floatatom 281 50 5 0 0 0 - - -;
-#X msg 275 189 send /advance;
-#X msg 101 39 disconnect;
-#X msg 286 324 send /stop;
-#X msg 286 292 send /recoil;
-#X msg 286 259 send /rotateR;
-#X msg 284 226 send /rotateL;
-#X obj 274 89 key;
-#X obj 462 98 print key;
-#X obj 274 127 select 119 97 100 115 32;
-#X msg 187 39 connect 192.168.1.110 9000;
-#X msg 284 349 send /pruebaSS;
-#X msg 283 380 send /pruebaST;
-#X obj 74 164 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 140 82 vsl 15 40 0 20 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1700 1;
-#X obj 92 79 vsl 15 40 0 20 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 600 1;
-#X obj 114 79 vsl 15 40 0 20 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 600 1;
-#X obj 4 140 spigot;
-#X msg 79 267 send /dormilonador \$1 \$2 \$3;
-#X obj 78 304 print;
-#X obj 77 197 pack 0 f f f;
-#X obj 78 234 route 0;
-#X floatatom 94 131 5 0 0 0 - - -;
-#X floatatom 116 153 5 0 0 0 - - -;
-#X floatatom 143 170 5 0 0 0 - - -;
-#X obj 324 103 spigot;
-#X obj 357 83 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#N canvas 174 160 646 591 10;
+#X obj 177 74 sendOSC;
+#X msg 329 196 send /advance;
+#X msg 91 16 disconnect;
+#X msg 329 303 send /stop;
+#X msg 329 276 send /recoil;
+#X msg 329 249 send /rotateR;
+#X msg 329 222 send /rotateL;
+#X obj 328 87 key;
+#X obj 328 134 select 119 97 100 115 32;
+#X msg 329 325 send /pruebaSS;
+#X msg 329 350 send /pruebaST;
+#X obj -34 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 32 36 vsl 15 40 0 20 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj -16 33 vsl 15 40 0 20 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 6 33 vsl 15 40 0 20 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg -29 221 send /dormilonador \$1 \$2 \$3;
+#X obj -30 258 print;
+#X obj -31 151 pack 0 f f f;
+#X obj -30 188 route 0;
+#X floatatom -14 85 5 0 0 0 - - -;
+#X floatatom 8 107 5 0 0 0 - - -;
+#X floatatom 35 124 5 0 0 0 - - -;
+#X obj 335 108 spigot;
+#X obj 368 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 103 422 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X obj 76 473 route 0;
-#X obj 76 446 pack 0 0 0;
-#X obj 180 447 hsl 128 15 500 2200 0 0 empty empty empty -2 -8 0 10
+#X obj 75 489 route 0;
+#X obj 75 462 pack 0 0 0;
+#X obj 179 463 hsl 128 15 500 2200 0 0 empty empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
-#X text 306 464 2200;
-#X text 174 464 500;
-#X floatatom 207 470 5 0 0 0 - - -;
+#X text 305 480 2200;
+#X text 173 480 500;
+#X floatatom 206 486 5 0 0 0 - - -;
 #X floatatom 67 422 5 0 0 0 - - -;
-#X obj 36 446 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 31 431 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 98 532 print;
-#X obj 150 446 int;
-#X msg 77 498 send /moverServo \$1 \$2;
-#X obj 16 413 metro 300;
-#X obj 12 388 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X connect 3 0 0 0;
-#X connect 4 0 0 0;
-#X connect 5 0 0 0;
-#X connect 6 0 0 0;
-#X connect 7 0 0 0;
-#X connect 8 0 0 0;
-#X connect 9 0 11 0;
-#X connect 11 0 3 0;
-#X connect 11 1 8 0;
-#X connect 11 2 7 0;
-#X connect 11 3 6 0;
-#X connect 11 4 5 0;
-#X connect 12 0 0 0;
-#X connect 13 0 0 0;
-#X connect 14 0 0 0;
-#X connect 15 0 22 0;
-#X connect 16 0 22 3;
-#X connect 16 0 26 0;
-#X connect 17 0 22 1;
-#X connect 17 0 24 0;
-#X connect 18 0 22 2;
-#X connect 18 0 25 0;
-#X connect 20 0 21 0;
-#X connect 20 0 0 0;
-#X connect 22 0 23 0;
-#X connect 23 0 20 0;
-#X connect 28 0 27 1;
-#X connect 29 0 31 1;
-#X connect 29 0 36 0;
-#X connect 30 0 40 0;
-#X connect 31 0 30 0;
-#X connect 32 0 35 0;
-#X connect 32 0 39 0;
-#X connect 37 0 31 0;
-#X connect 39 0 31 2;
-#X connect 40 0 38 0;
-#X connect 40 0 0 0;
-#X connect 41 0 37 0;
-#X connect 42 0 41 0;
+#X obj 76 557 print;
+#X obj 149 462 int;
+#X msg 76 514 send /moverServo \$1 \$2;
+#X obj 11 398 metro 300;
+#X obj 7 373 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X msg 177 16 connect 192.168.1.2 9001;
+#X text 4 351 CONTROL DE SERVOS;
+#X text 100 397 # de servo;
+#X text 176 445 Posición;
+#X obj 85 535 s toSend;
+#X obj 196 44 r toSend;
+#X text 324 64 CONTROL DE SERNAPODO;
+#X obj 329 380 s toSend;
+#X obj 17 258 s toSend;
+#X text 392 89 activar teclado;
+#X connect 1 0 45 0;
+#X connect 2 0 0 0;
+#X connect 3 0 45 0;
+#X connect 4 0 45 0;
+#X connect 5 0 45 0;
+#X connect 6 0 45 0;
+#X connect 7 0 22 0;
+#X connect 8 0 1 0;
+#X connect 8 1 6 0;
+#X connect 8 2 5 0;
+#X connect 8 3 4 0;
+#X connect 8 4 3 0;
+#X connect 9 0 45 0;
+#X connect 10 0 45 0;
+#X connect 11 0 17 0;
+#X connect 12 0 17 3;
+#X connect 12 0 21 0;
+#X connect 13 0 17 1;
+#X connect 13 0 19 0;
+#X connect 14 0 17 2;
+#X connect 14 0 20 0;
+#X connect 15 0 16 0;
+#X connect 15 0 46 0;
+#X connect 17 0 18 0;
+#X connect 18 0 15 0;
+#X connect 22 0 8 0;
+#X connect 23 0 22 1;
+#X connect 24 0 26 1;
+#X connect 24 0 31 0;
+#X connect 25 0 35 0;
+#X connect 26 0 25 0;
+#X connect 27 0 30 0;
+#X connect 27 0 34 0;
+#X connect 32 0 26 0;
+#X connect 34 0 26 2;
+#X connect 35 0 33 0;
+#X connect 35 0 42 0;
+#X connect 36 0 32 0;
+#X connect 37 0 36 0;
+#X connect 38 0 0 0;
+#X connect 43 0 0 0;
