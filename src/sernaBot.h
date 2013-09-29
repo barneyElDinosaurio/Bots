@@ -44,6 +44,7 @@ public:
 	
 	float sensorHumedad; // Tenemos que cambiarles factores de escala para hacerlos comparables.
 	float sensorLuz;
+	float necesidadCal;
 	
 	Timer elTimer;
 	float tiempoDeAvance;

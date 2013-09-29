@@ -34,10 +34,12 @@ void SernaBot::setup(){
 	// Medir inicialmente el valor de los sensores.
 	sensorHumedad = 0;
 	sensorLuz = 0;
+	necesidadCal = 1; // Primero necesita calibrarse
 	
-	modo = "relajado";
+	//modo = "calibracion";
 	modos.push_back("relajado");
 	modos.push_back("sediento");
+	modos.push_back("calibracion");
 	
 	
 	// BEbedero y otras suciedades
@@ -51,7 +53,9 @@ void SernaBot::update(){
 	
 	// Encontrar el máximo de las necesidades
 	
-	float necesidades [] = {sensorHumedad, sensorLuz };
+	float necesidades [] = {sensorHumedad, sensorLuz, necesidadCal }; // Es importante que estén en el mismo orden en modos!!!
+	
+	// Brujería para encontrar el máximo de las necesidades
 	const int N = sizeof(necesidades) / sizeof(float);
 	
 	float  maxIndex = distance( necesidades, max_element(necesidades, necesidades + N));
@@ -64,6 +68,9 @@ void SernaBot::update(){
 	}
 	else if(modo == "sediento"){
 		goTo( bebedero.x, bebedero.y );
+	}
+	else if(modo == "calibracion"){
+		calibrate();
 	}
 							   
 							   
