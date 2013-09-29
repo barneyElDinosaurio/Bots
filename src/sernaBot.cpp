@@ -20,6 +20,9 @@ void SernaBot::setup(){
 	cout << "tratando de conectar al puerto " << port << endl;
 	( (Bot* )this)->setListeningPort(9001);
 	
+	// Track size
+	( (Bot* )this)->setTrackSize(30);
+	
 	
 	// Tipo de bot
 	botType = "sernaBot";
@@ -48,7 +51,8 @@ void SernaBot::setup(){
 	elTimer.start();
 	tiempoDeAvance = 400;
 	
-	calibrate();
+	// Calibracion
+	firstTimeCal = true;
 }
 void SernaBot::update(){
 	((Bot* )this)->update(); // Aquí adentro están los recibidores de osc.
@@ -66,7 +70,7 @@ void SernaBot::update(){
 	
 	
 	if( modo == "relajado"){
-	  //cout << "estoy relajado" << endl;
+		//cout << "estoy relajado" << endl;
 	}
 	else if(modo == "sediento"){
 		goTo( bebedero.x, bebedero.y );
@@ -74,8 +78,8 @@ void SernaBot::update(){
 	else if(modo == "calibracion"){
 		calibrate();
 	}
-							   
-							   
+	
+	
 	
 	
 	
@@ -97,22 +101,37 @@ void SernaBot::calibrate(){
 	// OJO: tendría que tener primero mi posición
 	
 	Bot* papa = (Bot*)this;
-	papa->update();
+	//papa->update();
 	
-	cout << "EMPEXANDO CALIBRACION ******************************* "<< endl;
-	ofVec2f posicionInicial = papa->getPos();
-	Timer timerCal;
-
 	timerCal.start();
-	while(timerCal.getTime() < 1000){}
-	advance();
-	
-	while ( timerCal.getTime() < 3000 ){ // Esperar un ratico
-	 // ***sdfsdfsfsd  >>>
+	if( firstTimeCal ){
+		advance();
+		firstTimeCal = false;
+		cout << "EMPEXANDO CALIBRACION ******************************* "<< endl;
 	}
-	stop();
-	papa->update(); // Leer de nuevo la posición
-	ofVec2f posicionFinal = papa->getPos();
+	
+	ofVec2f posicionInicial;
+	ofVec2f posicionFinal;
+	if(timerCal.getTime() > 1000){
+		
+		// Agarrar primera posición no nula, y última posición.
+		
+		int i = 0 ; 
+		ofVec2f trackedPos = lastPos.at(0);
+		while( trackedPos == ofVec2f( 0, 0)  ){
+			trackedPos = lastPos.at(i);
+			posicionInicial.set(trackedPos);
+			i++;
+		}
+		stop(); // Parar el man
+		necesidadCal = 0; //salir de modo calibracion 
+		timerCal.stop();
+		posicionFinal = lastPos.back(); // Tambien podría sacarla con papa->getPos
+		
+		cout << "CALIBRANDO ÁNGULO CON ----- POSINIT : " << posicionInicial << " POSFINAL : " << posicionFinal << endl;
+		
+	}
+	
 	
 	ofVec2f deltaPos = posicionFinal - posicionInicial;
 	float elAngulo = deltaPos.angle( ofVec2f(1,0) ); // Angulo con respecto al eje x.
@@ -120,8 +139,8 @@ void SernaBot::calibrate(){
 	
 	cout << "CALIBRACION TERMINADA ------------  POSINIT: "<< posicionInicial << " POSFINAL: " << posicionFinal << "  ANGULO: " << elAngulo << endl;
 	
-
-
+	
+	
 	
 }
 void SernaBot::advance(){
@@ -152,7 +171,7 @@ void SernaBot::rotateR(){
 	
 }
 void SernaBot::rotateL(){
-
+	
 	digitalWrite(15, HIGH);
 	digitalWrite(16, LOW);
 	digitalWrite(1, LOW);

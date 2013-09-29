@@ -37,6 +37,7 @@ public:
 	void setSendingPort(int _port);
 	void setSendingHost( string _host );
 	void setOscSender( string _host, int _port);
+	void setTrackSize(int);
 	void calibrate();
 	void isCalibrated();
 	
@@ -48,6 +49,7 @@ public:
 	
 	void setupSerial(string terminal, int baudRate );
 	void setupSerial(int device, int baudRate);
+	void trackLastPos( ofVec2f);
 	ofVec2f getPos();
 	
 	
@@ -61,6 +63,9 @@ public:
 	
 	ofSerial serial;
 
+	// Tracking of last positions
+	vector <ofVec2f> lastPos; 
+	int trackSize;
 	
 	// Identification
 	int ID;

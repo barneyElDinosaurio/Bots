@@ -47,10 +47,16 @@ public:
 	float necesidadCal;
 	
 	Timer elTimer;
+	
+	// Calibracion
+	Timer timerCal;
+	bool firstTimeCal;
+	
 	float tiempoDeAvance;
 	// Cosillas sucioas
 	
-	ofVec2f bebedero;
+	ofVec2f bebedero; // En la clase general??? Es decir, en BOt?
+	
 	
 //	float 
 

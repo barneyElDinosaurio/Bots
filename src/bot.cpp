@@ -39,12 +39,19 @@ void Bot::update(){
 			cout << "Hu moment 1: " << hu1 << endl;
 			cout << "Hu moment 2: " << hu2 << endl;
 			
+			
+			// VALORES PARA EL SERNAPODO
 			float hu1fixed = 0.162;
 			float hu1thres = 0.6;
 			
-			if( abs(hu1 - hu1fixed)  < hu1thres ){
-				setPos(blobPos.x, blobPos.y);
-				cout << "Me llamo SERNAPODO, con posición:---  " << pos.x << " " << pos.y << endl; 
+			if( abs(hu1 - hu1fixed)  < hu1thres ){ // SI SOY UN SERNAPODO
+				if( this->botType == "sernaBot"){
+					setPos(blobPos.x, blobPos.y);
+					cout << "Me llamo SERNAPODO, con posición:---  " << pos.x << " " << pos.y << endl; 
+					
+					trackLastPos(pos);
+				}
+				
 			}
 			
 			
@@ -162,6 +169,12 @@ void Bot::update(){
 	}
 }
 
+void Bot::trackLastPos(ofVec2f laPos){
+	lastPos.push_back(laPos);
+	while( lastPos.size() > trackSize){ // limitar el número de posiciones tracked a trackSize
+		lastPos.erase( lastPos.begin() );
+	}
+}
 // Tal vez algunos de estos métodos deberían estar dentro de la clase sintética.
 void Bot::setImage( string imageName ){
 	image.loadImage(imageName);
@@ -207,6 +220,9 @@ void Bot::setAngleThreshold(float _a){
 }
 ofVec2f Bot::getPos(){
 	return( pos );
+}
+void Bot::setTrackSize(int _ts){
+	trackSize = _ts;
 }
 /*void Bot::advance(float speed, float rotAngle){
 	

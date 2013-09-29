@@ -30,6 +30,11 @@ public:
 		start();
 	}
 	
+	void stop(){
+		started = false;
+		startTime = 0;
+	}
+	
 	unsigned long long startTime;
 	bool started;
 
