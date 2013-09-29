@@ -39,8 +39,8 @@ void Bot::update(){
 			cout << "Hu moment 1: " << hu1 << endl;
 			cout << "Hu moment 2: " << hu2 << endl;
 			
-			float hu1fixed = 162;
-			float hu1thres = 5;
+			float hu1fixed = 0.162;
+			float hu1thres = 0.6;
 			
 			if( abs(hu1 - hu1fixed)  < hu1thres ){
 				setPos(blobPos.x, blobPos.y);
