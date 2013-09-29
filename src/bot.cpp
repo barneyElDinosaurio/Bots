@@ -173,6 +173,8 @@ void Bot::trackLastPos(ofVec2f laPos){
 	lastPos.push_back(laPos);
 	while( lastPos.size() > trackSize){ // limitar el número de posiciones tracked a trackSize
 		lastPos.erase( lastPos.begin() );
+		
+		cout << "numero de posiciones rastreadsdas " <<  lastPos.size() << endl;
 	}
 }
 // Tal vez algunos de estos métodos deberían estar dentro de la clase sintética.

@@ -68,6 +68,7 @@ void SernaBot::update(){
 	
 	modo = modos.at(maxIndex);
 	
+	cout << "Estoy en modo --- > " << modo << endl;
 	
 	if( modo == "relajado"){
 		//cout << "estoy relajado" << endl;
@@ -103,9 +104,10 @@ void SernaBot::calibrate(){
 	Bot* papa = (Bot*)this;
 	//papa->update();
 	
-	timerCal.start();
+	
 	if( firstTimeCal ){
-		advance();
+	  timerCal.start();
+	advance();
 		firstTimeCal = false;
 		cout << "EMPEXANDO CALIBRACION ******************************* "<< endl;
 	}
