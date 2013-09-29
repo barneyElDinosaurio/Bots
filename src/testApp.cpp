@@ -28,7 +28,7 @@ void testApp::setup(){
 		
 #ifdef SERNAPODO
 	elGarden.setup();
-	cout << "SERNAPODO STARTING" << endl;
+	cout << "SERNAPODO STARTING..............." << endl;
 #endif
 	
 	
@@ -38,7 +38,7 @@ void testApp::setup(){
 	
 #ifdef HEXAPOD	
 	hexa.setup();
-	cout << " HEXAPODO STARTING" << endl;
+	cout << " HEXAPODO STARTING..............." << endl;
 #endif
 	
 	
@@ -47,8 +47,10 @@ void testApp::setup(){
 	
 #ifdef DORMILONADOR
 	dorm.setup();
-	cout << " DORMILONADOR STARTING " << endl;
+	cout << " DORMILONADOR STARTING........... " << endl;
 #endif
+	
+	// PUEBAS... Borrar 
 	
 	leg.setOffset(ofVec3f(0, 0, 0));
 	leg.setSize(100, 80, 50);

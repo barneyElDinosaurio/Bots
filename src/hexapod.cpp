@@ -24,6 +24,7 @@
 Hexapod::Hexapod(){
 	//startSerial();
 }
+// PONER EL UPDATE DE ESTE MAN.
 void Hexapod::setup(){
 	servocontroller.begin(9600);
 	((Bot*)this)->setListeningPort(9000);
