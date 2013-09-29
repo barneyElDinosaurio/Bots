@@ -47,6 +47,8 @@ void SernaBot::setup(){
 	bebedero.set(0.3, 0.3);
 	elTimer.start();
 	tiempoDeAvance = 400;
+	
+	calibrate();
 }
 void SernaBot::update(){
 	((Bot* )this)->update(); // Aquí adentro están los recibidores de osc.
@@ -64,7 +66,7 @@ void SernaBot::update(){
 	
 	
 	if( modo == "relajado"){
-		cout << "estoy relajado" << endl;
+	  //cout << "estoy relajado" << endl;
 	}
 	else if(modo == "sediento"){
 		goTo( bebedero.x, bebedero.y );
@@ -97,12 +99,15 @@ void SernaBot::calibrate(){
 	Bot* papa = (Bot*)this;
 	papa->update();
 	
+	cout << "EMPEXANDO CALIBRACION ******************************* "<< endl;
 	ofVec2f posicionInicial = papa->getPos();
 	Timer timerCal;
+
 	timerCal.start();
+	while(timerCal.getTime() < 1000){}
 	advance();
 	
-	while ( timerCal.getTime() < 400 ){ // Esperar un ratico
+	while ( timerCal.getTime() < 3000 ){ // Esperar un ratico
 	 // ***sdfsdfsfsd  >>>
 	}
 	stop();
@@ -113,7 +118,7 @@ void SernaBot::calibrate(){
 	float elAngulo = deltaPos.angle( ofVec2f(1,0) ); // Angulo con respecto al eje x.
 	papa->setAngle( elAngulo );
 	
-	cout << "CALIBRACION TERMINADA ------------  POS: " << posicionFinal << "  ANGULO: " << elAngulo << endl;
+	cout << "CALIBRACION TERMINADA ------------  POSINIT: "<< posicionInicial << " POSFINAL: " << posicionFinal << "  ANGULO: " << elAngulo << endl;
 	
 
 
