@@ -13,6 +13,8 @@
 #include "ofMain.h"
 #include "ofxOsc.h"
 
+#include <algorithm>
+
 
 class Bot{
 	
@@ -46,12 +48,15 @@ public:
 	
 	void setupSerial(string terminal, int baudRate );
 	void setupSerial(int device, int baudRate);
+	ofVec2f getPos();
+	
 	
 	
 	
 	// Position and orientation of the bot
 	ofVec2f pos;
 	ofVec2f orientation;
+	float angleFromVision; // Blob angle
 	float angle;
 	
 	ofSerial serial;

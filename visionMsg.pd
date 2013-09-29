@@ -1,0 +1,42 @@
+#N canvas 798 70 591 336 10;
+#X obj 300 262 print;
+#X obj 296 67 dumpOSC 9001;
+#X obj 162 125 f;
+#X obj 200 127 + 1;
+#X obj 162 176 mod 3;
+#X obj 162 73 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 300 193 spigot;
+#X obj 162 97 metro 300;
+#X obj 300 225 spigot;
+#X obj 376 124 key;
+#X obj 376 147 == 32;
+#X obj 376 171 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 377 191 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 16 31 Código para ver algunos;
+#X text 15 45 de los mensajes enviados;
+#X obj 0 13 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 0 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 185 156 cambia la fraccion;
+#X text 198 168 de mensajes;
+#X text 371 101 parar el flujo de mensajes;
+#X text 414 117 con barra espaciadora;
+#X text 15 59 por el ojo.;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 1;
+#X connect 4 0 6 1;
+#X connect 5 0 7 0;
+#X connect 6 0 8 0;
+#X connect 7 0 2 0;
+#X connect 8 0 0 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 8 1;
+#X connect 15 0 16 0;

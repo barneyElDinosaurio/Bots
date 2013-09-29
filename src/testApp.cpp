@@ -50,6 +50,10 @@ void testApp::setup(){
 	cout << " DORMILONADOR STARTING........... " << endl;
 #endif
 	
+	// ALGUNOS GLOBALES?
+	
+//	bebedero.set( 0.3, 0.3 );
+	
 	// PUEBAS... Borrar 
 	
 	leg.setOffset(ofVec3f(0, 0, 0));
@@ -57,6 +61,8 @@ void testApp::setup(){
 	leg.calcularAngulos( 40, 50, 60, 0);
 	cout << leg.angBrazo << " " << leg.angAntebrazo <<  " "  << leg.angMun << endl;
 
+	
+	
 #else // If debugging
 	
 	

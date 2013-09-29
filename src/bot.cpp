@@ -21,13 +21,14 @@ void Bot::update(){
 		oscReciever.getNextMessage( &m );
 		cout << " In OSC reciever !!!" << endl;
 		
-		// Position
+		// POSICION
 		
 		if ( m.getAddress() == "/blob/data") { // got blob message
 			cout << " In OSC parsing !!!" << endl;
 			// Get position vector and direction vector (a unit vector)
 			ofVec2f blobPos( m.getArgAsFloat(0), m.getArgAsFloat(1) );
-			float angle = m.getArgAsFloat(2);
+			
+			float angleFromVision = m.getArgAsFloat(2);
 			float area = m.getArgAsFloat(3);
 			float hu1 = m.getArgAsFloat(4);
 			float hu2 = m.getArgAsFloat(5);
@@ -47,7 +48,7 @@ void Bot::update(){
 			}
 			
 			
-			ofVec2f blobDirection( cos(angle), sin(angle) );
+			//ofVec2f blobDirection( cos(angle), sin(angle) );
 				
 			if ( pos.distance(blobPos) < distanceThreshold /* && orientation.angle(blobDirection) < angleThreshold && timer! */){ // Its me!
 				pos.set(blobPos);
@@ -203,6 +204,9 @@ void Bot::setDistanceThreshold(float _d){
 }
 void Bot::setAngleThreshold(float _a){
 	angleThreshold = _a;
+}
+ofVec2f Bot::getPos(){
+	return( pos );
 }
 /*void Bot::advance(float speed, float rotAngle){
 	

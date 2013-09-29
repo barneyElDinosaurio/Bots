@@ -16,7 +16,8 @@
 #include "bot.h"
 #endif
 
-//
+#include "timer.h"
+
 //class Bot;
 
 class SernaBot : public Bot{
@@ -30,5 +31,26 @@ public:
 	void rotateL();
 	void recoil();
 	void stop();
+	void goTo( float x, float y);
+	void advanceTime(float time);
+	void calibrate();
+	
+	
+	// Sensores y modos
+	
+	string modo;
+	vector <string> modos;
+	
+	
+	float sensorHumedad; // Tenemos que cambiarles factores de escala para hacerlos comparables.
+	float sensorLuz;
+	
+	Timer elTimer;
+	float tiempoDeAvance;
+	// Cosillas sucioas
+	
+	ofVec2f bebedero;
+	
+//	float 
 
 };
