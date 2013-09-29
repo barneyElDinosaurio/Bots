@@ -176,6 +176,13 @@ void Bot::trackLastPos(ofVec2f laPos){
 		
 		cout << "numero de posiciones rastreadsdas " <<  lastPos.size() << endl;
 	}
+	
+	vector <ofVec2f> :: iterator it;
+	
+	for( it = lastPos.begin() ; it!=lastPos.end(); it++){
+		cout << *it << " ";
+	}
+	cout << endl;
 }
 // Tal vez algunos de estos métodos deberían estar dentro de la clase sintética.
 void Bot::setImage( string imageName ){
