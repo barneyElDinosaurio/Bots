@@ -19,12 +19,12 @@ void Bot::update(){
 	while (oscReciever.hasWaitingMessages()) {
 		ofxOscMessage m;
 		oscReciever.getNextMessage( &m );
-		cout << " In OSC reciever !!!" << endl;
+		//cout << " In OSC reciever !!!" << endl;
 		
 		// POSICION
 		
 		if ( m.getAddress() == "/blob/data") { // got blob message
-			cout << " In OSC parsing !!!" << endl;
+		  //cout << " In OSC parsing !!!" << endl;
 			// Get position vector and direction vector (a unit vector)
 			ofVec2f blobPos( m.getArgAsFloat(0), m.getArgAsFloat(1) );
 			

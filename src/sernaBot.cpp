@@ -68,7 +68,7 @@ void SernaBot::update(){
 	
 	modo = modos.at(maxIndex);
 	
-	cout << "Estoy en modo --- > " << modo << endl;
+	//	cout << "Estoy en modo --- > " << modo << endl;
 	
 	if( modo == "relajado"){
 		//cout << "estoy relajado" << endl;
@@ -112,6 +112,7 @@ void SernaBot::calibrate(){
 		cout << "EMPEXANDO CALIBRACION ******************************* "<< endl;
 	}
 	
+	cout << "EN CA CALIBRACION ******************************* "<< endl;
 	ofVec2f posicionInicial;
 	ofVec2f posicionFinal;
 	if(timerCal.getTime() > 1000){
@@ -128,10 +129,10 @@ void SernaBot::calibrate(){
 
 	for(int i = 0 ; i < lastPos.size() ; i++){
 	  ofVec2f trackedPos = lastPos.at(i);
-	  cout << "En el chequeador de no nulos***********************" << endl;
+	  cout << "En el chequeador de no nulos*********************** CON I = " << i << endl;
 	  if( trackedPos != ofVec2f(0, 0) ){
 	    posicionInicial.set(trackedPos);
-	    posicionFinal.set(lastPos.back());
+	    // posicionFinal.set(lastPos.back());
 	    cout << "La posición inicil ************************** " << posicionInicial << endl;
 
 	    break;
@@ -142,15 +143,17 @@ void SernaBot::calibrate(){
 		necesidadCal = 0; //salir de modo calibracion 
 		timerCal.stop();
 		posicionFinal = lastPos.back(); // Tambien podría sacarla con papa->getPos
-	cout << "CALIBRACION TERMINADA ------------  POSINIT: "<< posicionInicial << " POSFINAL: " << posicionFinal << "  ANGULO: " << elAngulo << endl;
+ofVec2f deltaPos = posicionFinal - posicionInicial;
+	float elAngulo = deltaPos.angle( ofVec2f(1,0) ); // Angulo con respecto al eje x.
+	papa->setAngle( elAngulo );
+	cout << "Datos calibracion delta pos " << deltaPos << endl;
+		
+cout << "CALIBRACION TERMINADA ------------  POSINIT: "<< posicionInicial << " POSFINAL: " << posicionFinal << "  ANGULO: " << elAngulo << endl;
 	
 		
 	}
 	
 	
-	ofVec2f deltaPos = posicionFinal - posicionInicial;
-	float elAngulo = deltaPos.angle( ofVec2f(1,0) ); // Angulo con respecto al eje x.
-	papa->setAngle( elAngulo );
 	
 	
 	
