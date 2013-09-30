@@ -153,7 +153,7 @@ void SernaBot::calibrate(){
 	cout << "CALIBRACION TERMINADA ------------  POSINIT: "<< posicionInicial << " POSFINAL: " << posicionFinal << "  ANGULO: " << elAngulo << endl;
 	
 	cout << "SALIENDO GNRS" << endl;
-	exit();	
+	//	exit();	
 	}
 	
 	
@@ -179,7 +179,7 @@ void SernaBot:: recoil(){
 	digitalWrite(16, HIGH);
 	digitalWrite(1, LOW);
 	digitalWrite(4, HIGH);
-	
+	cout << "avanzando wiring pi" << endl;
 }
 
 void SernaBot::rotateR(){
@@ -188,6 +188,7 @@ void SernaBot::rotateR(){
 	digitalWrite(16, HIGH);
 	digitalWrite(1, HIGH);
 	digitalWrite(4, LOW);
+	cout << "rotateR wiring pi" << endl;
 	
 }
 void SernaBot::rotateL(){
@@ -196,6 +197,7 @@ void SernaBot::rotateL(){
 	digitalWrite(16, LOW);
 	digitalWrite(1, LOW);
 	digitalWrite(4, HIGH);
+	cout << "rotateL wiring pi" << endl;
 }
 
 void SernaBot::stop(){
@@ -203,5 +205,5 @@ void SernaBot::stop(){
 	digitalWrite(16, LOW);
 	digitalWrite(1, LOW);
 	digitalWrite(4, LOW);
-	
+		cout << "stop wiring pi" << endl;
 }
