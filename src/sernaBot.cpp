@@ -113,6 +113,7 @@ void SernaBot::calibrate(){
 	}
 	
 	cout << "EN CA CALIBRACION ******************************* "<< endl;
+
 	ofVec2f posicionInicial;
 	ofVec2f posicionFinal;
 	if(timerCal.getTime() > 1000){
@@ -140,17 +141,19 @@ void SernaBot::calibrate(){
 
 }		
 	stop(); // Parar el man
-		necesidadCal = 0; //salir de modo calibracion 
-		timerCal.stop();
-		posicionFinal = lastPos.back(); // Tambien podría sacarla con papa->getPos
-ofVec2f deltaPos = posicionFinal - posicionInicial;
+
+	necesidadCal = 0; //salir de modo calibracion 
+	timerCal.stop();
+	posicionFinal = lastPos.back(); // Tambien podría sacarla con papa->getPos
+	ofVec2f deltaPos = posicionFinal - posicionInicial;
 	float elAngulo = deltaPos.angle( ofVec2f(1,0) ); // Angulo con respecto al eje x.
 	papa->setAngle( elAngulo );
 	cout << "Datos calibracion delta pos " << deltaPos << endl;
 		
-cout << "CALIBRACION TERMINADA ------------  POSINIT: "<< posicionInicial << " POSFINAL: " << posicionFinal << "  ANGULO: " << elAngulo << endl;
+	cout << "CALIBRACION TERMINADA ------------  POSINIT: "<< posicionInicial << " POSFINAL: " << posicionFinal << "  ANGULO: " << elAngulo << endl;
 	
-		
+	cout << "SALIENDO GNRS" << endl;
+	exit();	
 	}
 	
 	
