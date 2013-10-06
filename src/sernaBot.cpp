@@ -145,7 +145,7 @@ void SernaBot::calibrate(){
 
 	necesidadCal = 0; //salir de modo calibracion 
 	timerCal.stop();
-	if( !lastPos.isempty()){
+	if( lastPos.size() > 0){
 		posicionFinal = lastPos.back(); // Tambien podría sacarla con papa->getPos
 
 	}
