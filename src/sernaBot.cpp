@@ -174,21 +174,23 @@ void SernaBot::advance(){
 }
 
 void SernaBot:: recoil(){
-	
+
+	cout << "retrocediendo wiring pi" << endl;
 	digitalWrite(15, LOW);
 	digitalWrite(16, HIGH);
 	digitalWrite(1, LOW);
 	digitalWrite(4, HIGH);
-	cout << "avanzando wiring pi" << endl;
+	
 }
 
 void SernaBot::rotateR(){
 	
+		cout << "rotateR wiring pi" << endl;
+
 	digitalWrite(15, LOW);
 	digitalWrite(16, HIGH);
 	digitalWrite(1, HIGH);
 	digitalWrite(4, LOW);
-	cout << "rotateR wiring pi" << endl;
 	
 }
 void SernaBot::rotateL(){
