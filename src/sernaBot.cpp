@@ -106,14 +106,14 @@ void SernaBot::calibrate(){
 	
 	
 	if( firstTimeCal ){
-	  timerCal.start();
-	advance();
+		timerCal.start();
+		advance();
 		firstTimeCal = false;
 		cout << "EMPEXANDO CALIBRACION ******************************* "<< endl;
 	}
 	
 	cout << "EN CA CALIBRACION ******************************* "<< endl;
-
+	cout << "**** 0 " << endl;
 	ofVec2f posicionInicial;
 	ofVec2f posicionFinal;
 	if(timerCal.getTime() > 1000){
@@ -128,18 +128,19 @@ void SernaBot::calibrate(){
 		       
 		  }*/
 
-	for(int i = 0 ; i < lastPos.size() ; i++){
-	  ofVec2f trackedPos = lastPos.at(i);
-	  cout << "En el chequeador de no nulos*********************** CON I = " << i << endl;
-	  if( trackedPos != ofVec2f(0, 0) ){
-	    posicionInicial.set(trackedPos);
+		  for(int i = 0 ; i < lastPos.size() ; i++){
+		  	ofVec2f trackedPos = lastPos.at(i);
+		  	cout << "En el chequeador de no nulos*********************** CON I = " << i << endl;
+		  	if( trackedPos != ofVec2f(0, 0) ){
+		  		posicionInicial.set(trackedPos);
 	    // posicionFinal.set(lastPos.back());
-	    cout << "La posición inicil ************************** " << posicionInicial << endl;
+		  		cout << "La posición inicil ************************** " << posicionInicial << endl;
 
-	    break;
-}
+		  		break;
+		  	}
 
-}		
+		  }		
+		  cout << "**** 1 " << endl;
 	stop(); // Parar el man
 
 	necesidadCal = 0; //salir de modo calibracion 
@@ -149,19 +150,19 @@ void SernaBot::calibrate(){
 	float elAngulo = deltaPos.angle( ofVec2f(1,0) ); // Angulo con respecto al eje x.
 	papa->setAngle( elAngulo );
 	cout << "Datos calibracion delta pos " << deltaPos << endl;
-		
+	cout << "**** 2 " << endl;
 	cout << "CALIBRACION TERMINADA ------------  POSINIT: "<< posicionInicial << " POSFINAL: " << posicionFinal << "  ANGULO: " << elAngulo << endl;
 	
 	cout << "SALIENDO GNRS" << endl;
 	//	exit();	
-	}
-	
-	
-	
-	
-	
-	
-	
+}
+
+
+
+
+
+
+
 }
 void SernaBot::advance(){
 	

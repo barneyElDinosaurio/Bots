@@ -32,14 +32,14 @@ void Bot::update(){
 			float area = m.getArgAsFloat(3);
 			float hu1 = m.getArgAsFloat(4);
 			float hu2 = m.getArgAsFloat(5);
-			/*	
-			cout << "Blob position : " << blobPos << endl;
-			cout << "Blob angle : "  << angle << endl;
-			cout << "Blob area : "  << area << endl;			
+				
+			//cout << "Blob position : " << blobPos << endl;
+			//cout << "Blob angle : "  << angle << endl;
+			//cout << "Blob area : "  << area << endl;			
 			cout << "Hu moment 1: " << hu1 << endl;
 			cout << "Hu moment 2: " << hu2 << endl;
 			
-			*/
+			
 			// VALORES PARA EL SERNAPODO
 			float hu1fixed = 0.162;
 			float hu1thres = 0.01;
@@ -47,7 +47,7 @@ void Bot::update(){
 			if( abs(hu1 - hu1fixed)  < hu1thres ){ // SI SOY UN SERNAPODO
 				if( this->botType == "sernaBot"){
 					setPos(blobPos.x, blobPos.y);
-					cout << "Me llamo SERNAPODO, con posición:---  " << pos.x << " " << pos.y << endl; 
+					cout << "Me llamo SERNAPODO, con posición:---  " << pos.x << " " << pos.y << " HU : " << hu1 <<endl; 
 					
 					trackLastPos(pos);
 				}
