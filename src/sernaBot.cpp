@@ -159,7 +159,7 @@ void SernaBot::calibrate(){
 
 	}
 	else{
-		cout << " *********** IMPOSIBLE CALIBRAR *********** REINICIANDO CALIBRACION"
+		cout << " *********** IMPOSIBLE CALIBRAR *********** REINICIANDO CALIBRACION" << endl;
 		cout << "[NO HAY REGISTRO DE UNA POSICIÓN ANTERIOR]" << endl;
 		necesidadCal = 0;
 		firstTimeCal = true;
