@@ -145,7 +145,15 @@ void SernaBot::calibrate(){
 
 	necesidadCal = 0; //salir de modo calibracion 
 	timerCal.stop();
-	posicionFinal = lastPos.back(); // Tambien podría sacarla con papa->getPos
+	if( !lastPos.isempty()){
+		posicionFinal = lastPos.back(); // Tambien podría sacarla con papa->getPos
+
+	}
+	else{
+
+		cout << "en lastpos no hay nada, gonorrea" << endl;
+	}
+	
 	ofVec2f deltaPos = posicionFinal - posicionInicial;
 	float elAngulo = deltaPos.angle( ofVec2f(1,0) ); // Angulo con respecto al eje x.
 	papa->setAngle( elAngulo );
