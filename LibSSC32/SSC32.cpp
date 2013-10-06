@@ -67,7 +67,7 @@ void SSC32::begin(int bauds)
 	
 	serialNumber  = serialOpen("/dev/ttyAMA0",bauds);
 	
-	cout << "Se ha conectado al puerto serial número: " << endl;
+	cout << "Se ha conectado al puerto serial número: " << serialNumber << endl;
 	
 	// Código de prueba
 	serialPutchar( serialNumber, 'c' );
