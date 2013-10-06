@@ -36,8 +36,8 @@ void Bot::update(){
 			//cout << "Blob position : " << blobPos << endl;
 			//cout << "Blob angle : "  << angle << endl;
 			//cout << "Blob area : "  << area << endl;			
-			cout << "Hu moment 1: " << hu1 << endl;
-			cout << "Hu moment 2: " << hu2 << endl;
+			//cout << "Hu moment 1: " << hu1 << endl;
+			//cout << "Hu moment 2: " << hu2 << endl;
 			
 			
 			// VALORES PARA EL SERNAPODO
