@@ -14,7 +14,7 @@
 //class SernaBot;
 void Bot::update(){
 	
-	cout << "update del BOT" << endl;
+	//cout << "update del BOT" << endl; // Por qué coños, no sale esto??
 	// ****** PARSE OSC MESSAGES ******//
 	while (oscReciever.hasWaitingMessages()) {
 		ofxOscMessage m;
