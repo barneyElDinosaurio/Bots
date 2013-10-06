@@ -42,7 +42,7 @@ void Bot::update(){
 			*/
 			// VALORES PARA EL SERNAPODO
 			float hu1fixed = 0.162;
-			float hu1thres = 0.6;
+			float hu1thres = 0.01;
 			
 			if( abs(hu1 - hu1fixed)  < hu1thres ){ // SI SOY UN SERNAPODO
 				if( this->botType == "sernaBot"){

@@ -164,7 +164,8 @@ void SernaBot::calibrate(){
 	
 }
 void SernaBot::advance(){
-	cout << " SERNAPODO: En la funcion de avanzar " << endl;
+	
+	//cout << " SERNAPODO: En la funcion de avanzar " << endl;
 	digitalWrite(15, HIGH);
 	digitalWrite(16, LOW);
 	digitalWrite(1, HIGH);
@@ -175,7 +176,7 @@ void SernaBot::advance(){
 
 void SernaBot:: recoil(){
 
-	cout << "retrocediendo wiring pi" << endl;
+	//cout << "retrocediendo wiring pi" << endl;
 	digitalWrite(15, LOW);
 	digitalWrite(16, HIGH);
 	digitalWrite(1, LOW);
@@ -185,7 +186,7 @@ void SernaBot:: recoil(){
 
 void SernaBot::rotateR(){
 	
-		cout << "rotateR wiring pi" << endl;
+	//cout << "rotateR wiring pi" << endl;
 
 	digitalWrite(15, LOW);
 	digitalWrite(16, HIGH);
@@ -199,7 +200,8 @@ void SernaBot::rotateL(){
 	digitalWrite(16, LOW);
 	digitalWrite(1, LOW);
 	digitalWrite(4, HIGH);
-	cout << "rotateL wiring pi" << endl;
+	
+	//cout << "rotateL wiring pi" << endl;
 }
 
 void SernaBot::stop(){
@@ -207,5 +209,6 @@ void SernaBot::stop(){
 	digitalWrite(16, LOW);
 	digitalWrite(1, LOW);
 	digitalWrite(4, LOW);
-		cout << "stop wiring pi" << endl;
+		
+	//cout << "stop wiring pi" << endl;
 }
