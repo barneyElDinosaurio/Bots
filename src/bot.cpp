@@ -14,7 +14,7 @@
 //class SernaBot;
 void Bot::update(){
 	
-
+	cout << "update del BOT" << endl;
 	// ****** PARSE OSC MESSAGES ******//
 	while (oscReciever.hasWaitingMessages()) {
 		ofxOscMessage m;
