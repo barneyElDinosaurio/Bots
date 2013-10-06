@@ -143,25 +143,29 @@ void SernaBot::calibrate(){
 		  cout << "**** 1 " << endl;
 	stop(); // Parar el man
 
-	necesidadCal = 0; //salir de modo calibracion 
+	//salir de modo calibracion 
 	timerCal.stop();
 	if( lastPos.size() > 0){
 		posicionFinal = lastPos.back(); // Tambien podría sacarla con papa->getPos
-
-	}
-	else{
-
-		cout << "en lastpos no hay nada, gonorrea" << endl;
-	}
-	
-	ofVec2f deltaPos = posicionFinal - posicionInicial;
+		ofVec2f deltaPos = posicionFinal - posicionInicial;
 	float elAngulo = deltaPos.angle( ofVec2f(1,0) ); // Angulo con respecto al eje x.
 	papa->setAngle( elAngulo );
 	cout << "Datos calibracion delta pos " << deltaPos << endl;
-	cout << "**** 2 " << endl;
-	cout << "CALIBRACION TERMINADA ------------  POSINIT: "<< posicionInicial << " POSFINAL: " << posicionFinal << "  ANGULO: " << elAngulo << endl;
-	
+	cout << "CALIBRACION TERMINADA ------------  POSINIT: "<< posicionInicial << " POSFINAL: " << posicionFinal << "  ANGULO: " << elAngulo << endl;	
 	cout << "SALIENDO GNRS" << endl;
+	
+	// Poner en 0 la necesidad de calibración
+	necesidadCal = 0; 
+
+	}
+	else{
+		cout << " *********** IMPOSIBLE CALIBRAR *********** REINICIANDO CALIBRACION"
+		cout << "[NO HAY REGISTRO DE UNA POSICIÓN ANTERIOR]" << endl;
+		necesidadCal = 0;
+		firstTimeCal = true;
+	}
+	
+	
 	//	exit();	
 }
 
