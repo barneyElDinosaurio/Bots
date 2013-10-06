@@ -25,6 +25,8 @@ void Dormilonador::setup(){
 	brazo.setServocontroller(&servocontroller);
 	brazo.setSize(12.5, 16, 8);
 	brazo.setOffset( ofVec3f( 0, 0, 6) );
+
+	cout << "EN EL SETUP DEL DORM" << endl;
 	
 }
 void Dormilonador::meterEnVaso(){
