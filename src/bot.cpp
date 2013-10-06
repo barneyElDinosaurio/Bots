@@ -19,7 +19,7 @@ void Bot::update(){
 	while (oscReciever.hasWaitingMessages()) {
 		ofxOscMessage m;
 		oscReciever.getNextMessage( &m );
-		//cout << " In OSC reciever !!!" << endl;
+		cout << " In OSC reciever !!!" << endl;
 		
 		// POSICION
 		

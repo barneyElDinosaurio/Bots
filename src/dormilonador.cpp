@@ -18,7 +18,7 @@ void Dormilonador::setup(){
 	//((Bot* )this )->setup();
 	botType = "dormilonador";
 	
-	((Bot*)this)->setListeningPort(9000);
+	((Bot*)this)->setListeningPort(9001);
 	servocontroller.begin(9600);
 	
 	// LEG // MEDIR CORRECTAMENTE !!!
