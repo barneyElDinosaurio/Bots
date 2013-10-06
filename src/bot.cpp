@@ -121,6 +121,7 @@ void Bot::update(){
 			
 			if( botType == "dormilonador"){
 				((Dormilonador *)this)->servocontroller.servoMove(servoNum, pulse);
+				cout <<  "RECIBI ORDEN DE MOVER SERVO"<< endl;
 			}
 		}
 		
