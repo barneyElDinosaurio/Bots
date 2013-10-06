@@ -68,7 +68,7 @@ void SernaBot::update(){
 	
 	modo = modos.at(maxIndex);
 	
-	//	cout << "Estoy en modo --- > " << modo << endl;
+	cout << "Estoy en modo --- > " << modo << endl;
 	
 	if( modo == "relajado"){
 		//cout << "estoy relajado" << endl;
