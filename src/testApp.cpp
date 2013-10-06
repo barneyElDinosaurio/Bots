@@ -89,7 +89,7 @@ void testApp::update(){
 
 #ifdef DORMILONADOR
 	dorm.update();
-	cout << "En el update del DORM" << endl;
+	//cout << "En el update del DORM" << endl;
 #endif
 	
 	
