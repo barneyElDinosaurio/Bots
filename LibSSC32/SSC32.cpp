@@ -428,7 +428,7 @@ int SSC32::queryPulseWidth(int channel)
 
 	stringstream ss;
 	ss << "QP " << int2str(channel) << "\n\r";
-	cout<< "Enviando datos al servo controlador: " 	<< ss;
+	cout<< "Enviando datos al servo controlador: " 	<< ss.str();
 	const string s = ss.str();
 	serialPuts( serialNumber, (char*) s.c_str() );
 
