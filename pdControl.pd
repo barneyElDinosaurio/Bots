@@ -1,4 +1,4 @@
-#N canvas 174 160 646 591 10;
+#N canvas 174 160 705 611 10;
 #X obj 177 74 sendOSC;
 #X msg 329 196 send /advance;
 #X msg 91 16 disconnect;
@@ -26,7 +26,7 @@
 #X floatatom 8 107 5 0 0 0 - - -;
 #X floatatom 35 124 5 0 0 0 - - -;
 #X obj 335 108 spigot;
-#X obj 368 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 368 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 103 422 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
@@ -56,6 +56,12 @@
 #X obj 329 380 s toSend;
 #X obj 17 258 s toSend;
 #X text 392 89 activar teclado;
+#X text 451 382 PREGUNTAR POR SERV0;
+#X obj 444 416 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X msg 444 444 send /QP \$1;
+#X obj 444 471 s toSend;
+#X obj 444 500 print preguntador;
 #X connect 1 0 45 0;
 #X connect 2 0 0 0;
 #X connect 3 0 45 0;
@@ -97,3 +103,6 @@
 #X connect 37 0 36 0;
 #X connect 38 0 0 0;
 #X connect 43 0 0 0;
+#X connect 49 0 50 0;
+#X connect 50 0 51 0;
+#X connect 50 0 52 0;

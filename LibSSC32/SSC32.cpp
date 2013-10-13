@@ -428,6 +428,9 @@ int SSC32::queryPulseWidth(int channel)
 
 	stringstream ss;
 	ss << "QP " << int2str(channel) << "\n\r";
+	const string s = ss.str();
+	serialPuts( serialNumber, (char*) s.c_str() );
+
 
 cout << "antes del delay" << endl;
 	delay(50);
