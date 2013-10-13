@@ -428,6 +428,7 @@ int SSC32::queryPulseWidth(int channel)
 
 	stringstream ss;
 	ss << "QP " << int2str(channel) << "\n\r";
+	cout<< "Enviando datos al servo controlador: " 	<< ss;
 	const string s = ss.str();
 	serialPuts( serialNumber, (char*) s.c_str() );
 
@@ -436,6 +437,7 @@ cout << "antes del delay" << endl;
 	delay(100);
 
 	cout << "despues del delay" << endl;
+	cout << "SERIAL dATA av.: " << serialDataAvail(serialNumber) << endl;
 
 	if( serialDataAvail(serialNumber) > 0){
 		char c = serialGetchar( serialNumber );
