@@ -122,7 +122,7 @@ class SSC32
 	void mandarUnDato();
 	std::string int2str(int number);
 	
-	int serialNumber;
+	int serialNumber; // CAMBIARlo a otra parte... debe ser de cada bot.
 		
 
 };

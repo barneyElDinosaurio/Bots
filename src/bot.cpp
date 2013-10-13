@@ -115,13 +115,14 @@ void Bot::update(){
 					cout << "SernaBot: OJO, no tengo puerto serial..." << endl;
 
 				} else if( this->botType == "hexapod"){
-					
-					serialPuts(serialNumber, (char*) s.c_str());
+					Hexapod * h = (Hexapod*) this;
+					serialPuts( h->servocontroller.serialNumber , (char*) s.c_str());
 				//	((Hexapod*) this)->servocontroller.queryPulseWidth( channel );
 
 				}else if( this->botType == "dormilonador" ){
 					//((Dormilonador*) this)->servocontroller.queryPulseWidth( channel );
-					serialPuts(serialNumber, (char*) s.c_str());
+					Dormilonador * d = (Dormilonador*) this;
+					serialPuts( d->servocontroller.serialNumber , (char*) s.c_str());
 				}
 
 		}

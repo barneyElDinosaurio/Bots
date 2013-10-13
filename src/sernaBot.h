@@ -57,6 +57,8 @@ public:
 	
 	ofVec2f bebedero; // En la clase general??? Es decir, en BOt?
 	
+	//int serialNumber;
+
 	
 //	float 
 
