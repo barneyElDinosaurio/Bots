@@ -104,10 +104,28 @@ void Bot::update(){
 				}
 
 		}
+		else if( m.getAddress() == "/Q"){
+
+			int channel = m.getArgAsInt32(0);
+			cout << "EN Q " << endl;
+				if( this->botType == "sernaBot"){
+					cout << "Me pide servos, pero no tengo servos" << endl;
+
+				} else if( this->botType == "hexapod"){
+
+					bool isMoving = ((Hexapod*) this)->servocontroller.isMoving( channel );
+					cout << "servo " << channel << "isMoving = " << isMoving << endl; 
+
+				}else if( this->botType == "dormilonador" ){
+					bool isMoving = ((Dormilonador*) this)->servocontroller.isMoving( channel );
+					cout << "servo " << channel << "isMoving = " << isMoving << endl;
+
+				}
 		else if(m.getAddress() == "/arbitrarySerial"){
 				
 				const string s = m.getArgAsString(0);
 				//const string s = ss.str();
+				cout << "tratando de enviar ___ " << s << "____ por serial" << endl;
 	
 
 

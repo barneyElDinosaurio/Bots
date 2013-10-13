@@ -506,6 +506,11 @@ const char* SSC32::appendChannelPos( int channel , int position){ // Append stuf
 bool SSC32::pulseOffset(int channel, int offset)
 {
 	
+	/*
+	----------- 
+	NO HEMOS PROBADO ESTA FUNCIÓN !!!! 
+	-----------
+	*/
 	if (channel < SSC32_MIN_CH || channel > SSC32_MAX_CH)
 	{
 		//Channel not valid
