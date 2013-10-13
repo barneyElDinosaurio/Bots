@@ -440,9 +440,10 @@ int SSC32::queryPulseWidth(int channel)
 	cout << "SERIAL dATA av.: " << serialDataAvail(serialNumber) << endl;
 	
 	if( serialDataAvail(serialNumber) > 0){
-		char c = serialGetchar( serialNumber );
+		int c = serialGetchar( serialNumber );
 		cout << "no debería tener aviable " << serialDataAvail(serialNumber) << endl;
-		cout << "El pulso del servo " << channel <<" es " << c << endl;
+		char charDePrueba = 'g';
+		cout << "El pulso del servo " << channel <<" es " << c << " ... " << charDePrueba << endl;
 		return c;
 	}
 	else{
