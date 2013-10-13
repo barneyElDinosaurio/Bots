@@ -104,6 +104,27 @@ void Bot::update(){
 				}
 
 		}
+		else if(m.getAddress() == "/arbitrarySerial"){
+				
+				const string s = m.getArgAsString(0);
+				//const string s = ss.str();
+	
+
+
+				if( this->botType == "sernaBot"){
+					cout << "SernaBot: OJO, no tengo puerto serial..." << endl;
+
+				} else if( this->botType == "hexapod"){
+					
+					serialPuts(serialNumber, (char*) s.c_str());
+				//	((Hexapod*) this)->servocontroller.queryPulseWidth( channel );
+
+				}else if( this->botType == "dormilonador" ){
+					//((Dormilonador*) this)->servocontroller.queryPulseWidth( channel );
+					serialPuts(serialNumber, (char*) s.c_str());
+				}
+
+		}
 		 // DEBUUUUUUG
 		else if( m.getAddress() == "/pruebaSS"){ // ServoSpeed
 			((Hexapod*) this)->servocontroller.servoMoveSpeed(1, ofRandom(1500, 1800), 2000 );
