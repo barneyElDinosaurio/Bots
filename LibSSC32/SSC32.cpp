@@ -430,7 +430,7 @@ int SSC32::queryPulseWidth(int channel)
 	ss << "QP " << int2str(channel) << "\n\r";
 
 cout << "antes del delay" << endl;
-	delay(30);
+	delay(50);
 
 	cout << "despues del delay" << endl;
 

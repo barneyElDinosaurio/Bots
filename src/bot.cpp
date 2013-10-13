@@ -87,6 +87,23 @@ void Bot::update(){
 			}
 			
 		}
+		else if( m.getAddress() == "/QP"){
+
+			int channel = m.getArgAsInt32(0);
+			cout << "EN QP " << endl;
+				if( this->botType == "sernaBot"){
+					cout << "Me pide servos, pero no tengo servos" << endl;
+
+				} else if( this->botType == "hexapod"){
+
+					((Hexapod*) this)->servocontroller.queryPulseWidth( channel );
+
+				}else if( this->botType == "dormilonador" ){
+					((Dormilonador*) this)->servocontroller.queryPulseWidth( channel );
+
+				}
+
+		}
 		 // DEBUUUUUUG
 		else if( m.getAddress() == "/pruebaSS"){ // ServoSpeed
 			((Hexapod*) this)->servocontroller.servoMoveSpeed(1, ofRandom(1500, 1800), 2000 );
