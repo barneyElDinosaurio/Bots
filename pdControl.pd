@@ -1,4 +1,4 @@
-#N canvas -27 129 1237 630 10;
+#N canvas 42 122 1237 630 10;
 #X obj 177 74 sendOSC;
 #X msg 329 196 send /advance;
 #X msg 91 16 disconnect;
