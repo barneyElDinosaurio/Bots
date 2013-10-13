@@ -439,7 +439,7 @@ cout << "antes del delay" << endl;
 	cout << "despues del delay" << endl;
 	cout << "SERIAL dATA av.: " << serialDataAvail(serialNumber) << endl;
 
-	if( serialDataAvail(serialNumber) > 0){
+	if( serialDataAvail(serialNumber) >= 0){
 		char c = serialGetchar( serialNumber );
 		cout << "El pulso del servo " << channel <<" es " << c << endl;
 		return c;
