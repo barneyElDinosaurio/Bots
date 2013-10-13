@@ -218,20 +218,11 @@ bool SSC32::servoMove(int channel, int position)
 	Serial.print(" ");
 	*/
 		
-	/*// **** RASPI *****
-	string mes = "#";
-	string channelString = int2str(channel);
-	mes.append(channelString);
-	mes.append(" P");
+	// **** RASPI *****
 	
-	string positionString = int2str(position);
-	mes.append(positionString);
-	mes.append(" ");
-	cout << "Trying to send message " <<  mes << endl;
-	*/
 	
 	stringstream ss;
-	ss << "#" << int2str(channel) << " P" << int2str(position);
+	ss << "#" << int2str(channel) << " P" << int2str(position) << " ";
 	const string s = ss.str(); // Careful with this, see  See http://stackoverflow.com/questions/1374468/c-stringstream-string-and-char-conversion-confusion
 	//cout << "SS___ " << ss;  
 	
@@ -419,6 +410,53 @@ bool SSC32::servoMoveTime(int channel, int position, int ttcm)
 	
 	return true;
 	
+}
+int SSC32::queryPulseWidth(int channel)
+{
+
+	if (channel < SSC32_MIN_CH || channel > SSC32_MAX_CH)
+	{
+		//Channel not valid
+		return -1;
+	}
+
+	if (_commandType != SSC32_CMDGRP_TYPE_NONE)
+	{
+		//This can only be executed from outside a group of commands. That is, as a single command.
+		return -1;
+	}
+
+	stringstream ss;
+	ss << "QP " << int2str(channel) << "\n\r";
+
+cout << "antes del delay" << endl;
+	delay(30);
+
+	cout << "despues del delay" << endl;
+
+	if( serialDataAvail(serialNumber) > 0){
+		char c = serialGetchar( serialNumber );
+		cout << "El pulso del servo " << channel <<" es " << c << endl;
+		return c;
+	}
+	else{
+		return -1;
+	}
+
+	/*char c;
+	Serial.print("QP");
+	Serial.print(channel);
+	Serial.println();
+
+	delay(50);
+	if (Serial.available())
+	{	
+		c = Serial.read();
+		return int(c);
+	}else{
+		return -1;
+	}*/
+
 }
 
 
