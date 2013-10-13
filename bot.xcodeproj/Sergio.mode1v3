@@ -202,6 +202,46 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
+				<string>49BCF54B180B4CDD003EB18A</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>SSC32.cpp</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>49BCF54C180B4CDD003EB18A</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>SSC32.cpp</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>49BCF56D180B51A5003EB18A</string>
+						<key>history</key>
+						<array>
+							<string>49BCF534180B49A9003EB18A</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {699, 468}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>122 75 699 509 0 0 1440 878 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
 				<string>49C9A92017F8374C000A225F</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>bot.cpp</string>
@@ -216,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>49BCF517180B4125003EB18A</string>
+						<string>49BCF56E180B51A5003EB18A</string>
 						<key>history</key>
 						<array>
 							<string>49BCF512180B40A7003EB18A</string>
@@ -256,7 +296,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>49BCF518180B4125003EB18A</string>
+						<string>49BCF56F180B51A5003EB18A</string>
 						<key>history</key>
 						<array>
 							<string>49BCF4F4180B2E35003EB18A</string>
@@ -296,7 +336,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>49BCF519180B4125003EB18A</string>
+						<string>49BCF570180B51A5003EB18A</string>
 						<key>history</key>
 						<array>
 							<string>497D4D8F1801F026006B8079</string>
@@ -336,7 +376,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>49BCF51A180B4125003EB18A</string>
+						<string>49BCF571180B51A5003EB18A</string>
 						<key>history</key>
 						<array>
 							<string>497D4D911801F026006B8079</string>
@@ -376,7 +416,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>49BCF51B180B4125003EB18A</string>
+						<string>49BCF572180B51A5003EB18A</string>
 						<key>history</key>
 						<array>
 							<string>497D4D921801F026006B8079</string>
@@ -416,7 +456,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>49BCF51C180B4125003EB18A</string>
+						<string>49BCF573180B51A5003EB18A</string>
 						<key>history</key>
 						<array>
 							<string>49E501A217EC385100CED24D</string>
@@ -568,7 +608,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>49BCF515180B4125003EB18A</string>
+										<string>49BCF56B180B51A5003EB18A</string>
 										<key>history</key>
 										<array>
 											<string>49B2333C178E62D900C2AEA4</string>
@@ -635,7 +675,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>49BCF516180B4125003EB18A</string>
+										<string>49BCF56C180B51A5003EB18A</string>
 										<key>history</key>
 										<array>
 											<string>49B2333C178E62D900C2AEA4</string>
@@ -875,6 +915,8 @@
 		<string>49C9A87C17F7F0DA000A225F</string>
 		<string>/Users/Sergio/Documents/OF/of_v0.7.4_osx_release/apps/Symbiosis/bot/bot.xcodeproj</string>
 		<string>49C9A92017F8374C000A225F</string>
+		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>49BCF54B180B4CDD003EB18A</string>
 		<string>4903F233178C4E6000CEEDED</string>
 	</array>
 	<key>WindowString</key>
@@ -901,7 +943,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>bot.cpp</string>
+								<string>SSC32.cpp</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -1112,14 +1154,12 @@
 							<key>Dock</key>
 							<array>
 								<dict>
-									<key>BecomeActive</key>
-									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>sernaBot.cpp</string>
+										<string>SSC32.cpp</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -1140,6 +1180,8 @@
 							<string>462pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -1175,8 +1217,8 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D57069F1CE1000CFCEE</string>
-				<string>4936964A17F8C07C00A6ECF2</string>
-				<string>4936964B17F8C07C00A6ECF2</string>
+				<string>49BCF532180B4986003EB18A</string>
+				<string>49BCF533180B4986003EB18A</string>
 				<string>1CDD528C0622207200134675</string>
 				<string>1CD0528E0623707200166675</string>
 			</array>

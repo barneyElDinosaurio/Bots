@@ -130,7 +130,7 @@ void Bot::update(){
 				//const string s = ss.str();
 				cout << "tratando de enviar ___ " << s << "____ por serial" << endl;
 	
-
+				
 
 				if( this->botType == "sernaBot"){
 					cout << "SernaBot: OJO, no tengo puerto serial..." << endl;
