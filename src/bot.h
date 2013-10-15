@@ -58,6 +58,7 @@ public:
 	// Position and orientation of the bot
 	ofVec2f pos;
 	ofVec2f orientation;
+	
 	float angleFromVision; // Blob angle
 	float angle;
 	

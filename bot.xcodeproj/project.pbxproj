@@ -24,6 +24,7 @@
 		4909E01F17DA305A00406CD7 /* sernaBot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4909E01E17DA305A00406CD7 /* sernaBot.cpp */; };
 		4909E04217DA37BA00406CD7 /* hexapod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4909E04117DA37BA00406CD7 /* hexapod.cpp */; };
 		4909E04617DA3BD900406CD7 /* servoMover.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4909E04517DA3BD900406CD7 /* servoMover.cpp */; };
+		4951543E180BE07A00B6EB12 /* mover.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4951543D180BE07A00B6EB12 /* mover.cpp */; };
 		49B62BFF17E2B8AF003B59D2 /* drcSerial.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BAF17E2B8AF003B59D2 /* drcSerial.c */; };
 		49B62C0017E2B8AF003B59D2 /* drcSerial.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BB117E2B8AF003B59D2 /* drcSerial.o */; };
 		49B62C0117E2B8AF003B59D2 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BB317E2B8AF003B59D2 /* Makefile */; };
@@ -77,7 +78,6 @@
 		49B62C3117E2B8AF003B59D2 /* wiringShift.c in Sources */ = {isa = PBXBuildFile; fileRef = 49B62BFC17E2B8AF003B59D2 /* wiringShift.c */; };
 		49B62C3217E2B8AF003B59D2 /* wiringShift.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B62BFE17E2B8AF003B59D2 /* wiringShift.o */; };
 		49B62D5517E2CD28003B59D2 /* SSC32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49B62D5317E2CD28003B59D2 /* SSC32.cpp */; };
-		49C9A83017F7E1CA000A225F /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49C9A82F17F7E1CA000A225F /* timer.cpp */; };
 		49E5007617EBD0F000CED24D /* dormilonador.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49E5007517EBD0F000CED24D /* dormilonador.cpp */; };
 		49E5014D17EC27F000CED24D /* leg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49E5014C17EC27F000CED24D /* leg.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
@@ -173,6 +173,8 @@
 		4909E04117DA37BA00406CD7 /* hexapod.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hexapod.cpp; sourceTree = "<group>"; };
 		4909E04417DA3BD900406CD7 /* servoMover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = servoMover.h; sourceTree = "<group>"; };
 		4909E04517DA3BD900406CD7 /* servoMover.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = servoMover.cpp; sourceTree = "<group>"; };
+		4951543C180BE07A00B6EB12 /* mover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mover.h; sourceTree = "<group>"; };
+		4951543D180BE07A00B6EB12 /* mover.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mover.cpp; sourceTree = "<group>"; };
 		49B62BAE17E2B8AF003B59D2 /* COPYING.LESSER */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.LESSER; sourceTree = "<group>"; };
 		49B62BAF17E2B8AF003B59D2 /* drcSerial.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = drcSerial.c; sourceTree = "<group>"; };
 		49B62BB017E2B8AF003B59D2 /* drcSerial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = drcSerial.h; sourceTree = "<group>"; };
@@ -257,8 +259,6 @@
 		49B62D5217E2CD28003B59D2 /* keywords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = keywords.txt; sourceTree = "<group>"; };
 		49B62D5317E2CD28003B59D2 /* SSC32.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SSC32.cpp; sourceTree = "<group>"; };
 		49B62D5417E2CD28003B59D2 /* SSC32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSC32.h; sourceTree = "<group>"; };
-		49C9A82E17F7E1CA000A225F /* timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timer.h; sourceTree = "<group>"; };
-		49C9A82F17F7E1CA000A225F /* timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = timer.cpp; sourceTree = "<group>"; };
 		49E5007417EBD0F000CED24D /* dormilonador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dormilonador.h; sourceTree = "<group>"; };
 		49E5007517EBD0F000CED24D /* dormilonador.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dormilonador.cpp; sourceTree = "<group>"; };
 		49E5014B17EC27F000CED24D /* leg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leg.h; sourceTree = "<group>"; };
@@ -616,6 +616,8 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				4951543C180BE07A00B6EB12 /* mover.h */,
+				4951543D180BE07A00B6EB12 /* mover.cpp */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				4909E04017DA37BA00406CD7 /* hexapod.h */,
 				4909E04117DA37BA00406CD7 /* hexapod.cpp */,
@@ -631,8 +633,6 @@
 				49E5007517EBD0F000CED24D /* dormilonador.cpp */,
 				49E5014B17EC27F000CED24D /* leg.h */,
 				49E5014C17EC27F000CED24D /* leg.cpp */,
-				49C9A82E17F7E1CA000A225F /* timer.h */,
-				49C9A82F17F7E1CA000A225F /* timer.cpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -779,7 +779,7 @@
 				49B62D5517E2CD28003B59D2 /* SSC32.cpp in Sources */,
 				49E5007617EBD0F000CED24D /* dormilonador.cpp in Sources */,
 				49E5014D17EC27F000CED24D /* leg.cpp in Sources */,
-				49C9A83017F7E1CA000A225F /* timer.cpp in Sources */,
+				4951543E180BE07A00B6EB12 /* mover.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

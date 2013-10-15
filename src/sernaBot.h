@@ -18,6 +18,12 @@
 
 #include "timer.h"
 
+#ifndef MOVER_H
+#define MOVER_H
+#include "mover.h"
+
+#endif
+
 //class Bot;
 
 class SernaBot : public Bot{
@@ -59,7 +65,7 @@ public:
 	
 	//int serialNumber;
 
-	
+	Mover mover;
 //	float 
 
 };
