@@ -79,12 +79,12 @@ void Leg::calcularAngulos(float x, float y, float z, float w){
 	        }
         }
 	}
-/*	falta crear el saveAng	**************************************************/
-	saveAng();
+/*	falta crear el savePulse	**************************************************/
+	savePulse();
 }
 
 //no se   que suceda con los Strings!!!**********************************
-void Leg::saveAng() {
+void Leg::savePulse() {
 
 
 	//ASI NO SE LLENA UN STRING EN C++
@@ -97,13 +97,13 @@ void Leg::saveAng() {
 
 	if ((angGiro != angGiro) || (angBrazo != angBrazo) || (angAntebrazo != angAntebrazo) || (angGiro != angGiro))
 	{
-		cout << "triplehpta" << endl;
+		cout << "no alcanza llegar al destino " << endl;
 	}
 	else {
-		angulos[0] = angGiro;
-	  	angulos[1] = angBrazo;
-		angulos[2] = angAntebrazo;
-	  	angulos[3] = angMun;
+		pulsos[0] = rad2Pulse ( angGiro 	);
+	  	pulsos[1] = rad2Pulse ( angBrazo 	);
+		pulsos[2] = rad2Pulse ( angAntebrazo);
+	  	pulsos[3] = rad2Pulse ( angMun 		);
 	}
 }
 
@@ -136,12 +136,7 @@ void Leg::moveTo(float x, float y, float z, float w){
 	//Brazo
 	
 	//servocontroller->servoMove( , rad2Pulse() );
-	servocontroller->servoMove( 0, rad2Pulse( angGiro ) );
-	servocontroller->servoMove( 1, rad2Pulse( angBrazo ) );
-	servocontroller->servoMove( 2, rad2Pulse( angAntebrazo) );
-	servocontroller->servoMove( 3, rad2Pulse( angMun ) );
-
-
+	
 	/*********** escrito por sergio*********//*
 		
 		cout << " 1 " << endl;
@@ -157,4 +152,19 @@ void Leg::moveTo(float x, float y, float z, float w){
 		float pulseWidth3 = angMun/PI*1000 + 1500;
 		servocontroller->servoMove(3, 1500);
 	*/
+
+	servocontroller->servoMove( 0, pulsos[0] );
+	servocontroller->servoMove( 1, pulsos[1] );
+	servocontroller->servoMove( 2, pulsos[2] );
+	servocontroller->servoMove( 3, pulsos[3] );
+}
+
+void Leg::moveSpeedTo(float x, float y, float z, float w, int speed){
+	calcularAngulos(x, y, z, w);
+
+	servocontroller->servoMoveSpeed( 0, pulsos[0], speed );
+	servocontroller->servoMoveSpeed( 1, pulsos[1], speed );
+	servocontroller->servoMoveSpeed( 2, pulsos[2], speed );
+	servocontroller->servoMoveSpeed( 3, pulsos[3], speed );
+
 }

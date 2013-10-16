@@ -15,15 +15,15 @@ public:
         inv = false;
         ruido = false;
         //esto creo q va a llorar
-        angulos[4];
+        pulsos[4];
 	}
 
 	void setServocontroller( SSC32 * _servoControllerFromParent ){
 		servocontroller = _servoControllerFromParent;
 	}
 
-	void setSize(/*float _lAltura, */ float _lBrazo, float _lAntebrazo, float _lMun){
-//		lAltura = _lAltura;
+	void setSize(float _lAltura, float _lBrazo, float _lAntebrazo, float _lMun){
+		lAltura = _lAltura;
 		lBrazo = _lBrazo;
 		lAntebrazo = _lAntebrazo;
 		lMun = _lMun;
@@ -36,22 +36,24 @@ public:
 
 
 void calcularAngulos(float x, float y, float z, float w);
-void moveTo(float x, float y, float z, float w);
+void moveTo(float x, float y, float z, float w); // un toque modificada....
 
 //NUEVOS METODOS
+void moveSpeedTo(float x, float y, float z, float w, int speed);
+
 void setInv(bool invertir){
     inv = invertir;
 }
 void setInv(){
     inv = !inv;
 }
-void saveAng();
+void savePulse();
 
 float rad2Pulse(float x);
 
 // funcion de float!! si retorna el flotante??
-float* printAng() {
-    return(angulos);
+float* printPulse() {
+    return(pulsos);
   }
 
 // zero offset
@@ -78,7 +80,7 @@ float* printAng() {
 	bool ruido ;
 
 	//un pequeño array q quizas joda bastante
-	float angulos[];
+	float pulsos[];
 
 	ofVec3f posFin;
 
