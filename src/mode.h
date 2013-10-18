@@ -5,7 +5,7 @@ class Mode{
 	string mode;
 
 	Mode(){}
-	Mode(string _mode, int _sensorValue){
+	Mode(string _mode, float _sensorValue){
 		this->mode = _mode;
 		this->sensorValue = _sensorValue;
 	}
