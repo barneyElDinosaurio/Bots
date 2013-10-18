@@ -40,9 +40,9 @@ void SernaBot::setup(){
 	necesidadCal = 1; // Primero necesita calibrarse
 	
 	//modo = "calibracion";
-	modos.push_back("relajado");
-	modos.push_back("sediento");
-	modos.push_back("calibracion");
+//	modos.push_back("relajado");
+//	modos.push_back("sediento");
+//	modos.push_back("calibracion");
 	
 	
 	// BEbedero y otras suciedades
@@ -66,7 +66,7 @@ void SernaBot::update(){
 	
 	float  maxIndex = distance( necesidades, max_element(necesidades, necesidades + N));
 	
-	modo = modos.at(maxIndex);
+	//modo = modos.at(maxIndex);
 
 		
 	if( modo == "relajado"){

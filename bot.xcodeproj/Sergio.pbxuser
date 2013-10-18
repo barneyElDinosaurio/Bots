@@ -3,8 +3,8 @@
 	4903F238178C4E8600CEEDED /* bot.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {834, 1560}}";
-			sepNavSelRange = "{2043, 0}";
-			sepNavVisRange = "{1244, 810}";
+			sepNavSelRange = "{2046, 0}";
+			sepNavVisRange = "{1171, 835}";
 		};
 	};
 	4903F239178C4E8600CEEDED /* bot.cpp */ = {
@@ -12,6 +12,13 @@
 			sepNavIntBoundsRect = "{{0, 0}, {706, 4524}}";
 			sepNavSelRange = "{8859, 0}";
 			sepNavVisRange = "{0, 577}";
+		};
+	};
+	4909E01E17DA305A00406CD7 /* sernaBot.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {894, 3068}}";
+			sepNavSelRange = "{4925, 0}";
+			sepNavVisRange = "{616, 574}";
 		};
 	};
 	496AFE9C1810E35B000E5F2F /* bot */ = {
@@ -187,6 +194,150 @@
 		vrLen = 810;
 		vrLoc = 1244;
 	};
+	496AFF2C18110AD5000E5F2F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4903F239178C4E8600CEEDED /* bot.cpp */;
+		name = "bot.cpp: 342";
+		rLen = 0;
+		rLoc = 8859;
+		rType = 0;
+		vrLen = 351;
+		vrLoc = 340;
+	};
+	496AFF2D18110AD5000E5F2F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 496AFF2E18110AD5000E5F2F /* mode.h */;
+		name = "mode.h: 9";
+		rLen = 0;
+		rLoc = 125;
+		rType = 0;
+		vrLen = 259;
+		vrLoc = 22;
+	};
+	496AFF2E18110AD5000E5F2F /* mode.h */ = {
+		isa = PBXFileReference;
+		name = mode.h;
+		path = /Users/Sergio/Documents/OF/of_v0.7.4_osx_release/apps/Symbiosis/bot/src/mode.h;
+		sourceTree = "<absolute>";
+	};
+	496AFF2F18110AD5000E5F2F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4903F238178C4E8600CEEDED /* bot.h */;
+		name = "bot.h: 120";
+		rLen = 0;
+		rLoc = 2046;
+		rType = 0;
+		vrLen = 174;
+		vrLoc = 1870;
+	};
+	496AFF3018110AD5000E5F2F /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'modos' was not declared in this scope";
+		fRef = 4909E01E17DA305A00406CD7 /* sernaBot.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 42;
+		rType = 1;
+	};
+	496AFF3118110AD5000E5F2F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4909E01E17DA305A00406CD7 /* sernaBot.cpp */;
+		name = "sernaBot.cpp: 43";
+		rLen = 0;
+		rLoc = 801;
+		rType = 0;
+		vrLen = 336;
+		vrLoc = 639;
+	};
+	496AFF3218110AD6000E5F2F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4903F239178C4E8600CEEDED /* bot.cpp */;
+		name = "bot.cpp: 342";
+		rLen = 0;
+		rLoc = 8859;
+		rType = 0;
+		vrLen = 577;
+		vrLoc = 0;
+	};
+	496AFF3318110AD6000E5F2F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4903F238178C4E8600CEEDED /* bot.h */;
+		name = "bot.h: 120";
+		rLen = 0;
+		rLoc = 2046;
+		rType = 0;
+		vrLen = 835;
+		vrLoc = 1171;
+	};
+	496AFF3618110AF1000E5F2F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4903F239178C4E8600CEEDED /* bot.cpp */;
+		name = "bot.cpp: 342";
+		rLen = 0;
+		rLoc = 8859;
+		rType = 0;
+		vrLen = 577;
+		vrLoc = 0;
+	};
+	496AFF3718110AF1000E5F2F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4903F238178C4E8600CEEDED /* bot.h */;
+		name = "bot.h: 118";
+		rLen = 0;
+		rLoc = 2037;
+		rType = 0;
+		vrLen = 332;
+		vrLoc = 1714;
+	};
+	496AFF3818110AF1000E5F2F /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "No matching function for call to 'std::vector<Mode, std::allocator<Mode> >::push_back(const char [9])'";
+		fRef = 4909E01E17DA305A00406CD7 /* sernaBot.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 42;
+		rType = 1;
+	};
+	496AFF3918110AF1000E5F2F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4909E01E17DA305A00406CD7 /* sernaBot.cpp */;
+		name = "sernaBot.cpp: 43";
+		rLen = 0;
+		rLoc = 801;
+		rType = 0;
+		vrLen = 532;
+		vrLoc = 533;
+	};
+	496AFF3A18110AF1000E5F2F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4903F238178C4E8600CEEDED /* bot.h */;
+		name = "bot.h: 120";
+		rLen = 0;
+		rLoc = 2046;
+		rType = 0;
+		vrLen = 835;
+		vrLoc = 1171;
+	};
+	496AFF3F18110B39000E5F2F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4909E01E17DA305A00406CD7 /* sernaBot.cpp */;
+		name = "sernaBot.cpp: 229";
+		rLen = 0;
+		rLoc = 4925;
+		rType = 0;
+		vrLen = 574;
+		vrLoc = 616;
+	};
+	496AFF4018110B39000E5F2F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4903F238178C4E8600CEEDED /* bot.h */;
+		name = "bot.h: 120";
+		rLen = 0;
+		rLoc = 2046;
+		rType = 0;
+		vrLen = 835;
+		vrLoc = 1171;
+	};
 	E4B69B4C0A3A1720003C02F2 /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 496AFE9C1810E35B000E5F2F /* bot */;
@@ -236,6 +387,20 @@
 			496AFF2318110700000E5F2F /* PBXTextBookmark */ = 496AFF2318110700000E5F2F /* PBXTextBookmark */;
 			496AFF2818110744000E5F2F /* PBXTextBookmark */ = 496AFF2818110744000E5F2F /* PBXTextBookmark */;
 			496AFF2918110744000E5F2F /* PBXTextBookmark */ = 496AFF2918110744000E5F2F /* PBXTextBookmark */;
+			496AFF2C18110AD5000E5F2F /* PBXTextBookmark */ = 496AFF2C18110AD5000E5F2F /* PBXTextBookmark */;
+			496AFF2D18110AD5000E5F2F /* PBXTextBookmark */ = 496AFF2D18110AD5000E5F2F /* PBXTextBookmark */;
+			496AFF2F18110AD5000E5F2F /* PBXTextBookmark */ = 496AFF2F18110AD5000E5F2F /* PBXTextBookmark */;
+			496AFF3018110AD5000E5F2F /* XCBuildMessageTextBookmark */ = 496AFF3018110AD5000E5F2F /* XCBuildMessageTextBookmark */;
+			496AFF3118110AD5000E5F2F /* PBXTextBookmark */ = 496AFF3118110AD5000E5F2F /* PBXTextBookmark */;
+			496AFF3218110AD6000E5F2F /* PBXTextBookmark */ = 496AFF3218110AD6000E5F2F /* PBXTextBookmark */;
+			496AFF3318110AD6000E5F2F /* PBXTextBookmark */ = 496AFF3318110AD6000E5F2F /* PBXTextBookmark */;
+			496AFF3618110AF1000E5F2F /* PBXTextBookmark */ = 496AFF3618110AF1000E5F2F /* PBXTextBookmark */;
+			496AFF3718110AF1000E5F2F /* PBXTextBookmark */ = 496AFF3718110AF1000E5F2F /* PBXTextBookmark */;
+			496AFF3818110AF1000E5F2F /* XCBuildMessageTextBookmark */ = 496AFF3818110AF1000E5F2F /* XCBuildMessageTextBookmark */;
+			496AFF3918110AF1000E5F2F /* PBXTextBookmark */ = 496AFF3918110AF1000E5F2F /* PBXTextBookmark */;
+			496AFF3A18110AF1000E5F2F /* PBXTextBookmark */ = 496AFF3A18110AF1000E5F2F /* PBXTextBookmark */;
+			496AFF3F18110B39000E5F2F /* PBXTextBookmark */ = 496AFF3F18110B39000E5F2F /* PBXTextBookmark */;
+			496AFF4018110B39000E5F2F /* PBXTextBookmark */ = 496AFF4018110B39000E5F2F /* PBXTextBookmark */;
 		};
 		sourceControlManager = 496AFEC91810E35F000E5F2F /* Source Control */;
 		userBuildSettings = {

@@ -115,6 +115,6 @@ public:
 	//  ******** MODOS *********
 
 	string modo;
-	vector <Mode> modosPosibles;
+	vector <Mode> modos;
 
 };
