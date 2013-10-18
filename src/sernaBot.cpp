@@ -64,15 +64,15 @@ void SernaBot::update(){
 	
 	// Encontrar el máximo de las necesidades
 	float necesidades [modos.size() - 1];//= new float[  ]; 
-	cout << "TAMANO de necidades  " <<  necesidades.size() << endl;
 	for( int i = 0 ; i < modos.size() ; i++){
 		necesidades[i] = modos.at(i).sensorValue;
-		cout << "necesidad "  << necesidad.mode << "   ... " << necesidad.sensorValue << endl; 
+		cout << "necesidad "  << modos.at(i).mode << "   ... " << modos.at(i).sensorValue << endl; 
 	}
 	
 	
 	// Brujería para encontrar el máximo de las necesidades
 	const int N = sizeof(necesidades) / sizeof(float);
+	cout << "TAMAÑO " << N << endl;
 	
 	float  maxIndex = distance( necesidades, max_element(necesidades, necesidades + N));
 	
