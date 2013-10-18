@@ -64,9 +64,11 @@ void SernaBot::update(){
 	
 	// Encontrar el máximo de las necesidades
 	float necesidades [modos.size() - 1];//= new float[  ]; 
+	cout << "TAMANO de necidades" << endl;
 	for( int i = 0 ; i < modos.size() ; i++){
 		necesidades[i] = modos.at(i).sensorValue;
 	}
+	cout <<"NEC  "  << necesidades << endl;
 	
 	
 	// Brujería para encontrar el máximo de las necesidades
