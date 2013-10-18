@@ -16,8 +16,8 @@
 	};
 	4909E01E17DA305A00406CD7 /* sernaBot.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {706, 3354}}";
-			sepNavSelRange = "{5269, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {706, 3458}}";
+			sepNavSelRange = "{5424, 0}";
 			sepNavVisRange = "{0, 475}";
 		};
 	};
@@ -544,6 +544,46 @@
 		vrLen = 818;
 		vrLoc = 1102;
 	};
+	496AFF6D18111F66000E5F2F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4909E01E17DA305A00406CD7 /* sernaBot.cpp */;
+		name = "sernaBot.cpp: 242";
+		rLen = 0;
+		rLoc = 5350;
+		rType = 0;
+		vrLen = 475;
+		vrLoc = 0;
+	};
+	496AFF6E18111F66000E5F2F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4903F238178C4E8600CEEDED /* bot.h */;
+		name = "bot.h: 123";
+		rLen = 0;
+		rLoc = 2082;
+		rType = 0;
+		vrLen = 818;
+		vrLoc = 1102;
+	};
+	496AFF6F1811205E000E5F2F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4909E01E17DA305A00406CD7 /* sernaBot.cpp */;
+		name = "sernaBot.cpp: 242";
+		rLen = 0;
+		rLoc = 5424;
+		rType = 0;
+		vrLen = 475;
+		vrLoc = 0;
+	};
+	496AFF701811205E000E5F2F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4903F238178C4E8600CEEDED /* bot.h */;
+		name = "bot.h: 123";
+		rLen = 0;
+		rLoc = 2082;
+		rType = 0;
+		vrLen = 818;
+		vrLoc = 1102;
+	};
 	E4B69B4C0A3A1720003C02F2 /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 496AFE9C1810E35B000E5F2F /* bot */;
@@ -627,6 +667,10 @@
 			496AFF6618111C8F000E5F2F /* PBXTextBookmark */ = 496AFF6618111C8F000E5F2F /* PBXTextBookmark */;
 			496AFF6918111CB1000E5F2F /* PBXTextBookmark */ = 496AFF6918111CB1000E5F2F /* PBXTextBookmark */;
 			496AFF6A18111CB1000E5F2F /* PBXTextBookmark */ = 496AFF6A18111CB1000E5F2F /* PBXTextBookmark */;
+			496AFF6D18111F66000E5F2F /* PBXTextBookmark */ = 496AFF6D18111F66000E5F2F /* PBXTextBookmark */;
+			496AFF6E18111F66000E5F2F /* PBXTextBookmark */ = 496AFF6E18111F66000E5F2F /* PBXTextBookmark */;
+			496AFF6F1811205E000E5F2F /* PBXTextBookmark */ = 496AFF6F1811205E000E5F2F /* PBXTextBookmark */;
+			496AFF701811205E000E5F2F /* PBXTextBookmark */ = 496AFF701811205E000E5F2F /* PBXTextBookmark */;
 		};
 		sourceControlManager = 496AFEC91810E35F000E5F2F /* Source Control */;
 		userBuildSettings = {
