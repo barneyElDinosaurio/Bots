@@ -28,7 +28,7 @@ public:
 	
 	Bot(){
 		image.setAnchorPercent(0.5, 0.5);
-		showMode = false;
+		showMode = true;
 		showBlobData = false;
 	}
 		
