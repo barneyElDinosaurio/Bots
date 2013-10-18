@@ -27,8 +27,9 @@ void Bot::update(){
 	while (oscReciever.hasWaitingMessages()) {
 		ofxOscMessage m;
 		oscReciever.getNextMessage( &m );
-		cout << " In OSC reciever !!!" << endl;
-		
+		if(ofRandom(1) > 0.9 ){
+			cout << " In OSC reciever !!!" << endl;
+		}	
 		// POSICION
 		
 		if ( m.getAddress() == "/blob/data") { // got blob message
@@ -42,7 +43,7 @@ void Bot::update(){
 			float hu2 = m.getArgAsFloat(5);
 			
 			if( showBlobData == true){
-
+				cout << showBlobData << endl;
 				cout << "Blob **position : " << blobPos << endl;
 				cout << "Blob angle : "  << angle << endl;
 				cout << "Blob area : "  << area << endl;			
@@ -83,17 +84,22 @@ void Bot::update(){
 			int val = m.getArgAsInt32(0);
 			if( val == 0){
 				showBlobData = false;
+				cout << "SBD )= " << showBlobData;
 			}else if( val == 1 ){
 				showBlobData = true;
+				cout << "SBD )= " << showBlobData;
 			}
 		}
 		else if( m.getAddress() == "/showMode"){ // Mostar o no mostrar el modo en el que estoy.
-			cout << "En el cambiador de showblob" << endl;
+			cout << "En el cambiador de showmode" << endl;
 			int val = m.getArgAsInt32(0);
 			if( val == 0){
 				showMode = false;
+				cout << "Smode )= " << showMode;
 			}else if( val == 1 ){
 				showMode = true;
+				cout << "Smode )= " << showMode;
+	
 			}
 		}
 		
