@@ -63,7 +63,7 @@ void SernaBot::update(){
 	((Bot* )this)->update(); // Aquí adentro están los recibidores de osc.
 	
 	// Encontrar el máximo de las necesidades
-	float necesidades [modos.size() - 1];//= new float[  ]; 
+	float necesidades [modos.size()];//= new float[  ]; 
 	for( int i = 0 ; i < modos.size() ; i++){
 		necesidades[i] = modos.at(i).sensorValue;
 		cout << "necesidad "  << modos.at(i).mode << "   ... " << modos.at(i).sensorValue << endl; 
