@@ -67,9 +67,8 @@ void SernaBot::update(){
 	float  maxIndex = distance( necesidades, max_element(necesidades, necesidades + N));
 	
 	modo = modos.at(maxIndex);
-	
-	cout << "Estoy en modo --- > " << modo << endl;
-	
+
+		
 	if( modo == "relajado"){
 		//cout << "estoy relajado" << endl;
 	}

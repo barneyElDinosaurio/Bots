@@ -23,6 +23,8 @@ public:
 	
 	Bot(){
 		image.setAnchorPercent(0.5, 0.5);
+		showMode = false;
+		showBlobData = false;
 	}
 		
 	void move();
@@ -102,5 +104,10 @@ public:
 	
 	// Type of bot
 	string botType;
+
+	// DEBUGGING STUFF
+	bool showBlobData;
+	bool showMode;
+
 
 };

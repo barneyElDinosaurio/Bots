@@ -16,6 +16,13 @@ void Bot::update(){
 	
 	//cout << "update del BOT" << endl; // Por qué coños, no sale esto??
 	// ****** PARSE OSC MESSAGES ******//
+
+	if( showMode == true){
+		cout << "Estoy en modo --- > " << modo << endl;
+	}
+	
+	
+
 	while (oscReciever.hasWaitingMessages()) {
 		ofxOscMessage m;
 		oscReciever.getNextMessage( &m );
@@ -32,12 +39,17 @@ void Bot::update(){
 			float area = m.getArgAsFloat(3);
 			float hu1 = m.getArgAsFloat(4);
 			float hu2 = m.getArgAsFloat(5);
-				
-			//cout << "Blob position : " << blobPos << endl;
-			//cout << "Blob angle : "  << angle << endl;
-			//cout << "Blob area : "  << area << endl;			
-			//cout << "Hu moment 1: " << hu1 << endl;
-			//cout << "Hu moment 2: " << hu2 << endl;
+			
+			if( showBlobData == true){
+
+				cout << "Blob position : " << blobPos << endl;
+				cout << "Blob angle : "  << angle << endl;
+				cout << "Blob area : "  << area << endl;			
+				cout << "Hu moment 1: " << hu1 << endl;
+				cout << "Hu moment 2: " << hu2 << endl;
+
+
+			}	
 			
 			
 			// VALORES PARA EL SERNAPODO
@@ -65,7 +77,22 @@ void Bot::update(){
 			}
 		}
 		// Other messages: eg. orders: calibrate, go home... qué se yo...
-
+		else if( m.getAddress() == "/showBlobData"){ // Mensaje para activar la pintada de blobs en cout.
+			int val = m.getArgAsInt32(0);
+			if( val == 0){
+				showBlobData = false;
+			}else if( val == 1 ){
+				showBlobData = true;
+			}
+		}
+		else if( m.getAddress() == "/showMode"){ // Mostar o no mostrar el modo en el que estoy.
+			int val = m.getArgAsInt32(0);
+			if( val == 0){
+				showMode = false;
+			}else if( val == 1 ){
+				showMode = true;
+			}
+		}
 		
 		else if( m.getAddress() == "/advance"){ // **** ADVANCE **** // ESTO ESTÁ MALO, LAS ORDENES DEBERÍAN ESTAR DIRIGIDAS.HAY QUE HACER PARSING DE OSC
 			
