@@ -102,7 +102,6 @@ void Bot::update(){
 	
 			}
 		}
-		
 		else if( m.getAddress() == "/advance"){ // **** ADVANCE **** // ESTO ESTÁ MALO, LAS ORDENES DEBERÍAN ESTAR DIRIGIDAS.HAY QUE HACER PARSING DE OSC
 			
 			

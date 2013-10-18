@@ -40,6 +40,7 @@ public:
 	void goTo( float x, float y);
 	void advanceTime(float time);
 	void calibrate();
+	void updateMovement();
 	
 	
 	float sensorHumedad; // Tenemos que cambiarles factores de escala para hacerlos comparables.
@@ -47,6 +48,10 @@ public:
 	float necesidadCal;
 	
 	Timer elTimer;
+
+	// MOVIMIENTO
+	Timer movementTimer;
+	ofVec2f destino; // ojo con la inicialización.
 	
 	// Calibracion
 	Timer timerCal;

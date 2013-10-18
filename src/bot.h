@@ -120,4 +120,11 @@ public:
 	string modo;
 	vector <Mode> modos;
 
+	// ++++++++++++++++++ 
+	// MOVIMIENTO !!!!
+	//+++++++++++++++++++++
+	float movementThreshold; // Threshold de acercamiento a un objeto
+	bool movement; // modo estático o moviéndose
+
+
 };

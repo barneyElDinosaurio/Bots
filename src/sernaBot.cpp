@@ -58,6 +58,9 @@ void SernaBot::setup(){
 	
 	// Calibracion
 	firstTimeCal = true;
+
+	// Movimiento
+	movementThreshold = 0.1;
 }
 void SernaBot::update(){
 	((Bot* )this)->update(); // Aquí adentro están los recibidores de osc.
@@ -87,6 +90,8 @@ void SernaBot::update(){
 	}
 	else if(modo == "sediento"){
 		goTo( bebedero.x, bebedero.y );
+
+
 	}
 	else if(modo == "calibracion"){
 		calibrate();
@@ -98,7 +103,20 @@ void SernaBot::update(){
 	
 	
 	
-	
+	updateMovement();
+}
+void SernaBot::updateMovement(){
+
+	if( movement == true ){
+		if( pos.distance(destino) < movementThreshold ){ // Siga avanzando
+			//a = 1;
+		}	
+		else {// stop
+
+
+		}
+	}
+
 }
 
 void SernaBot::goTo(float x, float y){
@@ -170,6 +188,9 @@ void SernaBot::calibrate(){
 	
 	// Poner en 0 la necesidad de calibración
 	necesidadCal = 0; 
+
+	// Aquí debería poner que el destino sea la posición actual.
+	// destino = posicionFinal;
 
 	}
 	else{
