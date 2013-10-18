@@ -15,7 +15,10 @@
 
 #include <algorithm>
 
-#include "mode.h" 
+#ifndef MODE_H
+#define MODE_H
+#include "mode.h"
+#endif
 
 
 class Bot{

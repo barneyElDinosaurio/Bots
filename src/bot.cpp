@@ -27,11 +27,11 @@ void Bot::update(){
 	while (oscReciever.hasWaitingMessages()) {
 		ofxOscMessage m;
 		oscReciever.getNextMessage( &m );
-		if(ofRandom(1) > 0.9 ){
+		if(ofRandom(1) > 0.9 ){ // Para no mandar todos los mensajes, que son excesivos.
 			cout << " In OSC reciever !!!" << endl;
 		}	
 		// POSICION
-		
+		// CREO que hay que forzar el framerate del dispositivo de captura para que sea más bajo
 		if ( m.getAddress() == "/blob/data") { // got blob message
 		  //cout << " In OSC parsing !!!" << endl;
 			// Get position vector and direction vector (a unit vector)

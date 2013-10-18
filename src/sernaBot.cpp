@@ -9,6 +9,11 @@
 
 #include "sernaBot.h"
 
+#ifndef MODE_H
+#define MODE_H
+#include "mode.h"
+#endif
+
 void SernaBot::setup(){
 	
 	cout << "SernaBot: inicializando..." << endl;
@@ -40,9 +45,9 @@ void SernaBot::setup(){
 	necesidadCal = 1; // Primero necesita calibrarse
 	
 	//modo = "calibracion";
-//	modos.push_back("relajado");
-//	modos.push_back("sediento");
-//	modos.push_back("calibracion");
+    modos.push_back( Mode( "relajado" , 0.5 ) );
+	modos.push_back( Mode( "sediento" , 0.6) );
+	modos.push_back( Mode( "calibracion" , 1 ) );
 	
 	
 	// BEbedero y otras suciedades
@@ -58,18 +63,24 @@ void SernaBot::update(){
 	((Bot* )this)->update(); // Aquí adentro están los recibidores de osc.
 	
 	// Encontrar el máximo de las necesidades
+	float necesidades [modos.size() - 1];//= new float[  ]; 
+	for( int i = 0 ; i < modos.size() ; i++){
+		necesidades[i] = modos.at(i).sensorValue;
+	}
 	
-	float necesidades [] = {sensorHumedad, sensorLuz, necesidadCal }; // Es importante que estén en el mismo orden en modos!!!
 	
 	// Brujería para encontrar el máximo de las necesidades
 	const int N = sizeof(necesidades) / sizeof(float);
 	
 	float  maxIndex = distance( necesidades, max_element(necesidades, necesidades + N));
 	
-	//modo = modos.at(maxIndex);
+	modo = modos.at(maxIndex).mode; // ENCUENTRO LA NECESIDAD ASOCIADA AL MÁXIMO DE LOS VALORES DE SENSOR
 
-		
-	if( modo == "relajado"){
+	
+	//------------------
+	// ESTA ES LA PARTE JUGOSA!!!
+	//-----------------	
+	if( modo == "relajado"){ // MUCHO CUIDADO CON LA ESCTRITURA!!! QUE NO SE DIFIRENCIE DE LA DE ARRIBA
 		//cout << "estoy relajado" << endl;
 	}
 	else if(modo == "sediento"){
