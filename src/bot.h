@@ -15,6 +15,8 @@
 
 #include <algorithm>
 
+#include "mode.h" 
+
 
 class Bot{
 	
@@ -109,5 +111,10 @@ public:
 	bool showBlobData;
 	bool showMode;
 
+
+	//  ******** MODOS *********
+
+	string modo;
+	vector <Mode> modosPosibles;
 
 };

@@ -11,6 +11,7 @@
 #include "sernaBot.h" /// ****** PROBLEMAS DE CROSS HEADERS!!!**** Corregir con ifdefs... !
 #include "hexapod.h"
 #include "dormilonador.h"
+
 //class SernaBot;
 void Bot::update(){
 	
@@ -18,7 +19,7 @@ void Bot::update(){
 	// ****** PARSE OSC MESSAGES ******//
 
 	if( showMode == true){
-		cout << "Estoy en modo --- > " << modo << endl;
+		cout << "Estoy en modo --- > " << modo << endl; 
 	}
 	
 	

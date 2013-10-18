@@ -42,12 +42,6 @@ public:
 	void calibrate();
 	
 	
-	// Sensores y modos
-	
-	string modo;
-	vector <string> modos;
-	
-	
 	float sensorHumedad; // Tenemos que cambiarles factores de escala para hacerlos comparables.
 	float sensorLuz;
 	float necesidadCal;
