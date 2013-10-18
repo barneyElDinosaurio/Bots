@@ -43,7 +43,7 @@ void Bot::update(){
 			
 			if( showBlobData == true){
 
-				cout << "Blob position : " << blobPos << endl;
+				cout << "Blob **position : " << blobPos << endl;
 				cout << "Blob angle : "  << angle << endl;
 				cout << "Blob area : "  << area << endl;			
 				cout << "Hu moment 1: " << hu1 << endl;
@@ -79,6 +79,7 @@ void Bot::update(){
 		}
 		// Other messages: eg. orders: calibrate, go home... qué se yo...
 		else if( m.getAddress() == "/showBlobData"){ // Mensaje para activar la pintada de blobs en cout.
+			cout << "En el cambiador de showblob" << endl;
 			int val = m.getArgAsInt32(0);
 			if( val == 0){
 				showBlobData = false;
@@ -87,6 +88,7 @@ void Bot::update(){
 			}
 		}
 		else if( m.getAddress() == "/showMode"){ // Mostar o no mostrar el modo en el que estoy.
+			cout << "En el cambiador de showblob" << endl;
 			int val = m.getArgAsInt32(0);
 			if( val == 0){
 				showMode = false;
