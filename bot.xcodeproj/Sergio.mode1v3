@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>4903D29A18113ACC004C7EFE</string>
+						<string>4903D2A318114B9A004C7EFE</string>
 						<key>history</key>
 						<array>
 							<string>496AFF95181138E7000E5F2F</string>
@@ -368,7 +368,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4903D29918113ACC004C7EFE</string>
+										<string>4903D2A218114B9A004C7EFE</string>
 										<key>history</key>
 										<array>
 											<string>496AFEF91810F8AE000E5F2F</string>
@@ -574,9 +574,9 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>496AFEC71810E35F000E5F2F</string>
 		<string>496AFF2118110700000E5F2F</string>
 		<string>/Users/Sergio/Documents/OF/of_v0.7.4_osx_release/apps/Symbiosis/bot/bot.xcodeproj</string>
-		<string>496AFEC71810E35F000E5F2F</string>
 	</array>
 	<key>WindowString</key>
 	<string>326 185 975 614 0 0 1440 878 </string>
@@ -671,7 +671,7 @@
 			<key>WindowToolGUID</key>
 			<string>496AFEC71810E35F000E5F2F</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

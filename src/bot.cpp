@@ -78,6 +78,13 @@ void Bot::update(){
 				blobData.set(blobPos.x, blobPos.y, angle);
 			}
 		}
+		else if( m.getAddress() == "/setDestino"){
+			if( this->botType == "sernaBot"){
+				( (SernaBot*) this)->goTo(  m.getArgAsFloat(0), m.getArgAsFloat(1) );
+
+			}
+
+		}
 		// Other messages: eg. orders: calibrate, go home... qué se yo...
 		else if( m.getAddress() == "/showBlobData"){ // Mensaje para activar la pintada de blobs en cout.
 			cout << "En el cambiador de showblob" << endl;

@@ -41,6 +41,7 @@ public:
 	void advanceTime(float time);
 	void calibrate();
 	void updateMovement();
+	void startLinearMovement();
 	
 	
 	float sensorHumedad; // Tenemos que cambiarles factores de escala para hacerlos comparables.
@@ -49,9 +50,18 @@ public:
 	
 	Timer elTimer;
 
+	//***************
 	// MOVIMIENTO
+	//***************
+
 	Timer movementTimer;
 	ofVec2f destino; // ojo con la inicialización.
+
+	bool isStatic; // Ponerlo en BOT?
+
+	int movementStatus;
+	int linear; // Poner como defines
+	int rotation; // Poner como defines
 	
 	// Calibracion
 	Timer timerCal;
@@ -63,8 +73,5 @@ public:
 	ofVec2f bebedero; // En la clase general??? Es decir, en BOt?
 	
 	//int serialNumber;
-
-	Mover mover;
-//	float 
 
 };

@@ -59,8 +59,17 @@ void SernaBot::setup(){
 	// Calibracion
 	firstTimeCal = true;
 
-	// Movimiento
+	// ************
+	// MOVIMIENTO
+	// ************
+
+	linear = 0 ;
+	rotation = 1; // Poner como defines
+
+	movementStatus = linear; // ¿Cómo inicializar?
+
 	movementThreshold = 0.1;
+	isStatic = false; // Seguro????
 }
 void SernaBot::update(){
 	((Bot* )this)->update(); // Aquí adentro están los recibidores de osc.
@@ -96,6 +105,10 @@ void SernaBot::update(){
 	else if(modo == "calibracion"){
 		calibrate();
 	}
+	else if(modo == "debug"){
+		//Código debug 
+
+	}
 	
 	//mover.updateAngle();
 
@@ -107,28 +120,36 @@ void SernaBot::update(){
 }
 void SernaBot::updateMovement(){
 
-	if( movement == true ){
-		if( pos.distance(destino) < movementThreshold ){ // Siga avanzando
-			//a = 1;
-		}	
-		else {// stop
+	// -------------------------
+	//	PRIMER MODO DE MOVIMIENTO: LÍNEAS RECTAS...
+	//________________________
+
+	if( isStatic == false ){ // Si no es estático
+		// SIEMPRE SE MUEVE
+		if( movementStatus == linear ){
+			if(movementTimer.getTime() >  1000 ){ // definir T!
+				stop(); // O tal vez cambiarlo de modo...
+				movementStatus = rotation;
+				movementTimer.restart();
+				// Calcular el ángulos
+			}
 
 
 		}
+		
 	}
 
 }
 
+void SernaBot::startLinearMovement(){
+// Timer restart?
+// Static = false?
+
+}
 void SernaBot::goTo(float x, float y){
-	if(elTimer.getTime() > tiempoDeAvance ){
-		ofVec2f pos = ((Bot * )this)->getPos();
-		
-		float deltaAngulo = pos.angle( bebedero );
-		cout << "angulo Diff" << endl;
-		
-		
-		elTimer.restart();
-	}
+	isStatic = false;
+	destino = ofVec2f( x , y );
+	movementStatus = linear;
 }
 void SernaBot::calibrate(){
 	// OJO: tendría que tener primero mi posición
