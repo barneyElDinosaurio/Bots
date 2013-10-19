@@ -126,7 +126,7 @@ public:
 	// MOVIMIENTO !!!!
 	//+++++++++++++++++++++
 	float movementThreshold; // Threshold de acercamiento a un objeto
-	bool movement; // modo estático o moviéndose
+	bool isStatic; // modo estático o moviéndose
 
 
 };

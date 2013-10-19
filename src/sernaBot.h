@@ -58,7 +58,7 @@ public:
 	Timer movementTimer;
 	ofVec2f destino; // ojo con la inicialización.
 
-	bool isStatic; // Ponerlo en BOT?
+	//bool isStatic; // Lo mandé a BOT
 
 	int movementStatus;
 	int linear; // Poner como defines
