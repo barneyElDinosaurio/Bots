@@ -42,6 +42,7 @@ public:
 	void calibrate();
 	void updateMovement();
 	void startLinearMovement();
+	void setDestino(float x, float y);
 	
 	
 	float sensorHumedad; // Tenemos que cambiarles factores de escala para hacerlos comparables.

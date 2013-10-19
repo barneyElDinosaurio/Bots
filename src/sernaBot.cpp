@@ -101,7 +101,7 @@ void SernaBot::update(){
 		//cout << "estoy relajado" << endl;
 	}
 	else if(modo == "sediento"){
-		goTo( bebedero.x, bebedero.y );
+		//goTo( bebedero.x, bebedero.y );
 
 
 	}
@@ -155,6 +155,9 @@ void SernaBot::goTo(float x, float y){
 	movementStatus = linear;
 	movementTimer.restart();
 	advance();
+}
+void SernaBot::setDestino(float x , float y){
+	destino = ofVec2f( x, y);
 }
 void SernaBot::calibrate(){
 	// OJO: tendría que tener primero mi posición

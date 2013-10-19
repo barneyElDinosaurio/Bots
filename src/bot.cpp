@@ -86,6 +86,17 @@ void Bot::update(){
 
 		}
 		// Other messages: eg. orders: calibrate, go home... qué se yo...
+		else if( m.getAddress() == "/setStatic"){ // Mensaje para activar la pintada de blobs en cout.
+			cout << "En el cambiador de static" << endl;
+			int val = m.getArgAsInt32(0);
+			if( val == 0){
+				isStatic = false;
+				cout << "Static =  " << isStatic;
+			}else if( val == 1 ){
+				isStatic = true;
+				cout << "Static = " << isStatic;
+			}
+		}
 		else if( m.getAddress() == "/showBlobData"){ // Mensaje para activar la pintada de blobs en cout.
 			cout << "En el cambiador de showblob" << endl;
 			int val = m.getArgAsInt32(0);
