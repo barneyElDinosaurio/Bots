@@ -78,13 +78,16 @@ void SernaBot::update(){
 	float necesidades [modos.size()];//= new float[  ]; 
 	for( int i = 0 ; i < modos.size() ; i++){
 		necesidades[i] = modos.at(i).sensorValue;
-		cout << "necesidad "  << modos.at(i).mode << "   ... " << modos.at(i).sensorValue << endl; 
+
+		if( showNecesidades == true ){
+			cout << "necesidad "  << modos.at(i).mode << "   ... " << modos.at(i).sensorValue << endl; 
+		}
 	}
 	
 	
 	// Brujería para encontrar el máximo de las necesidades
 	const int N = sizeof(necesidades) / sizeof(float);
-	cout << "TAMAÑO " << N << endl;
+	//cout << "TAMAÑO " << N << endl;
 	
 	float  maxIndex = distance( necesidades, max_element(necesidades, necesidades + N));
 	
@@ -151,6 +154,7 @@ void SernaBot::goTo(float x, float y){
 	destino = ofVec2f( x , y );
 	movementStatus = linear;
 	movementTimer.restart();
+	advance();
 }
 void SernaBot::calibrate(){
 	// OJO: tendría que tener primero mi posición

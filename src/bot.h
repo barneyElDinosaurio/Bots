@@ -30,6 +30,7 @@ public:
 		image.setAnchorPercent(0.5, 0.5);
 		showMode = true;
 		showBlobData = false;
+		showNecesidades = false;
 	}
 		
 	void move();
@@ -113,6 +114,7 @@ public:
 	// DEBUGGING STUFF
 	bool showBlobData;
 	bool showMode;
+	bool showNecesidades;
 
 
 	//  ******** MODOS *********

@@ -105,22 +105,27 @@
 -1;
 #X text 613 43 ORDENES GENERALES ?;
 #X msg 765 99 send /showBlobData \$1;
-#X obj 616 84 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 616 84 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 765 158 s toSend;
+#X obj 765 179 s toSend;
 #X text 636 83 Mostar datos de blob;
 #X obj 617 109 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 637 108 Mostrar modo;
 #X msg 775 124 send /showMode \$1;
-#X obj 604 178 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 604 205 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 808 193 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 808 220 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 622 176 ORDENES DE MOVIMIENTO;
-#X msg 774 244 send /setDestino \$1 \$2;
-#X msg 685 227 0.5 0.5;
-#X obj 774 274 s toSend;
+#X text 622 203 ORDENES DE MOVIMIENTO;
+#X msg 774 271 send /setDestino \$1 \$2;
+#X msg 685 254 0.5 0.5;
+#X obj 774 301 s toSend;
+#X obj 197 119 print sending;
+#X obj 617 137 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 637 136 Mostrar modo;
+#X msg 782 152 send /showNecesidades \$1;
 #X connect 1 0 44 0;
 #X connect 2 0 0 0;
 #X connect 3 0 44 0;
@@ -163,6 +168,7 @@
 #X connect 37 0 36 0;
 #X connect 38 0 0 0;
 #X connect 43 0 0 0;
+#X connect 43 0 99 0;
 #X connect 47 0 48 0;
 #X connect 48 0 49 0;
 #X connect 48 0 50 0;
@@ -193,3 +199,5 @@
 #X connect 93 0 94 0;
 #X connect 96 0 98 0;
 #X connect 97 0 96 0;
+#X connect 100 0 102 0;
+#X connect 102 0 88 0;

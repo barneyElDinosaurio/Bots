@@ -55,7 +55,7 @@ void Bot::update(){
 			
 			
 			// VALORES PARA EL SERNAPODO
-			float hu1fixed = 0.162;
+			float hu1fixed = 0.162; // CAMBIAR DINÁMICAMENTE
 			float hu1thres = 0.01;
 			
 			if( abs(hu1 - hu1fixed)  < hu1thres ){ // SI SOY UN SERNAPODO
@@ -80,7 +80,7 @@ void Bot::update(){
 		}
 		else if( m.getAddress() == "/setDestino"){
 			if( this->botType == "sernaBot"){
-				( (SernaBot*) this)->goTo(  m.getArgAsFloat(0), m.getArgAsFloat(1) );
+				( (SernaBot*) this)->goTo(  m.getArgAsFloat(0), m.getArgAsFloat(1) )	;
 
 			}
 
@@ -106,6 +106,18 @@ void Bot::update(){
 			}else if( val == 1 ){
 				showMode = true;
 				cout << "Smode )= " << showMode;
+	
+			}
+		}
+		else if( m.getAddress() == "/showNecesidades"){ // Mostar o no mostrar el modo en el que estoy.
+			cout << "En el cambiador de Necesidades" << endl;
+			int val = m.getArgAsInt32(0);
+			if( val == 0){
+				showNecesidades = false;
+				cout << "Smode )= " << showNecesidades;
+			}else if( val == 1 ){
+				showNecesidades = true;
+				cout << "Smode )= " << showNecesidades;
 	
 			}
 		}
