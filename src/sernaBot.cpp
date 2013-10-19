@@ -70,6 +70,7 @@ void SernaBot::setup(){
 
 	movementThreshold = 0.1;
 	isStatic = false; // Seguro????
+
 }
 void SernaBot::update(){
 	((Bot* )this)->update(); // Aquí adentro están los recibidores de osc.
@@ -127,14 +128,27 @@ void SernaBot::updateMovement(){
 	//	PRIMER MODO DE MOVIMIENTO: LÍNEAS RECTAS...
 	//________________________
 
+	// FACTOR DE CALIBRACIÓN: (HABRÍA QUE HACER QUE FUERA DINÁMICO...):
+	// 4.4s por vuelta entera = 1.42 rad / s
+
 	if( isStatic == false ){ // Si no es estático
-		// SIEMPRE SE MUEVE
+		
 		if( movementStatus == linear ){
-			if(movementTimer.getTime() >  1000 ){ // definir T!
+			if( movementTimer.getTime() >  1000 ){ // definir T!
 				stop(); // O tal vez cambiarlo de modo...
 				movementStatus = rotation;
 				movementTimer.restart();
-				// Calcular el ángulos
+				// Calcular el ángulo
+
+				rotateR();
+			}
+		} else if(movementStatus == rotation){
+			if( movementTimer.getTime() >  1000 ){ // definir T!
+				stop();
+				movementStatus = linear;
+				movementTimer.restart();
+				advance();
+				//lastStopPos.set(pos); // La posición justo antes de empezar a andar
 			}
 
 
@@ -220,6 +234,7 @@ void SernaBot::calibrate(){
 	int modoCal = 2;
 	modos.at(modoCal).sensorValue = 0; // Esta muy sucio, cambiarlo por map.
 	cout  << "Ya calibré, con modo: "  << modos.at( modoCal ).mode << endl;
+	lastStopPos = posicionFinal;
 
 
 

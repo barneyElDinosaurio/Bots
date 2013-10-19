@@ -57,14 +57,21 @@ public:
 
 	Timer movementTimer;
 	ofVec2f destino; // ojo con la inicialización.
+	ofVec2f lastStopPos;
 
 	//bool isStatic; // Lo mandé a BOT
 
 	int movementStatus;
 	int linear; // Poner como defines
 	int rotation; // Poner como defines
-	
+
+	float beforeAngle; 
+
+	//***************
+	// OTRAS COSAS
+	//***************
 	// Calibracion
+
 	Timer timerCal;
 	bool firstTimeCal;
 	

@@ -1,4 +1,4 @@
-#N canvas 76 184 1328 635 10;
+#N canvas 64 264 1328 635 10;
 #X obj 177 74 sendOSC;
 #X msg 329 196 send /advance;
 #X msg 91 16 disconnect;
@@ -26,7 +26,7 @@
 #X floatatom 8 107 5 0 0 0 - - -;
 #X floatatom 35 124 5 0 0 0 - - -;
 #X obj 335 108 spigot;
-#X obj 368 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 368 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 80 401 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
@@ -105,7 +105,7 @@
 -1;
 #X text 613 43 ORDENES GENERALES ?;
 #X msg 765 99 send /showBlobData \$1;
-#X obj 616 84 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 616 84 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 765 179 s toSend;
 #X text 636 83 Mostar datos de blob;
@@ -118,14 +118,19 @@
 #X obj 808 220 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 622 203 ORDENES DE MOVIMIENTO;
-#X msg 774 271 send /setDestino \$1 \$2;
-#X msg 685 254 0.5 0.5;
-#X obj 774 301 s toSend;
+#X msg 807 294 send /setDestino \$1 \$2;
+#X msg 718 277 0.5 0.5;
+#X obj 807 324 s toSend;
 #X obj 197 119 print sending;
 #X obj 617 137 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 637 136 Mostrar modo;
 #X msg 782 152 send /showNecesidades \$1;
+#X text 637 136 Mostrar necesidades;
+#X obj 623 237 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 643 236 Modo estático;
+#X msg 809 252 send /setStatic \$1;
+#X text -239 57 CAL: 1 giro en 4.67sfs;
 #X connect 1 0 44 0;
 #X connect 2 0 0 0;
 #X connect 3 0 44 0;
@@ -199,5 +204,7 @@
 #X connect 93 0 94 0;
 #X connect 96 0 98 0;
 #X connect 97 0 96 0;
-#X connect 100 0 102 0;
-#X connect 102 0 88 0;
+#X connect 100 0 101 0;
+#X connect 101 0 88 0;
+#X connect 103 0 105 0;
+#X connect 105 0 98 0;
