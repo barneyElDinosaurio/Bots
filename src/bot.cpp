@@ -71,12 +71,23 @@ void Bot::update(){
 			
 			//ofVec2f blobDirection( cos(angle), sin(angle) );
 				
-			if ( pos.distance(blobPos) < distanceThreshold /* && orientation.angle(blobDirection) < angleThreshold && timer! */){ // Its me!
+	/*		if ( pos.distance(blobPos) < distanceThreshold ){ // Its me!
 				pos.set(blobPos);
 			}
 			else{
 				blobData.set(blobPos.x, blobPos.y, angle);
 			}
+			*/
+		}
+		else if( m.getAddress() == "/tuio/2Dobj"){
+			int fid = m.getArgAsInt32(2);
+			int x = m.getArgAsFloat(3);
+			int y = m.getArgAsFloat(4);
+			int angle = m.getArgAsFloat(5);
+
+			cout << "got TUIO" << endl;
+			cout << "FID " << fid << endl;
+			cout << "POS : "<< x << " " << y << endl;
 		}
 		else if( m.getAddress() == "/setDestino"){
 			if( this->botType == "sernaBot"){

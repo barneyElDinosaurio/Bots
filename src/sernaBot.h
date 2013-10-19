@@ -43,6 +43,7 @@ public:
 	void updateMovement();
 	void startLinearMovement();
 	void setDestino(float x, float y);
+	float angle2Time(float angle);
 	
 	
 	float sensorHumedad; // Tenemos que cambiarles factores de escala para hacerlos comparables.
@@ -66,6 +67,7 @@ public:
 	int rotation; // Poner como defines
 
 	float beforeAngle; 
+	float timeAngleCalFactor; // Conversión radianes -> tiempo de rotación
 
 	//***************
 	// OTRAS COSAS

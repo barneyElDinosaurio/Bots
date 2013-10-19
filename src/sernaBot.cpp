@@ -40,6 +40,7 @@ void SernaBot::setup(){
 	pinMode(4, OUTPUT);
 	
 	// Medir inicialmente el valor de los sensores.
+	// YA ES INUTIL
 	sensorHumedad = 0;
 	sensorLuz = 0;
 	necesidadCal = 1; // Primero necesita calibrarse
@@ -47,7 +48,7 @@ void SernaBot::setup(){
 	//modo = "calibracion";
     modos.push_back( Mode( "relajado" , 0.5 ) );
 	modos.push_back( Mode( "sediento" , 0.6) );
-	modos.push_back( Mode( "calibracion" , 1 ) );
+	modos.push_back( Mode( "calibracion" , 0.5) );
 	
 	
 	// BEbedero y otras suciedades
@@ -70,6 +71,7 @@ void SernaBot::setup(){
 
 	movementThreshold = 0.1;
 	isStatic = false; // Seguro????
+	timeAngleCalFactor = 1.0 / 1.42;// Segundos por radián
 
 }
 void SernaBot::update(){
@@ -161,6 +163,10 @@ void SernaBot::updateMovement(){
 		}*/
 		
 	}
+
+}
+float SernaBot::angle2Time(float angle){
+	return( angle * timeAngleCalFactor );
 
 }
 
