@@ -14,6 +14,7 @@
 #include "mode.h"
 #endif
 
+# define TUIO // no lo he usado todavía
 void SernaBot::setup(){
 	
 	cout << "SernaBot: inicializando..." << endl;

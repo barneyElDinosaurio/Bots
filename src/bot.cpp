@@ -81,13 +81,16 @@ void Bot::update(){
 		}
 		else if( m.getAddress() == "/tuio/2Dobj"){
 			int fid = m.getArgAsInt32(2);
-			int x = m.getArgAsFloat(3);
-			int y = m.getArgAsFloat(4);
-			int angle = m.getArgAsFloat(5);
+			float x = m.getArgAsFloat(3);
+			float y = m.getArgAsFloat(4);
+			angle = m.getArgAsFloat(5);
 
 			cout << "got TUIO" << endl;
 			cout << "FID " << fid << endl;
 			cout << "POS : "<< x << " " << y << endl;
+
+			pos = ofVec2f(x, y);
+			
 		}
 		else if( m.getAddress() == "/setDestino"){
 			if( this->botType == "sernaBot"){
