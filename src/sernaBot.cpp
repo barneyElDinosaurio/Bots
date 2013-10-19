@@ -150,6 +150,7 @@ void SernaBot::goTo(float x, float y){
 	isStatic = false;
 	destino = ofVec2f( x , y );
 	movementStatus = linear;
+	movementTimer.restart();
 }
 void SernaBot::calibrate(){
 	// OJO: tendría que tener primero mi posición
@@ -208,7 +209,12 @@ void SernaBot::calibrate(){
 	cout << "SALIENDO GNRS" << endl;
 	
 	// Poner en 0 la necesidad de calibración
-	necesidadCal = 0; 
+	necesidadCal = 0;
+	int modoCal = 2;
+	modos.at(modoCal).sensorValue = 0; // Esta muy sucio, cambiarlo por map.
+	cout  << "Ya calibré, con modo: "  << modos.at( modoCal ).mode << endl;
+
+
 
 	// Aquí debería poner que el destino sea la posición actual.
 	// destino = posicionFinal;
