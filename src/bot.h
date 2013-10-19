@@ -31,6 +31,7 @@ public:
 		showMode = true;
 		showBlobData = false;
 		showNecesidades = false;
+		setOscSender("192.168.1.52", 9000);
 	}
 		
 	void move();
@@ -127,6 +128,5 @@ public:
 	//+++++++++++++++++++++
 	float movementThreshold; // Threshold de acercamiento a un objeto
 	bool isStatic; // modo estático o moviéndose
-
 
 };

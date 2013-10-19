@@ -138,21 +138,27 @@ void SernaBot::updateMovement(){
 				stop(); // O tal vez cambiarlo de modo...
 				movementStatus = rotation;
 				movementTimer.restart();
+				
 				// Calcular el ángulo
-
-				rotateR();
+				ofVec2f deltaPos = pos - lastStopPos; // la posición actual, menos la pos en la última parada
+				float elAngulo = deltaPos.angle( ofVec2f(1,0) ); 
+				ofxOscMessage m;
+				m.setAddress( "/measuredAngle");
+				m.addFloatArg( elAngulo );
+				oscSender.sendMessage(m);
+				//rotateR();
 			}
-		} else if(movementStatus == rotation){
+		} /*else if(movementStatus == rotation){
 			if( movementTimer.getTime() >  1000 ){ // definir T!
 				stop();
 				movementStatus = linear;
 				movementTimer.restart();
 				advance();
-				//lastStopPos.set(pos); // La posición justo antes de empezar a andar
+				lastStopPos.set(pos); // La posición justo antes de empezar a andar
 			}
 
 
-		}
+		}*/
 		
 	}
 
@@ -241,7 +247,7 @@ void SernaBot::calibrate(){
 	// Aquí debería poner que el destino sea la posición actual.
 	// destino = posicionFinal;
 
-	}
+}
 	else{
 		cout << " *********** IMPOSIBLE CALIBRAR *********** REINICIANDO CALIBRACION" << endl;
 		cout << "[NO HAY REGISTRO DE UNA POSICIÓN ANTERIOR]" << endl;

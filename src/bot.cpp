@@ -348,6 +348,7 @@ void Bot::setSendingHost( string _host ){
 void Bot::setOscSender( string _host, int _port){
 	sHOST = _host;
 	sPORT = _port;
+	oscSender.setup( sHOST, sPORT );
 }
 void Bot::setDistanceThreshold(float _d){
 	distanceThreshold = _d;

@@ -1,4 +1,4 @@
-#N canvas 64 264 1328 635 10;
+#N canvas 153 201 1328 635 10;
 #X obj 177 74 sendOSC;
 #X msg 329 196 send /advance;
 #X msg 91 16 disconnect;
@@ -126,11 +126,13 @@
 1;
 #X msg 782 152 send /showNecesidades \$1;
 #X text 637 136 Mostrar necesidades;
-#X obj 623 237 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 623 237 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 643 236 Modo estático;
 #X msg 809 252 send /setStatic \$1;
-#X text -239 57 CAL: 1 giro en 4.67sfs;
+#X text -239 57 CAL: 1 giro en 4.4;
+#X obj -287 122 dumpOSC 9000;
+#X obj -285 157 print RECEIVE;
 #X connect 1 0 44 0;
 #X connect 2 0 0 0;
 #X connect 3 0 44 0;
@@ -208,3 +210,4 @@
 #X connect 101 0 88 0;
 #X connect 103 0 105 0;
 #X connect 105 0 98 0;
+#X connect 107 0 108 0;
