@@ -197,7 +197,7 @@ void SernaBot::updateMovement(){
 				stop();
 				movementStatus = linear;
 				movementTimer.restart();
-				//advance();
+				advance();
 				lastStopPos.set(pos); // La posición justo antes de empezar a andar
 			}
 
