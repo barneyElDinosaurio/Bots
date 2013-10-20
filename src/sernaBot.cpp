@@ -155,8 +155,12 @@ void SernaBot::updateMovement(){
 				// Calcular la diferencia angular entre uno y el destino
 				// Primero el 
 				ofVec2f deltaPos = destino - pos; 
-				cout << "delta pos " << deltaPos << endl;
+				
 				float angulo = deltaPos.angle( ofVec2f(0,1));
+				cout << "mi Pos " << pos << endl;
+				cout << "mi Angulo en grados " << angle*(180.0/PI) << endl;
+				cout << "destino " << destino << endl;
+ 				cout << "delta pos " << deltaPos << endl;
 				cout << " el ángulo con el destino: " << angulo << endl;
 				//rotateR();
 			}
