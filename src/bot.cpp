@@ -87,13 +87,21 @@ void Bot::update(){
 				float y = m.getArgAsFloat(4);
 				angle = m.getArgAsFloat(5);
 
+				if( fid = 0){ // El sernápodo
+					pos = ofVec2f(x, y);
+				}
+				else if( fid = 1){
+					((SernaBot *)this)->goTo( x, y );
+				}
+
+
 				if(showTuio == true){
 					cout << "got TUIO" << endl;
 					cout << "FID " << fid << endl;
 					cout << "POS : "<< x << " " << y << endl;
 					cout << "ANGLE RAD: " << angle << "   deg"  << angle*(180/PI) << endl;
 				}
-				pos = ofVec2f(x, y);
+				
 
 			}
 			
