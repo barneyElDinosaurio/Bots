@@ -1,4 +1,4 @@
-#N canvas 205 569 1328 635 10;
+#N canvas 26 365 1328 635 10;
 #X obj 177 74 sendOSC;
 #X msg 329 196 send /advance;
 #X msg 91 16 disconnect;
@@ -54,7 +54,6 @@
 #X obj 196 44 r toSend;
 #X obj 329 380 s toSend;
 #X obj 17 258 s toSend;
-#X text 392 89 activar teclado;
 #X obj 444 416 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
 #X msg 444 444 send /QP \$1;
@@ -68,7 +67,7 @@
 #X text 451 382 PREGUNTAR POSICION DE SERV0;
 #X msg 691 443 send /Q \$1;
 #X text 698 381 SERVO IS MOVING;
-#X msg 548 329 send /arbitrarySerial;
+#X msg 511 341 send /arbitrarySerial;
 #X obj -239 407 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
 #X obj -267 474 route 0;
@@ -107,32 +106,42 @@
 #X msg 765 99 send /showBlobData \$1;
 #X obj 616 84 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 765 179 s toSend;
+#X obj 768 233 s toSend;
 #X text 636 83 Mostar datos de blob;
 #X obj 617 109 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 637 108 Mostrar modo;
 #X msg 775 124 send /showMode \$1;
-#X obj 604 205 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 610 246 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 808 220 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 814 261 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 622 203 ORDENES DE MOVIMIENTO;
-#X msg 807 294 send /setDestino \$1 \$2;
-#X msg 718 277 0.5 0.5;
-#X obj 807 324 s toSend;
+#X text 628 244 ORDENES DE MOVIMIENTO;
+#X msg 813 335 send /setDestino \$1 \$2;
+#X msg 724 318 0.5 0.5;
+#X obj 806 360 s toSend;
 #X obj 197 119 print sending;
 #X obj 617 137 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 782 152 send /showNecesidades \$1;
 #X text 637 136 Mostrar necesidades;
-#X obj 623 237 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 629 278 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 643 236 Modo estático;
-#X msg 809 252 send /setStatic \$1;
+#X text 649 277 Modo estático;
+#X msg 815 293 send /setStatic \$1;
 #X text -239 57 CAL: 1 giro en 4.4;
 #X obj -287 122 dumpOSC 9000;
-#X obj -285 157 print RECEIVE;
+#X obj -287 161 print;
+#X obj -179 201 print TUIO;
+#X obj -179 143 dumpOSC 3334;
+#X obj -179 175 spigot;
+#X obj -99 158 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 392 89 activar teclado;
+#X obj 618 165 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 638 164 Mostrar TUIO;
+#X msg 782 180 send /showTuio \$1;
 #X connect 1 0 44 0;
 #X connect 2 0 0 0;
 #X connect 3 0 44 0;
@@ -167,7 +176,7 @@
 #X connect 27 0 30 0;
 #X connect 27 0 34 0;
 #X connect 32 0 26 0;
-#X connect 32 0 77 0;
+#X connect 32 0 76 0;
 #X connect 34 0 26 2;
 #X connect 35 0 33 0;
 #X connect 35 0 42 0;
@@ -175,39 +184,44 @@
 #X connect 37 0 36 0;
 #X connect 38 0 0 0;
 #X connect 43 0 0 0;
-#X connect 43 0 99 0;
+#X connect 43 0 98 0;
+#X connect 46 0 47 0;
 #X connect 47 0 48 0;
-#X connect 48 0 49 0;
-#X connect 48 0 50 0;
-#X connect 52 0 56 0;
-#X connect 56 0 53 0;
-#X connect 56 0 54 0;
-#X connect 58 0 49 0;
-#X connect 59 0 61 1;
-#X connect 59 0 66 0;
-#X connect 60 0 70 0;
-#X connect 61 0 60 0;
-#X connect 62 0 65 0;
-#X connect 62 0 69 0;
-#X connect 67 0 61 0;
-#X connect 69 0 61 2;
-#X connect 70 0 68 0;
-#X connect 70 0 76 0;
-#X connect 71 0 67 0;
-#X connect 72 0 71 0;
-#X connect 77 0 78 0;
-#X connect 78 0 26 2;
-#X connect 79 0 80 0;
-#X connect 83 0 84 0;
-#X connect 86 0 88 0;
-#X connect 87 0 86 0;
-#X connect 90 0 92 0;
-#X connect 92 0 88 0;
-#X connect 93 0 94 0;
-#X connect 96 0 98 0;
-#X connect 97 0 96 0;
-#X connect 100 0 101 0;
-#X connect 101 0 88 0;
-#X connect 103 0 105 0;
-#X connect 105 0 98 0;
-#X connect 107 0 108 0;
+#X connect 47 0 49 0;
+#X connect 51 0 55 0;
+#X connect 55 0 52 0;
+#X connect 55 0 53 0;
+#X connect 57 0 48 0;
+#X connect 58 0 60 1;
+#X connect 58 0 65 0;
+#X connect 59 0 69 0;
+#X connect 60 0 59 0;
+#X connect 61 0 64 0;
+#X connect 61 0 68 0;
+#X connect 66 0 60 0;
+#X connect 68 0 60 2;
+#X connect 69 0 67 0;
+#X connect 69 0 75 0;
+#X connect 70 0 66 0;
+#X connect 71 0 70 0;
+#X connect 76 0 77 0;
+#X connect 77 0 26 2;
+#X connect 78 0 79 0;
+#X connect 82 0 83 0;
+#X connect 85 0 87 0;
+#X connect 86 0 85 0;
+#X connect 89 0 91 0;
+#X connect 91 0 87 0;
+#X connect 92 0 93 0;
+#X connect 95 0 97 0;
+#X connect 96 0 95 0;
+#X connect 99 0 100 0;
+#X connect 100 0 87 0;
+#X connect 102 0 104 0;
+#X connect 104 0 97 0;
+#X connect 106 0 107 0;
+#X connect 109 0 110 0;
+#X connect 110 0 108 0;
+#X connect 111 0 110 1;
+#X connect 113 0 115 0;
+#X connect 115 0 87 0;

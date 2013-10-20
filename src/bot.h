@@ -31,6 +31,7 @@ public:
 		showMode = true;
 		showBlobData = false;
 		showNecesidades = false;
+		showTuio = false;
 		setOscSender("192.168.1.52", 9000);
 	}
 		
@@ -116,6 +117,7 @@ public:
 	bool showBlobData;
 	bool showMode;
 	bool showNecesidades;
+	bool showTuio;
 
 
 	//  ******** MODOS *********

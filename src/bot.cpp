@@ -80,16 +80,25 @@ void Bot::update(){
 			*/
 		}
 		else if( m.getAddress() == "/tuio/2Dobj"){
-			int fid = m.getArgAsInt32(2);
-			float x = m.getArgAsFloat(3);
-			float y = m.getArgAsFloat(4);
-			angle = m.getArgAsFloat(5);
+			if( m.getArgAsString(0) == "set"){ // if message is a set message
 
-			cout << "got TUIO" << endl;
-			cout << "FID " << fid << endl;
-			cout << "POS : "<< x << " " << y << endl;
+				int fid = m.getArgAsInt32(2);
+				float x = m.getArgAsFloat(3);
+				float y = m.getArgAsFloat(4);
+				angle = m.getArgAsFloat(5);
 
-			pos = ofVec2f(x, y);
+				if(showTuio == true){
+					cout << "got TUIO" << endl;
+					cout << "FID " << fid << endl;
+					cout << "POS : "<< x << " " << y << endl;
+					cout << "ANGLE RAD: " << angle << "   deg"  << angle*(180/PI) << endl;
+				}
+				pos = ofVec2f(x, y);
+
+			}
+			
+
+			
 			
 		}
 		else if( m.getAddress() == "/setDestino"){
@@ -97,6 +106,13 @@ void Bot::update(){
 				( (SernaBot*) this)->goTo(  m.getArgAsFloat(0), m.getArgAsFloat(1) )	;
 
 			}
+
+		}
+		else if( m.getAddress() == "/giveMePos"){
+			ofxOscMessage elMensaje;
+			elMensaje.setAddress("/pos");
+			elMensaje.addFloatArg( pos.x );
+			elMensaje.addFloatArg( pos.y ); 
 
 		}
 		// Other messages: eg. orders: calibrate, go home... qué se yo...
@@ -109,6 +125,17 @@ void Bot::update(){
 			}else if( val == 1 ){
 				isStatic = true;
 				cout << "Static = " << isStatic;
+			}
+		}
+		else if( m.getAddress() == "/showTuio"){ // Mensaje para activar la pintada de blobs en cout.
+			cout << "En el cambiador de tuio" << endl;
+			int val = m.getArgAsInt32(0);
+			if( val == 0){
+				showTuio = false;
+				cout << "Static =  " <<	showTuio;
+			}else if( val == 1 ){
+				showTuio = true;
+				cout << "Static = " << showTuio;
 			}
 		}
 		else if( m.getAddress() == "/showBlobData"){ // Mensaje para activar la pintada de blobs en cout.
