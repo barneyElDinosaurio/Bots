@@ -202,46 +202,6 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>4903D41C181369C6004C7EFE</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>sernaBot.cpp</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>4903D41D181369C6004C7EFE</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>sernaBot.cpp</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>4903D42D18136B6C004C7EFE</string>
-						<key>history</key>
-						<array>
-							<string>4903D413181369A0004C7EFE</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {893, 681}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>84 88 893 722 0 0 1440 878 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
 				<string>496AFF2118110700000E5F2F</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>bot.h</string>
@@ -256,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>4903D42E18136B6C004C7EFE</string>
+						<string>4903D43918136E4D004C7EFE</string>
 						<key>history</key>
 						<array>
 							<string>4903D337181285F4004C7EFE</string>
@@ -405,7 +365,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4903D42C18136B6C004C7EFE</string>
+										<string>4903D43818136E4D004C7EFE</string>
 										<key>history</key>
 										<array>
 											<string>496AFEF91810F8AE000E5F2F</string>
@@ -614,7 +574,6 @@
 		<string>/Users/Sergio/Documents/OF/of_v0.7.4_osx_release/apps/Symbiosis/bot/bot.xcodeproj</string>
 		<string>496AFF2118110700000E5F2F</string>
 		<string>496AFEC71810E35F000E5F2F</string>
-		<string>4903D41C181369C6004C7EFE</string>
 	</array>
 	<key>WindowString</key>
 	<string>326 185 975 614 0 0 1440 878 </string>
@@ -633,6 +592,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -655,8 +616,6 @@
 							<string>227pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
