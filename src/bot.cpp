@@ -27,9 +27,9 @@ void Bot::update(){
 	while (oscReciever.hasWaitingMessages()) {
 		ofxOscMessage m;
 		oscReciever.getNextMessage( &m );
-		if(ofRandom(1) > 0.9 ){ // Para no mandar todos los mensajes, que son excesivos.
+		/*if(ofRandom(1) > 0.9 ){ // Para no mandar todos los mensajes, que son excesivos.
 			cout << " In OSC reciever !!!" << endl;
-		}	
+		}*/	
 		// POSICION
 		// CREO que hay que forzar el framerate del dispositivo de captura para que sea más bajo
 		if ( m.getAddress() == "/blob/data") { // got blob message
