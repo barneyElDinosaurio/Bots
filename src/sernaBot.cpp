@@ -195,7 +195,7 @@ void SernaBot::updateMovement(){
 		} else if(movementStatus == rotation && controlledMotion == false ){
 			if( movementTimer.getTime() > abs( angle2Time( angleDifference ) ) ){ // definir T! // ojo con el signo! tiene que ser positivo!
 				stop();
-				//movementStatus = linear;
+				movementStatus = linear;
 				movementTimer.restart();
 				//advance();
 				lastStopPos.set(pos); // La posición justo antes de empezar a andar
