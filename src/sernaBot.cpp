@@ -157,7 +157,7 @@ void SernaBot::updateMovement(){
 				ofVec2f deltaPos = destino - pos; 
 				
 				float anguloGrados = angle*(180.0/PI) ;
-				float anguloDeltaPos = deltaPos.angle( ofVec2f(1,0));
+				float anguloDeltaPos = - deltaPos.angle( ofVec2f(1,0));
 				cout << "mi Pos " << pos << endl;
 				cout << "mi Angulo en grados " <<  anguloGrados << endl;
 				cout << "destino " << destino << endl;
