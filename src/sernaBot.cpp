@@ -222,7 +222,7 @@ void SernaBot::goTo(float x, float y){
 	destino = ofVec2f( x , y );
 	movementStatus = linear;
 	movementTimer.restart();
-	advance();
+	
 }
 void SernaBot::setDestino(float x , float y){
 	destino = ofVec2f( x, y);
