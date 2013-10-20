@@ -139,7 +139,8 @@ void SernaBot::updateMovement(){
 		if( movementStatus == linear ){
 			if( movementTimer.getTime() >  1000 ){ // definir T!
 				stop(); // O tal vez cambiarlo de modo...
-				
+				movementStatus = rotation;
+				movementTimer.restart();
 				
 				// Calcular el ángulo [En versión no TUIO]
 				/*
@@ -161,7 +162,14 @@ void SernaBot::updateMovement(){
 				cout << "mi Angulo en grados " <<  anguloGrados << endl;
 				cout << "destino " << destino << endl;
  				cout << "delta pos " << deltaPos << endl;
- 				cout << "El ángulo del delta Pos" << anguloDeltaPos << endl;; // en grados
+ 				cout << "El ángulo del delta Pos" << anguloDeltaPos; // en grados
+
+ 				//float anguloRotacion = anguloDeltaPos - anguloGrados;
+ 				float anguloRotacion = ofAngleDifferenceDegrees(anguloDeltaPos , anguloGrados);
+				cout << " el ángulo con el destino: " << anguloRotacion << endl;
+				
+				 
+				/*
 
  				//float anguloRotacion = anguloDeltaPos - anguloGrados;
  				float anguloRotacion = ofAngleDifferenceDegrees(anguloDeltaPos , anguloGrados);
@@ -180,6 +188,7 @@ void SernaBot::updateMovement(){
 					movementStatus = rotation;
 					movementTimer.restart();
 				}*/
+				*/
 
 				//rotateR();
 			}
