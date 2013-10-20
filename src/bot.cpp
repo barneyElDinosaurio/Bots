@@ -103,8 +103,8 @@ void Bot::update(){
 		}
 		else if( m.getAddress() == "/setDestino"){
 			if( this->botType == "sernaBot"){
-				( (SernaBot*) this)->goTo(  m.getArgAsFloat(0), m.getArgAsFloat(1) )	;
-
+				controlledMotion = false; // Pone el modo de movimiento controlado en falso;
+				( (SernaBot*) this)->goTo(  m.getArgAsFloat(0), m.getArgAsFloat(1) );
 			}
 
 		}
@@ -181,6 +181,8 @@ void Bot::update(){
 			if( this->botType == "sernaBot"){
 				cout << "Avanzando desde OSC" << endl;
 				((SernaBot*) this)->advance();	
+				controlledMotion = true;
+				cout << "controlled Motion = " << controlledMotion << endl;
 			}
 			
 			//  HEXAPOD 
@@ -313,6 +315,7 @@ void Bot::update(){
 			
 			if( this->botType == "sernaBot"){
 				((SernaBot*) this)->recoil();
+				controlledMotion = true;
 			}
 			
 			// HEXAPOD
@@ -325,11 +328,13 @@ void Bot::update(){
 		else if( m.getAddress() == "/rotateR"){ // **** ROTATE R ****
 			if( this->botType == "sernaBot"){
 				((SernaBot*) this)->rotateR();
+				controlledMotion = true;
 			}
 		}
 		else if( m.getAddress() == "/rotateL"){ // **** ROTATE L ****
 			if( this->botType == "sernaBot"){
 				((SernaBot*) this)->rotateL();
+				controlledMotion = true;
 			}
 		}
 		

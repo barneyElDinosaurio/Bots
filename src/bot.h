@@ -28,10 +28,11 @@ public:
 	
 	Bot(){
 		image.setAnchorPercent(0.5, 0.5);
-		showMode = true;
+		showMode = false;
 		showBlobData = false;
 		showNecesidades = false;
 		showTuio = false;
+		controlledMotion = true;
 		setOscSender("192.168.1.52", 9000);
 	}
 		
@@ -130,5 +131,6 @@ public:
 	//+++++++++++++++++++++
 	float movementThreshold; // Threshold de acercamiento a un objeto
 	bool isStatic; // modo estático o moviéndose
+	bool controlledMotion;
 
 };

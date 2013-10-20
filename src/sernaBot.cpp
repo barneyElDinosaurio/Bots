@@ -154,7 +154,7 @@ void SernaBot::updateMovement(){
  		// cout << "angulo con calculo OF" << angleDifference << endl;
  		// cout << "voy a rotar "<< angle2Time(angleDifference) << "segundos" << endl;
 		
-		if( movementStatus == linear ){
+		if( movementStatus == linear && controlledMotion == false ){
 
 			
 
@@ -192,8 +192,8 @@ void SernaBot::updateMovement(){
 					rotateR();
 				}
 			}
-		} else if(movementStatus == rotation){
-			if( movementTimer.getTime() > abs(angle2Time( angleDifference ) ) ){ // definir T! // ojo con el signo! tiene que ser positivo!
+		} else if(movementStatus == rotation && controlledMotion == false ){
+			if( movementTimer.getTime() > abs( angle2Time( angleDifference ) ) ){ // definir T! // ojo con el signo! tiene que ser positivo!
 				//stop();
 				//movementStatus = linear;
 				movementTimer.restart();
