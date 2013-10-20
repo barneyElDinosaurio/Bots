@@ -72,7 +72,7 @@ void SernaBot::setup(){
 
 	movementThreshold = 0.1;
 	isStatic = false; // Seguro????
-	timeAngleCalFactor = 1.0 / 1.42;// Segundos por radián
+	timeAngleCalFactor = 1000 / 1.42;// milisegundos por radián [cronometrado suciamente cuando tenía adaptador]
 
 }
 void SernaBot::update(){
@@ -135,24 +135,28 @@ void SernaBot::updateMovement(){
 	// 4.4s por vuelta entera = 1.42 rad / s
 
 	if( isStatic == false ){ // Si no es estático
+
+		// CALCULO DE LOS ÁNGULOS DE DESTINO
+		// Calcular antes que nada la diferencia angular entre uno y el destino
+				// Primero el vector que nos une con el destino
+		ofVec2f deltaPos = destino - pos; 
+
+		float anguloGrados = angle*(180.0/PI);
+		float anguloDeltaPos = - deltaPos.angle( ofVec2f(1,0)); // el ángulo entre este vector y el eje x.
+		cout << "mi Pos " << pos << endl;
+		cout << "mi Angulo en grados " <<  anguloGrados << endl;
+		cout << "destino " << destino << endl;
+		cout << "delta pos " << deltaPos << endl;
+ 		cout << "El ángulo del delta Pos" << anguloDeltaPos; // en grados
+
+ 		cout << "angulo restado " <<  anguloDeltaPos - anguloGrados << endl;
+ 		float angleDifference = ofAngleDifferenceDegrees(anguloDeltaPos, anguloGrados ); // ESte es el ángulo que tengo que rotar!
+ 		cout << "angulo con calculo OF" << angleDifference << endl;
+ 		cout << "voy a rotar "<< angle2Time(angleDifference) << "segundos" << endl;
 		
 		if( movementStatus == linear ){
 
-			// Calcular antes que nada la diferencia angular entre uno y el destino
-				// Primero el vector que nos une con el destino
-				ofVec2f deltaPos = destino - pos; 
-				
-				float anguloGrados = angle*(180.0/PI) ;
-				float anguloDeltaPos = - deltaPos.angle( ofVec2f(1,0)); // el ángulo entre este vector y el eje x.
-				cout << "mi Pos " << pos << endl;
-				cout << "mi Angulo en grados " <<  anguloGrados << endl;
-				cout << "destino " << destino << endl;
- 				cout << "delta pos " << deltaPos << endl;
- 				cout << "El ángulo del delta Pos" << anguloDeltaPos; // en grados
-
- 				cout << "angulo restado " <<  anguloDeltaPos - anguloGrados << endl;
- 				float angleDifference = ofAngleDifferenceDegrees(anguloDeltaPos, anguloGrados ); // ESte es el ángulo que tengo que rotar!
- 				cout << "angulo con calculo OF" << angleDifference << endl;
+			
 
 			if( movementTimer.getTime() >  1000 ){ // definir T!
 				stop(); // O tal vez cambiarlo de modo...
@@ -176,17 +180,17 @@ void SernaBot::updateMovement(){
 					rotateR();
 				}
 			}
-		} /*else if(movementStatus == rotation){
-			if( movementTimer.getTime() >  1000 ){ // definir T!
+		} else if(movementStatus == rotation){
+			if( movementTimer.getTime() >  angle2Time( angleDifference )  ){ // definir T!
 				stop();
-				movementStatus = linear;
+				//movementStatus = linear;
 				movementTimer.restart();
-				advance();
+				//advance();
 				lastStopPos.set(pos); // La posición justo antes de empezar a andar
 			}
 
 
-		}*/
+		}
 		
 	}
 
