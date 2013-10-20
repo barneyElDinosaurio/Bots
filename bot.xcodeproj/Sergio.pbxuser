@@ -436,6 +436,36 @@
 		vrLen = 981;
 		vrLoc = 933;
 	};
+	4903D4591813B6FF004C7EFE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4903F239178C4E8600CEEDED /* bot.cpp */;
+		name = "bot.cpp: 421";
+		rLen = 0;
+		rLoc = 11269;
+		rType = 0;
+		vrLen = 665;
+		vrLoc = 1328;
+	};
+	4903D45A1813B6FF004C7EFE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4909E01E17DA305A00406CD7 /* sernaBot.cpp */;
+		name = "sernaBot.cpp: 350";
+		rLen = 0;
+		rLoc = 8322;
+		rType = 0;
+		vrLen = 1784;
+		vrLoc = 2930;
+	};
+	4903D45B1813B6FF004C7EFE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4903F238178C4E8600CEEDED /* bot.h */;
+		name = "bot.h: 134";
+		rLen = 0;
+		rLoc = 2388;
+		rType = 0;
+		vrLen = 981;
+		vrLoc = 933;
+	};
 	4903F238178C4E8600CEEDED /* bot.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {834, 1729}}";
@@ -453,9 +483,9 @@
 	};
 	4909E01E17DA305A00406CD7 /* sernaBot.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {834, 4290}}";
-			sepNavSelRange = "{8182, 0}";
-			sepNavVisRange = "{3015, 1655}";
+			sepNavIntBoundsRect = "{{0, 0}, {978, 4329}}";
+			sepNavSelRange = "{8322, 0}";
+			sepNavVisRange = "{2930, 1784}";
 			sepNavWindowFrame = "{{84, 32}, {893, 778}}";
 		};
 	};
@@ -652,6 +682,9 @@
 			4903D4541813AC6C004C7EFE /* PBXTextBookmark */ = 4903D4541813AC6C004C7EFE /* PBXTextBookmark */;
 			4903D4551813AC6C004C7EFE /* PBXTextBookmark */ = 4903D4551813AC6C004C7EFE /* PBXTextBookmark */;
 			4903D4561813AC6C004C7EFE /* PBXTextBookmark */ = 4903D4561813AC6C004C7EFE /* PBXTextBookmark */;
+			4903D4591813B6FF004C7EFE /* PBXTextBookmark */ = 4903D4591813B6FF004C7EFE /* PBXTextBookmark */;
+			4903D45A1813B6FF004C7EFE /* PBXTextBookmark */ = 4903D45A1813B6FF004C7EFE /* PBXTextBookmark */;
+			4903D45B1813B6FF004C7EFE /* PBXTextBookmark */ = 4903D45B1813B6FF004C7EFE /* PBXTextBookmark */;
 			496AFEF91810F8AE000E5F2F = 496AFEF91810F8AE000E5F2F /* PBXTextBookmark */;
 			496AFF3718110AF1000E5F2F = 496AFF3718110AF1000E5F2F /* PBXTextBookmark */;
 		};

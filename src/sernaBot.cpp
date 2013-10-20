@@ -151,8 +151,9 @@ void SernaBot::updateMovement(){
  				cout << "El ángulo del delta Pos" << anguloDeltaPos; // en grados
 
  				cout << "angulo restado " <<  anguloDeltaPos - anguloGrados << endl;
- 				cout << "angulo con calculo OF" << ofAngleDifferenceDegrees(anguloGrados , anguloDeltaPos) << endl;
- 				
+ 				float angleDifference = ofAngleDifferenceDegrees(anguloGrados , anguloDeltaPos); // ESte es el ángulo que tengo que rotar!
+ 				cout << "angulo con calculo OF" << angleDifference << endl;
+
 			if( movementTimer.getTime() >  1000 ){ // definir T!
 				stop(); // O tal vez cambiarlo de modo...
 				movementStatus = rotation;
@@ -168,9 +169,12 @@ void SernaBot::updateMovement(){
 				oscSender.sendMessage(m);
 				*/
 
-				
- 				
-				//rotateR();
+				if( angleDifference > 0){
+					rotateL();
+				}
+				else {
+					rotateR();
+				}
 			}
 		} /*else if(movementStatus == rotation){
 			if( movementTimer.getTime() >  1000 ){ // definir T!
