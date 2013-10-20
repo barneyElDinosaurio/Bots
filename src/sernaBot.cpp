@@ -161,11 +161,14 @@ void SernaBot::updateMovement(){
 				cout << "mi Angulo en grados " <<  anguloGrados << endl;
 				cout << "destino " << destino << endl;
  				cout << "delta pos " << deltaPos << endl;
- 				cout << "El ángulo del delta Pos" << anguloDeltaPos; // en grados
+ 				cout << "El ángulo del delta Pos" << anguloDeltaPos << endl;; // en grados
 
  				//float anguloRotacion = anguloDeltaPos - anguloGrados;
  				float anguloRotacion = ofAngleDifferenceDegrees(anguloDeltaPos , anguloGrados);
 				cout << " el ángulo con el destino: " << anguloRotacion << endl;
+				
+				movementStatus = rotation;
+				movementTimer.restart();
 				
 				/* 
 				if( anguloRotacion > 0 ){
