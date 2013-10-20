@@ -194,7 +194,7 @@ void SernaBot::updateMovement(){
 			}
 		} else if(movementStatus == rotation && controlledMotion == false ){
 			if( movementTimer.getTime() > abs( angle2Time( angleDifference ) ) ){ // definir T! // ojo con el signo! tiene que ser positivo!
-				//stop();
+				stop();
 				//movementStatus = linear;
 				movementTimer.restart();
 				//advance();

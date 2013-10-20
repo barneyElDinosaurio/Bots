@@ -556,26 +556,56 @@
 		vrLen = 981;
 		vrLoc = 933;
 	};
+	4903D46D1813C7E5004C7EFE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4903F239178C4E8600CEEDED /* bot.cpp */;
+		name = "bot.cpp: 426";
+		rLen = 0;
+		rLoc = 11528;
+		rType = 0;
+		vrLen = 750;
+		vrLoc = 1225;
+	};
+	4903D46E1813C7E5004C7EFE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4909E01E17DA305A00406CD7 /* sernaBot.cpp */;
+		name = "sernaBot.cpp: 366";
+		rLen = 0;
+		rLoc = 9176;
+		rType = 0;
+		vrLen = 2108;
+		vrLoc = 3048;
+	};
+	4903D46F1813C7E5004C7EFE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4903F238178C4E8600CEEDED /* bot.h */;
+		name = "bot.h: 136";
+		rLen = 0;
+		rLoc = 2440;
+		rType = 0;
+		vrLen = 981;
+		vrLoc = 961;
+	};
 	4903F238178C4E8600CEEDED /* bot.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {834, 1729}}";
-			sepNavSelRange = "{2388, 0}";
-			sepNavVisRange = "{933, 981}";
+			sepNavIntBoundsRect = "{{0, 0}, {834, 1742}}";
+			sepNavSelRange = "{2440, 0}";
+			sepNavVisRange = "{961, 981}";
 			sepNavWindowFrame = "{{61, 53}, {893, 778}}";
 		};
 	};
 	4903F239178C4E8600CEEDED /* bot.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {859, 5395}}";
-			sepNavSelRange = "{11269, 0}";
-			sepNavVisRange = "{1328, 665}";
+			sepNavIntBoundsRect = "{{0, 0}, {859, 5512}}";
+			sepNavSelRange = "{11528, 0}";
+			sepNavVisRange = "{1225, 750}";
 		};
 	};
 	4909E01E17DA305A00406CD7 /* sernaBot.cpp */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {922, 4537}}";
-			sepNavSelRange = "{9118, 0}";
-			sepNavVisRange = "{3000, 2081}";
+			sepNavSelRange = "{9176, 0}";
+			sepNavVisRange = "{3048, 2108}";
 			sepNavWindowFrame = "{{84, 32}, {893, 778}}";
 		};
 	};
@@ -784,6 +814,9 @@
 			4903D4681813C2CE004C7EFE /* PBXTextBookmark */ = 4903D4681813C2CE004C7EFE /* PBXTextBookmark */;
 			4903D4691813C2CE004C7EFE /* PBXTextBookmark */ = 4903D4691813C2CE004C7EFE /* PBXTextBookmark */;
 			4903D46A1813C2CE004C7EFE /* PBXTextBookmark */ = 4903D46A1813C2CE004C7EFE /* PBXTextBookmark */;
+			4903D46D1813C7E5004C7EFE /* PBXTextBookmark */ = 4903D46D1813C7E5004C7EFE /* PBXTextBookmark */;
+			4903D46E1813C7E5004C7EFE /* PBXTextBookmark */ = 4903D46E1813C7E5004C7EFE /* PBXTextBookmark */;
+			4903D46F1813C7E5004C7EFE /* PBXTextBookmark */ = 4903D46F1813C7E5004C7EFE /* PBXTextBookmark */;
 			496AFEF91810F8AE000E5F2F = 496AFEF91810F8AE000E5F2F /* PBXTextBookmark */;
 			496AFF3718110AF1000E5F2F = 496AFF3718110AF1000E5F2F /* PBXTextBookmark */;
 		};

@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>4903D4691813C2CE004C7EFE</string>
+						<string>4903D46E1813C7E5004C7EFE</string>
 						<key>history</key>
 						<array>
 							<string>4903D44018137237004C7EFE</string>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>4903D46A1813C2CE004C7EFE</string>
+						<string>4903D46F1813C7E5004C7EFE</string>
 						<key>history</key>
 						<array>
 							<string>4903D337181285F4004C7EFE</string>
@@ -405,7 +405,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4903D4681813C2CE004C7EFE</string>
+										<string>4903D46D1813C7E5004C7EFE</string>
 										<key>history</key>
 										<array>
 											<string>496AFEF91810F8AE000E5F2F</string>
@@ -611,10 +611,10 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>/Users/Sergio/Documents/OF/of_v0.7.4_osx_release/apps/Symbiosis/bot/bot.xcodeproj</string>
 		<string>496AFF2118110700000E5F2F</string>
 		<string>496AFEC71810E35F000E5F2F</string>
 		<string>4903D4441813725C004C7EFE</string>
+		<string>/Users/Sergio/Documents/OF/of_v0.7.4_osx_release/apps/Symbiosis/bot/bot.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>326 185 975 614 0 0 1440 878 </string>
