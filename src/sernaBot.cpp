@@ -165,7 +165,7 @@ void SernaBot::updateMovement(){
  				cout << "El ángulo del delta Pos" << anguloDeltaPos; // en grados
 
  				cout << "angulo restado " <<  anguloDeltaPos - anguloGrados << endl;
- 				cout << "angulo con calculo OF" << ofAngleDifferenceDegrees(anguloDeltaPos , anguloGrados) << endl;
+ 				cout << "angulo con calculo OF" << ofAngleDifferenceDegrees(anguloGrados , anguloDeltaPos) << endl;
  				
 				//rotateR();
 			}
