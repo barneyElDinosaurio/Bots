@@ -160,6 +160,7 @@ void SernaBot::updateMovement(){
 
 			if( movementTimer.getTime() >  1000 ){ // definir T!
 				stop(); // O tal vez cambiarlo de modo...
+				cout << "Paré en el linear movement" << endl;
 				movementStatus = rotation;
 				movementTimer.restart();
 
@@ -193,7 +194,7 @@ void SernaBot::updateMovement(){
 			}
 		} else if(movementStatus == rotation){
 			if( movementTimer.getTime() > abs(angle2Time( angleDifference ) ) ){ // definir T! // ojo con el signo! tiene que ser positivo!
-				stop();
+				//stop();
 				//movementStatus = linear;
 				movementTimer.restart();
 				//advance();
