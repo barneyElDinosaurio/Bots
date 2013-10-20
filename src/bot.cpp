@@ -90,7 +90,7 @@ void Bot::update(){
 				if( fid = 0){ // El sernápodo
 					pos = ofVec2f(x, y);
 				}
-				else if( fid = 1){
+				else if( fid = 1 ){
 					((SernaBot *)this)->goTo( x, y );
 				}
 
