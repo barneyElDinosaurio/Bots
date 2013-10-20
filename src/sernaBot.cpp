@@ -142,13 +142,22 @@ void SernaBot::updateMovement(){
 				movementStatus = rotation;
 				movementTimer.restart();
 				
-				// Calcular el ángulo
+				// Calcular el ángulo [En versión no TUIO]
+				/*
 				ofVec2f deltaPos = pos - lastStopPos; // la posición actual, menos la pos en la última parada
 				float elAngulo = deltaPos.angle( ofVec2f(1,0) ); 
 				ofxOscMessage m;
 				m.setAddress( "/measuredAngle");
 				m.addFloatArg( elAngulo );
 				oscSender.sendMessage(m);
+				*/
+
+				// Calcular la diferencia angular entre uno y el destino
+				// Primero el 
+				ofVec2f deltaPos = destino - pos; 
+				cout << "delta pos " << deltaPos << endl;
+				float angulo = deltaPos.angle( ofVec2f(0,1));
+				cout << " el ángulo con el destino: " << angulo << endl;
 				//rotateR();
 			}
 		} /*else if(movementStatus == rotation){
