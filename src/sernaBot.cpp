@@ -218,12 +218,13 @@ void SernaBot::startLinearMovement(){
 
 }
 void SernaBot::goTo(float x, float y){
-	if(destino.distance( ofVec2f(x,y) ) > 0.05){
+	if(destino.distance( ofVec2f(x,y) ) > 0.1){
 		isStatic = false;
 		destino = ofVec2f( x , y );
 		movementStatus = linear;
 		movementTimer.restart();
 		advance();
+		cout << "nuevo destino " << x << " " << y << endl;
 	}
 }
 void SernaBot::setDestino(float x , float y){
