@@ -197,48 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>496AFF2118110700000E5F2F</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>bot.h</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>496AFF2218110700000E5F2F</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>bot.h</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>4903D4821813D5C3004C7EFE</string>
-						<key>history</key>
-						<array>
-							<string>4903D337181285F4004C7EFE</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {893, 681}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>61 109 893 722 0 0 1440 878 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -365,7 +324,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4903D4811813D5C3004C7EFE</string>
+										<string>4903D488181488BB004C7EFE</string>
 										<key>history</key>
 										<array>
 											<string>496AFEF91810F8AE000E5F2F</string>
@@ -571,9 +530,8 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>496AFF2118110700000E5F2F</string>
-		<string>/Users/Sergio/Documents/OF/of_v0.7.4_osx_release/apps/Symbiosis/bot/bot.xcodeproj</string>
 		<string>496AFEC71810E35F000E5F2F</string>
+		<string>/Users/Sergio/Documents/OF/of_v0.7.4_osx_release/apps/Symbiosis/bot/bot.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>326 185 975 614 0 0 1440 878 </string>
@@ -668,7 +626,7 @@
 			<key>WindowToolGUID</key>
 			<string>496AFEC71810E35F000E5F2F</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

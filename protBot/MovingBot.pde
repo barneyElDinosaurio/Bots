@@ -6,7 +6,7 @@ class MovingBot {
 
   float tiempoDeAvance = 500;
 
-  
+
 
   float tam = 15;
   float m = 1;
@@ -18,6 +18,7 @@ class MovingBot {
 
   float vel_ang;
 
+  String computingMode;
 
 
   MovingBot(float _x, float _y) {
@@ -25,12 +26,14 @@ class MovingBot {
     pos.set(_x, _y, 0);
     pos_old = new PVector();
     pos_old.set(pos);
+    computingMode = "acc";
 
     // Siempre ajustar angulo y velocidad
   }
   MovingBot() {
     pos = new PVector(); // cero por defecto
     pos_old = new PVector(); // idem
+    computingMode = "acc";
   }
   void dibujate() {
     pushMatrix();
@@ -44,6 +47,9 @@ class MovingBot {
   void mueveteAqui(float x, float y) {
     //      pos_old.set( pos.x, pos.y , 0);
     pos.set(x, y, 0);
+  }
+  void setComputingMode(String _s) {
+    computingMode = _s;
   }
   void avanza() { // ?
     pos_old.set(pos);
@@ -66,13 +72,35 @@ class MovingBot {
     m = _m;
   }
   void recalculaVelocidad(float anguloDiff) {
-    float acc_angular = kAng * anguloDiff - friccionAngular*vel_ang;
-    vel_ang += acc_angular;
-    println("vel_ang : " + vel_ang*180/PI);
-    angle+=vel_ang;
-    angle = angle % (2*PI);
-    vel = PVector.fromAngle(angle);
+    if (computingMode == "acc") {
+
+      //Opción 1: USAR LA ACELERACIÓN ANGULAR, ES DECIR, USAR UNA ESPECIE DE FUERZAS ANGULARES. IGUAL QUE NEWTON, PERO CON ÁNGULOS
+      println("COMPUTING MODE: " + computingMode);
+      float acc_angular = kAng * anguloDiff ;//- friccionAngular*vel_ang;
+      vel_ang += acc_angular;
+      println("vel_ang : " + vel_ang*180/PI);
+      angle+=vel_ang;
+      angle = angle % (2*PI);
+      vel = PVector.fromAngle(angle);
+    }
+    else if (computingMode == "vel") {
+      /* 
+       Opción 2: USAR LA VELOCIDAD ANGULAR, ES DECIR, HACER ÁNGULO += K*DELTA_ÁNGULO. NO ESTOY SEGURO DE CUÁL ES LA
+       DIFERENCIA CON EL MÉTODO ANTERIOR. CREO QUE LA DIFERENCIA ES QUE CON EL OTRO SE OBTIENE UN OSCILADOR AMORTIGUADO, Y
+       EN ESTE CASO HAY UNA CONVERGENCIA EXPONENCIAL 
+       */
+       
+       vel_ang += kAng * anguloDiff;
+       angle+=vel_ang;
+      angle = angle % (2*PI);
+      vel = PVector.fromAngle(angle);
+       
+    }
+    else{
+      println("WARNING ::  wrong computing mode !!!!");
+    }
   }
+  
   void start() {
     timer.start();
   }

@@ -9,7 +9,7 @@ MovingBot elOtroBot;// = new MovingBot();
 PVector bebedero; 
 float kAng = 0.03;
 float friccionAngular = 0.05;
-
+boolean loop;
 void setup() {
   smooth();
   size(w, h);
@@ -19,10 +19,17 @@ void setup() {
 
   elBot.mueveteAqui( 300*0.1, 250*0.1);
   elBot.start();
+  elBot.setComputingMode("vel");
+  loop = true;
 }
 
 void draw() {
   background(155);
+  /*if(loop == true){
+    loop();
+  }else{
+    noLoop();
+  }*/
   
   // *************** CALCULO PRELIMINAR *****************
   /*
@@ -63,15 +70,29 @@ void draw() {
   }
   else{
     elBot.timer.restart();
+    
+    // Vector que une la posición del bot actual con el destino.
     PVector distancia = PVector.sub( bebedero , elBot.pos );
+    
+    // Ángulo entre los dos vectores. Atención con el cálculo, porque hay que hacerle un wrap para que quede entre -pi y pi
     //float angulo = PVector.angleBetween( elBot.vel , distancia );
-    float angulo = distancia.heading() - elBot.vel.heading();
+    
+    
+    //float angulo = deltaAngle( elBot.vel , distancia);
+    float angulo2 = distancia.heading() - elBot.vel.heading();
+    float angulo = deltaAngle(elBot.vel, distancia);
+    println("--------- comparacion entre angulos");
+    println(angulo);
+    println(angulo2);
+    println("-------");
+    
     println("angulo diff " + angulo*180/PI);
+    if(angulo > PI || angulo < -PI){
+      println("WARNING ::: El ángulo no está siendo medido en el intervalo correcto");
+      noLoop();
+    }
     elBot.recalculaVelocidad(angulo);
   }
-  
-  
-  
   
   //*********** DIBUJO ************* 
 
@@ -81,3 +102,37 @@ void draw() {
   rect(bebedero.x, bebedero.y, 20, 20);
 }
 
+float deltaAngle(PVector v1, PVector v2 ) {
+  /*
+Función que calcula la diferencia angular (CON SIGNO), entre dos vectores.
+   El ángulo de v2 - el ángulo de v1
+   */
+   
+   float angle = PVector.angleBetween(v1, v2);
+   PVector signVector = v1.cross(v2);
+   angle*= signOf( signOf( signVector.z ) );
+   
+   println("SV: " + signVector);
+   
+   return(angle);
+}
+int signOf(float num) {
+  if ( num >= 0) {
+    return(1);
+  }
+  else {
+    return(-1);
+  }
+}
+
+void keyPressed(){
+  if(key == ' '){
+    loop = !loop;
+  }
+  if(loop){
+    loop();
+  }else{
+  noLoop();
+  }
+}
+  
