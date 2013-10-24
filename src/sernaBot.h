@@ -8,8 +8,15 @@
  */
 
 
+
+//intento de i2c
+#include <wiringPiI2C.h>
+
+
 #include "wiringPi.h"
 #include "wiringSerial.h"
+
+
 
 #ifndef BOT_H
 #define BOT_H
@@ -83,5 +90,9 @@ public:
 	ofVec2f bebedero; // En la clase general??? Es decir, en BOt?
 	
 	//int serialNumber;
+	
+	//intento i2c...........................................................PENDIENTE
+	int fd;
+	int angulo;
 
 };

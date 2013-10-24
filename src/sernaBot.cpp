@@ -34,7 +34,12 @@ void SernaBot::setup(){
 	botType = "sernaBot";
 	
 	//Setear wiringPI
+		
 	wiringPiSetup();
+	
+	//intento i2c......................................................................
+	fd = wiringPiI2CSetup(0x21);
+	
 	pinMode(15, OUTPUT);
 	pinMode(16, OUTPUT);
 	pinMode(1, OUTPUT);
@@ -88,6 +93,14 @@ void SernaBot::update(){
 		}
 	}
 	
+	//INTENTO DE I2C.................PENDIENTE
+	
+	//Escribiendo la letra "A"(0x42) al device (0x21)
+	wiringPiI2CWriteReg8 (fd,0x00,0x41);
+	//Ahora leyendo
+	ofSleepMillis(10);
+	angulo=wiringPiI2CReadReg8(fd,0x01);
+	cout << "angulo de i2c bruja: " << angulo << endl;
 	
 	// Brujería para encontrar el máximo de las necesidades
 	const int N = sizeof(necesidades) / sizeof(float);
