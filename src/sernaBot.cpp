@@ -101,7 +101,8 @@ void SernaBot::update(){
 	ofSleepMillis(10);
 	byte1=wiringPiI2CReadReg8(fd,0x01);
 	byte2=wiringPiI2CReadReg8(fd,0x02);
-	cout << "byte1: " << byte1 << "byte2: " << byte2 << endl;
+	angulo=(byte1 << 8) + byte2;
+	cout << "byte1: " << byte1 << "byte2: " << byte2 << "angulo: " << angulo  << endl;
 	
 	// Brujería para encontrar el máximo de las necesidades
 	const int N = sizeof(necesidades) / sizeof(float);
