@@ -99,8 +99,9 @@ void SernaBot::update(){
 	wiringPiI2CWriteReg8 (fd,0x00,0x41);
 	//Ahora leyendo
 	ofSleepMillis(10);
-	angulo=wiringPiI2CReadReg8(fd,0x01);
-	cout << "angulo de i2c bruja: " << angulo << endl;
+	byte1=wiringPiI2CReadReg8(fd,0x01);
+	byte2=wiringPiI2CReadReg8(fd,0x02);
+	cout << "byte1: " << byte1 << "byte2: " << byte2<< endl;
 	
 	// Brujería para encontrar el máximo de las necesidades
 	const int N = sizeof(necesidades) / sizeof(float);
