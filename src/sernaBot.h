@@ -93,6 +93,8 @@ public:
 	
 	//intento i2c...........................................................PENDIENTE
 	int fd;
+	int byte1;
+	int byte2;
 	int angulo;
 
 };
