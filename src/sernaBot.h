@@ -92,9 +92,9 @@ public:
 	//int serialNumber;
 	
 	//intento i2c...........................................................PENDIENTE
-	int fd;
-	int byte1;
-	int byte2;
-	int angulo;
+	float fd;
+	float byte1;
+	float byte2;
+	float angulo;
 
 };
