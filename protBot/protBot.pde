@@ -7,13 +7,22 @@ MovingBot elBot = new MovingBot();
 MovingBot elOtroBot;// = new MovingBot();
 
 PVector bebedero; 
+Obstacle obstaculo;
+
 float kAng = 0.03;
+float kAng2 = 0.25;
+float kRepulsion = 0.25;
 float friccionAngular = 0.05;
 boolean loop;
+
+float distanciaColision;
+
 void setup() {
   smooth();
   size(w, h);
-  bebedero = new PVector(300, 250);
+  bebedero = new PVector(300, 300);
+  obstaculo = new Obstacle( new PVector( 270, 270), 10 ) ;
+  distanciaColision = 40;
 
   elOtroBot = new MovingBot( 300*0.1, 260*0.01 );  
 
@@ -25,81 +34,39 @@ void setup() {
 
 void draw() {
   background(155);
-  /*if(loop == true){
-    loop();
-  }else{
-    noLoop();
-  }*/
-  
-  // *************** CALCULO PRELIMINAR *****************
-  /*
-  // Calcular Fuerza
-  // Qué fuerzas calculamos?
-
-  // ** Con el bebedero;
-
-  float k = 0.01;
-  PVector fuerza = new PVector();
-  PVector distancia = PVector.sub( bebedero, elBot.pos);
-
-  //fuerza.add( PVector.mult(distancia, k) );
-  println("FUERZA BEB " + fuerza);
-  
-  
-  // ** Con el otro Bot
-  // exponencial
-
-  float const_f = 10;
-  PVector distBots = PVector.sub( elBot.pos, elOtroBot.pos );
-  float r = distBots.mag();
-  float magFuerza = const_f * exp(-r*r/200);
-  PVector dirFuerza = new PVector(distBots.x, distBots.y);
-  dirFuerza.normalize();
-  PVector fuerzaBot = PVector.mult(dirFuerza, magFuerza);
-  fuerza.add( fuerzaBot);
-  println( "FUERZA BOT" + fuerzaBot );
-
-  elBot.mueveteFuerza(fuerza);
-  */
-  
-  //*********** LA VELOCIDAD COMO OSCILADOR AMORTIGUADO  (BOT + BEBEDERO )*************
-  // Calcula el ángulo....
-  
-  if( elBot.timer.tiempo() < elBot.tiempoDeAvance){
-    elBot.avanza();
-  }
-  else{
-    elBot.timer.restart();
-    
-    // Vector que une la posición del bot actual con el destino.
-    PVector distancia = PVector.sub( bebedero , elBot.pos );
-    
-    // Ángulo entre los dos vectores. Atención con el cálculo, porque hay que hacerle un wrap para que quede entre -pi y pi
-    //float angulo = PVector.angleBetween( elBot.vel , distancia );
-    
-    
-    //float angulo = deltaAngle( elBot.vel , distancia);
-    float angulo2 = distancia.heading() - elBot.vel.heading();
-    float angulo = deltaAngle(elBot.vel, distancia);
-    println("--------- comparacion entre angulos");
-    println(angulo);
-    println(angulo2);
-    println("-------");
-    
-    println("angulo diff " + angulo*180/PI);
-    if(angulo > PI || angulo < -PI){
-      println("WARNING ::: El ángulo no está siendo medido en el intervalo correcto");
-      noLoop();
-    }
-    elBot.recalculaVelocidad(angulo);
-  }
   
   //*********** DIBUJO ************* 
 
   elBot.dibujate();
+  noFill();
+  ellipse(elBot.pos.x, elBot.pos.y , distanciaColision/2, distanciaColision/2 );
   elOtroBot.dibujate();
   fill(0, 0, 200);
   rect(bebedero.x, bebedero.y, 20, 20);
+
+  line(elBot.pos.x, elBot.pos.y, bebedero.x, bebedero.y);
+
+  // OBSTACULO
+  //PVector distanciaObstaculo = PVector.sub(obstaculo, elBot.pos);
+  line( obstaculo.pos.x, obstaculo.pos.y, elBot.pos.x, elBot.pos.y);
+  obstaculo.dibujate();
+
+  //*********** LA VELOCIDAD COMO OSCILADOR AMORTIGUADO  (BOT + BEBEDERO )*************
+  // Calcula el ángulo....
+
+  if ( elBot.timer.tiempo() < elBot.tiempoDeAvance) {
+    elBot.avanza();
+  }
+  else {
+    elBot.timer.restart();
+    elBot.computeAngleAttractor(bebedero);
+    elBot.computeAngleObstacle(obstaculo);
+    elBot.recalculaVelocidad();
+    
+   
+  }
+
+  
 }
 
 float deltaAngle(PVector v1, PVector v2 ) {
@@ -107,14 +74,14 @@ float deltaAngle(PVector v1, PVector v2 ) {
 Función que calcula la diferencia angular (CON SIGNO), entre dos vectores.
    El ángulo de v2 - el ángulo de v1
    */
-   
-   float angle = PVector.angleBetween(v1, v2);
-   PVector signVector = v1.cross(v2);
-   angle*= signOf( signOf( signVector.z ) );
-   
-   println("SV: " + signVector);
-   
-   return(angle);
+
+  float angle = PVector.angleBetween(v1, v2);
+  PVector signVector = v1.cross(v2);
+  angle*= signOf( signOf( signVector.z ) );
+
+  println("SV: " + signVector);
+
+  return(angle);
 }
 int signOf(float num) {
   if ( num >= 0) {
@@ -125,14 +92,15 @@ int signOf(float num) {
   }
 }
 
-void keyPressed(){
-  if(key == ' '){
+void keyPressed() {
+  if (key == ' ') {
     loop = !loop;
   }
-  if(loop){
+  if (loop) {
     loop();
-  }else{
-  noLoop();
+  }
+  else {
+    noLoop();
   }
 }
-  
+

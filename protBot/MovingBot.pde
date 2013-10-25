@@ -4,7 +4,7 @@ class MovingBot {
 
   color c = color(random(255), random(255), random(255));
 
-  float tiempoDeAvance = 500;
+  float tiempoDeAvance = 200;
 
 
 
@@ -54,8 +54,6 @@ class MovingBot {
   void avanza() { // ?
     pos_old.set(pos);
     pos.add(vel);
-    // PVector delta = PVector.sub(pos, pos_old);
-    // angle = atan2(delta.y, delta.x);
   }
   void mueveteFuerza(PVector fuerza) {
     pos_old.set(pos);
@@ -71,17 +69,22 @@ class MovingBot {
   void setMasa(float _m) {
     m = _m;
   }
-  void recalculaVelocidad(float anguloDiff) {
+  void resetVel() {
+    vel.set(0, 0);
+  }
+  void recalculaOrientacion(float anguloDiff) {
+    
+    println("COMPUTING MODE: " + computingMode);
     if (computingMode == "acc") {
 
       //Opción 1: USAR LA ACELERACIÓN ANGULAR, ES DECIR, USAR UNA ESPECIE DE FUERZAS ANGULARES. IGUAL QUE NEWTON, PERO CON ÁNGULOS
-      println("COMPUTING MODE: " + computingMode);
+
       float acc_angular = kAng * anguloDiff ;//- friccionAngular*vel_ang;
       vel_ang += acc_angular;
       println("vel_ang : " + vel_ang*180/PI);
       angle+=vel_ang;
       angle = angle % (2*PI);
-      vel = PVector.fromAngle(angle);
+      //  vel = PVector.fromAngle(angle); // OJO, ELIMINÉ ESTO!
     }
     else if (computingMode == "vel") {
       /* 
@@ -90,19 +93,70 @@ class MovingBot {
        EN ESTE CASO HAY UNA CONVERGENCIA EXPONENCIAL 
        */
        
-       vel_ang += kAng * anguloDiff;
-       angle+=vel_ang;
+      // RESET PARA EMPEZAR LOS CÁLCULOS
+      resetVel();
+      
+      // DELTA, EN FUNCIÓN DE LA DIFERENCIA ANGULAR
+      vel_ang = kAng2 * anguloDiff;
+      angle+=vel_ang;
+      
+      println("Cambio angular " + vel_ang*180/PI );
       angle = angle % (2*PI);
-      vel = PVector.fromAngle(angle);
-       
+      
     }
-    else{
+    else {
       println("WARNING ::  wrong computing mode !!!!");
     }
   }
-  
+  void recalculaVelocidad(){
+   vel = PVector.fromAngle(angle);
+  }
+
   void start() {
     timer.start();
+  }
+  void computeAngleAttractor(PVector atractor){
+    // ESTA FUNCIÓN CALCULA EL ÁNGULO QUE VA A ROTAR EL BOT EN FUNCIÓN DEL ATRACTOR.
+    
+     // Vector que une la posición del bot actual con el destino.
+    PVector distancia = PVector.sub( atractor, elBot.pos );
+
+    // Ángulo entre los dos vectores. Atención con el cálculo, porque hay que hacerle un wrap para que quede entre -pi y pi
+
+    float angulo2 = distancia.heading() - elBot.vel.heading();
+    float angulo = deltaAngle(elBot.vel, distancia);
+    
+    println("--------- comparacion entre angulos");
+    println(angulo);
+    println(angulo2);
+    println("-------");
+
+    println("angulo diff " + angulo*180/PI);
+    if (angulo > PI || angulo < -PI) {
+      println("WARNING ::: El ángulo no está siendo medido en el intervalo correcto");
+      noLoop();
+    }
+
+    elBot.recalculaOrientacion(angulo);
+    //elBot.recalculaVelocidad();
+  }
+  
+  void computeAngleObstacle(Obstacle obstaculo){
+    
+    PVector distancia = PVector.sub( obstaculo.pos , pos);
+    float angulo = deltaAngle( elBot.vel, distancia );
+    
+    if( distancia.mag() < distanciaColision && angulo < PI/3 ){
+      println("COLISION INMINENTE");
+      
+      if( angulo > 0 ){ // Sígalo desviando
+        angle += PI/2;
+      }else{
+        angle -= PI/2;
+      }
+      
+    }
+  
   }
 }
 
