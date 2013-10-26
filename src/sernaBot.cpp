@@ -182,18 +182,29 @@ void SernaBot::updateMovement(){
  	// 	cout << "El ángulo del delta Pos" << anguloDeltaPos; // en grados
 
  	// 	cout << "angulo restado " <<  anguloDeltaPos - anguloGrados << endl;
- 		float angleDifference = ofAngleDifferenceDegrees(anguloDeltaPos, anguloGrados ); // ESte es el ángulo que tengo que rotar!
-
- 		// OBSTACULOS:
-
+ 		float angleDifference = ofAngleDifferenceDegrees(anguloDeltaPos, anguloGrados ); // ESte es el ángulo que tengo que rotar! ( o una constante por este ángulo)
+		
+		// OBSTACULOS:
+ 		bool colisionInminente = false;
  		for( int i = 0 ; i < obstaculos.size() ; i++){
 
- 			if( pos.distance( obstaculos.at(i) ) < collisionDistance ){
+ 			float d =  pos.distance( obstaculos.at(i) )
+ 			cout << "Distancia con obstaculo " << d << endl;
+ 			
+ 			if( d < collisionDistance || colisionInminente == false){
  				cout << "Colision inminente " << endl;
+ 				colisionInminente = true; // Dejo esto por si voy a colisionar con más de una persona
+
+ 				// Detectar angulo con obstaculo
+ 				ofVec2f deltaPosObstaculo = obstaculo - pos; // OJO con el signo!
+ 				float anguloDeltaPosObstaculo = - deltaPosObstaculo.angle( ofVec2f(1,0) );
+ 				float angleToObstacle = ofAngleDifferenceDegrees( anguloDeltaPosObstaculo , anguloGrados );
+ 				cout << "Angulo con el obstáculo " << angle2Obstacle << endl;
  			}
 
 
  		}
+ 		
  		// cout << "angulo con calculo OF" << angleDifference << endl;
  		// cout << "voy a rotar "<< angle2Time(angleDifference) << "segundos" << endl;
 		

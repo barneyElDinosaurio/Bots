@@ -34,7 +34,7 @@ public:
 		showTuio = false;
 		controlledMotion = true;
 		reportObstacles = false;
-		collisionDistance = 0.1;
+		collisionDistance = 0.2; // 0.2 Parece sensato para una distancia de 2 metros
 		setOscSender("192.168.1.52", 9000);
 	}
 		
