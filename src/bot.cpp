@@ -80,8 +80,12 @@ void Bot::update(){
 			*/
 		}
 		// ****** TODO SUYO MARIO *********
-
-
+		else if( m.getAddress() == "/blobK/data"){
+			int blobTrackId = m.getArgAsInt32(0);
+			float blobTrackX = m.getArgAsFloat(1);
+			float blobTrackY = m.getArgAsFloat(2);
+			
+			
 
 		// ******* QUIETO AQUÍ, CAN *******
 		else if( m.getAddress() == "/tuio/2Dobj"){
