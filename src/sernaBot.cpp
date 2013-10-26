@@ -154,6 +154,7 @@ void SernaBot::updateMovement(){
 			cout << "Obs " << i << ": posX = " << obstaculos.at(i).x <<  ", posY = " << obstaculos.at(i).y << endl;
 
 		}
+		cout << "______________________" << endl;
 
 	}
 	// -------------------------
