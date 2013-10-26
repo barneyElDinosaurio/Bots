@@ -193,17 +193,17 @@ void SernaBot::updateMovement(){
  			float d =  pos.distance( obstaculos.at(i) );
  			cout << "Distancia con obstaculo " << d << endl;
  			
- 			if( d < collisionDistance || colisionInminente == false){
+ 			if( d < collisionDistance && colisionInminente == false){
  				cout << "Colision inminente " << endl;
  				colisionInminente = true; // Dejo esto por si voy a colisionar con más de una persona
 
  				// Detectar angulo con obstaculo
  				ofVec2f deltaPosObstaculo = obstaculos.at(i) - pos; // OJO con el signo!
- 				float anguloDeltaPosObstaculo =  deltaPosObstaculo.angle( ofVec2f(1,0) ); // Aqui le cambié el signo para que rote correctamente. 
- 				float angleToObstacle = ofAngleDifferenceDegrees( anguloDeltaPosObstaculo , anguloGrados );
+ 				float anguloDeltaPosObstaculo =  -deltaPosObstaculo.angle( ofVec2f(1,0) ); // Aqui le cambié el signo para que rote correctamente. 
+ 				float angleToObstacle = - ofAngleDifferenceDegrees( anguloDeltaPosObstaculo , anguloGrados );
  				cout << "Angulo con el obstáculo " << angleToObstacle << endl;
 
- 				if( angleToObstacle > 0){
+ 				if( angleToObstacle > 0){ // Lo desvía brutalmente. Hay que notar que este ángulo de evasión no es real, sino que está ponderado por un factor (abgle2TimeFactor, o algo así)
  					angleDifference = anguloDeEvasion;
  				}
  				else {
