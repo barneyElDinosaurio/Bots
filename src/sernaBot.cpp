@@ -188,7 +188,7 @@ void SernaBot::updateMovement(){
  		bool colisionInminente = false;
  		for( int i = 0 ; i < obstaculos.size() ; i++){
 
- 			float d =  pos.distance( obstaculos.at(i) )
+ 			float d =  pos.distance( obstaculos.at(i) );
  			cout << "Distancia con obstaculo " << d << endl;
  			
  			if( d < collisionDistance || colisionInminente == false){
@@ -196,10 +196,10 @@ void SernaBot::updateMovement(){
  				colisionInminente = true; // Dejo esto por si voy a colisionar con más de una persona
 
  				// Detectar angulo con obstaculo
- 				ofVec2f deltaPosObstaculo = obstaculo - pos; // OJO con el signo!
+ 				ofVec2f deltaPosObstaculo = obstaculos.at(i) - pos; // OJO con el signo!
  				float anguloDeltaPosObstaculo = - deltaPosObstaculo.angle( ofVec2f(1,0) );
  				float angleToObstacle = ofAngleDifferenceDegrees( anguloDeltaPosObstaculo , anguloGrados );
- 				cout << "Angulo con el obstáculo " << angle2Obstacle << endl;
+ 				cout << "Angulo con el obstáculo " << angleToObstacle << endl;
  			}
 
 
