@@ -183,6 +183,17 @@ void SernaBot::updateMovement(){
 
  	// 	cout << "angulo restado " <<  anguloDeltaPos - anguloGrados << endl;
  		float angleDifference = ofAngleDifferenceDegrees(anguloDeltaPos, anguloGrados ); // ESte es el ángulo que tengo que rotar!
+
+ 		// OBSTACULOS:
+
+ 		for( int i = 0 ; i < obstaculos.size() ; i++){
+
+ 			if( pos.distance( obstaculos.at(i) ) < collisionDistance ){
+ 				cout << "Colision inminente " << endl;
+ 			}
+
+
+ 		}
  		// cout << "angulo con calculo OF" << angleDifference << endl;
  		// cout << "voy a rotar "<< angle2Time(angleDifference) << "segundos" << endl;
 		

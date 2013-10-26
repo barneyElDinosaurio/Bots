@@ -79,6 +79,11 @@ void Bot::update(){
 			}
 			*/
 		}
+		// ****** TODO SUYO MARIO *********
+
+
+
+		// ******* QUIETO AQUÍ, CAN *******
 		else if( m.getAddress() == "/tuio/2Dobj"){
 			if( m.getArgAsString(0) == "set"){ // if message is a set message
 

@@ -34,6 +34,7 @@ public:
 		showTuio = false;
 		controlledMotion = true;
 		reportObstacles = false;
+		collisionDistance = 0.1;
 		setOscSender("192.168.1.52", 9000);
 	}
 		
@@ -135,5 +136,6 @@ public:
 	bool controlledMotion;
 	bool reportObstacles;
 	vector <ofVec2f> obstaculos;
+	float collisionDistance;
 
 };
