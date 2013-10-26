@@ -128,7 +128,7 @@ void Bot::update(){
 		}
 		// Other messages: eg. orders: calibrate, go home... qué se yo...
 		else if( m.getAddress() == "/reportObstacles"){ // Mensaje para activar la pintada de blobs en cout.
-			cout << "En el cambiador de static" << endl;
+			cout << "En el cambiador de reporte de obstaculos" << endl;
 			int val = m.getArgAsInt32(0);
 			if( val == 0){
 				reportObstacles = false;
