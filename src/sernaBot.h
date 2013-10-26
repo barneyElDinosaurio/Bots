@@ -76,6 +76,7 @@ public:
 	float beforeAngle; 
 	float timeAngleCalFactor; // Conversión radianes -> tiempo de rotación
 
+
 	//***************
 	// OTRAS COSAS
 	//***************

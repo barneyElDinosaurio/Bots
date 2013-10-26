@@ -81,6 +81,9 @@ void SernaBot::setup(){
 
 }
 void SernaBot::update(){
+
+	// Antes de recibir OSC, borre el registro de los obstáculos que tiene. Un día hacemos tracking, para que sepa donde estaban ayer...
+	obstaculos.clear();
 	((Bot* )this)->update(); // Aquí adentro están los recibidores de osc.
 	
 	// Encontrar el máximo de las necesidades
@@ -94,7 +97,7 @@ void SernaBot::update(){
 	}
 	
 	//INTENTO DE I2C.................PENDIENTE
-	
+	/*
 	//Escribiendo la letra "A"(0x42) al device (0x21)
 	wiringPiI2CWriteReg8 (fd,0x00,0x41);
 	//Ahora leyendo
@@ -103,7 +106,7 @@ void SernaBot::update(){
 	byte2=wiringPiI2CReadReg8(fd,0x02);
 	angulo=(byte1 << 8) + byte2;
 	cout << "byte1: " << byte1 << "byte2: " << byte2 << "angulo: " << angulo  << endl;
-	
+	*/
 	// Brujería para encontrar el máximo de las necesidades
 	const int N = sizeof(necesidades) / sizeof(float);
 	//cout << "TAMAÑO " << N << endl;
@@ -142,12 +145,25 @@ void SernaBot::update(){
 }
 void SernaBot::updateMovement(){
 
+
+	if( reportObstacles == true){
+		cout << "______________________" << endl;
+		cout << "Número de obstáculos = " << obstaculos.size() << endl;
+
+		for(int i = 0 ; i < obstaculos.size() ; i++){
+			cout << "Obs " << i << ": posX = " << obstaculos.at(i).x <<  ", posY = " << obstaculos.at(i).y << endl;
+
+		}
+
+	}
 	// -------------------------
 	//	PRIMER MODO DE MOVIMIENTO: LÍNEAS RECTAS...
 	//________________________
 
 	// FACTOR DE CALIBRACIÓN: (HABRÍA QUE HACER QUE FUERA DINÁMICO...):
 	// 4.4s por vuelta entera = 1.42 rad / s
+
+	// HAY QUE PONERLE UN MODO ** LOST ** !!!!
 
 	if( isStatic == false ){ // Si no es estático
 
