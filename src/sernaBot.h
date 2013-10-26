@@ -73,8 +73,11 @@ public:
 	int linear; // Poner como defines
 	int rotation; // Poner como defines
 
+
 	float beforeAngle; 
 	float timeAngleCalFactor; // Conversión radianes -> tiempo de rotación
+
+	float anguloDeEvasion;
 
 
 	//***************

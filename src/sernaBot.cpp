@@ -79,6 +79,8 @@ void SernaBot::setup(){
 	isStatic = false; // Seguro????
 	timeAngleCalFactor = 1.0 * 1000 / ( 1.42 * 180/PI ) ; //segundos por radián [cronometrado suciamente cuando tenía adaptador]
 
+	anguloDeEvasion = 360;
+
 }
 void SernaBot::update(){
 
@@ -197,9 +199,17 @@ void SernaBot::updateMovement(){
 
  				// Detectar angulo con obstaculo
  				ofVec2f deltaPosObstaculo = obstaculos.at(i) - pos; // OJO con el signo!
- 				float anguloDeltaPosObstaculo = - deltaPosObstaculo.angle( ofVec2f(1,0) );
+ 				float anguloDeltaPosObstaculo =  deltaPosObstaculo.angle( ofVec2f(1,0) ); // Aqui le cambié el signo para que rote correctamente. 
  				float angleToObstacle = ofAngleDifferenceDegrees( anguloDeltaPosObstaculo , anguloGrados );
  				cout << "Angulo con el obstáculo " << angleToObstacle << endl;
+
+ 				if( angleToObstacle > 0){
+ 					angleDifference = anguloDeEvasion;
+ 				}
+ 				else {
+ 					angleDifference = -anguloDeEvasion;
+
+ 				}
  			}
 
 
