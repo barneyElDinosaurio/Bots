@@ -33,6 +33,7 @@ public:
 		showNecesidades = false;
 		showTuio = false;
 		controlledMotion = true;
+		reportObstacles = false;
 		setOscSender("192.168.1.52", 9000);
 	}
 		
@@ -132,5 +133,7 @@ public:
 	float movementThreshold; // Threshold de acercamiento a un objeto
 	bool isStatic; // modo estático o moviéndose
 	bool controlledMotion;
+	bool reportObstacles;
+	vector <ofVec2f> obstaculos;
 
 };

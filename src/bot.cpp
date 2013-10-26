@@ -90,8 +90,11 @@ void Bot::update(){
 				if( fid == 0){ // El sernápodo
 					pos = ofVec2f(x, y);
 				}
-				else if( fid == 1 ){
+				/*else if( fid == 1 ){
 					((SernaBot *)this)->goTo( x, y );
+				}*/
+				else{
+					obstaculos.push_back( ofVec2f( x, y ) );
 				}
 
 
@@ -124,6 +127,17 @@ void Bot::update(){
 
 		}
 		// Other messages: eg. orders: calibrate, go home... qué se yo...
+		else if( m.getAddress() == "/reportObstacles"){ // Mensaje para activar la pintada de blobs en cout.
+			cout << "En el cambiador de static" << endl;
+			int val = m.getArgAsInt32(0);
+			if( val == 0){
+				reportObstacles = false;
+				cout << "reportObstacles =  " << reportObstacles;
+			}else if( val == 1 ){
+				reportObstacles = true;
+				cout << "reportObstacles = " << reportObstacles;
+			}
+		}
 		else if( m.getAddress() == "/setStatic"){ // Mensaje para activar la pintada de blobs en cout.
 			cout << "En el cambiador de static" << endl;
 			int val = m.getArgAsInt32(0);
@@ -307,6 +321,8 @@ void Bot::update(){
 			
 			if( this->botType == "sernaBot"){
 				((SernaBot*) this)->stop();
+				controlledMotion = true;
+
 			}
 			
 			// HEXAPOD
