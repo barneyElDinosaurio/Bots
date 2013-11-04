@@ -164,13 +164,26 @@ void Bot::update(){
 			float z = m.getArgAsFloat(2);			
 			cout << "mandadnome por osc a "<< x << " " << y << " " << z << endl;
 			((Dormilonador*)this)->brazo.moveTo( x, y, z, 0);
+		}else if(m.getAddress() == "/dormilonadorTime"){
+
+			cout << "entrando a servomovetime" << endl;
+			float x = m.getArgAsFloat(0);
+                        float y = m.getArgAsFloat(1);
+                        float z = m.getArgAsFloat(2);                 
+			float theta = m.getArgAsFloat(3);
+			int time = m.getArgAsInt32(4);
+			cout << "saliendo del movetime" << endl; 
 		}
+
 		else if(m.getAddress() == "/moverServo" ){ // **** MOVER SERVO
 			
 			cout << "En mover servo. Numargs " << m.getNumArgs() <<endl;
 			int servoNum = m.getArgAsInt32(0);
 			int pulse = m.getArgAsInt32(1);
-			
+
+				
+
+	
 			// HEXAPODO
 			
 			if(botType == "hexapod"){
@@ -180,8 +193,9 @@ void Bot::update(){
 			// DORMILONADOR
 			
 			if( botType == "dormilonador"){
-				((Dormilonador *)this)->servocontroller.servoMove(servoNum, pulse);
-				cout <<  "RECIBI ORDEN DE MOVER SERVO"<< endl;
+					int time = m. getArgAsInt32(2);
+	((Dormilonador *)this)->servocontroller.servoMoveSpeed(servoNum, pulse, time);
+				cout <<  "RECIBI ORDEN DE MOVER SERVO time solo"<< endl;
 			}
 		}
 		

@@ -163,11 +163,11 @@ void Leg::moveTo(float x, float y, float z, float w){
 }
 //dice move speed peor es un move time.....
 void Leg::moveSpeedTo(float x, float y, float z, float w, int speed){
+cout << "entrando a moveSpeedTo()..." << endl;
 	calcularAngulos(x, y, z, w);
-
+cout << "calculo angulos desde moveSpeedTo del domir (movetime) "<<  endl;
 	servocontroller->servoMoveTime( 0, pulsos[0], speed );
-	servocontroller->servoMoveTime( 1, pulsos[1], speed );
-	servocontroller->servoMoveTime( 2, pulsos[2], speed );
-	servocontroller->servoMoveTime( 3, pulsos[3], speed );
-
+	//servocontroller->servoMoveTime( 1, pulsos[1], speed );
+	//servocontroller->servoMoveTime( 2, pulsos[2], speed );
+	//servocontroller->servoMoveTime( 3, pulsos[3], speed );
 }
