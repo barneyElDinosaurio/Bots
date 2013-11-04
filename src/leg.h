@@ -49,7 +49,7 @@ void setInv(){
 }
 void savePulse();
 
-float rad2Pulse(float x);
+int rad2Pulse(float x);
 
 // funcion de float!! si retorna el flotante??
 float* printPulse() {
@@ -68,7 +68,7 @@ float* printPulse() {
 	float lBrazo;
 	float lAntebrazo;
 	float lMun;
-
+	float cabeceo;
 // Angulo
 	float angBrazo;
 	float angAntebrazo;

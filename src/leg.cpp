@@ -18,10 +18,10 @@ Leg::Leg()
 void Leg::calcularAngulos(float x, float y, float z, float w){
 
 
-	if ((posFin.x != x) || (posFin.y != y) || (posFin.z != z)) {
+	if ((posFin.x != x) || (posFin.y != y) || (posFin.z != z)|| (cabeceo != (w * rad) ) ) {
 
 		posFin.set(x,y,z);
-
+		cabeceo = w * rad;
 	    float xPrima = sqrt( x*x + y*y);
 	    float yPrima = z;
 
@@ -31,7 +31,7 @@ void Leg::calcularAngulos(float x, float y, float z, float w){
 
         while ( (menos == true) || (mas == true) || (repeat == 0)) {
 
-			float cabeceo = w * rad;
+		//	float cabeceo = w * rad;
 
 
 			float afx = cos(cabeceo) * lMun;
@@ -66,12 +66,12 @@ void Leg::calcularAngulos(float x, float y, float z, float w){
 	        if  ( angMun*grad < -90 ) {
 	          menos = true;
 	          mas = false;
-	          cabeceo=cabeceo * grad + 1;
+	          cabeceo=cabeceo + (1 * rad);
 	        }
 	        else if (angMun*grad > 90) {
 	          mas = true;
 	          menos=false;
-	          cabeceo=cabeceo * grad - 1;
+	          cabeceo=cabeceo - (1 * rad);
 	        }
 	        else {
 	          mas = false;
@@ -95,11 +95,12 @@ void Leg::savePulse() {
 
 
 
-	if ((angGiro != angGiro) || (angBrazo != angBrazo) || (angAntebrazo != angAntebrazo) || (angGiro != angGiro))
+	if ((angGiro != angGiro) || (angBrazo != angBrazo) || (angAntebrazo != angAntebrazo) || (angMun != angMun))
 	{
 		cout << "no alcanza llegar al destino " << endl;
 	}
 	else {
+	cout << "empezando a guardar pulsos " << endl;
 		pulsos[0] = rad2Pulse ( angGiro 	);
 	  	pulsos[1] = rad2Pulse ( angBrazo 	);
 		pulsos[2] = rad2Pulse ( angAntebrazo);
@@ -107,8 +108,10 @@ void Leg::savePulse() {
 	}
 }
 
-float Leg::rad2Pulse(float x){
+int Leg::rad2Pulse(float x){
 
+
+//quizas deberia no colocar este mas 90.0.... debug aqui PENDIENTE...
 	x = (x * grad) + 90.0;
 
 	float maxPulse = 1800;
@@ -120,7 +123,7 @@ float Leg::rad2Pulse(float x){
 
 	float m = (maxPulse - minPulse) / ( maxAng - minAng) ;
 	float b = minPulse - (m * minAng);
-	float y = (m*x)+b;
+	int y =(int)((m*x)+b);
 
 	return(y);
 }
@@ -158,13 +161,13 @@ void Leg::moveTo(float x, float y, float z, float w){
 	servocontroller->servoMove( 2, pulsos[2] );
 	servocontroller->servoMove( 3, pulsos[3] );
 }
-
+//dice move speed peor es un move time.....
 void Leg::moveSpeedTo(float x, float y, float z, float w, int speed){
 	calcularAngulos(x, y, z, w);
 
-	servocontroller->servoMoveSpeed( 0, pulsos[0], speed );
-	servocontroller->servoMoveSpeed( 1, pulsos[1], speed );
-	servocontroller->servoMoveSpeed( 2, pulsos[2], speed );
-	servocontroller->servoMoveSpeed( 3, pulsos[3], speed );
+	servocontroller->servoMoveTime( 0, pulsos[0], speed );
+	servocontroller->servoMoveTime( 1, pulsos[1], speed );
+	servocontroller->servoMoveTime( 2, pulsos[2], speed );
+	servocontroller->servoMoveTime( 3, pulsos[3], speed );
 
 }
