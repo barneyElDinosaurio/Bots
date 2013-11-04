@@ -38,7 +38,7 @@ void Leg::calcularAngulos(float x, float y, float z, float w){
 			float afy = sin(cabeceo) * lMun;
 
 			float ladoX  = xPrima - afx;
-			float ladoY  = yPrima - afy - offset.x ;
+			float ladoY  = yPrima - afy - lAltura ;
 
 			float hipotenusa  = sqrt( ladoX*ladoX + ladoY*ladoY );
 
