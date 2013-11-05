@@ -22,6 +22,7 @@ void Leg::calcularAngulos(float x, float y, float z, float w){
 
 		posFin.set(x,y,z);
 		cabeceo = w * rad;
+	
 	    float xPrima = sqrt( x*x + y*y);
 	    float yPrima = z;
 
@@ -66,12 +67,12 @@ void Leg::calcularAngulos(float x, float y, float z, float w){
 	        if  ( angMun*grad < -90 ) {
 	          menos = true;
 	          mas = false;
-	          cabeceo=cabeceo + (1 * rad);
+	          cabeceo = cabeceo + (1 * rad);
 	        }
 	        else if (angMun*grad > 90) {
 	          mas = true;
 	          menos=false;
-	          cabeceo=cabeceo - (1 * rad);
+	          cabeceo = cabeceo - (1 * rad);
 	        }
 	        else {
 	          mas = false;
@@ -161,13 +162,23 @@ void Leg::moveTo(float x, float y, float z, float w){
 	servocontroller->servoMove( 2, pulsos[2] );
 	servocontroller->servoMove( 3, pulsos[3] );
 }
-//dice move speed peor es un move time.....
-void Leg::moveSpeedTo(float x, float y, float z, float w, int speed){
-cout << "entrando a moveSpeedTo()..." << endl;
+
+void Leg::moveTimeTo(float x, float y, float z, float w, int tiempo){
+cout << "entrando a moveTimeTo()..." << endl;
 	calcularAngulos(x, y, z, w);
-cout << "calculo angulos desde moveSpeedTo del domir (movetime) "<<  endl;
-	servocontroller->servoMoveTime( 0, pulsos[0], speed );
-	//servocontroller->servoMoveTime( 1, pulsos[1], speed );
-	//servocontroller->servoMoveTime( 2, pulsos[2], speed );
-	//servocontroller->servoMoveTime( 3, pulsos[3], speed );
+cout << "calculo de angulos aprobado.... "<<  endl;
+
+
+// por motivos de tiempo y para tirar sucioas esto queda descartado hasta nueva orden
+//cout << "los argumentos " << pulsos[0] << " tiempo " << tiempo << endl:
+//		cout << "brebebrebr" << endl;
+//	  servocontroller->servoMoveTime( 0, pulsos[0], tiempo );
+	//servocontroller->servoMoveTime( 1, pulsos[1], tiempo );
+	//servocontroller->servoMoveTime( 2, pulsos[2], tiempo );
+	//servocontroller->servoMoveTime( 3, pulsos[3], tiempo );
+}
+
+
+float Leg::printPulse (int in){
+	return ( pulsos[in] );
 }

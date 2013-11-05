@@ -345,6 +345,10 @@ bool SSC32::servoMoveSpeed(int channel, int position, int speed)
  */
 bool SSC32::servoMoveTime(int channel, int position, int ttcm)
 {
+	cout << "comienzo de la funcion smt" << endl;
+cout << "channel 234234234 " << channel << "position" << position << " ttcm,"<< ttcm << endl ;
+cout << "command type" <<endl;
+cout << _commandType << endl;
 	if (channel < SSC32_MIN_CH || channel > SSC32_MAX_CH)
 	{
 		//Channel not valid
@@ -399,6 +403,8 @@ bool SSC32::servoMoveTime(int channel, int position, int ttcm)
 		
 		// **** RASPI *****
 		
+
+	cout << "mitad d ela ufuncion smt " <<endl;
 		stringstream ss;
 		ss << " T" << int2str( ttcm ) << " \n\r";
 		const string s = ss.str();

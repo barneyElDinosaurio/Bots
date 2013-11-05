@@ -20,6 +20,8 @@ public:
 
 	void setServocontroller( SSC32 * _servoControllerFromParent ){
 		servocontroller = _servoControllerFromParent;
+		servocontroller->_commandType = SSC32_CMDGRP_TYPE_NONE;
+		servocontroller->_ttcm = -1;
 	}
 
 	void setSize(float _lAltura, float _lBrazo, float _lAntebrazo, float _lMun){
@@ -39,7 +41,9 @@ void calcularAngulos(float x, float y, float z, float w);
 void moveTo(float x, float y, float z, float w); // un toque modificada....
 
 //NUEVOS METODOS
-void moveSpeedTo(float x, float y, float z, float w, int speed);
+void moveTimeTo(float x, float y, float z, float w, int tiempo);
+
+
 
 void setInv(bool invertir){
     inv = invertir;
@@ -55,6 +59,7 @@ int rad2Pulse(float x);
 float* printPulse() {
     return(pulsos);
   }
+float  printPulse (int in);
 
 // zero offset
 	ofVec3f offset;

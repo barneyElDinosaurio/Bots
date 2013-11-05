@@ -165,14 +165,28 @@ void Bot::update(){
 			cout << "mandadnome por osc a "<< x << " " << y << " " << z << endl;
 			((Dormilonador*)this)->brazo.moveTo( x, y, z, 0);
 		}else if(m.getAddress() == "/dormilonadorTime"){
-
-			cout << "entrando a servomovetime" << endl;
+			cout << "dormilonadorTime"<< endl;
+			cout << "bots getArgs empezando" << endl;
 			float x = m.getArgAsFloat(0);
                         float y = m.getArgAsFloat(1);
                         float z = m.getArgAsFloat(2);                 
 			float theta = m.getArgAsFloat(3);
-			int time = m.getArgAsInt32(4);
-			cout << "saliendo del movetime" << endl; 
+			int tiempo = m.getArgAsInt32(4);
+			cout << "bots getArgs completado" << endl;
+			// esto no funciono... a tirar sucia...
+			/*
+				((Dormilonador*)this)->brazo.moveTimeTo(x,y,z,theta,time);
+			*/
+
+			((Dormilonador *)this)->brazo.calcularAngulos(x,y,z,theta);
+
+			((Dormilonador *)this)->servocontroller.servoMoveTime(0, ((Dormilonador *)this)->brazo.printPulse(0), tiempo);
+			((Dormilonador *)this)->servocontroller.servoMoveTime(1, ((Dormilonador *)this)->brazo.printPulse(1), tiempo);
+			((Dormilonador *)this)->servocontroller.servoMoveTime(2, ((Dormilonador *)this)->brazo.printPulse(2), tiempo);
+			((Dormilonador *)this)->servocontroller.servoMoveTime(3, ((Dormilonador *)this)->brazo.printPulse(3), tiempo);
+			//esperoemos que no llore por tantas ordenes al tiempo... ESTAR PENDIENTE...
+
+			cout << "dormilonador brazo moveTimeTo terminado parte bot.cpp" << endl; 
 		}
 
 		else if(m.getAddress() == "/moverServo" ){ // **** MOVER SERVO
@@ -180,7 +194,7 @@ void Bot::update(){
 			cout << "En mover servo. Numargs " << m.getNumArgs() <<endl;
 			int servoNum = m.getArgAsInt32(0);
 			int pulse = m.getArgAsInt32(1);
-
+			int tiempo = m.getArgAsInt32(2);
 				
 
 	
@@ -193,8 +207,8 @@ void Bot::update(){
 			// DORMILONADOR
 			
 			if( botType == "dormilonador"){
-					int time = m. getArgAsInt32(2);
-	((Dormilonador *)this)->servocontroller.servoMoveSpeed(servoNum, pulse, time);
+				cout << "bot.cpp: empezando moveTimeTo " <<  endl;
+				((Dormilonador *)this)->servocontroller.servoMoveTime(servoNum, pulse, tiempo);
 				cout <<  "RECIBI ORDEN DE MOVER SERVO time solo"<< endl;
 			}
 		}

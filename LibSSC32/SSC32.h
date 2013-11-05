@@ -90,11 +90,11 @@ using namespace std;
 
 class SSC32
 {
-	private:
+	public:// una cochinada para arreglar un problema de segmentation fault
 		int _ttcm;
 		int _commandType;
 
-	public:
+	//public:
 
 		SSC32();
 		
