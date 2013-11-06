@@ -11,11 +11,14 @@ class Leg{
 public:
 	Leg(){
 		grad = 180/PI;
-        rad = PI/180;
-        inv = false;
-        ruido = false;
-        //esto creo q va a llorar
-        pulsos[4];
+	        rad = PI/180;
+	        inv = false;
+	        ruido = false;
+	        pulsos[4];
+		inv0 = false;
+		inv1 = false;
+		inv2 = false;
+		inv3 = false;
 	}
 
 	void setServocontroller( SSC32 * _servoControllerFromParent ){
@@ -41,17 +44,22 @@ void calcularAngulos(float x, float y, float z, float w);
 void moveTo(float x, float y, float z, float w); // un toque modificada....
 
 //NUEVOS METODOS
+
+void savePulse();
 void moveTimeTo(float x, float y, float z, float w, int tiempo);
 
 
 
-void setInv(bool invertir){
-    inv = invertir;
-}
+
+
+
+void setInv(int in ,bool invertir);
+
+
+// esto es debera descartar...
 void setInv(){
     inv = !inv;
 }
-void savePulse();
 
 int rad2Pulse(float x);
 
@@ -80,9 +88,16 @@ float  printPulse (int in);
 	float angMun;
 	float angGiro;
 
-	//ALgunos booleanos nuevos
+//ALgunos booleanos nuevos
 	bool inv ;
-	bool ruido ;
+	bool ruido ; //  sin uso, con tendencia a desaparecer.
+
+//boleanos de direccion del servo...
+	bool inv0 ;
+	bool inv1 ;
+	bool inv2 ;
+	bool inv3 ;
+
 
 	//un pequeño array q quizas joda bastante
 	float pulsos[];

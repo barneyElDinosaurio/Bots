@@ -23,8 +23,8 @@ void Leg::calcularAngulos(float x, float y, float z, float w){
 		posFin.set(x,y,z);
 		cabeceo = w * rad;
 	
-	    float xPrima = sqrt( x*x + y*y);
-	    float yPrima = z;
+		float xPrima = sqrt( x*x + y*y);
+		    float yPrima = z;
 
 		bool menos = false;
 	    bool mas = false;
@@ -58,56 +58,73 @@ void Leg::calcularAngulos(float x, float y, float z, float w){
 			angMun    = cabeceo - angBrazo - angAntebrazo;
 			angGiro     = atan2(y, x);
 
-	        if (inv) {
+/*
+este invertir usado mas para patas invertidas de un hexapodo, no muy practico 
+para el dormilonador y su nueva funcion de invertir de forma respectiva a cada servomotor
+*/
+
+/*	        if (inv) {
 	          angGiro = - angGiro;
 	        }
+*/
+		        repeat +=1;
 
-	        repeat +=1;
-
-	        if  ( angMun*grad < -90 ) {
-	          menos = true;
-	          mas = false;
-	          cabeceo = cabeceo + (1 * rad);
-	        }
-	        else if (angMun*grad > 90) {
-	          mas = true;
-	          menos=false;
-	          cabeceo = cabeceo - (1 * rad);
-	        }
-	        else {
-	          mas = false;
-	          menos=false;
-	        }
-        }
+		        if  ( angMun*grad < -90 ) {
+		          menos = true;
+		          mas = false;
+		          cabeceo = cabeceo + (1 * rad);
+		        }
+		        else if (angMun*grad > 90) {
+		          mas = true;
+		          menos=false;
+		          cabeceo = cabeceo - (1 * rad);
+		        }
+		        else {
+		          mas = false;
+		          menos=false;
+		        }
+       		}
 	}
 /*	falta crear el savePulse	**************************************************/
 	savePulse();
 }
 
 //no se   que suceda con los Strings!!!**********************************
+
 void Leg::savePulse() {
-
-
-	//ASI NO SE LLENA UN STRING EN C++
-		/*string strGiro = "" + angGiro;
-		string strBrazo = "" + angBrazo;
-		string strAntebrazo = "" + angAntebr;
-		string strMun = "" + angMun;*/
-
-
 
 	if ((angGiro != angGiro) || (angBrazo != angBrazo) || (angAntebrazo != angAntebrazo) || (angMun != angMun))
 	{
 		cout << "no alcanza llegar al destino " << endl;
 	}
 	else {
-	cout << "empezando a guardar pulsos " << endl;
+		cout << "empezando a guardar pulsos " << endl;
+
+		if ((inv0) || (inv1) || (inv2) || (inv3))
+		{
+			if (inv0){angGiro	*= -1;}
+			if (inv1){angBrazo	*= -1;}
+			if (inv2){angAntebrazo	*= -1;}
+			if (inv3){angMun	*= -1;}
+		}
+	
 		pulsos[0] = rad2Pulse ( angGiro 	);
 	  	pulsos[1] = rad2Pulse ( angBrazo 	);
-		pulsos[2] = rad2Pulse ( angAntebrazo);
+		pulsos[2] = rad2Pulse ( angAntebrazo	);
 	  	pulsos[3] = rad2Pulse ( angMun 		);
 	}
 }
+
+void  Leg::setInv(int in, bool invertir){
+	if ( ( in >= 0 ) && ( in <= 3 ) )
+	{
+		if (in == 0) { inv0 = invertir; }
+		if (in == 1) { inv1 = invertir; }
+		if (in == 2) { inv2 = invertir; }
+		if (in == 3) { inv3 = invertir; }
+	}
+}
+
 
 int Leg::rad2Pulse(float x){
 
