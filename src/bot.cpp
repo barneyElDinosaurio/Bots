@@ -180,9 +180,9 @@ void Bot::update(){
 
 			((Dormilonador *)this)->brazo.calcularAngulos(x,y,z,theta);
 
-			((Dormilonador *)this)->servocontroller.servoMoveTime(0, ((Dormilonador *)this)->brazo.printPulse(0), tiempo);
-			((Dormilonador *)this)->servocontroller.servoMoveTime(1, ((Dormilonador *)this)->brazo.printPulse(1), tiempo);
-			((Dormilonador *)this)->servocontroller.servoMoveTime(2, ((Dormilonador *)this)->brazo.printPulse(2), tiempo);
+//			((Dormilonador *)this)->servocontroller.servoMoveTime(0, ((Dormilonador *)this)->brazo.printPulse(0), tiempo);
+//			((Dormilonador *)this)->servocontroller.servoMoveTime(1, ((Dormilonador *)this)->brazo.printPulse(1), tiempo);
+//			((Dormilonador *)this)->servocontroller.servoMoveTime(2, ((Dormilonador *)this)->brazo.printPulse(2), tiempo);
 			((Dormilonador *)this)->servocontroller.servoMoveTime(3, ((Dormilonador *)this)->brazo.printPulse(3), tiempo);
 			//esperoemos que no llore por tantas ordenes al tiempo... ESTAR PENDIENTE...
 

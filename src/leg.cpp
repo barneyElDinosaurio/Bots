@@ -1,3 +1,6 @@
+
+
+
 /*
  *  leg.cpp
  *  bot
@@ -22,15 +25,12 @@ void Leg::calcularAngulos(float x, float y, float z, float w){
 
 		posFin.set(x,y,z);
 		cabeceo = w * rad;
-	
+
 		float xPrima = sqrt( x*x + y*y);
-		    float yPrima = z;
+	    	float yPrima = z;
 
-		bool menos = false;
-	    bool mas = false;
-    	int repeat=0;
 
-        while ( (menos == true) || (mas == true) || (repeat == 0)) {
+//        while ( (menos == true) || (mas == true) || (repeat == 0)) {
 
 		//	float cabeceo = w * rad;
 
@@ -58,6 +58,14 @@ void Leg::calcularAngulos(float x, float y, float z, float w){
 			angMun    = cabeceo - angBrazo - angAntebrazo;
 			angGiro     = atan2(y, x);
 
+cout  << "angBrazo:	 "<< angGiro <<endl;
+cout  << "angAntebrazo:	 "<< angAntebrazo <<endl;
+cout  << "angMuneca: 	 "<< angMun <<endl;
+cout  << "angGiro: 	 "<< angGiro <<endl;
+
+
+
+
 /*
 este invertir usado mas para patas invertidas de un hexapodo, no muy practico 
 para el dormilonador y su nueva funcion de invertir de forma respectiva a cada servomotor
@@ -67,26 +75,12 @@ para el dormilonador y su nueva funcion de invertir de forma respectiva a cada s
 	          angGiro = - angGiro;
 	        }
 */
-		        repeat +=1;
 
-		        if  ( angMun*grad < -90 ) {
-		          menos = true;
-		          mas = false;
-		          cabeceo = cabeceo + (1 * rad);
-		        }
-		        else if (angMun*grad > 90) {
-		          mas = true;
-		          menos=false;
-		          cabeceo = cabeceo - (1 * rad);
-		        }
-		        else {
-		          mas = false;
-		          menos=false;
-		        }
+		savePulse();
        		}
-	}
+	
+//	}
 /*	falta crear el savePulse	**************************************************/
-	savePulse();
 }
 
 //no se   que suceda con los Strings!!!**********************************
@@ -186,13 +180,16 @@ cout << "entrando a moveTimeTo()..." << endl;
 cout << "calculo de angulos aprobado.... "<<  endl;
 
 
+
+
 // por motivos de tiempo y para tirar sucioas esto queda descartado hasta nueva orden
 //cout << "los argumentos " << pulsos[0] << " tiempo " << tiempo << endl:
 //		cout << "brebebrebr" << endl;
-//	  servocontroller->servoMoveTime( 0, pulsos[0], tiempo );
-	//servocontroller->servoMoveTime( 1, pulsos[1], tiempo );
-	//servocontroller->servoMoveTime( 2, pulsos[2], tiempo );
-	//servocontroller->servoMoveTime( 3, pulsos[3], tiempo );
+
+	servocontroller->servoMoveTime( 0, pulsos[0], tiempo );
+	servocontroller->servoMoveTime( 1, pulsos[1], tiempo );
+	servocontroller->servoMoveTime( 2, pulsos[2], tiempo );
+	servocontroller->servoMoveTime( 3, pulsos[3], tiempo );
 }
 
 

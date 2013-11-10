@@ -23,9 +23,9 @@ void Dormilonador::setup(){
 	
 	// LEG // MEDIR CORRECTAMENTE !!!
 	brazo.setServocontroller(&servocontroller);
-	brazo.setSize(6, 12.5, 16, 8);
+	brazo.setSize(4.5, 4, 4.5, 4);	
 	//especificando que el angMun es inverso....
-	brazo.setInv(3,true);
+//	brazo.setInv(3,true);
 	brazo.setOffset( ofVec3f( 0, 0, 6) );
 
 	cout << "EN EL SETUP DEL DORM" << endl;
