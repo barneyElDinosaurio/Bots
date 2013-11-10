@@ -44,6 +44,12 @@ void SernaBot::setup(){
 	pinMode(16, OUTPUT);
 	pinMode(1, OUTPUT);
 	pinMode(4, OUTPUT);
+
+	//SERIAL
+	serialNumber  = serialOpen("/dev/ttyAMA0", 9600);
+	
+	cout << "Se ha conectado al puerto serial número: " << serialNumber << endl;
+
 	
 	// Medir inicialmente el valor de los sensores.
 	// YA ES INUTIL
