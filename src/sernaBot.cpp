@@ -38,17 +38,17 @@ void SernaBot::setup(){
 	wiringPiSetup();
 	
 	//intento i2c......................................................................
-	fd = wiringPiI2CSetup(0x21);
-	
+	//fd = wiringPiI2CSetup(0x21);
+	/*
 	pinMode(15, OUTPUT);
 	pinMode(16, OUTPUT);
 	pinMode(1, OUTPUT);
 	pinMode(4, OUTPUT);
-
+*/
 	//SERIAL
-	serialNumber  = serialOpen("/dev/ttyAMA0", 9600);
+	fdS  = serialOpen("/dev/ttyAMA0", 9600);
 	
-	cout << "Se ha conectado al puerto serial número: " << serialNumber << endl;
+	cout << "Se ha conectado al puerto serial número: " << fdS << endl;
 
 	
 	// Medir inicialmente el valor de los sensores.
@@ -103,6 +103,42 @@ void SernaBot::update(){
 			cout << "necesidad "  << modos.at(i).mode << "   ... " << modos.at(i).sensorValue << endl; 
 		}
 	}
+	// **************
+	//    SERIAL    *
+	//***************
+
+	while ( serialDataAvail (fdS) > 0)
+    { //cout << "available: " << serialDataAvail(fdS) << endl;
+      //cout << serialGetchar (fdS) << endl;
+      char c = serialGetchar(fdS);
+      //cout << "recibí ..." << c.c_str() << endl;
+
+      // Conversion a string luego a float:
+      serialData += c;
+      if(c == '\n'){ // String complete
+        stringComplete = true;
+
+      }
+
+      // Conversión de prueba
+      if( stringComplete){
+        //cout << "en el string complete con :: " << serialData << endl;
+        cout << "Brújula mirando hacia :: " << serialData << endl;
+        cout << ".... Te gané brújula malparida !!!!!!!!!!!" << endl;
+        
+        serialData = ""; // reset
+        stringComplete = false;
+      }
+
+    }
+
+    /*string s("0.001");
+    float a = atof(s.c_str());
+    cout << "El float de prueba es : " << a << endl;
+    */
+    ofSleepMillis(10);
+
+    /*
 	
 	//INTENTO DE I2C.................PENDIENTE
 	/*
