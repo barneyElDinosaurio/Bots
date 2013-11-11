@@ -145,15 +145,27 @@ bool SSC32::abortGroupCommand()
  */
 bool SSC32::endGroupCommand()
 {
-	
+
+cout << "commandType: "<< _commandType << endl;
+cout << "ttcm: "<< _ttcm << endl;
+cout << "serialNumber: "<<serialNumber << endl;
+
+
 	if (_commandType == SSC32_CMDGRP_TYPE_NONE)
 	{
+	cout << "entrando en el primer if" << endl;
+
 		//Can not end, we are not in a group of commands
 		return false;
 	}
-	
+
+
+cout << "1"<< endl;
+
 	if (_ttcm != -1)
 	{
+cout << "entrando en el segundo if" << endl;
+
 		//Set the time to complete movement
 		// **** ARDUINO ****
 		//		Serial.print(" T");
@@ -162,19 +174,43 @@ bool SSC32::endGroupCommand()
 		// **** RASPI ****
 		
 		string mes(" T");
+cout << "1.1"<< endl;
+
 		serialPuts( serialNumber, (char*) mes.c_str() ); // With wiringpi
+cout << "1.2"<< endl;
+//string 
+
+/*
+                stringstream ss;
+                ss << " T" << int2str( ttcm )<< endl;
+                const string s = ss.str();
+                serialPuts( serialNumber, (char*) s.c_str() );
+
+*/
+//fin
+
+
+
 		serialPuts( serialNumber, (char*)_ttcm ); // With wiringpi // NO estoy seguro
 		
 	}
+
+cout << "2" << endl;
 	
 	string mes("/n/r"); // **** REvisar orden
+cout << "2.1" << endl;
+
 	serialPuts( serialNumber, (char*) mes.c_str() );
 	
+cout << "2.2" << endl;
 	
 	_commandType = SSC32_CMDGRP_TYPE_NONE;
+cout << "2.3" << endl;
+
 	_ttcm = -1;
+
+cout << "3" << endl;
 	return true;
-	
 }
 
 /**
@@ -345,10 +381,11 @@ bool SSC32::servoMoveSpeed(int channel, int position, int speed)
  */
 bool SSC32::servoMoveTime(int channel, int position, int ttcm)
 {
-	cout << "comienzo de la funcion smt" << endl;
-cout << "channel 234234234 " << channel << "position" << position << " ttcm,"<< ttcm << endl ;
+cout << "comienzo de la funcion smt" << endl;
+cout << "channel " << channel << "position " << position << " ttcm "<< ttcm << endl ;
 cout << "command type" <<endl;
 cout << _commandType << endl;
+
 	if (channel < SSC32_MIN_CH || channel > SSC32_MAX_CH)
 	{
 		//Channel not valid
@@ -404,7 +441,6 @@ cout << _commandType << endl;
 		// **** RASPI *****
 		
 
-	cout << "mitad d ela ufuncion smt " <<endl;
 		stringstream ss;
 		ss << " T" << int2str( ttcm ) << " \n\r";
 		const string s = ss.str();

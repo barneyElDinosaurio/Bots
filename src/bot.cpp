@@ -164,7 +164,8 @@ void Bot::update(){
 			float z = m.getArgAsFloat(2);			
 			cout << "mandadnome por osc a "<< x << " " << y << " " << z << endl;
 			((Dormilonador*)this)->brazo.moveTo( x, y, z, 0);
-		}else if(m.getAddress() == "/dormilonadorTime"){
+		}
+		else if(m.getAddress() == "/dormilonadorTime"){
 			cout << "dormilonadorTime"<< endl;
 			cout << "bots getArgs empezando" << endl;
 			float x = m.getArgAsFloat(0);
@@ -180,10 +181,20 @@ void Bot::update(){
 
 			((Dormilonador *)this)->brazo.calcularAngulos(x,y,z,theta);
 
-//			((Dormilonador *)this)->servocontroller.servoMoveTime(0, ((Dormilonador *)this)->brazo.printPulse(0), tiempo);
-//			((Dormilonador *)this)->servocontroller.servoMoveTime(1, ((Dormilonador *)this)->brazo.printPulse(1), tiempo);
-//			((Dormilonador *)this)->servocontroller.servoMoveTime(2, ((Dormilonador *)this)->brazo.printPulse(2), tiempo);
+			((Dormilonador *)this)->servocontroller.beginGroupCommand(1); //type servoMovement
+cout << "termina beginGroupCommand" << endl;
+			((Dormilonador *)this)->servocontroller.servoMoveTime(0, ((Dormilonador *)this)->brazo.printPulse(0), tiempo);
+			((Dormilonador *)this)->servocontroller.servoMoveTime(1, ((Dormilonador *)this)->brazo.printPulse(1), tiempo);
+			((Dormilonador *)this)->servocontroller.servoMoveTime(2, ((Dormilonador *)this)->brazo.printPulse(2), tiempo);
+//			ofSleepMillis(100);
 			((Dormilonador *)this)->servocontroller.servoMoveTime(3, ((Dormilonador *)this)->brazo.printPulse(3), tiempo);
+cout << "por empezar endGroupCommand"<< endl;
+			((Dormilonador *)this)->servocontroller.endGroupCommand() ;
+cout << "termina endGroupCommand"<< endl;
+
+//			ofSleepMillis(10);
+
+			
 			//esperoemos que no llore por tantas ordenes al tiempo... ESTAR PENDIENTE...
 
 			cout << "dormilonador brazo moveTimeTo terminado parte bot.cpp" << endl; 

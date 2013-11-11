@@ -61,7 +61,7 @@ void setInv(){
     inv = !inv;
 }
 
-int rad2Pulse(float x);
+int rad2Pulse(int servo, float x);
 
 // funcion de float!! si retorna el flotante??
 float* printPulse() {

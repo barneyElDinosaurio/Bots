@@ -58,10 +58,10 @@ void Leg::calcularAngulos(float x, float y, float z, float w){
 			angMun    = cabeceo - angBrazo - angAntebrazo;
 			angGiro     = atan2(y, x);
 
-cout  << "angBrazo:	 "<< angGiro <<endl;
+cout  << "angGiro:	 "<< angGiro <<endl;
+cout  << "angBrazo: 	 "<< angBrazo <<endl;
 cout  << "angAntebrazo:	 "<< angAntebrazo <<endl;
 cout  << "angMuneca: 	 "<< angMun <<endl;
-cout  << "angGiro: 	 "<< angGiro <<endl;
 
 
 
@@ -102,10 +102,10 @@ void Leg::savePulse() {
 			if (inv3){angMun	*= -1;}
 		}
 	
-		pulsos[0] = rad2Pulse ( angGiro 	);
-	  	pulsos[1] = rad2Pulse ( angBrazo 	);
-		pulsos[2] = rad2Pulse ( angAntebrazo	);
-	  	pulsos[3] = rad2Pulse ( angMun 		);
+		pulsos[0] = rad2Pulse ( 0, angGiro 	);
+	  	pulsos[1] = rad2Pulse ( 1, angBrazo 	);
+		pulsos[2] = rad2Pulse ( 2, angAntebrazo	);
+	  	pulsos[3] = rad2Pulse ( 3, angMun 	);
 	}
 }
 
@@ -120,11 +120,18 @@ void  Leg::setInv(int in, bool invertir){
 }
 
 
-int Leg::rad2Pulse(float x){
+int Leg::rad2Pulse(int servo, float x){
 
 
 //quizas deberia no colocar este mas 90.0.... debug aqui PENDIENTE...
+	float rango = 100;
 	x = (x * grad) + 90.0;
+
+	if (servo == 1){
+		x = x - (rango / 2);
+	}else if(servo == 2 ){
+		x = x + (rango / 2);
+	}
 
 	float maxPulse = 1800;
 	float minPulse = 640;
