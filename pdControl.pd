@@ -1,4 +1,4 @@
-#N canvas 164 400 1402 648 10;
+#N canvas 38 252 1402 648 10;
 #X obj 177 74 sendOSC;
 #X msg 329 196 send /advance;
 #X msg 91 16 disconnect;
@@ -118,7 +118,7 @@
 1;
 #X msg 782 152 send /showNecesidades \$1;
 #X text 637 136 Mostrar necesidades;
-#X obj 629 278 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 629 278 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 649 277 Modo estático;
 #X msg 815 293 send /setStatic \$1;
