@@ -146,8 +146,10 @@ void SernaBot::update(){
 	wiringPiI2CWriteReg8 (fd,0x00,0x41);
 	//Ahora leyendo
 	ofSleepMillis(10);
+	//leyendo datos de los registros(1) y (2) por q se supone q el ModeOutput esta por defecto en(HEADING)
 	byte1=wiringPiI2CReadReg8(fd,0x01);
 	byte2=wiringPiI2CReadReg8(fd,0x02);
+	//Jugada para convertir de complemento A2 a entero... ???
 	angulo=(byte1 << 8) + byte2;
 	cout << "byte1: " << byte1 << "byte2: " << byte2 << "angulo: " << angulo  << endl;
 	*/
