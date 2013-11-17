@@ -72,7 +72,7 @@ void Bot::update(){
 			float hu1fixed = 0.162; // CAMBIAR DINÁMICAMENTE
 			float hu1thres = 0.01;
 			
-			if( abs(hu1 - hu1fixed)  < hu1thres ){ // SI SOY UN SERNAPODO
+			if( abs(hu1 - hu1fixed)  < hu1thres && vision == "camara" ){ // SI SOY UN SERNAPODO
 				if( this->botType == "sernaBot"){
 					setPos(blobPos.x, blobPos.y);
 					cout << "Me llamo SERNAPODO, con posición:---  " << pos.x << " " << pos.y << " HU : " << hu1 <<endl; 
@@ -98,6 +98,12 @@ void Bot::update(){
 			int blobTrackId = m.getArgAsInt32(0);
 			float blobTrackX = m.getArgAsFloat(1);
 			float blobTrackY = m.getArgAsFloat(2);
+
+			if(vision == "kinect"){
+
+				setPos(blobTrackX, blobTrackY);
+				cout << "posición por kinect :: " << blobTrackX << " " << blobTrackY << endl;
+			}
 			
 			
 		}
@@ -229,6 +235,20 @@ void Bot::update(){
 				cout << " reporte de posición : " << reportarPosicion << endl;
 	
 			}
+		}
+		else if( m.getAddress() == "/vision"){
+			int opcion = m.getArgAsInt32(0);
+			if( opcion == 0){
+				vision = "camara";
+			}else if( opcion == 1){
+				vision == "kinect";
+			}
+			else{
+				cout << "opción errónea para el sistema de vision" << endl;
+			}
+
+
+
 		}
 		else if( m.getAddress() == "/advance"){ // **** ADVANCE **** // ESTO ESTÁ MALO, LAS ORDENES DEBERÍAN ESTAR DIRIGIDAS.HAY QUE HACER PARSING DE OSC
 			
