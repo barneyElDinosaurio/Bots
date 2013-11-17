@@ -23,7 +23,7 @@ void Bot::update(){
 	}
 	if( reportarPosicion == true ){
 		ofxOscMessage elMensaje;
-		if( botType == "sernapodo"){
+		if( this->botType == "sernaBot"){
 			elMensaje.setAddress("/ornitopodo");
 			cout << " Reportando posición " << endl;
 		}
