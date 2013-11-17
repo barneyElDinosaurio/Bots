@@ -447,21 +447,21 @@ void SernaBot::calibrate(){
 void SernaBot::advance(){
 	
 	//cout << " SERNAPODO: En la funcion de avanzar " << endl;
-	digitalWrite(1, HIGH);
-	digitalWrite(4, LOW);
-	digitalWrite(5, HIGH);
-	digitalWrite(6, LOW);
+	digitalWrite(1, LOW);
+	digitalWrite(4, HI);
+	digitalWrite(5, LOW);
+	digitalWrite(6, HIGH);
 	
 	
 }
 
-void SernaBot:: recoil(){
+void SernaBot::recoil(){
 
 	//cout << "retrocediendo wiring pi" << endl;
-	digitalWrite(1, LOW);
-	digitalWrite(4, HIGH);
-	digitalWrite(5, LOW);
-	digitalWrite(6, HIGH);
+	digitalWrite(1, HIGH);
+	digitalWrite(4, LOW);
+	digitalWrite(5, HIGH);
+	digitalWrite(6, LOW);
 	
 }
 
