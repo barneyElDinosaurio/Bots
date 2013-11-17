@@ -25,6 +25,7 @@ void Bot::update(){
 		ofxOscMessage elMensaje;
 		if( botType == "sernapodo"){
 			elMensaje.setAddress("/ornitopodo");
+			cout << " Reportando posición " << endl:
 		}
 
 		// Espero que no haya null pointer exception la primera vez...
