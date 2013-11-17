@@ -126,7 +126,20 @@ void SernaBot::update(){
         cout << "Brújula mirando hacia :: " << serialData << endl;
         cout << ".... Te gané brújula malparida !!!!!!!!!!!" << endl;
         
-        serialData = ""; // reset
+        vector <string> losStrings = ofSplitString(serialData, " ");
+
+        cout << "tamaño de los strings" << losStrings.size() << endl;
+        if( losStrings.size() == 2){ // interpretable
+
+        	if(losStrings.at(0) == "brujula"){
+
+        		angle = ofToFloat(losStrings.at(1));
+        		cout << "Angulo brujula " << angle << endl; 
+        	}
+
+        }
+        // Reset de las cositas para recibir
+        serialData = "";
         stringComplete = false;
       }
 
