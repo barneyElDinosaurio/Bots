@@ -86,7 +86,7 @@ void Bot::update(){
 			float blobTrackY = m.getArgAsFloat(2);
 			
 			
-
+		}
 		// ******* QUIETO AQUÍ, CAN *******
 		else if( m.getAddress() == "/tuio/2Dobj"){
 			if( m.getArgAsString(0) == "set"){ // if message is a set message

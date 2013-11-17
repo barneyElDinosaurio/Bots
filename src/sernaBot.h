@@ -93,8 +93,13 @@ public:
 	
 	ofVec2f bebedero; // En la clase general??? Es decir, en BOt?
 	
-	//int serialNumber;
 	
+	// SERIAL
+
+	int fdS; // device identifier
+	bool stringComplete; // Para saber si ya terminó la línea
+	string serialData;
+
 	//intento i2c...........................................................PENDIENTE
 	int fd;
 	int byte1;
