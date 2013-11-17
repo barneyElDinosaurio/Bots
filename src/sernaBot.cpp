@@ -129,6 +129,12 @@ void SernaBot::update(){
         vector <string> losStrings = ofSplitString(serialData, " ");
 
         cout << "tamaño de los strings" << losStrings.size() << endl;
+
+        cout << "Los strings son : " << endl;
+
+        for(int i = 0 ; i < losStrings.size() ; i++){
+        	cout << i << ":: "<< losStrings.at(i) << endl;
+        }
         if( losStrings.size() == 2){ // interpretable
 
         	if(losStrings.at(0) == "brujula"){
@@ -154,7 +160,7 @@ void SernaBot::update(){
     /*
 	
 	//INTENTO DE I2C.................PENDIENTE
-	/*
+	
 	//Escribiendo la letra "A"(0x42) al device (0x21)
 	wiringPiI2CWriteReg8 (fd,0x00,0x41);
 	//Ahora leyendo
