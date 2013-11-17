@@ -39,12 +39,12 @@ void SernaBot::setup(){
 	
 	//intento i2c......................................................................
 	//fd = wiringPiI2CSetup(0x21);
-	/*
-	pinMode(15, OUTPUT);
-	pinMode(16, OUTPUT);
+	
 	pinMode(1, OUTPUT);
 	pinMode(4, OUTPUT);
-*/
+	pinMode(5, OUTPUT);
+	pinMode(6, OUTPUT);
+
 	//SERIAL
 	fdS  = serialOpen("/dev/ttyAMA0", 9600);
 	
@@ -447,10 +447,10 @@ void SernaBot::calibrate(){
 void SernaBot::advance(){
 	
 	//cout << " SERNAPODO: En la funcion de avanzar " << endl;
-	digitalWrite(15, HIGH);
-	digitalWrite(16, LOW);
 	digitalWrite(1, HIGH);
 	digitalWrite(4, LOW);
+	digitalWrite(5, HIGH);
+	digitalWrite(6, LOW);
 	
 	
 }
@@ -458,10 +458,10 @@ void SernaBot::advance(){
 void SernaBot:: recoil(){
 
 	//cout << "retrocediendo wiring pi" << endl;
-	digitalWrite(15, LOW);
-	digitalWrite(16, HIGH);
 	digitalWrite(1, LOW);
 	digitalWrite(4, HIGH);
+	digitalWrite(5, LOW);
+	digitalWrite(6, HIGH);
 	
 }
 
@@ -469,27 +469,27 @@ void SernaBot::rotateR(){
 	
 	//cout << "rotateR wiring pi" << endl;
 
-	digitalWrite(15, LOW);
-	digitalWrite(16, HIGH);
-	digitalWrite(1, HIGH);
-	digitalWrite(4, LOW);
+	digitalWrite(1, LOW);
+	digitalWrite(4, HIGH);
+	digitalWrite(5, HIGH);
+	digitalWrite(6, LOW);
 	
 }
 void SernaBot::rotateL(){
 	
-	digitalWrite(15, HIGH);
-	digitalWrite(16, LOW);
-	digitalWrite(1, LOW);
-	digitalWrite(4, HIGH);
+	digitalWrite(1, HIGH);
+	digitalWrite(4, LOW);
+	digitalWrite(5, LOW);
+	digitalWrite(6, HIGH);
 	
 	//cout << "rotateL wiring pi" << endl;
 }
 
 void SernaBot::stop(){
-	digitalWrite(15, LOW);
-	digitalWrite(16, LOW);
 	digitalWrite(1, LOW);
 	digitalWrite(4, LOW);
+	digitalWrite(5, LOW);
+	digitalWrite(6, LOW);
 		
 	//cout << "stop wiring pi" << endl;
 }
