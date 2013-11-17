@@ -448,7 +448,7 @@ void SernaBot::advance(){
 	
 	//cout << " SERNAPODO: En la funcion de avanzar " << endl;
 	digitalWrite(1, LOW);
-	digitalWrite(4, HI);
+	digitalWrite(4, HIGH);
 	digitalWrite(5, LOW);
 	digitalWrite(6, HIGH);
 	
