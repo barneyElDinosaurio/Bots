@@ -24,8 +24,9 @@ void Bot::update(){
 	if( reportarPosicion == true ){
 		ofxOscMessage elMensaje;
 		if( this->botType == "sernaBot"){
+			// Tal vex hay que reducir la frecuencia de esto...
 			elMensaje.setAddress("/ornitopodo");
-			cout << " Reportando posición " << endl;
+			//cout << " Reportando posición " << endl;
 		}
 
 		// Espero que no haya null pointer exception la primera vez...
