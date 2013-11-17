@@ -1,4 +1,4 @@
-#N canvas 38 252 1402 648 10;
+#N canvas 13 92 1402 648 10;
 #X obj 177 74 sendOSC;
 #X msg 329 196 send /advance;
 #X msg 91 16 disconnect;
@@ -22,7 +22,7 @@
 #X floatatom 8 107 5 0 0 0 - - -;
 #X floatatom 35 124 5 0 0 0 - - -;
 #X obj 335 108 spigot;
-#X obj 368 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 368 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 80 401 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
@@ -49,19 +49,19 @@
 #X obj 196 44 r toSend;
 #X obj 329 380 s toSend;
 #X obj 17 258 s toSend;
-#X obj 440 487 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
+#X obj 376 512 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X msg 440 515 send /QP \$1;
-#X obj 440 542 s toSend;
-#X obj 440 571 print preguntador;
-#X obj 687 486 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
+#X msg 376 540 send /QP \$1;
+#X obj 376 567 s toSend;
+#X obj 376 596 print preguntador;
+#X obj 695 545 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X obj 687 541 s toSend;
-#X obj 687 570 print preguntador;
-#X text 447 453 PREGUNTAR POSICION DE SERV0;
-#X msg 687 514 send /Q \$1;
-#X text 694 452 SERVO IS MOVING;
-#X msg 507 412 send /arbitrarySerial;
+#X obj 695 600 s toSend;
+#X obj 695 629 print preguntador;
+#X text 383 478 PREGUNTAR POSICION DE SERV0;
+#X msg 695 573 send /Q \$1;
+#X text 702 511 SERVO IS MOVING;
+#X msg 443 437 send /arbitrarySerial;
 #X obj -239 407 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
 #X obj -267 474 route 0;
@@ -100,28 +100,28 @@
 #X msg 765 99 send /showBlobData \$1;
 #X obj 616 84 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 768 233 s toSend;
+#X obj 768 262 s toSend;
 #X text 636 83 Mostar datos de blob;
 #X obj 617 109 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 637 108 Mostrar modo;
 #X msg 775 124 send /showMode \$1;
-#X obj 610 246 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 618 305 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 814 261 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 822 320 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 628 244 ORDENES DE MOVIMIENTO;
-#X msg 822 405 send /setDestino \$1 \$2;
-#X obj 815 430 s toSend;
+#X text 636 303 ORDENES DE MOVIMIENTO;
+#X msg 830 464 send /setDestino \$1 \$2;
+#X obj 823 489 s toSend;
 #X obj 197 119 print sending;
 #X obj 617 137 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 782 152 send /showNecesidades \$1;
 #X text 637 136 Mostrar necesidades;
-#X obj 629 278 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 637 337 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 649 277 Modo estático;
-#X msg 815 293 send /setStatic \$1;
+#X text 657 336 Modo estático;
+#X msg 823 352 send /setStatic \$1;
 #X text -239 57 CAL: 1 giro en 4.4;
 #X obj -287 122 dumpOSC 9000;
 #X obj -287 161 print;
@@ -140,18 +140,18 @@
 #X obj 619 193 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 364 19 OJO QUE LA CAMBIE !!!!;
-#X obj 630 306 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 638 365 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 650 305 Movimiento controlado;
-#X msg 816 321 send /setControlledMotion \$1;
+#X text 658 364 Movimiento controlado;
+#X msg 824 380 send /setControlledMotion \$1;
 #X msg 329 249 send /rotateR;
 #X text -240 75 ATENCION \, REACTIVISION TIENE;
 #X text -241 91 QUE MANDAR A LA IP DEL SERNAPODO;
-#X obj 631 337 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 639 396 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 651 336 Diga obstáculos;
-#X msg 825 349 send /reportObstacles \$1;
-#X msg 731 441 0.6 0.25;
+#X text 659 395 Diga obstáculos;
+#X msg 833 408 send /reportObstacles \$1;
+#X msg 739 500 0.6 0.25;
 #X obj -31 151 pack 0 f f f f f;
 #X msg -29 221 send /dormilonador \$1 \$2 \$3 \$4 \$5;
 #X floatatom 89 80 5 0 0 0 - - -;
@@ -193,10 +193,14 @@
 #X restore -93 290 pd moveTime;
 #X obj -96 315 s toSend;
 #X msg 329 325 send /pruebaSS;
-#X msg 732 365 0 0;
-#X msg 733 388 0 0.5;
-#X msg 733 413 1 1;
+#X msg 740 424 0 0;
+#X msg 741 447 0 0.5;
+#X msg 741 472 1 1;
 #X msg 177 18 connect 192.168.1.2 9001;
+#X obj 619 217 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 639 216 reportar posicion;
+#X msg 805 232 send /reportarPosicion;
 #X connect 1 0 39 0;
 #X connect 2 0 0 0;
 #X connect 3 0 39 0;
@@ -292,3 +296,5 @@
 #X connect 132 0 89 0;
 #X connect 133 0 89 0;
 #X connect 134 0 0 0;
+#X connect 135 0 137 0;
+#X connect 137 0 81 0;

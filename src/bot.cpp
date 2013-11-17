@@ -21,7 +21,19 @@ void Bot::update(){
 	if( showMode == true){
 		cout << "Estoy en modo --- > " << modo << endl; 
 	}
-	
+	if( reportarPosicion == true ){
+		ofxOscMessage elMensaje;
+		if( botType == "sernapodo"){
+			elMensaje.setAddress("/ornitopodo");
+		}
+
+		// Espero que no haya null pointer exception la primera vez...
+
+		elMensaje.addFloatArg( pos.x );
+		elMensaje.addFloatArg( pos.y ); 
+		elMensaje.addFloatArg( angle );
+		oscSender.sendMessage( elMensaje );		
+	}
 	
 
 	while (oscReciever.hasWaitingMessages()) {
@@ -128,7 +140,7 @@ void Bot::update(){
 			}
 
 		}
-		else if( m.getAddress() == "/giveMePos"){
+		else if( m.getAddress() == "/giveMePos"){ // No terminado?
 			ofxOscMessage elMensaje;
 			elMensaje.setAddress("/pos");
 			elMensaje.addFloatArg( pos.x );
@@ -201,6 +213,18 @@ void Bot::update(){
 			}else if( val == 1 ){
 				showNecesidades = true;
 				cout << "Smode )= " << showNecesidades;
+	
+			}
+		}
+		else if( m.getAddress() == "/reportarPosicion"){ // Mostar o no mostrar el modo en el que estoy.
+			cout << "En el cambiador de reporte de Posición" << endl;
+			int val = m.getArgAsInt32(0);
+			if( val == 0){
+				reportarPosicion = false;
+				cout << " reporte de posición : " << reportarPosicion << endl;
+			}else if( val == 1 ){
+				reportarPosicion = true;
+				cout << " reporte de posición : " << reportarPosicion << endl;
 	
 			}
 		}

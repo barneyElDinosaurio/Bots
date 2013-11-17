@@ -34,8 +34,9 @@ public:
 		showTuio = false;
 		controlledMotion = true;
 		reportObstacles = false;
+		reportarPosicion = true;
 		collisionDistance = 0.2; // 0.2 Parece sensato para una distancia de 2 metros
-		setOscSender("192.168.1.52", 9000);
+		setOscSender("192.168.1.50", 9000);
 	}
 		
 	void move();
@@ -121,6 +122,7 @@ public:
 	bool showMode;
 	bool showNecesidades;
 	bool showTuio;
+	bool reportarPosicion;
 
 
 	//  ******** MODOS *********
