@@ -79,7 +79,13 @@ void Bot::update(){
 					
 					trackLastPos(pos);
 				}
+				isLost = false;
 				
+			}
+			else {
+				isLost = true;
+				cout << " ************ I AM LOST, PERRO. VOY A ANDAR POR AHÍ... SUERTE..." << endl;
+
 			}
 			
 			
