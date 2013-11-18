@@ -40,6 +40,8 @@ public:
 
 		vision = "kinect";
 		cout << "Visión :: " << vision << endl;
+		// No está perdido en principio.
+		isLost = false;
 	}
 		
 	void move();
@@ -145,5 +147,7 @@ public:
 	bool reportObstacles;
 	vector <ofVec2f> obstaculos;
 	float collisionDistance;
+
+	bool isLost; // para saber si está perdido...
 
 };

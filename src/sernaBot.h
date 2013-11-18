@@ -106,4 +106,6 @@ public:
 	int byte2;
 	int angulo;
 
+    // distancia medida por el sensor de prox (en cm)
+    float distancia;
 };

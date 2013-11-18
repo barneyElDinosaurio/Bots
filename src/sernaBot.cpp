@@ -87,6 +87,9 @@ void SernaBot::setup(){
 
 	anguloDeEvasion = 180;
 
+	// inicializar la distancia grande, por si jode...
+	distancia = 100;
+
 }
 void SernaBot::update(){
 
@@ -141,6 +144,11 @@ void SernaBot::update(){
 
         		angle = ofToFloat(losStrings.at(1));
         		cout << "Angulo brujula " << angle << endl; 
+        	}
+        	if( losStrings.at(0) == "distancia"){
+        		distancia = ofToFloat( losStrings.at(1) );
+        		cout << "Distancia " << distancia << endl;
+
         	}
 
         }
@@ -277,6 +285,19 @@ void SernaBot::updateMovement(){
 
 
  		}
+ 		/*
+ 		if(isLost == true && controlledMotion == false ){ //  Por si está perdido, rote si se va a estrellar.
+ 			float umbralDistancia = 40;
+ 			if( distancia < umbralDistancia){
+
+ 				rotateL();
+ 				ofSleepMillis(3000);
+ 			}
+ 			else{
+ 				advance();
+ 			}
+
+ 		}*/
  		
  		// cout << "angulo con calculo OF" << angleDifference << endl;
  		// cout << "voy a rotar "<< angle2Time(angleDifference) << "segundos" << endl;
