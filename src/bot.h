@@ -32,7 +32,7 @@ public:
 		showBlobData = false;
 		showNecesidades = false;
 		showTuio = false;
-		controlledMotion = true;
+		controlledMotion = false;
 		reportObstacles = false;
 		reportarPosicion = true;
 		collisionDistance = 0.2; // 0.2 Parece sensato para una distancia de 2 metros

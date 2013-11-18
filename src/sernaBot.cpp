@@ -46,7 +46,7 @@ void SernaBot::setup(){
 	pinMode(6, OUTPUT);
 
 	//SERIAL
-	fdS  = serialOpen("/dev/ttyAMA0", 9600);
+	fdS  = serialOpen("/dev/ttyAMA0", 38400);
 	
 	cout << "Se ha conectado al puerto serial número: " << fdS << endl;
 
@@ -285,9 +285,12 @@ void SernaBot::updateMovement(){
 
 
  		}
- 		
- 		/*if(isLost == true && controlledMotion == false ){ //  Por si está perdido, rote si se va a estrellar.
+		
+
+		//POR SI SE PIERDE EL MAN:::::::::::::::::::::::::: 		
+ 		if(isLost == true && controlledMotion == false ){ //  Por si está perdido, rote si se va a estrellar.
  			cout << "navegando en modo perdido" << endl;
+			cout<<"Distancia: "<<distancia<<" cm" <<endl;
  			float umbralDistancia = 40;
  			if( distancia < umbralDistancia){
 
@@ -298,7 +301,7 @@ void SernaBot::updateMovement(){
  				advance();
  			}
 
- 		}*/
+ 		}
  		
  		// cout << "angulo con calculo OF" << angleDifference << endl;
  		// cout << "voy a rotar "<< angle2Time(angleDifference) << "segundos" << endl;
