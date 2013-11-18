@@ -236,6 +236,13 @@ void Bot::update(){
 	
 			}
 		}
+		else if( m.getAddress() == "/reportAddress"){
+			string reportHost = m.getArgAsString(0);
+			int reportPort = m.getArgAsInt32(1);
+			oscSender.setup(reportHost, reportPort);
+
+			cout << "Cambié dirección de reporte a " << reportHost << ":" << reportPort << endl;
+		}
 		else if( m.getAddress() == "/vision"){
 			int opcion = m.getArgAsInt32(0);
 			if( opcion == 0){

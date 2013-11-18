@@ -1,4 +1,4 @@
-#N canvas -43 87 1417 723 10;
+#N canvas 0 87 1417 723 10;
 #X obj 177 74 sendOSC;
 #X msg 329 196 send /advance;
 #X msg 91 16 disconnect;
@@ -54,13 +54,13 @@
 #X msg 376 540 send /QP \$1;
 #X obj 376 567 s toSend;
 #X obj 376 596 print preguntador;
-#X obj 695 608 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
+#X obj 114 596 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X obj 695 663 s toSend;
-#X obj 695 692 print preguntador;
+#X obj 114 651 s toSend;
+#X obj 114 680 print preguntador;
 #X text 383 478 PREGUNTAR POSICION DE SERV0;
-#X msg 695 636 send /Q \$1;
-#X text 702 574 SERVO IS MOVING;
+#X msg 114 624 send /Q \$1;
+#X text 121 562 SERVO IS MOVING;
 #X msg 443 437 send /arbitrarySerial;
 #X obj -239 407 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
@@ -106,22 +106,22 @@
 1;
 #X text 637 108 Mostrar modo;
 #X msg 775 124 send /showMode \$1;
-#X obj 618 368 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 621 445 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 822 383 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 825 460 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 636 366 ORDENES DE MOVIMIENTO;
-#X msg 830 527 send /setDestino \$1 \$2;
-#X obj 823 552 s toSend;
+#X text 639 443 ORDENES DE MOVIMIENTO;
+#X msg 833 604 send /setDestino \$1 \$2;
+#X obj 826 629 s toSend;
 #X obj 197 119 print sending;
 #X obj 617 137 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 782 152 send /showNecesidades \$1;
 #X text 637 136 Mostrar necesidades;
-#X obj 637 400 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 640 477 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 657 399 Modo estático;
-#X msg 823 415 send /setStatic \$1;
+#X text 660 476 Modo estático;
+#X msg 826 492 send /setStatic \$1;
 #X text -239 57 CAL: 1 giro en 4.4;
 #X obj -287 161 print;
 #X obj -179 201 print TUIO;
@@ -139,18 +139,18 @@
 #X obj 619 193 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 364 19 OJO QUE LA CAMBIE !!!!;
-#X obj 638 428 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 641 505 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 658 427 Movimiento controlado;
-#X msg 824 443 send /setControlledMotion \$1;
+#X text 661 504 Movimiento controlado;
+#X msg 827 520 send /setControlledMotion \$1;
 #X msg 329 249 send /rotateR;
 #X text -240 75 ATENCION \, REACTIVISION TIENE;
 #X text -241 91 QUE MANDAR A LA IP DEL SERNAPODO;
-#X obj 639 459 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 642 536 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 659 458 Diga obstáculos;
-#X msg 833 471 send /reportObstacles \$1;
-#X msg 739 563 0.6 0.25;
+#X text 662 535 Diga obstáculos;
+#X msg 836 548 send /reportObstacles \$1;
+#X msg 742 640 0.6 0.25;
 #X obj -31 151 pack 0 f f f f f;
 #X msg -29 221 send /dormilonador \$1 \$2 \$3 \$4 \$5;
 #X floatatom 89 80 5 0 0 0 - - -;
@@ -192,20 +192,27 @@
 #X restore -93 290 pd moveTime;
 #X obj -96 315 s toSend;
 #X msg 329 325 send /pruebaSS;
-#X msg 740 487 0 0;
-#X msg 741 510 0 0.5;
-#X msg 741 535 1 1;
+#X msg 743 564 0 0;
+#X msg 744 587 0 0.5;
+#X msg 744 612 1 1;
 #X obj 619 217 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 639 216 reportar posicion;
 #X msg 805 232 send /reportarPosicion;
 #X obj -287 122 dumpOSC 4545;
-#X msg 177 18 connect 192.168.1.57 9001;
 #X obj 619 245 vradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
 #X text 640 243 Camara;
 #X text 641 260 Kinect;
 #X msg 841 275 send /vision \$1;
+#X msg 177 18 connect 192.168.0.101 9001;
+#X msg 765 353 send /reportAddress \$1 \$2;
+#X msg 618 306 192.168.0.101;
+#X obj 716 323 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 717 305 9001;
+#X obj 618 336 pack s f;
+#X text 616 287 reportAddress;
 #X connect 1 0 39 0;
 #X connect 2 0 0 0;
 #X connect 3 0 39 0;
@@ -301,6 +308,12 @@
 #X connect 132 0 89 0;
 #X connect 133 0 135 0;
 #X connect 135 0 81 0;
-#X connect 137 0 0 0;
-#X connect 138 0 141 0;
-#X connect 141 0 81 0;
+#X connect 137 0 140 0;
+#X connect 140 0 81 0;
+#X connect 141 0 0 0;
+#X connect 142 0 81 0;
+#X connect 143 0 144 0;
+#X connect 143 0 146 0;
+#X connect 144 0 145 0;
+#X connect 145 0 146 1;
+#X connect 146 0 142 0;
