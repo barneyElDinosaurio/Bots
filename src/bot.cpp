@@ -69,8 +69,8 @@ void Bot::update(){
 			
 			
 			// VALORES PARA EL SERNAPODO
-			float hu1fixed = 0.162; // CAMBIAR DINÁMICAMENTE
-			float hu1thres = 0.01;
+			float hu1fixed = 0.2; // CAMBIAR DINÁMICAMENTE
+			float hu1thres = 0.1;
 			
 			if( abs(hu1 - hu1fixed)  < hu1thres && vision == "camara" ){ // SI SOY UN SERNAPODO
 				if( this->botType == "sernaBot"){
