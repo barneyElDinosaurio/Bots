@@ -41,7 +41,7 @@ public:
 		vision = "kinect";
 		cout << "Visión :: " << vision << endl;
 		// No está perdido en principio.
-		isLost = false;
+		isLost = true;
 	}
 		
 	void move();
