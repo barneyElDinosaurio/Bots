@@ -46,7 +46,7 @@ void SernaBot::setup(){
 	pinMode(6, OUTPUT);
 
 	//SERIAL
-	fdS  = serialOpen("/dev/ttyAMA0", 9600);
+	fdS  = serialOpen("/dev/ttyAMA0", 38400);
 	
 	cout << "Se ha conectado al puerto serial número: " << fdS << endl;
 
@@ -84,6 +84,7 @@ void SernaBot::setup(){
 	movementThreshold = 0.1;
 	isStatic = false; // Seguro????
 	timeAngleCalFactor = 1.0 * 1000 / ( 1.42 * 180/PI ) ; //segundos por radián [cronometrado suciamente cuando tenía adaptador]
+
 
 	anguloDeEvasion = 180;
 
@@ -142,7 +143,7 @@ void SernaBot::update(){
 
         	if(losStrings.at(0) == "brujula"){
 
-        		angle = ofToFloat(losStrings.at(1));
+        		angle = ofToFloat(losStrings.at(1)) - 133.0f; // momentáneamente
         		cout << "Angulo brujula " << angle << endl; 
         	}
         	if( losStrings.at(0) == "distancia"){
@@ -286,8 +287,9 @@ void SernaBot::updateMovement(){
 
  		}
  		
- 		/*if(isLost == true && controlledMotion == false ){ //  Por si está perdido, rote si se va a estrellar.
+ 		if(isLost == true && controlledMotion == false ){ //  Por si está perdido, rote si se va a estrellar.
  			cout << "navegando en modo perdido" << endl;
+ 			cout << "Distancia : " << distancia << endl;
  			float umbralDistancia = 40;
  			if( distancia < umbralDistancia){
 
@@ -298,7 +300,7 @@ void SernaBot::updateMovement(){
  				advance();
  			}
 
- 		}*/
+ 		}
  		
  		// cout << "angulo con calculo OF" << angleDifference << endl;
  		// cout << "voy a rotar "<< angle2Time(angleDifference) << "segundos" << endl;

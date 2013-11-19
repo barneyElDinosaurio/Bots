@@ -32,7 +32,7 @@ public:
 		showBlobData = false;
 		showNecesidades = false;
 		showTuio = false;
-		controlledMotion = true;
+		controlledMotion = false;
 		reportObstacles = false;
 		reportarPosicion = true;
 		collisionDistance = 0.2; // 0.2 Parece sensato para una distancia de 2 metros
@@ -41,7 +41,7 @@ public:
 		vision = "kinect";
 		cout << "Visión :: " << vision << endl;
 		// No está perdido en principio.
-		isLost = true;
+		isLost = false;
 	}
 		
 	void move();
@@ -149,5 +149,6 @@ public:
 	float collisionDistance;
 
 	bool isLost; // para saber si está perdido...
+	Timer timerLost;
 
 };
