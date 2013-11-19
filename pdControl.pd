@@ -1,4 +1,4 @@
-#N canvas 45 401 1417 723 10;
+#N canvas 3 148 1417 723 10;
 #X obj 177 74 sendOSC;
 #X msg 329 196 send /advance;
 #X msg 91 16 disconnect;
@@ -202,7 +202,6 @@
 #X text 640 243 Camara;
 #X text 641 260 Kinect;
 #X msg 841 275 send /vision \$1;
-#X msg 177 18 connect 192.168.0.101 9001;
 #X msg 765 353 send /reportAddress \$1 \$2;
 #X obj 716 323 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -210,9 +209,10 @@
 #X obj 618 336 pack s f;
 #X text 616 287 reportAddress;
 #X msg 618 306 192.168.0.104;
-#X obj 622 218 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 622 218 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 805 232 send /reportarPosicion \$1;
+#X msg 177 18 connect 192.168.1.103 9001;
 #X connect 1 0 39 0;
 #X connect 2 0 0 0;
 #X connect 3 0 39 0;
@@ -308,12 +308,12 @@
 #X connect 132 0 89 0;
 #X connect 135 0 138 0;
 #X connect 138 0 81 0;
-#X connect 139 0 0 0;
-#X connect 140 0 81 0;
-#X connect 141 0 142 0;
-#X connect 142 0 143 1;
-#X connect 143 0 140 0;
-#X connect 145 0 141 0;
-#X connect 145 0 143 0;
-#X connect 146 0 147 0;
-#X connect 147 0 81 0;
+#X connect 139 0 81 0;
+#X connect 140 0 141 0;
+#X connect 141 0 142 1;
+#X connect 142 0 139 0;
+#X connect 144 0 140 0;
+#X connect 144 0 142 0;
+#X connect 145 0 146 0;
+#X connect 146 0 81 0;
+#X connect 147 0 0 0;

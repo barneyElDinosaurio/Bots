@@ -78,12 +78,12 @@ void Bot::update(){
 					cout << "Me llamo SERNAPODO, con posición:---  " << pos.x << " " << pos.y << " HU : " << hu1 <<endl; 
 					
 					trackLastPos(pos);
-					Ttimerw
+					//Ttimerw
 				}
 				isLost = false;
 				
 			}
-			/*else {
+			/*else { // Problemático cuando hay más blobs...
 				isLost = true;
 				cout << " ************ I AM LOST, PERRO. VOY A ANDAR POR AHÍ... SUERTE..." << endl;
 

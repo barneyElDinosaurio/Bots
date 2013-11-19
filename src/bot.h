@@ -149,6 +149,6 @@ public:
 	float collisionDistance;
 
 	bool isLost; // para saber si está perdido...
-	Timer timerLost;
+	//Timer timerLost;
 
 };
