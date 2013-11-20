@@ -22,7 +22,7 @@
 #X floatatom 8 107 5 0 0 0 - - -;
 #X floatatom 35 124 5 0 0 0 - - -;
 #X obj 335 108 spigot;
-#X obj 368 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 368 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 80 401 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
@@ -113,7 +113,7 @@
 #X text 639 443 ORDENES DE MOVIMIENTO;
 #X msg 833 604 send /setDestino \$1 \$2;
 #X obj 826 629 s toSend;
-#X obj 197 119 print sending;
+#X obj 196 119 print sending;
 #X obj 617 137 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 782 152 send /showNecesidades \$1;
@@ -212,7 +212,7 @@
 #X obj 622 218 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 805 232 send /reportarPosicion \$1;
-#X msg 177 18 connect 192.168.1.103 9001;
+#X msg 177 18 connect 192.168.43.23 9001;
 #X connect 1 0 39 0;
 #X connect 2 0 0 0;
 #X connect 3 0 39 0;
