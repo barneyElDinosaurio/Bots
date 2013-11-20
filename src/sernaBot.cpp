@@ -204,6 +204,8 @@ void SernaBot::update(){
 	
 	//------------------
 	// ESTA ES LA PARTE JUGOSA!!!
+
+	if( ofRandom(1) < 0.1 ){ cout << "A ver los modos pues... MODO = " << modo << endl; }
 	//-----------------	
 	if( modo == "relajado"){ // MUCHO CUIDADO CON LA ESCTRITURA!!! QUE NO SE DIFIRENCIE DE LA DE ARRIBA
 		//cout << "estoy relajado" << endl;
@@ -223,9 +225,11 @@ void SernaBot::update(){
 		}
 	}
 	else if( modo == "parar"){
+
 		if(firstTimeInMode){
 			firstTimeInMode = false;
 			stop();
+			//cout << ""
 			timerModo.start();
 		}
 		if (timerModo.getTime() > tiempoDePausa){
