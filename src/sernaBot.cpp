@@ -395,6 +395,10 @@ float SernaBot::angle2Time(float angle){
 	return( angle * timeAngleCalFactor );
 
 }
+float SernaBot::rotateTo(float angle){
+
+
+}
 
 void SernaBot::startLinearMovement(){
 // Timer restart?

@@ -26,6 +26,8 @@
 #endif
 
 
+
+
 class Bot{
 	
 public:
@@ -50,9 +52,10 @@ public:
 
 
 		// MODOS Y VAINAS
+		modo = "sediento"; // Tengo que poner esto momentáneamente... creo
 		chooseMode(); // Para elegir inicialmente un modo.
 		firstTimeInMode = true;
-		tiempoDeBebida = 50000; // En milisegundos... medio charro...
+		tiempoDeBebida = 25000; // En milisegundos... medio charro...
 		tiempoDePausa = 1000;
 
 

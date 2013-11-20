@@ -529,9 +529,9 @@ void Bot::chooseMode(){
 
 	if( ofInRange( val, 0, 40) ){
 		modo = "sediento";
-		if(modo == lastMode){ // Para evitar que se repitan los modos.
+		/*if(modo == lastMode){ // Para evitar que se repitan los modos.
 			chooseMode(); 
-		}
+		}*/
 	} /*else if( ofInRange(val, 40, 100) ){
 		modo = "cargar";
 	}*/
