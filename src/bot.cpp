@@ -525,7 +525,7 @@ void Bot::chooseMode(){
 	int val = ofRandom(100); // Lanzo un dado...
 
 	cout << "-----------------" << endl;
-	cout << " CAMBIO DE MODO " << endl;
+	cout << " CAMBIO DE MODO  " << endl;
 	cout << "-----------------" << endl;
 
 	if( ofInRange( val, 0, 40) ){
