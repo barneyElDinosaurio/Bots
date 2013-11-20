@@ -127,18 +127,18 @@ void SernaBot::update(){
       // Conversión de prueba
       if( stringComplete){
         //cout << "en el string complete con :: " << serialData << endl;
-        cout << "Brújula mirando hacia :: " << serialData << endl;
-        cout << ".... Te gané brújula malparida !!!!!!!!!!!" << endl;
+        //cout << "Brújula mirando hacia :: " << serialData << endl;
+        //cout << ".... Te gané brújula malparida !!!!!!!!!!!" << endl;
         
         vector <string> losStrings = ofSplitString(serialData, " ");
 
-        cout << "tamaño de los strings" << losStrings.size() << endl;
+        //cout << "tamaño de los strings" << losStrings.size() << endl;
 
-        cout << "Los strings son : " << endl;
+        //cout << "Los strings son : " << endl;
 
-        for(int i = 0 ; i < losStrings.size() ; i++){
+        /*for(int i = 0 ; i < losStrings.size() ; i++){
         	cout << i << ":: "<< losStrings.at(i) << endl;
-        }
+        }*/
         if( losStrings.size() == 2){ // interpretable
 
         	if(losStrings.at(0) == "brujula"){
