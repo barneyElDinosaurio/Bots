@@ -520,6 +520,7 @@ void Bot::callibrate(){
 }*/
 
 void Bot::chooseMode(){
+
 	int val = ofRandom(100); // Lanzo un dado...
 
 	cout << "-----------------" << endl;
@@ -528,12 +529,20 @@ void Bot::chooseMode(){
 
 	if( ofInRange( val, 0, 40) ){
 		modo = "sediento";
-	} else if( ofInRange(val, 40, 100) ){
+		if(modo == lastMode){ // Para evitar que se repitan los modos.
+			chooseMode(); 
+		}
+	} /*else if( ofInRange(val, 40, 100) ){
 		modo = "cargar";
+	}*/
+	else if ( ofInRange(val , 40, 100)){
+		modo = "parar";
+
 	}
 	cout << " MODO = " << modo << endl;  
 
 	firstTimeInMode = true;
+	lastMode = modo;
 
 }
 

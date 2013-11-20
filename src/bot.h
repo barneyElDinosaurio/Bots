@@ -182,6 +182,7 @@ public:
 	bool firstTimeInMode;
 	float tiempoDeBebida;
 	float tiempoDePausa;
+	string lastMode;
 
 	// LUGARES
 	ofVec2f bebedero; 
