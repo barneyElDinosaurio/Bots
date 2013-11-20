@@ -139,6 +139,17 @@ void testApp::keyPressed(int key){ //Dirty calibration
 	if (key == 'd'){
 		
 	}
+	if( key == 'x'){
+
+		#ifdef SERNAPODO
+		elGarden.stop();
+		#endif
+
+		#ifdef HEXAPOD
+		hexa.stop();
+		#endif
+		exit();
+	}
 #else
 	
 #endif

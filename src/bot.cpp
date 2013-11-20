@@ -544,6 +544,8 @@ void Bot::chooseMode(){
 	firstTimeInMode = true;
 	lastMode = modo;
 
+	ofSleepMillis(2000);
+
 }
 
 
