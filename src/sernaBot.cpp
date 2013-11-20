@@ -144,12 +144,12 @@ void SernaBot::update(){
         	if(losStrings.at(0) == "brujula"){
 
         		angle = ofToFloat(losStrings.at(1));
-        		cout << "Angulo [RAW]" << angle << endl;
+        		//cout << "Angulo [RAW]" << angle << endl;
         		angle = angle - 156.0f; //Le resto el cero.
-        		cout << "Angulo brujula [DEG]" << angle << endl; 
+        		//cout << "Angulo brujula [DEG]" << angle << endl; 
         		angle = ofDegToRad(angle);
 
-        		cout << "Angulo brujula [RAD]" << angle << endl; 
+        		//cout << "Angulo brujula [RAD]" << angle << endl; 
         	}
         	if( losStrings.at(0) == "distancia"){
         		distancia = ofToFloat( losStrings.at(1) );
