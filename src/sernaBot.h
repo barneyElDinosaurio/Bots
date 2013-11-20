@@ -23,7 +23,11 @@
 #include "bot.h"
 #endif
 
+#ifndef TIMER_H
+#define TIMER_H
 #include "timer.h"
+#endif
+//#include "timer.h"
 
 #ifndef MOVER_H
 #define MOVER_H
@@ -91,8 +95,6 @@ public:
 	float tiempoDeAvance;
 	// Cosillas sucioas
 	
-	ofVec2f bebedero; // En la clase general??? Es decir, en BOt?
-	
 	
 	// SERIAL
 
@@ -109,5 +111,5 @@ public:
     // distancia medida por el sensor de prox (en cm)
     float distancia;
 
-    
+
 };

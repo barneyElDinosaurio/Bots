@@ -519,5 +519,23 @@ void Bot::callibrate(){
 
 }*/
 
+void Bot::chooseMode(){
+	int val = ofRandom(100); // Lanzo un dado...
+
+	cout << "-----------------" << endl;
+	cout << " CAMBIO DE MODO " << endl;
+	cout << "-----------------" << endl;
+
+	if( ofInRange( val, 0, 40) ){
+		modo = "sediento";
+	} else if( ofInRange(val, 40, 100) ){
+		modo = "cargar";
+	}
+	cout << " MODO = " << modo << endl;  
+
+	firstTimeInMode = true;
+
+}
+
 
 	

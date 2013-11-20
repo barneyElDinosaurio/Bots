@@ -207,9 +207,30 @@ void SernaBot::update(){
 	if( modo == "relajado"){ // MUCHO CUIDADO CON LA ESCTRITURA!!! QUE NO SE DIFIRENCIE DE LA DE ARRIBA
 		//cout << "estoy relajado" << endl;
 	}
-	else if(modo == "sediento"){
-		//goTo( bebedero.x, bebedero.y );
-
+	else if(modo == "sediento"){ // AQUI CREO QUE PODRÍA SER UN TIMER DE MODO PARA TODOS LOS MODOS EN LUGAR DE UNO PARA CADA UNO.
+		if(firstTimeInMode){
+			firstTimeInMode = false;
+			goTo( bebedero.x, bebedero.y );
+			//timerSediento.start();ç
+			timerModo.start();
+		}
+		//if (timerSediento.getTime() > tiempoDeBebida){
+		if (timerModo.getTime() > tiempoDeBebida){
+			//timerSediento.stop();
+			timerModo.stop();
+			chooseMode();
+		}
+	}
+	else if( modo == "parar"){
+		if(firstTimeInMode){
+			firstTimeInMode = false;
+			stop();
+			timerModo.start();
+		}
+		if (timerModo.getTime() > tiempoDePausa){
+			chooseMode();
+			timerModo.stop();
+		}
 
 	}
 	else if(modo == "calibracion"){

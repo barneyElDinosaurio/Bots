@@ -20,6 +20,11 @@
 #include "mode.h"
 #endif
 
+#ifndef TIMER_H
+#define TIMER_H
+#include "timer.h"
+#endif
+
 
 class Bot{
 	
@@ -42,6 +47,19 @@ public:
 		cout << "Visión :: " << vision << endl;
 		// No está perdido en principio.
 		isLost = false;
+
+
+		// MODOS Y VAINAS
+		chooseMode(); // Para elegir inicialmente un modo.
+		firstTimeInMode = true;
+		tiempoDeBebida = 50000; // En milisegundos... medio charro...
+		tiempoDePausa = 1000;
+
+
+		// LUGARES:
+		bebedero.set(0.3, 0.3);
+
+
 	}
 		
 	void move();
@@ -70,6 +88,9 @@ public:
 	void setupSerial(int device, int baudRate);
 	void trackLastPos( ofVec2f);
 	ofVec2f getPos();
+
+	// Choose mode!
+	void chooseMode();
 	
 	
 	
@@ -149,9 +170,19 @@ public:
 	float collisionDistance;
 
 	bool isLost; // para saber si está perdido...
-	//Timer timerLost;
-
+	
 	// COLOR !!!
     float h, s, v;
 
+
+    // Modos y cosas...
+    Timer timerLost; // Tiempo sin que reciba un blob // CUADRAR ESTO !!!
+	Timer timerSediento; // Tiempo que va a pasar bebiendo...
+	Timer timerModo;
+	bool firstTimeInMode;
+	float tiempoDeBebida;
+	float tiempoDePausa;
+
+	// LUGARES
+	ofVec2f bebedero; 
 };
