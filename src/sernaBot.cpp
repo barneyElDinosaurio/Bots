@@ -301,7 +301,7 @@ void SernaBot::updateMovement(){
  		
  		if(isLost == true && controlledMotion == false ){ //  Por si está perdido, rote si se va a estrellar.
  			cout << "navegando en modo perdido" << endl;
- 			cout << "Distancia : " << distancia << endl;
+			cout<<"Distancia: "<<distancia<<" cm" <<endl;
  			float umbralDistancia = 40;
  			if( distancia < umbralDistancia){
 
