@@ -73,11 +73,12 @@ void SernaBot::setup(){
 	firstTimeCal = true;
 
 	// ************
-	// MOVIMIENTO
+	//  MOVIMIENTO
 	// ************
 
 	linear = 0 ;
 	rotation = 1; // Poner como defines
+	// defined rotation
 
 	movementStatus = linear; // ¿Cómo inicializar?
 
@@ -325,7 +326,7 @@ void SernaBot::updateMovement(){
 			cout<<"Distancia: "<<distancia<<" cm" <<endl;
  			float umbralDistancia = 40;
  			if( distancia < umbralDistancia){
-
+ 				// Aquí hay que navegarlo!!!
  				rotateL();
  				ofSleepMillis(3000);
  			}
@@ -395,10 +396,10 @@ float SernaBot::angle2Time(float angle){
 	return( angle * timeAngleCalFactor );
 
 }
-/*float SernaBot::rotateTo(float angle){
+float SernaBot::rotateTo(float angle){
 
 
-}*/
+}
 
 void SernaBot::startLinearMovement(){
 // Timer restart?
@@ -413,7 +414,7 @@ void SernaBot::goTo(float x, float y){
 		movementTimer.restart();
 		advance();
 		cout << "nuevo destino " << x << " " << y << endl;
-	}
+	}-
 }
 void SernaBot::setDestino(float x , float y){
 	destino = ofVec2f( x, y);
@@ -508,10 +509,10 @@ void SernaBot::calibrate(){
 void SernaBot::advance(){
 	
 	//cout << " SERNAPODO: En la funcion de avanzar " << endl;
-	digitalWrite(1, LOW);
-	digitalWrite(4, HIGH);
-	digitalWrite(5, LOW);
-	digitalWrite(6, HIGH);
+	digitalWrite(1, HIGH);
+	digitalWrite(4, LOW);
+	digitalWrite(5, HIGH);
+	digitalWrite(6, LOW);
 	
 	
 }
@@ -519,10 +520,10 @@ void SernaBot::advance(){
 void SernaBot::recoil(){
 
 	//cout << "retrocediendo wiring pi" << endl;
-	digitalWrite(1, HIGH);
-	digitalWrite(4, LOW);
-	digitalWrite(5, HIGH);
-	digitalWrite(6, LOW);
+	digitalWrite(1, LOW);
+	digitalWrite(4, HIGH);
+	digitalWrite(5, LOW);
+	digitalWrite(6, HIGH);
 	
 }
 
