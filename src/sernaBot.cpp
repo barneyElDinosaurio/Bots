@@ -229,8 +229,8 @@ void SernaBot::update(){
 			timerModo.start();
 		}
 		if (timerModo.getTime() > tiempoDePausa){
-			chooseMode();
 			timerModo.stop();
+			chooseMode();		
 		}
 
 	}

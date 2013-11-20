@@ -55,8 +55,8 @@ public:
 		modo = "sediento"; // Tengo que poner esto momentáneamente... creo
 		//chooseMode(); // Para elegir inicialmente un modo.
 		firstTimeInMode = true;
-		tiempoDeBebida = 25000; // En milisegundos... medio charro...
-		tiempoDePausa = 1000;
+		tiempoDeBebida = 5000; // En milisegundos... medio charro...
+		tiempoDePausa = 5000;
 
 
 		// LUGARES:
