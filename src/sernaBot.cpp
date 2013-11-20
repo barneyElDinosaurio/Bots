@@ -143,14 +143,17 @@ void SernaBot::update(){
 
         	if(losStrings.at(0) == "brujula"){
 
-        		angle = ofToFloat(losStrings.at(1)) - 156.0f; // momentáneamente
+        		angle = ofToFloat(losStrings.at(1));
+        		cout << "Angulo [RAW]" << endl;
+        		angle = angle - 156.0f; //Le resto el cero.
+        		cout << "Angulo brujula [DEG]" << angle << endl; 
         		angle = ofDegToRad(angle);
 
-        		cout << "Angulo brujula " << angle << endl; 
+        		cout << "Angulo brujula [RAD]" << angle << endl; 
         	}
         	if( losStrings.at(0) == "distancia"){
         		distancia = ofToFloat( losStrings.at(1) );
-        		cout << "Distancia " << distancia << endl;
+        		//cout << "Distancia " << distancia << endl;
 
         	}
 
@@ -248,6 +251,7 @@ void SernaBot::updateMovement(){
 		// Calcular antes que nada la diferencia angular entre uno y el destino
 				// Primero el vector que nos une con el destino
 		ofVec2f deltaPos = destino - pos; 
+		//cout << "Delta destino" << endl;
 
 		float anguloGrados = angle*(180.0/PI);
 		float anguloDeltaPos = - deltaPos.angle( ofVec2f(1,0)); // el ángulo entre este vector y el eje x.
