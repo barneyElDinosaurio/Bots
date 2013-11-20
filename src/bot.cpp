@@ -79,8 +79,9 @@ void Bot::update(){
 			if( abs(hu1 - hu1fixed)  < hu1thres && vision == "camara" ){ // SI SOY UN SERNAPODO
 				if( this->botType == "sernaBot"){
 					setPos(blobPos.x, blobPos.y);
-					cout << "Me llamo SERNAPODO, con posición:---  " << pos.x << " " << pos.y << " HU : " << hu1 <<endl; 
-					
+					if(ofRandom(1) < 0.1 ){ // Para no llenar la consola
+						cout << "Me llamo SERNAPODO, con posición:---  " << pos.x << " " << pos.y << " HU : " << hu1 <<endl; 
+					}
 					trackLastPos(pos);
 					//Ttimerw
 				}
@@ -443,7 +444,7 @@ void Bot::trackLastPos(ofVec2f laPos){
 	while( lastPos.size() > trackSize){ // limitar el número de posiciones tracked a trackSize
 		lastPos.erase( lastPos.begin() );
 		
-		cout << "numero de posiciones rastreadsdas " <<  lastPos.size() << endl;
+		//cout << "numero de posiciones rastreadsdas " <<  lastPos.size() << endl;
 	}
 	
 	/*	

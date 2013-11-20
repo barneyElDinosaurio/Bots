@@ -156,7 +156,7 @@ void SernaBot::update(){
         		//cout << "Angulo brujula [DEG]" << angle << endl; 
         		angle = ofDegToRad(angle);
 
-        		//	cout << "Angulo brujula [RAD]" << angle << endl; 
+        		if( ofRandom(1) < 0.1 ){ cout << "Angulo brujula [RAD]" << angle << endl; }
         	}
         	if( losStrings.at(0) == "distancia"){
         		distancia = ofToFloat( losStrings.at(1) );
