@@ -151,4 +151,7 @@ public:
 	bool isLost; // para saber si está perdido...
 	//Timer timerLost;
 
+	// COLOR !!!
+    float h, s, v;
+
 };

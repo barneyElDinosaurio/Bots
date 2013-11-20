@@ -108,4 +108,6 @@ public:
 
     // distancia medida por el sensor de prox (en cm)
     float distancia;
+
+    
 };

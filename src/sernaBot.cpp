@@ -91,6 +91,12 @@ void SernaBot::setup(){
 	// inicializar la distancia grande, por si jode...
 	distancia = 100;
 
+	// COLOR DEL BLOB !!!
+	// No sé si sea correcto setearlos así inicialmente...
+	h = 0;
+	s = 0;
+	v = 0; 
+
 }
 void SernaBot::update(){
 
@@ -149,7 +155,7 @@ void SernaBot::update(){
         		//cout << "Angulo brujula [DEG]" << angle << endl; 
         		angle = ofDegToRad(angle);
 
-        		//cout << "Angulo brujula [RAD]" << angle << endl; 
+        		//	cout << "Angulo brujula [RAD]" << angle << endl; 
         	}
         	if( losStrings.at(0) == "distancia"){
         		distancia = ofToFloat( losStrings.at(1) );

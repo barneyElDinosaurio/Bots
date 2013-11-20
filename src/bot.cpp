@@ -55,16 +55,20 @@ void Bot::update(){
 			float area = m.getArgAsFloat(3);
 			float hu1 = m.getArgAsFloat(4);
 			float hu2 = m.getArgAsFloat(5);
+			h = m.getArgAsFloat(6);
+			s = m.getArgAsFloat(7);
+			v = m.getArgAsFloat(8);
 			
 			if( showBlobData == true){
 				cout << showBlobData << endl;
-				cout << "Blob **position : " << blobPos << endl;
-				cout << "Blob angle : "  << angle << endl;
-				cout << "Blob area : "  << area << endl;			
-				cout << "Hu moment 1: " << hu1 << endl;
-				cout << "Hu moment 2: " << hu2 << endl;
-
-
+				cout << "Blob position : " << blobPos << endl;
+				cout << "Blob angle    : "  << angle << endl;
+				cout << "Blob area     : "  << area << endl;			
+				cout << "Hu moment 1   : " << hu1 << endl;
+				cout << "Hu moment 2   : " << hu2 << endl;
+				cout << "Hue           : " << h << endl;
+				cout << "Saturation    : " << s << endl;
+				cout << "Value         : " << v << endl;
 			}	
 			
 			
