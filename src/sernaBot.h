@@ -55,7 +55,7 @@ public:
 	void startLinearMovement();
 	void setDestino(float x, float y);
 	float angle2Time(float angle);
-	void rotateTo(float angle);
+//	void rotateTo(float angle);
 	
 	
 	float sensorHumedad; // Tenemos que cambiarles factores de escala para hacerlos comparables.
