@@ -396,10 +396,10 @@ float SernaBot::angle2Time(float angle){
 	return( angle * timeAngleCalFactor );
 
 }
-float SernaBot::rotateTo(float angle){
+/*float SernaBot::rotateTo(float angle){
 
 
-}
+}*/
 
 void SernaBot::startLinearMovement(){
 // Timer restart?
@@ -414,7 +414,7 @@ void SernaBot::goTo(float x, float y){
 		movementTimer.restart();
 		advance();
 		cout << "nuevo destino " << x << " " << y << endl;
-	}-
+	}
 }
 void SernaBot::setDestino(float x , float y){
 	destino = ofVec2f( x, y);
