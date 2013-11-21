@@ -215,6 +215,7 @@ void SernaBot::update(){
 	else if(modo == "sediento"){ // AQUI CREO QUE PODRÍA SER UN TIMER DE MODO PARA TODOS LOS MODOS EN LUGAR DE UNO PARA CADA UNO.
 		if(firstTimeInMode){
 			firstTimeInMode = false;
+			cout << "Ir al bebedero" << endl;
 			goTo( bebedero.x, bebedero.y );
 			//timerSediento.start();ç
 			timerModo.start();
@@ -424,6 +425,7 @@ void SernaBot::goTo(float x, float y){
 	}
 }
 void SernaBot::setDestino(float x , float y){
+
 	destino = ofVec2f( x, y);
 }
 void SernaBot::calibrate(){
