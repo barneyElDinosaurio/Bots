@@ -65,7 +65,8 @@ void SernaBot::setup(){
 	
 	// BEbedero y otras suciedades
 	
-	bebedero.set(0.9, 0.9);
+	//bebedero.set(0.9, 0.9);
+	cout << "EL bebedero está en ==================="  << bebedero << endl;
 	elTimer.start();
 	tiempoDeAvance = 400;
 	
@@ -210,7 +211,7 @@ void SernaBot::update(){
 	//if( ofRandom(1) < 0.1 ){ cout << "A ver los modos pues... MODO = " << modo << endl; }
 	//-----------------	
 	cout << "********** bebedero" << bebedero << endl;
-	/*if( modo == "relajado"){ // MUCHO CUIDADO CON LA ESCTRITURA!!! QUE NO SE DIFIRENCIE DE LA DE ARRIBA
+	if( modo == "relajado"){ // MUCHO CUIDADO CON LA ESCTRITURA!!! QUE NO SE DIFIRENCIE DE LA DE ARRIBA
 		//cout << "estoy relajado" << endl;
 	}
 	else if(modo == "sediento"){ // AQUI CREO QUE PODRÍA SER UN TIMER DE MODO PARA TODOS LOS MODOS EN LUGAR DE UNO PARA CADA UNO.
@@ -249,7 +250,7 @@ void SernaBot::update(){
 	else if(modo == "debug"){
 		//Código debug 
 
-	}*/
+	}
 	
 	//mover.updateAngle();
 
