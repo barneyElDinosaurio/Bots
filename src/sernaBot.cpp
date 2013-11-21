@@ -194,6 +194,8 @@ void SernaBot::update(){
 	cout << "byte1: " << byte1 << "byte2: " << byte2 << "angulo: " << angulo  << endl;
 	*/
 	// Brujería para encontrar el máximo de las necesidades
+
+	/*
 	const int N = sizeof(necesidades) / sizeof(float);
 	//cout << "TAMAÑO " << N << endl;
 	
@@ -201,7 +203,7 @@ void SernaBot::update(){
 	
 	modo = modos.at(maxIndex).mode; // ENCUENTRO LA NECESIDAD ASOCIADA AL MÁXIMO DE LOS VALORES DE SENSOR
 
-	
+	*/
 	//------------------
 	// ESTA ES LA PARTE JUGOSA!!!
 
@@ -229,7 +231,7 @@ void SernaBot::update(){
 		if(firstTimeInMode){
 			firstTimeInMode = false;
 			stop();
-			//cout << ""
+			cout << " Le dí la orden de para a este malparido " << endl;
 			timerModo.start();
 		}
 		if (timerModo.getTime() > tiempoDePausa){
