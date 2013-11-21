@@ -415,6 +415,7 @@ void SernaBot::startLinearMovement(){
 
 }
 void SernaBot::goTo(float x, float y){
+	cout << " Enviado a " << x << " " << y << endl;
 	if(destino.distance( ofVec2f(x,y) ) > 0.1){
 		isStatic = false;
 		destino = ofVec2f( x , y );
