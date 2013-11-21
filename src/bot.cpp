@@ -528,7 +528,7 @@ void Bot::chooseMode(){
 	cout << " CAMBIO DE MODO  " << endl;
 	cout << "-----------------" << endl;
 
-	if( ofInRange( val, 0, 95) ){
+	if( ofInRange( val, 0, 50) ){
 		modo = "sediento";
 		/*if(modo == lastMode){ // Para evitar que se repitan los modos.
 			chooseMode(); 
@@ -536,9 +536,8 @@ void Bot::chooseMode(){
 	} /*else if( ofInRange(val, 40, 100) ){
 		modo = "cargar";
 	}*/
-	else if ( ofInRange(val , 95, 100)){
-		modo = "parar";
-
+	else if ( ofInRange(val , 50, 100)){
+		modo = "parar";	
 	}
 	cout << " MODO = " << modo << endl;  
 

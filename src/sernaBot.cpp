@@ -32,8 +32,8 @@ void SernaBot::setup(){
 
 
 		// MODOS Y VAINAS
-		modo = "sediento"; // Tengo que poner esto momentáneamente... creo
-		//chooseMode(); // Para elegir inicialmente un modo.
+		modo = "inicial"; // Tengo que poner esto momentáneamente... creo
+		chooseMode(); // Para elegir inicialmente un modo.
 		firstTimeInMode = true;
 		tiempoDeBebida = 5000; // En milisegundos... medio charro...
 		tiempoDePausa = 10000;
@@ -43,6 +43,8 @@ void SernaBot::setup(){
 		bebedero.set(0.8, 0.8);
 
 		//**** AQUI CIERRAN
+
+
 
 	int port = 9001;
 	cout << "tratando de conectar al puerto " << port << endl;
@@ -209,6 +211,23 @@ void SernaBot::update(){
 
 	//if( ofRandom(1) < 0.1 ){ cout << "A ver los modos pues... MODO = " << modo << endl; }
 	//-----------------	
+
+	if(modo == "sediento"){
+		if(firstTimeInMode){
+			cout << "En el modo de beber" << endl;
+			timerSediento.start();
+			goTo(bebedero.x, bebedero.y);
+			firstTimeInMode = false;
+		}
+
+		cout << timerSediento.getTime() << endl;
+		/*else if(){
+
+
+		}*/
+
+
+	}
 	
 	
 	//mover.updateAngle();
