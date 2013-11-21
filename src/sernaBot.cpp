@@ -233,6 +233,16 @@ void SernaBot::update(){
 		cout << "Parado, como un miembro ..." << endl;
 		//timerParado.start();
 		cout << "Timer pàradp " << timerParado.getTime() << endl;
+
+		if( firstTimeInMode ){
+			stop();
+			timerParado.start();
+			firstTimeInMode = false;
+		}
+		/*else if(){
+
+
+		}*/
 	}
 	
 	
