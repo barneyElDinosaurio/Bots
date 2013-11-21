@@ -235,6 +235,7 @@ void SernaBot::update(){
 			timerModo.start();
 		}
 		if (timerModo.getTime() > tiempoDePausa){
+			cout << "Tiempo de parada " << timerModo.getTime() << endl;
 			timerModo.stop();
 			chooseMode();		
 		}
