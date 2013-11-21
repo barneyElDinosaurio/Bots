@@ -184,6 +184,7 @@ public:
     Timer timerLost; // Tiempo sin que reciba un blob // CUADRAR ESTO !!!
 	Timer timerSediento; // Tiempo que va a pasar bebiendo...
 	Timer timerModo;
+	Timer timerParado;
 	bool firstTimeInMode;
 	float tiempoDeBebida;
 	float tiempoDePausa;

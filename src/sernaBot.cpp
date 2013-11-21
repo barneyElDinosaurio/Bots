@@ -213,22 +213,26 @@ void SernaBot::update(){
 	//-----------------	
 
 	if(modo == "sediento"){
+
+		cout << "TimerSediento "  <<  timerSediento.getTime() << endl;
+
 		if(firstTimeInMode){
 			cout << "En el modo de beber" << endl;
 			timerSediento.start();
 			goTo(bebedero.x, bebedero.y);
 			firstTimeInMode = false;
 		}
-
-		cout << timerSediento.getTime() << endl;
-		/*else if(){
-
-
-		}*/
+		else if( timerSediento.getTime() > 5000){
+			chooseMode();
+			//timerSediento.stop();
+		}
 
 	}
 	if( modo == "parar"){
-		chooseMode();
+		//chooseMode();
+		cout << "Parado, como un miembro ..." << endl;
+		//timerParado.start();
+		cout << "Timer pàradp " << timerParado.getTime() << endl;
 	}
 	
 	
