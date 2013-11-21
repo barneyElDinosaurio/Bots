@@ -226,7 +226,9 @@ void SernaBot::update(){
 
 		}*/
 
-
+	}
+	if( modo == "parar"){
+		chooseMode();
 	}
 	
 	
