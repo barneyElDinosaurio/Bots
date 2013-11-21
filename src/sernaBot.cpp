@@ -175,7 +175,7 @@ void SernaBot::update(){
 
         		angle = ofToFloat(losStrings.at(1));
         		cout << "Angulo [RAW]" << angle << endl;
-        		angle = angle - 156.0f; //Le resto el cero.
+        		angle = angle - 230.0f; //Le resto el cero.
         		cout << "Angulo brujula [DEG]" << angle << endl; 
         		angle = ofDegToRad(angle);
 
