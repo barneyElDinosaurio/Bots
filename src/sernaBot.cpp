@@ -261,6 +261,12 @@ void SernaBot::update(){
 		else if( timerCarga.getTime() > 5000){
 			chooseMode();
 			timerCarga.stop();
+		}// MODS
+		if( pos.distance( cargadero1 ) < 0.1 ){
+
+			cout << "YA LLEGUE" << endl;
+			//exit();
+			ofSleepMillis(3000);
 		}
 	}
 	
