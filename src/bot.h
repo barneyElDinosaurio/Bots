@@ -56,7 +56,7 @@ public:
 		//chooseMode(); // Para elegir inicialmente un modo.
 		firstTimeInMode = true;
 		tiempoDeBebida = 5000; // En milisegundos... medio charro...
-		tiempoDePausa = 5000;
+		tiempoDePausa = 10000;
 
 
 		// LUGARES:
