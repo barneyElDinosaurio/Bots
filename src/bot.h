@@ -186,6 +186,7 @@ public:
 	Timer timerModo;
 	Timer timerParado;
 	Timer timerCarga;
+	Timer timerCangri;
 	bool firstTimeInMode;
 	float tiempoDeBebida;
 	float tiempoDePausa;

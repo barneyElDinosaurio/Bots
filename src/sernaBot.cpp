@@ -269,6 +269,30 @@ void SernaBot::update(){
 			ofSleepMillis(3000);
 		}
 	}
+	else if(modo == "cangri"){
+
+		cout << "TimerCangri "  <<  timerCangri.getTime() << endl;
+
+		if(firstTimeInMode){
+			cout << "En el modo de Cangri " << endl;
+			timerCangri.start();
+			//goTo( cargadero1.x, cargadero1.y);
+			firstTimeInMode = false;
+		}
+
+		else if( timerCangri.getTime() > 5000){
+			chooseMode();
+			//timerCangri.stop();
+		}// MODS
+
+		if( timerCangri.getTime() < 2000){
+			rotateL();
+			ofSleepMillis(110);
+			rotateR();
+			ofSleepMillis(110);
+		}
+
+	}
 	
 	
 	//mover.updateAngle();
