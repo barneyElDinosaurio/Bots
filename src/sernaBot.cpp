@@ -107,7 +107,7 @@ void SernaBot::setup(){
 
 	movementThreshold = 0.1;
 	isStatic = false; // Seguro????
-	timeAngleCalFactor = 1.0 * 1000 / ( 1.42 * 180/PI ) ; //segundos por radián [cronometrado suciamente cuando tenía adaptador]
+	timeAngleCalFactor = /*1*/0.6 * 1000 / ( 1.42 * 180/PI ) ; //segundos por radián [cronometrado suciamente cuando tenía adaptador]
 
 
 	anguloDeEvasion = 180;
