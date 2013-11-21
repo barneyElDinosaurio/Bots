@@ -201,78 +201,15 @@ void SernaBot::update(){
     */
     ofSleepMillis(10);
 
-    /*
+    
 	
-	//INTENTO DE I2C.................PENDIENTE
 	
-	//Escribiendo la letra "A"(0x42) al device (0x21)
-	wiringPiI2CWriteReg8 (fd,0x00,0x41);
-	//Ahora leyendo
-	ofSleepMillis(10);
-	//leyendo datos de los registros(1) y (2) por q se supone q el ModeOutput esta por defecto en(HEADING)
-	byte1=wiringPiI2CReadReg8(fd,0x01);
-	byte2=wiringPiI2CReadReg8(fd,0x02);
-	//Jugada para convertir de complemento A2 a entero... ???
-	angulo=(byte1 << 8) + byte2;
-	cout << "byte1: " << byte1 << "byte2: " << byte2 << "angulo: " << angulo  << endl;
-	*/
-	// Brujería para encontrar el máximo de las necesidades
-
-	/*
-	const int N = sizeof(necesidades) / sizeof(float);
-	//cout << "TAMAÑO " << N << endl;
-	
-	float  maxIndex = distance( necesidades, max_element(necesidades, necesidades + N));
-	
-	modo = modos.at(maxIndex).mode; // ENCUENTRO LA NECESIDAD ASOCIADA AL MÁXIMO DE LOS VALORES DE SENSOR
-
-	*/
 	//------------------
 	// ESTA ES LA PARTE JUGOSA!!!
 
 	//if( ofRandom(1) < 0.1 ){ cout << "A ver los modos pues... MODO = " << modo << endl; }
 	//-----------------	
-	cout << "********** bebedero" << bebedero << endl;
-	if( modo == "relajado"){ // MUCHO CUIDADO CON LA ESCTRITURA!!! QUE NO SE DIFIRENCIE DE LA DE ARRIBA
-		//cout << "estoy relajado" << endl;
-	}
-	else if(modo == "sediento"){ // AQUI CREO QUE PODRÍA SER UN TIMER DE MODO PARA TODOS LOS MODOS EN LUGAR DE UNO PARA CADA UNO.
-		if(firstTimeInMode){
-			firstTimeInMode = false;
-			cout << "Ir al bebedero" << endl;
-			goTo( bebedero.x, bebedero.y );
-			//timerSediento.start();ç
-			timerModo.start();
-		}
-		//if (timerSediento.getTime() > tiempoDeBebida){
-		if (timerModo.getTime() > tiempoDeBebida){
-			//timerSediento.stop();
-			timerModo.stop();
-			chooseMode();
-		}
-	}
-	else if( modo == "parar"){
-		cout << "Tiempo de parada " << timerModo.getTime() << endl;
-		if(firstTimeInMode){
-			firstTimeInMode = false;
-			stop();
-			cout << " Le dí la orden de para a este malparido " << endl;
-			timerModo.start();
-		}
-		if (timerModo.getTime() > tiempoDePausa){
-			cout << "salgo del modo de parada" << endl;
-			timerModo.stop();
-			chooseMode();		
-		}
-
-	}
-	else if(modo == "calibracion"){
-		calibrate();
-	}
-	else if(modo == "debug"){
-		//Código debug 
-
-	}
+	
 	
 	//mover.updateAngle();
 
