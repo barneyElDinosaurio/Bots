@@ -235,7 +235,7 @@ void SernaBot::update(){
 			timerModo.start();
 		}
 		if (timerModo.getTime() > tiempoDePausa){
-			
+			cout << "salgo del modo de parada" << endl;
 			timerModo.stop();
 			chooseMode();		
 		}
@@ -515,7 +515,7 @@ void SernaBot::calibrate(){
 }
 void SernaBot::advance(){
 	
-	//cout << " SERNAPODO: En la funcion de avanzar " << endl;
+	cout << " SERNAPODO: En la funcion de avanzar " << endl;
 	digitalWrite(1, HIGH);
 	digitalWrite(4, LOW);
 	digitalWrite(5, HIGH);
@@ -526,7 +526,7 @@ void SernaBot::advance(){
 
 void SernaBot::recoil(){
 
-	//cout << "retrocediendo wiring pi" << endl;
+	cout << "retrocediendo wiring pi" << endl;
 	digitalWrite(1, LOW);
 	digitalWrite(4, HIGH);
 	digitalWrite(5, LOW);
@@ -536,7 +536,7 @@ void SernaBot::recoil(){
 
 void SernaBot::rotateR(){
 	
-	//cout << "rotateR wiring pi" << endl;
+	cout << "rotateR wiring pi" << endl;
 
 	digitalWrite(1, LOW);
 	digitalWrite(4, HIGH);
@@ -551,7 +551,7 @@ void SernaBot::rotateL(){
 	digitalWrite(5, LOW);
 	digitalWrite(6, HIGH);
 	
-	//cout << "rotateL wiring pi" << endl;
+	cout << "rotateL wiring pi" << endl;
 }
 
 void SernaBot::stop(){
@@ -560,5 +560,5 @@ void SernaBot::stop(){
 	digitalWrite(5, LOW);
 	digitalWrite(6, LOW);
 		
-	//cout << "stop wiring pi" << endl;
+	cout << "stop wiring pi" << endl;
 }
