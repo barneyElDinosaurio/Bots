@@ -60,7 +60,7 @@ public:
 
 
 		// LUGARES:
-		bebedero.set(0.7, 0.3);
+		bebedero.set(0.8, 0.8);
 
 
 	}

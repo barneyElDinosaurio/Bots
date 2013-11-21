@@ -207,7 +207,7 @@ void SernaBot::update(){
 	//------------------
 	// ESTA ES LA PARTE JUGOSA!!!
 
-	if( ofRandom(1) < 0.1 ){ cout << "A ver los modos pues... MODO = " << modo << endl; }
+	//if( ofRandom(1) < 0.1 ){ cout << "A ver los modos pues... MODO = " << modo << endl; }
 	//-----------------	
 	if( modo == "relajado"){ // MUCHO CUIDADO CON LA ESCTRITURA!!! QUE NO SE DIFIRENCIE DE LA DE ARRIBA
 		//cout << "estoy relajado" << endl;
