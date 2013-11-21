@@ -209,6 +209,7 @@ void SernaBot::update(){
 
 	//if( ofRandom(1) < 0.1 ){ cout << "A ver los modos pues... MODO = " << modo << endl; }
 	//-----------------	
+	cout << "********** bebedero" << bebedero << endl;
 	if( modo == "relajado"){ // MUCHO CUIDADO CON LA ESCTRITURA!!! QUE NO SE DIFIRENCIE DE LA DE ARRIBA
 		//cout << "estoy relajado" << endl;
 	}
