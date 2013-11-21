@@ -80,7 +80,7 @@ void Bot::update(){
 				if( this->botType == "sernaBot"){
 					setPos(blobPos.x, blobPos.y);
 					if(ofRandom(1) < 0.1 ){ // Para no llenar la consola
-						//cout << "Me llamo SERNAPODO, con posición:---  " << pos.x << " " << pos.y << " HU : " << hu1 <<endl; 
+						cout << "Me llamo SERNAPODO, con posición:---  " << pos.x << " " << pos.y << " HU : " << hu1 <<endl; 
 					}
 					trackLastPos(pos);
 					//Ttimerw
