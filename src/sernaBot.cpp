@@ -65,7 +65,7 @@ void SernaBot::setup(){
 	
 	// BEbedero y otras suciedades
 	
-	//bebedero.set(0.3, 0.3);
+	bebedero.set(0.9, 0.9);
 	elTimer.start();
 	tiempoDeAvance = 400;
 	
