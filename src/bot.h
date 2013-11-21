@@ -45,6 +45,7 @@ public:
 		collisionDistance = 0.2; // 0.2 Parece sensato para una distancia de 2 metros
 		setOscSender("192.168.1.50", 9000);
 
+/*
 		vision = "camara";
 		cout << "Visión :: " << vision << endl;
 		// No está perdido en principio.
@@ -61,7 +62,7 @@ public:
 
 		// LUGARES:
 		bebedero.set(0.8, 0.8);
-
+*/
 
 	}
 		
@@ -90,6 +91,7 @@ public:
 	void setupSerial(string terminal, int baudRate );
 	void setupSerial(int device, int baudRate);
 	void trackLastPos( ofVec2f);
+	//void setup()
 	ofVec2f getPos();
 
 	// Choose mode!

@@ -20,8 +20,30 @@ void SernaBot::setup(){
 	cout << "SernaBot: inicializando..." << endl;
 	
 	// Setup de la clase padre ??
-	//(Bot*) setup();
+	//( (Bot*)this)->Bot();
 	
+	// ***COSAS DE LA CLASE PADRE QUE PEGUÉ AQUÍ...
+
+
+	vision = "camara";
+	cout << "Visión :: " << vision << endl;
+		// No está perdido en principio.
+	isLost = false;
+
+
+		// MODOS Y VAINAS
+		modo = "sediento"; // Tengo que poner esto momentáneamente... creo
+		//chooseMode(); // Para elegir inicialmente un modo.
+		firstTimeInMode = true;
+		tiempoDeBebida = 5000; // En milisegundos... medio charro...
+		tiempoDePausa = 10000;
+
+
+		// LUGARES:
+		bebedero.set(0.8, 0.8);
+
+		//**** AQUI CIERRAN
+
 	int port = 9001;
 	cout << "tratando de conectar al puerto " << port << endl;
 	( (Bot* )this)->setListeningPort(9001);
