@@ -236,13 +236,15 @@ void SernaBot::update(){
 
 		if( firstTimeInMode ){
 			stop();
+			isStatic = true;
 			timerParado.start();
 			firstTimeInMode = false;
 		}
-		/*else if(){
-
-
-		}*/
+		else if( timerParado.getTime() > 5000) {
+			cout << "ME voy a salir de PARADO" << endl;
+			chooseMode();
+			isStatic = false;
+		}
 	}
 	
 	
