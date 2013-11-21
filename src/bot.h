@@ -185,6 +185,7 @@ public:
 	Timer timerSediento; // Tiempo que va a pasar bebiendo...
 	Timer timerModo;
 	Timer timerParado;
+	Timer timerCarga;
 	bool firstTimeInMode;
 	float tiempoDeBebida;
 	float tiempoDePausa;
@@ -192,4 +193,5 @@ public:
 
 	// LUGARES
 	ofVec2f bebedero; 
+	ofVec2f cargadero1;
 };

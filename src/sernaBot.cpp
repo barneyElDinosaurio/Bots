@@ -39,8 +39,9 @@ void SernaBot::setup(){
 		tiempoDePausa = 10000;
 
 
-		// LUGARES:
+		//      LUGARES:
 		bebedero.set(0.8, 0.8);
+		cargadero1.set(0.8, 0.3);
 
 		//**** AQUI CIERRAN
 
@@ -244,6 +245,22 @@ void SernaBot::update(){
 			cout << "ME voy a salir de PARADO" << endl;
 			chooseMode();
 			isStatic = false;
+			timerParado.stop();
+		}
+	}
+	else if( modo == "cargar"){
+
+		cout << "TimerCarga "  <<  timerCarga.getTime() << endl;
+
+		if(firstTimeInMode){
+			cout << "En el modo de cargar" << endl;
+			timerCarga.start();
+			goTo( cargadero1.x, cargadero1.y);
+			firstTimeInMode = false;
+		}
+		else if( timerCarga.getTime() > 5000){
+			chooseMode();
+			timerCarga.stop();
 		}
 	}
 	
