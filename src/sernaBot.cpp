@@ -213,54 +213,55 @@ void SernaBot::update(){
 	//if( ofRandom(1) < 0.1 ){ cout << "A ver los modos pues... MODO = " << modo << endl; }
 	//-----------------	
 
-	if(modo == "sediento"){
+    if(controlledMotion == false){
+    	if(modo == "sediento"){
 
-		cout << "TimerSediento "  <<  timerSediento.getTime() << endl;
+    		cout << "TimerSediento "  <<  timerSediento.getTime() << endl;
 
-		if(firstTimeInMode){
-			cout << "En el modo de beber" << endl;
-			timerSediento.start();
-			goTo(bebedero.x, bebedero.y);
-			firstTimeInMode = false;
-		}
-		else if( timerSediento.getTime() > 5000){
-			chooseMode();
+    		if(firstTimeInMode){
+    			cout << "En el modo de beber" << endl;
+    			timerSediento.start();
+    			goTo(bebedero.x, bebedero.y);
+    			firstTimeInMode = false;
+    		}
+    		else if( timerSediento.getTime() > 5000){
+    			chooseMode();
 			//timerSediento.stop();
-		}
+    		}
 
-	}
-	if( modo == "parar"){
+    	}
+    	if( modo == "parar"){
 		//chooseMode();
-		cout << "Parado, como un miembro ..." << endl;
+    		cout << "Parado, como un miembro ..." << endl;
 		//timerParado.start();
-		cout << "Timer pàradp " << timerParado.getTime() << endl;
+    		cout << "Timer pàradp " << timerParado.getTime() << endl;
 
-		if( firstTimeInMode ){
-			stop();
-			isStatic = true;
-			timerParado.start();
-			firstTimeInMode = false;
-		}
-		else if( timerParado.getTime() > 5000) {
-			cout << "ME voy a salir de PARADO" << endl;
-			chooseMode();
-			isStatic = false;
-			timerParado.stop();
-		}
-	}
-	else if( modo == "cargar"){
+    		if( firstTimeInMode ){
+    			stop();
+    			isStatic = true;
+    			timerParado.start();
+    			firstTimeInMode = false;
+    		}
+    		else if( timerParado.getTime() > 5000) {
+    			cout << "ME voy a salir de PARADO" << endl;
+    			chooseMode();
+    			isStatic = false;
+    			timerParado.stop();
+    		}
+    	}
+    	else if( modo == "cargar"){
 
-		cout << "TimerCarga "  <<  timerCarga.getTime() << endl;
+    		cout << "TimerCarga "  <<  timerCarga.getTime() << endl;
 
-		if(firstTimeInMode){
-			cout << "En el modo de cargar" << endl;
-			timerCarga.start();
-			goTo( cargadero1.x, cargadero1.y);
-			firstTimeInMode = false;
-		}
-		else if( timerCarga.getTime() > 5000){
-			chooseMode();
-			timerCarga.stop();
+    		if(firstTimeInMode){
+    			cout << "En el modo de cargar" << endl;
+    			timerCarga.start();
+    			goTo( cargadero1.x, cargadero1.y);
+    			firstTimeInMode = false;
+    		}
+    		else if( timerCarga.getTime() > 5000){
+    			chooseMode();
+    			timerCarga.stop();
 		}// MODS
 		if( pos.distance( cargadero1 ) < 0.1 ){
 
@@ -298,7 +299,7 @@ void SernaBot::update(){
 	//mover.updateAngle();
 
 	
-	
+}
 	
 	
 	updateMovement();
